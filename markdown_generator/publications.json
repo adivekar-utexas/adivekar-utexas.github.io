@@ -1,11 +1,20 @@
 [
   {
+    "title": "Unsupervised text augmentation using Pre-trained Paraphrase Generation",
+    "pub_date": "2023-09-01",
+    "url_slug": "grok-paper",
+    "paper_url": "",
+    "venue": "(Preprint)",
+    "citation": "<i>(Preprint)</i> <u>Abhishek Divekar</u>, Mudit Agarwal, Srujana Merugu, and Nikhil Rasiwasia. <b>\"Unsupervised text augmentation using Pre-trained Paraphrase Generation\"</b>."
+  },
+  {
     "title": "Squeezing the last DRiP: AutoML for cost-constrained Product classification",
     "pub_date": "2021-09-01",
     "url_slug": "drip-paper",
     "paper_url": "(internal)",
+    "alternative_url": "<a href=\"https://adivekar-utexas.github.io/files/Squeezing_the_last_DRiP_ARD_2021_slides.pdf\">External talk at Amazon Research Days 2021</a>",
     "venue": "Amazon Machine Learning Conference (AMLC)",
-    "citation": "<u>Abhishek Divekar</u>*, Gaurav Manchanda*, Prit Raj, Abhishek Das, Karan Tanwar, Akshay Jagatap, Vinayak Puranik, Jagannathan Srinivasan, Ramakrishna Nalam, Nikhil Rasiwasia (2021). \"Squeezing the last DRiP: AutoML for cost-constrained product classification\" <i>9th conference of Amazon Machine Learning (AMLC 2021)</i> (Poster, ~30% acceptance-rate)"
+    "citation": "<u>Abhishek Divekar</u>*, Gaurav Manchanda*, Prit Raj, Abhishek Das, Karan Tanwar, Akshay Jagatap, Vinayak Puranik, Jagannathan Srinivasan, Ramakrishna Nalam, and Nikhil Rasiwasia. <b>\"Squeezing the last DRiP: AutoML for cost-constrained product classification\"</b>. <i>9th conference of Amazon Machine Learning (AMLC 2021)</i> (Poster, ~30% acceptance-rate)"
   },
   {
     "title": "CPP Multimodal AutoML Corpus and Benchmark",
@@ -13,7 +22,7 @@
     "url_slug": "cpp-benchmark-paper",
     "paper_url": "(internal)",
     "venue": "1st Workshop on MultiModal Learning and Fusion, Amazon Machine Learning Conference",
-    "citation": "Andrew Borthwick, <u>Abhishek Divekar</u>, Nick Erickson, Fayaz Ahmed Farooque, Oleg Kim, Nikhil Rasiwasia, and Ethan Xu. \"The CPP Multimodal AutoML Corpus and Benchmark\" <i>1st AMLC Workshop on MultiModal Learning and Fusion at the 9th conference of Amazon Machine Learning (AMLC 2021)</i> (Oral)"
+    "citation": "Andrew Borthwick, <u>Abhishek Divekar</u>, Nick Erickson, Fayaz Ahmed Farooque, Oleg Kim, Nikhil Rasiwasia, and Ethan Xu. <b>\"The CPP Multimodal AutoML Corpus and Benchmark\"</b>. <i>1st AMLC Workshop on MultiModal Learning and Fusion at the 9th conference of Amazon Machine Learning (AMLC 2021)</i> (Oral)"
   },
   {
     "title": "LEAP: LEAf node Predictions in the wild",
@@ -21,7 +30,7 @@
     "url_slug": "leap-paper",
     "paper_url": "(internal)",
     "venue": "2nd ASCS Applied Science Workshop",
-    "citation": "<u>Abhishek Divekar</u>, Vinayak Puranik, Zhenyu Shi, Jinmiao Fu, Nikhil Rasiwasia. \"LEAP: LEAf node Predictions in the wild\" <i>2nd ASCS Applied Science Workshop, 2021</i> (Oral)"
+    "citation": "<u>Abhishek Divekar</u>, Vinayak Puranik, Zhenyu Shi, Jinmiao Fu, and Nikhil Rasiwasia. <b>\"LEAP: LEAf node Predictions in the wild\"</b>. <i>2nd ASCS Applied Science Workshop, 2021</i> (Oral)"
   },
   {
     "title": "Entity Prediction Service: a configurable, end-to-end AutoML system",
@@ -29,7 +38,7 @@
     "url_slug": "eps-paper",
     "paper_url": "(internal)",
     "venue": "Workshop on Automated Machine Learning, Amazon Machine Learning Conference",
-    "citation": "Gaurav Manchanda*, <u>Abhishek Divekar</u>*, Akshay Jagatap, Prit Raj, Vinayak Puranik, Nikhil Rasiwasia, Ramakrishna Nalam, Jagannathan Srinivasa (2020). \"EPS: a configurable, end-to-end AutoML system\" <i>Workshop on Automated Machine Learning at the 8th conference of Amazon Machine Learning (AMLC 2020)</i> (Poster)"
+    "citation": "Gaurav Manchanda*, <u>Abhishek Divekar</u>*, Akshay Jagatap, Prit Raj, Vinayak Puranik, Nikhil Rasiwasia, Ramakrishna Nalam, and Jagannathan Srinivasa. <b>\"EPS: a configurable, end-to-end AutoML system\"</b>. <i>Workshop on Automated Machine Learning at the 8th conference of Amazon Machine Learning (AMLC 2020)</i> (Poster)"
   },
   {
     "title": "Benchmarking datasets for Anomaly-based Network Intrusion Detection: KDD CUP 99 alternatives",
@@ -37,7 +46,7 @@
     "url_slug": "kddcup99-paper",
     "paper_url": "https://arxiv.org/abs/1811.05372",
     "venue": "IEEE International Conference on Computing, Communication and Security, 2018",
-    "citation": "<u>Abhishek Divekar</u>, Meet Parekh, Vaibhav Savla, Rudra Mishra, and Mahesh Shirole (2018). \"Benchmarking datasets for Anomaly-based Network Intrusion Detection: KDD CUP 99 alternatives\" <i>IEEE International Conference on Computing, Communication and Security 2018</i> (Oral)",
-    "excerpt": "This paper is about the number 1. The number 2 is left for future work."
+    "citation": "<u>Abhishek Divekar</u>, Meet Parekh, Vaibhav Savla, Rudra Mishra, and Mahesh Shirole. <b>\"Benchmarking datasets for Anomaly-based Network Intrusion Detection: KDD CUP 99 alternatives\"</b>. <i>IEEE International Conference on Computing, Communication and Security 2018</i> (Oral)",
+    "excerpt": "Machine Learning has been steadily gaining traction for its use in Anomaly-based Network Intrusion Detection Systems (A-NIDS). Research into this domain is frequently performed using the KDD~CUP~99 dataset as a benchmark. Several studies question its usability while constructing a contemporary NIDS, due to the skewed response distribution, non-stationarity, and failure to incorporate modern attacks. In this paper, we compare the performance for KDD-99 alternatives when trained using classification models commonly found in literature: Neural Network, Support Vector Machine, Decision Tree, Random Forest, Naive Bayes and K-Means. Applying the SMOTE oversampling technique and random undersampling, we create a balanced version of NSL-KDD and prove that skewed target classes in KDD-99 and NSL-KDD hamper the efficacy of classifiers on minority classes (U2R and R2L), leading to possible security risks. We explore UNSW-NB15, a modern substitute to KDD-99 with greater uniformity of pattern distribution. We benchmark this dataset before and after SMOTE oversampling to observe the effect on minority performance. Our results indicate that classifiers trained on UNSW-NB15 match or better the Weighted F1-Score of those trained on NSL-KDD and KDD-99 in the binary case, thus advocating UNSW-NB15 as a modern substitute to these datasets."
   }
 ]
