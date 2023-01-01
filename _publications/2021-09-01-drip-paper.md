@@ -1,6 +1,7 @@
 ---
 title: "Squeezing the last DRiP: AutoML for cost-constrained Product classification"
 collection: publications
+urlslug: "drip-paper"
 permalink: /publication/2021-09-01-drip-paper
 date: 2021-09-01
 venue: 'Amazon Machine Learning Conference (AMLC)'

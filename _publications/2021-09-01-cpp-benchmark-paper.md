@@ -1,6 +1,7 @@
 ---
 title: "CPP Multimodal AutoML Corpus and Benchmark"
 collection: publications
+urlslug: "cpp-benchmark-paper"
 permalink: /publication/2021-09-01-cpp-benchmark-paper
 date: 2021-09-01
 venue: '1st Workshop on MultiModal Learning and Fusion, Amazon Machine Learning Conference'
