@@ -73,6 +73,14 @@
         (acceptance-rate: {{ post.acceptancerate }})
       {% endif %}
     </p>
+    {% if post.role %}<p style="margin: 0;"><b>Role:</b> {{ post.role }}</p>{% endif %}
+    {% if post.codeurl or post.projecturl %}
+      <p style="margin: 0;"><b>Links:</b>
+        {% if post.paperurl and post.paperurl contains "http" %}[<a href="{{ post.paperurl }}">Paper</a>]{% endif %}
+        {% if post.codeurl %}[<a href="{{ post.codeurl }}">Code</a>]{% endif %}
+        {% if post.projecturl %}[<a href="{{ post.projecturl }}">Project page</a>]{% endif %}
+      </p>
+    {% endif %}
 
     <p style="margin-top: 1em;">
       <b>Citation:</b>
