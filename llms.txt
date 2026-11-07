@@ -1,0 +1,26 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# {{ site.data.profile.name }}
+
+> {{ site.description }}
+
+{{ site.data.profile.name }} is a {{ site.data.profile.job_title }} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: {{ site.data.profile.email }}. Google Scholar: {{ site.data.profile.google_scholar }}
+
+## Core pages
+- [Home]({{ site.url }}/): bio, highlights, current research, career summary
+- [Publications]({{ site.url }}/publications/): all papers with venue, acceptance rate, role and abstract
+- [IOAI]({{ site.url }}/ioai/): International Scientific Committee member; IOAI² AI Models Track lead; Team India coach (IOAI 2025)
+- [Service]({{ site.url }}/service/): peer review (ACL, ICLR, AAAI, COLM, WSDM, SIGIR, WWW), Area Chair, grant review
+- [Impact]({{ site.url }}/impact/): research in production, external adoption, open-source software
+- [Awards & Press]({{ site.url }}/awards/): oral presentations, awards, media coverage
+- [CV]({{ site.url }}/cv/): education, experience, service, skills
+
+## Publications
+{% assign pubs = site.publications | sort: "date" | reverse %}{% for p in pubs %}- [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, acceptance rate {{ p.acceptancerate }}{% endif %}{% if p.role %}. Role: {{ p.role }}{% endif %}.{% if p.paperurl contains "http" %} Paper: {{ p.paperurl }}{% endif %}
+{% endfor %}
+## Optional
+- [Talks]({{ site.url }}/talks/): invited talks and oral presentations
+- [Projects]({{ site.url }}/projects/): graduate course projects and technical reports
+- [Sitemap]({{ site.url }}/sitemap.xml)
