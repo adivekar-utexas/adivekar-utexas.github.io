@@ -1,19 +1,25 @@
-# main links links
+# Top navigation
 main:
-  - title: "CV"
-    url: /cv/
-    
   - title: "Publications"
     url: /publications/
+
+  - title: "IOAI"
+    url: /ioai/
+
+  - title: "Service"
+    url: /service/
+
+  - title: "Impact"
+    url: /impact/
+
+  - title: "Awards & Press"
+    url: /awards/
 
   - title: "Talks"
     url: /talks/
 
+  - title: "CV"
+    url: /cv/
+
   - title: "Projects"
     url: /projects/
-    
-  # - title: "Blog"
-  #   url: /year-archive/
-    
-  # - title: "Guide"
-  #   url: /markdown/
