@@ -7,11 +7,11 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Home"
+title                    : "Abhishek Divekar"
 title_separator          : "-"
 name                     : &name "Abhishek Divekar"
-description              : &description ""
-url                      : https://adivekar-utexas.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : &description "Abhishek Divekar is a Senior Applied Scientist at Amazon working on LLM evaluation (LLM-as-a-Judge), synthetic data generation, red-teaming and guardrailing LLMs, and multimodal agents. First-author papers at AAAI 2026 and EMNLP 2024; member of the International Scientific Committee of the International Olympiad in Artificial Intelligence (IOAI)."
+url                      : https://adivekar.com # canonical; adivekar-utexas.github.io redirects here via CNAME
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "adivekar-utexas/adivekar-utexas.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -66,9 +66,16 @@ og_image                 :  # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : "Abhishek Divekar"
+  links: # sameAs links used in JSON-LD (keep identical to profile fields everywhere)
+    - "https://scholar.google.com/citations?user=1Sf2oM4AAAAJ"
+    - "https://www.linkedin.com/in/ardivekar"
+    - "https://github.com/adivekar-utexas"
+    - "https://github.com/ARDivekar"
+    - "https://x.com/AdamDivekar"
+    - "https://huggingface.co/adivekar"
+    # TODO(Abhishek): add ORCID, DBLP pid, Semantic Scholar author ID, OpenReview profile once confirmed
 
 
 # Analytics
@@ -82,8 +89,8 @@ analytics:
 author:
   name             : "Abhishek Divekar"
   avatar           : "profile.jpeg"
-  bio              : "Applied Scientist at Amazon; MSCS student at UT Austin (online)"
-  location         : ""
+  bio              : "Senior Applied Scientist, Amazon · MSCS (Thesis), UT Austin · IOAI International Scientific Committee"
+  location         : 
   employer         : Amazon
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=1Sf2oM4AAAAJ&hl=en"

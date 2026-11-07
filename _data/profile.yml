@@ -1,0 +1,39 @@
+# Single source of truth for identity facts. Used by JSON-LD, llms.txt and pages.
+# Every fact here must be verifiable against a document (offer letter, paper, invitation, etc.).
+name: "Abhishek Divekar"
+job_title: "Senior Applied Scientist"
+employer: "Amazon"
+employer_url: "https://www.amazon.science/"
+country: "IN"
+google_scholar: "https://scholar.google.com/citations?user=1Sf2oM4AAAAJ"
+one_liner: "Senior Applied Scientist at Amazon working on LLM evaluation, synthetic data generation and LLM red-teaming."
+
+research_areas:
+  - "Large Language Models"
+  - "LLM-as-a-Judge evaluation"
+  - "Prediction-Powered Inference"
+  - "Synthetic dataset generation"
+  - "Retrieval-augmented generation"
+  - "LLM red-teaming and guardrails"
+  - "Multimodal agentic systems"
+  - "AutoML"
+
+education:
+  - institution: "The University of Texas at Austin"
+    degree: "M.S. in Computer Science (Thesis track)"
+    dates: "Aug 2020 – May 2024"
+    note: "Thesis advisor: Prof. Greg Durrett. Thesis work published at EMNLP 2024 (SynthesizRR)."
+  - institution: "Veermata Jijabai Technological Institute (VJTI), Mumbai"
+    degree: "B.Tech. in Information Technology"
+    dates: "2013 – 2017"
+    note: "Research Assistant in Prof. Mahesh Shirole's lab (anomaly-based network intrusion detection)."
+
+memberships:
+  - name: "International Scientific Committee, International Olympiad in Artificial Intelligence (IOAI)"
+    url: "https://ioai-official.org/"
+    since: "Dec 2025"
+  - name: "NSF-Simons AI Institute for Cosmic Origins (CosmicAI) — Research Collaborator"
+    url: "https://www.cosmicai.org/"
+    since: "Feb 2025"
+  - name: "IEEE (Senior Member)"
+    url: "https://www.ieee.org/"

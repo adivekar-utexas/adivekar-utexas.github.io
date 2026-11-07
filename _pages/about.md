@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-[Amazon International Machine Learning (IML)](https://www.amazon.science/working-at-amazon/how-rajeev-rastogis-machine-learning-team-in-india-develops-innovations-for-customers-worldwide) is a group of ~100 ML researchers working across several Amazon sites, led by [Rajeev Rastogi](https://www.linkedin.com/in/rajeev-rastogi-5019701/?originalSubdomain=in). I research and train models for AutoML and NLP projects.
+[Amazon International Machine Learning (IML)](https://www.amazon.science/working-at-amazon/how-rajeev-rastogis-machine-learning-team-in-india-develops-innovations-for-customers-worldwide) is a group of ~100 ML researchers working across Seattle, Sydney and Berlin, led by [Rajeev Rastogi](https://www.linkedin.com/in/rajeev-rastogi-5019701/?originalSubdomain=in). I research and train models for AutoML and NLP projects.
 
 <iframe style="padding-bottom: 1em;" src="https://www.youtube.com/embed/15sa6OeIWJg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
