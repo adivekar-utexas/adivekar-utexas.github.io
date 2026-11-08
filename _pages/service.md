@@ -10,8 +10,10 @@ description: "Peer review, program committee, area chair, grant review and compe
 
 ## International Olympiad in Artificial Intelligence (IOAI)
 
-- **Member, International Scientific Committee (ISC)**, IOAI (since December 2025). The ISC is the scientific body that sets and finalizes the competition tasks and coordinates the international jury. See the [IOAI page](/ioai/) for details.
-- **National team selection and coaching, Team India, IOAI 2025.** Designed and judged the final stages of India's national selection for the IOAI 2025 team. See the [IOAI page](/ioai/).
+- **Chair, IOAI² AI Models Track (IOAI 2026).** Led the committee that ran the first olympiad track for fully autonomous AI systems, in which 15 systems from 14 organizations were evaluated and ranked ([official report](https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/)).
+- **Member, IOAI Jury (IOAI 2026).** The Jury verified the AI Models Track submissions and ruled on rule violations.
+- **Member, International Scientific Committee (ISC), IOAI 2026.** The ISC sets the scientific direction of the competition and approved the AI Models Track rules and score normalization.
+- **Team Leader, Team India, IOAI 2025.** Contributed to the final stages of India's national team selection. See the [IOAI page](/ioai/).
 
 ## Conference peer review and program committees
 

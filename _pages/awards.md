@@ -13,6 +13,8 @@ description: "Awards, oral presentations, selective recognition and press covera
 - **Oral presentation, AAAI 2026**, Innovative Applications of AI track (19.2% acceptance) for [PRECISE](/publication/precise).
 - **Oral presentation, Amazon Machine Learning Conference 2025** (~10% oral acceptance) for [TrojanShot](/publication/trojanshot).
 - **Oral presentation, Amazon Machine Learning Conference 2024** (~10% oral acceptance) for [SynthesizRR](/publication/synthesizrr-amlc).
+- **Team Leader, Team India, IOAI 2025**: the team won 3 Gold, 2 Silver and 1 Bronze medals, placing 3rd of 53 countries and regions by medal table ([official results](https://ioai-official.org/china-2025/results-2025/); see [IOAI](/ioai/)).
+- **Chair, IOAI² AI Models Track, IOAI 2026**, with the official statement and the [inaugural report](https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/) published under my name.
 - **Winner (out of 300 participants)**, Amazon Machine Learning Challenge, Chennai, 2017.
 
 <!-- TODO(Abhishek): add the AAAI 2026 Innovative Application Award (with the official AAAI announcement link and the number of awardees) once you have the public link. -->

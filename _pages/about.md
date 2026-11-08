@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Abhishek Divekar"
-excerpt: "Senior Applied Scientist at Amazon working on LLM evaluation, synthetic data generation and LLM red-teaming. First-author papers at AAAI 2026 and EMNLP 2024. Member of the IOAI International Scientific Committee."
+excerpt: "Senior Applied Scientist at Amazon working on LLM evaluation, synthetic data generation and LLM red-teaming. First-author papers at AAAI 2026 and EMNLP 2024. Chair of the IOAI² AI Models Track (IOAI 2026)."
 description: "Abhishek Divekar is a Senior Applied Scientist at Amazon working on LLM evaluation (LLM-as-a-Judge), synthetic data generation, red-teaming and guardrailing LLMs, and multimodal agents."
 author_profile: true
 redirect_from:
@@ -16,7 +16,7 @@ redirect_from:
 ## Highlights
 
 - **Publications:** first-author papers at **AAAI 2026** (oral, Innovative Applications track, 19.2% acceptance) and **EMNLP 2024** (two main-conference papers, 20.8% acceptance), an **ACL 2026** workshop paper, and an IEEE ICCCS 2018 paper. → [Publications](/publications/)
-- **International Olympiad in AI:** member of the **International Scientific Committee** since December 2025, lead of the new **IOAI² AI Models Track** at IOAI 2026, and **Team India coach** for IOAI 2025. → [IOAI](/ioai/)
+- **International Olympiad in AI:** **Chair of the IOAI² AI Models Track** at IOAI 2026, the first olympiad track for fully autonomous AI systems (15 systems from 14 organizations), and lead author of its [official report](https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/). Member of the International Scientific Committee and the IOAI Jury. **Team Leader of Team India at IOAI 2025**, which won 3 Gold, 2 Silver and 1 Bronze medals. → [IOAI](/ioai/)
 - **Peer review:** reviewer for ACL, ICLR, AAAI, COLM, WSDM, SIGIR and WWW; Area Chair at the Amazon Machine Learning Conference 2025; proposal reviewer for Amazon Research Awards. → [Service](/service/)
 - **Impact:** lead science contributor to an AutoML platform that deployed 1,000+ models across 14 Amazon websites; red-teaming for the India launch of Amazon Rufus (100M+ customers); open-source libraries on Amazon Science. → [Impact](/impact/)
 - **Research collaborations:** NSF-Simons AI Institute for Cosmic Origins (CosmicAI), with UT Austin, NYU and UCLA.
