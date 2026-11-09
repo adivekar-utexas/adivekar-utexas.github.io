@@ -25,7 +25,7 @@ Other roles at IOAI 2026, as listed in the [official report](https://ioai-offici
 
 ## IOAI 2025: Team Leader, Team India
 
-I was **Team Leader of Team India** at IOAI 2025 in Beijing, China, and contributed to the final stages of India's national team selection. The eight-member team won **3 Gold, 2 Silver and 1 Bronze medals**, plus one Honourable Mention ([official IOAI 2025 results](https://ioai-official.org/china-2025/results-2025/)).
+I was **Team Leader of Team India** for India's debut at IOAI 2025 in Beijing, China. I helped select, mentor and coach the eight olympians; created training material, curated practice problems and ran timed six-hour mock contests; and represented India at the IOAI General Assembly, where I petitioned the International Scientific Committee for fairness and transparency in the contest rules. The team won **3 Gold, 2 Silver and 1 Bronze medals**, plus one Honourable Mention ([official IOAI 2025 results](https://ioai-official.org/china-2025/results-2025/)).
 
 In the official individual-contest results (284 contestants from 53 countries and regions), India's medals were:
 
@@ -39,5 +39,13 @@ In the official individual-contest results (284 contestants from 53 countries an
 | 77 | Himaneesh Sompalle | Bronze |
 
 India's 3 golds tied for the second-highest gold count of any country, behind only Russia. Ranked Olympic-style (golds first, then silvers, then bronzes), India placed **3rd of 53 countries and regions**. These figures are computed from the official results table.
+
+![Team India IOAI 2025 logo: a peacock with eight feathers, one for each olympian]({{ base_path }}/images/ioai-2025-team-india-logo.png){: .align-right width="160px"}
+
+I also designed the official Team India logo, a peacock with eight feathers for the eight olympians, used on the team's jackets, T-shirts and badges.
+
+**Press coverage** of the team's result: [The Hindu BusinessLine](https://www.thehindubusinessline.com/news/indian-team-bags-third-spot-in-its-debut-appearance-at-ai-olympiad/article69960200.ece) (Rohan Das, 21 Aug 2025; names me as a team lead), [The Times of India](https://timesofindia.indiatimes.com/city/chennai/indian-students-win-3-gold-medals-at-intl-ai-olympiad/articleshow/123474957.cms) (24 Aug 2025), [Navbharat Times](https://navbharattimes.indiatimes.com/tech/ai-news/india-secured-third-postion-in-international-olympiad-in-artificial-intelligence-ahead-of-china-and-america/articleshow/123436355.cms) (21 Aug 2025), [Zee News](https://zeenews.india.com/hindi/technology/india-shines-at-international-ai-olympiad-2025-beats-us-and-china-to-win-3rd-place/2891483) and [India.com](https://www.india.com/hindi-news/gallery-hindi/india-occupy-3rd-position-in-international-ai-olympiad-beat-us-china-8029719/india-vs-usa-china-ai-olympiad/).
+
+Before IOAI, I served on the **Technical Committee of the ACM India AI Olympiad (INAIO 2025)**, which selected the national team: I curated Stage-2 problems attempted by 200+ students and coached and judged the 22 Stage-4 finalists at IIIT Hyderabad.
 
 A member of the 2025 team, Ishaan Gangwani (Honourable Mention), later co-founded Synthetic Sciences, the lab that won the inaugural IOAI² AI Models Track in 2026 ([report](https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/)).

@@ -6,7 +6,7 @@ type: "Oral presentation"
 permalink: /talks/2026-precise-aaai-2026-oral
 venue: "AAAI Conference on Artificial Intelligence (AAAI 2026), Innovative Applications of AI track"
 date: 2026-01-24
-location: "Philadelphia, USA"
+location: "Singapore"
 excerpt: "Oral presentation of PRECISE at AAAI 2026."
 ---
 

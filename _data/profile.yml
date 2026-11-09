@@ -1,12 +1,25 @@
 # Single source of truth for identity facts. Used by JSON-LD, llms.txt and pages.
 # Every fact here must be verifiable against a document (offer letter, paper, invitation, etc.).
 name: "Abhishek Divekar"
-job_title: "Senior Applied Scientist"
+
+# ---- JOB TITLE SWITCH ----------------------------------------------------
+# Change `title_style` to one of the keys below; every page, the sidebar,
+# <title>/meta tags, JSON-LD and llms.txt update together.
+title_style: "researcher"
+titles:
+  researcher: "Senior Researcher"
+  research_scientist: "Senior Research Scientist"
+  applied_scientist: "Senior Applied Scientist"
+  scientist: "Senior Scientist"
+# Front matter cannot run Liquid, so pages write [[TITLE]] there and the
+# templates substitute it. In page bodies use {% include jobtitle %}.
+# --------------------------------------------------------------------------
+
 employer: "Amazon"
 employer_url: "https://www.amazon.science/"
 country: "IN"
 google_scholar: "https://scholar.google.com/citations?user=1Sf2oM4AAAAJ"
-one_liner: "Senior Applied Scientist at Amazon working on LLM evaluation, synthetic data generation and LLM red-teaming."
+one_liner: "[[TITLE]] at Amazon working on LLM evaluation, synthetic data generation and LLM red-teaming."
 
 research_areas:
   - "Large Language Models"
@@ -31,7 +44,7 @@ education:
 memberships:
   - name: "International Scientific Committee, International Olympiad in Artificial Intelligence (IOAI)"
     url: "https://ioai-official.org/"
-    since: "Dec 2025"
+    since: "2026"
     role: "Member; Chair of the IOAI² AI Models Track (2026); IOAI Jury member (2026)"
   - name: "NSF-Simons AI Institute for Cosmic Origins (CosmicAI) — Research Collaborator"
     since: "Feb 2025"

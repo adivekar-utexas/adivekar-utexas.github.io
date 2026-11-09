@@ -3,6 +3,7 @@
   Facts come from _data/profile.yml so HTML, llms.txt and JSON-LD never drift apart.
 {% endcomment %}
 {% assign p = site.data.profile %}
+{% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,7 +29,7 @@
       "url": "{{ site.url }}/",
       "image": "{{ site.url }}/images/{{ site.author.avatar }}",
       "email": "mailto:{{ p.email }}",
-      "jobTitle": {{ p.job_title | jsonify }},
+      "jobTitle": {{ jobtitle | jsonify }},
       "description": {{ site.description | jsonify }},
       "worksFor": { "@type": "Organization", "name": {{ p.employer | jsonify }}, "url": {{ p.employer_url | jsonify }} },
       "alumniOf": [

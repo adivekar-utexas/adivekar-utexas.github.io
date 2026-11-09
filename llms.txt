@@ -6,7 +6,7 @@ permalink: /llms.txt
 
 > {{ site.description }}
 
-{{ site.data.profile.name }} is a {{ site.data.profile.job_title }} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: {{ site.data.profile.email }}. Google Scholar: {{ site.data.profile.google_scholar }}
+{{ site.data.profile.name }} is a {% include jobtitle %} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. His scientific contributions added over USD 550M to Amazon revenue (2021–2026). He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: {{ site.data.profile.email }}. Google Scholar: {{ site.data.profile.google_scholar }}
 
 ## Core pages
 - [Home]({{ site.url }}/): bio, highlights, current research, career summary

@@ -1,0 +1,1 @@
+{{ site.data.profile.titles[site.data.profile.title_style] }}
