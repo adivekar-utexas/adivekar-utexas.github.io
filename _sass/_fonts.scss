@@ -37,3 +37,18 @@
   descent-override: 28.23%;
   line-gap-override: 0%;
 }
+
+/* Display serif for headings and key numbers (Source Serif 4, SIL OFL 1.1).
+   Pinned to optical size 24, weights 400-700, Latin only. */
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/assets/fonts/geist/SourceSerif4-Latin-VF.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Serif Fallback";
+  src: local("Georgia"), local("Times New Roman");
+  size-adjust: 97%;
+}

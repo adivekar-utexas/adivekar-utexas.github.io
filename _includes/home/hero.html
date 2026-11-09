@@ -1,0 +1,19 @@
+{% assign p = site.data.profile %}
+<section class="hero" aria-labelledby="hero-name">
+  <div class="hero__text">
+    <p class="eyebrow">{{ include.jobtitle }} · Amazon · </p>
+    <h1 id="hero-name" class="hero__name">Abhishek Divekar</h1>
+    <p class="hero__lede">I study how to <strong>evaluate and improve large language models when human labels are scarce</strong>: statistically valid LLM judges, diverse synthetic training data, red-teaming and guarding LLMs, and vision-language agents for science.</p>
+    <p class="hero__sub">Published at NeurIPS, AAAI and EMNLP. Chair of the <a href="/service/#ioai">IOAI² AI Models Track</a> at the International Olympiad in AI. M.S. in Computer Science, UT Austin, advised by <a href="https://gregdurrett.github.io/">Greg Durrett</a>.</p>
+    <nav class="link-row" aria-label="Profiles and contact">
+      <a class="btn-pill btn-pill--primary" href="/cv/">{% include icons/cv.svg %}<span>CV</span></a>
+      <a class="btn-pill" href="{{ p.google_scholar }}">{% include icons/scholar.svg %}<span>Google Scholar</span></a>
+      <a class="btn-pill" href="https://github.com/adivekar-utexas">{% include icons/github.svg %}<span>GitHub</span></a>
+      <a class="btn-pill" href="https://www.linkedin.com/in/ardivekar">{% include icons/linkedin.svg %}<span>LinkedIn</span></a>
+      <a class="btn-pill" href="mailto:{{ p.email }}">{% include icons/email.svg %}<span>Email</span></a>
+    </nav>
+  </div>
+  <figure class="hero__photo">
+    <picture><source srcset="{{ base_path }}/images/profile-440.webp" type="image/webp"><img src="{{ base_path }}/images/profile-440.jpg" alt="Portrait of Abhishek Divekar" width="220" height="220" fetchpriority="high"></picture>
+  </figure>
+</section>
