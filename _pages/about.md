@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: "Abhishek Divekar"
+seo_title: "Abhishek Divekar - Senior Applied Scientist at Amazon (LLM Evaluation, Synthetic Data)"
 excerpt: "Senior Applied Scientist at Amazon working on LLM evaluation, synthetic data generation and LLM red-teaming. First-author papers at AAAI 2026 and EMNLP 2024. Chair of the IOAI² AI Models Track (IOAI 2026)."
 description: "Abhishek Divekar is a Senior Applied Scientist at Amazon working on LLM evaluation (LLM-as-a-Judge), synthetic data generation, red-teaming and guardrailing LLMs, and multimodal agents."
 author_profile: true
