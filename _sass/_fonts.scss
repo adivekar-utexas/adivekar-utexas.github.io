@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Self-hosted Geist (SIL OFL 1.1, see /assets/fonts/geist/OFL.txt).
+   One variable file per style (weights 100-900), subset to Latin (~34 KB).
+   ========================================================================== */
+
+@font-face {
+  font-family: "Geist";
+  src: url("/assets/fonts/geist/Geist-Latin-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/assets/fonts/geist/Geist-Italic-Latin-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/geist/GeistMono-Latin-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Metric-matched fallback: Arial scaled to Geist's width and vertical metrics,
+   so text does not shift when Geist finishes loading (no layout shift). */
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
+  size-adjust: 104.49%;
+  ascent-override: 96.18%;
+  descent-override: 28.23%;
+  line-gap-override: 0%;
+}

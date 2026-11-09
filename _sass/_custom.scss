@@ -3,16 +3,6 @@
    compact publication list. Loaded last from assets/css/main.scss.
    ========================================================================== */
 
-/* Fonts: "OpenAI Sans" is used if installed on the visitor's machine or if
-   licensed .woff2 files are added under /assets/fonts/openai-sans/ (see the
-   commented @font-face below). Inter (loaded in _includes/head/custom.html)
-   is the open-source fallback. */
-
-// @font-face {
-//   font-family: "OpenAI Sans";
-//   src: url("/assets/fonts/openai-sans/OpenAISans-Regular.woff2") format("woff2");
-//   font-weight: 400; font-display: swap;
-// }
 
 body { background: #fbfaf8; color: $text-color; }
 .masthead { background: #fbfaf8; border-bottom: 1px solid #e7e5e4; }
