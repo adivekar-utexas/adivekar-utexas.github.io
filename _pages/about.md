@@ -15,7 +15,7 @@ redirect_from:
 
 I am a {{ jobtitle }} at Amazon in . I study how to **evaluate and improve large language models when human labels are scarce**: statistically valid LLM judges, diverse synthetic training data, red-teaming and guarding LLMs, and vision-language agents that do scientific data analysis. My research has been published at NeurIPS, AAAI, EMNLP and ACL workshops, and has shipped in Amazon products used by hundreds of millions of customers.
 
-I chair the [IOAI² AI Models Track](/ioai/) at the International Olympiad in Artificial Intelligence and serve on its International Scientific Committee. In 2025, I was Team Leader of Team India, which won 3 Gold, 2 Silver and 1 Bronze medals at IOAI 2025. I hold an M.S. in Computer Science from UT Austin, advised by [Greg Durrett](https://gregdurrett.github.io/), completed while working full-time at Amazon.
+I chair the [IOAI² AI Models Track](/service/#ioai) at the International Olympiad in Artificial Intelligence and serve on its International Scientific Committee. In 2025, I was Team Leader of Team India, which won 3 Gold, 2 Silver and 1 Bronze medals at IOAI 2025. I hold an M.S. in Computer Science from UT Austin, advised by [Greg Durrett](https://gregdurrett.github.io/), completed while working full-time at Amazon.
 
 <p class="home-links">[<a href="/cv/">CV</a>] [<a href="{{ site.data.profile.google_scholar }}">Google Scholar</a>] [<a href="https://github.com/adivekar-utexas">GitHub</a>] [<a href="https://www.linkedin.com/in/ardivekar">LinkedIn</a>] [<a href="mailto:{{ site.data.profile.email }}">Email</a>]</p>
 
@@ -36,7 +36,7 @@ I chair the [IOAI² AI Models Track](/ioai/) at the International Olympiad in Ar
 
 ## Publications
 
-<p class="section-note">* equal contribution. Full list with abstracts on the <a href="/publications/">Publications</a> page.</p>
+<p class="section-note">* equal contribution. Full list with abstracts on the <a href="/research/">Research</a> page.</p>
 
 {% assign pubs = site.publications | sort: "date" | reverse %}
 <ul class="pub-list">

@@ -89,3 +89,20 @@ a:hover { color: #7c2d12; }
   border-radius: 8px; border: 1px solid #e7e5e4;
 }
 @media (max-width: 600px) { .talk-teaser img { width: 100%; max-width: 100%; } }
+
+/* ---- Writing (Eugene Yan-style list) ------------------------------------ */
+.tag-filter { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1.5rem; }
+.tag-chip {
+  font: inherit; font-size: 0.8em; cursor: pointer; padding: 0.15rem 0.6rem;
+  border-radius: 999px; border: 1px solid #e7e5e4; background: #fff; color: #57534e;
+}
+.tag-chip:hover { border-color: #d6d3d1; color: #1c1917; }
+.tag-chip.is-active { background: #1c1917; color: #fafaf9; border-color: #1c1917; }
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-entry { margin: 0 0 1.6rem; }
+.post-entry__title { margin: 0 0 0.2rem; font-size: 1.15em; font-weight: 600; }
+.post-entry__title a { color: #1c1917; text-decoration: none; }
+.post-entry__title a:hover { color: $info-color; text-decoration: underline; }
+.post-entry__summary { margin: 0 0 0.2rem; color: #44403c; }
+.post-entry__meta { margin: 0; font-size: 0.82em; color: #78716c; }
+.post-tag { color: #9a3412; }

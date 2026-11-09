@@ -206,9 +206,10 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
-      share: true
-      related: true
+      comments: false
+      share: false
+      related: false
+      permalink: /writing/:title/
   # _pages
   - scope:
       path: ""

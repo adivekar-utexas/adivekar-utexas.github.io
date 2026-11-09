@@ -1,25 +1,16 @@
-# Top navigation
+# Top navigation (short labels; content is grouped for readers, not by document type)
 main:
-  - title: "Publications"
-    url: /publications/
+  - title: "Research"
+    url: /research/
 
-  - title: "IOAI"
-    url: /ioai/
+  - title: "Writing"
+    url: /writing/
+
+  - title: "Speaking"
+    url: /speaking/
 
   - title: "Service"
     url: /service/
 
-  - title: "Impact"
-    url: /impact/
-
-  - title: "Awards & Press"
-    url: /awards/
-
-  - title: "Talks"
-    url: /talks/
-
-  - title: "CV"
-    url: /cv/
-
-  - title: "Projects"
-    url: /projects/
+  - title: "About"
+    url: /about-me/
