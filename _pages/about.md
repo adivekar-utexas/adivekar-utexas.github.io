@@ -34,7 +34,7 @@ I chair the [IOAI² AI Models Track](/ioai/) at the International Olympiad in Ar
 </ul>
 </div>
 
-## Selected publications
+## Publications
 
 <p class="section-note">* equal contribution. Full list with abstracts on the <a href="/publications/">Publications</a> page.</p>
 

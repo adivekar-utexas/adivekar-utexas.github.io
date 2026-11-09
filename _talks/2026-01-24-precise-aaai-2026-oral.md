@@ -7,7 +7,10 @@ permalink: /talks/2026-precise-aaai-2026-oral
 venue: "AAAI Conference on Artificial Intelligence (AAAI 2026), Innovative Applications of AI track"
 date: 2026-01-24
 location: "Singapore"
-excerpt: "Oral presentation of PRECISE at AAAI 2026."
+teaserurl: 'precise-overview.png'
+teaser_alt: "PRECISE overview: combining a small set of human labels with LLM judgments to estimate ranking metrics"
+paperurl: 'https://arxiv.org/abs/2601.18777'
+excerpt: "Oral presentation in the Innovative Applications of AI track (19.2% acceptance). PRECISE combines a small set of human relevance labels with LLM judgments, using prediction-powered inference to estimate ranking metrics such as Precision@K while correcting for LLM-judge bias."
 ---
 
 **Paper:** [arXiv:2601.18777](https://arxiv.org/abs/2601.18777) · [Publication page](/publication/precise)

@@ -58,7 +58,7 @@ a:hover { color: #7c2d12; }
   background: #f5f5f4; color: #57534e; border: 1px solid #e7e5e4;
 }
 .news-tag--paper    { background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
-.news-tag--olympiad { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+.news-tag--IOAI     { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
 .news-tag--award    { background: #fefce8; color: #a16207; border-color: #fde68a; }
 .news-tag--talk     { background: #f5f3ff; color: #6d28d9; border-color: #ddd6fe; }
 .news-tag--service  { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
@@ -81,3 +81,11 @@ a:hover { color: #7c2d12; }
 .pub-authors { font-size: 0.9em; color: #57534e; }
 .pub-authors u { text-decoration: none; font-weight: 600; color: #1c1917; }
 .pub-links { font-size: 0.85em; }
+
+/* ---- Talks: images under the header, 75% width --------------------------- */
+.talk-teaser { margin: 0.75em 0 0.5em; }
+.talk-teaser img {
+  display: block; width: 75%; max-width: 75%; height: auto;
+  border-radius: 8px; border: 1px solid #e7e5e4;
+}
+@media (max-width: 600px) { .talk-teaser img { width: 100%; max-width: 100%; } }

@@ -1,13 +1,13 @@
 # News feed shown on the homepage (newest first; the page sorts by date anyway).
-# Add an entry: date (YYYY-MM-DD), tag (paper | talk | service | award | press | olympiad | code), text (Markdown).
+# Add an entry: date (YYYY-MM-DD), tag (paper | talk | service | award | press | IOAI | education), text (Markdown).
 - date: 2026-11-01
   tag: paper
   text: "**VESTA** (Visual Exploration with Statistical Tool Agents) accepted at **NeurIPS 2026** (main track). Joint first author with researchers at UT Austin and NYU, via the NSF-Simons CosmicAI Institute. [arXiv](https://arxiv.org/abs/2606.00384)"
 - date: 2026-09-01
-  tag: olympiad
+  tag: IOAI
   text: "Published the [IOAI² 2026 Inaugural Edition Review](https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/) as lead author, with IOAI cofounder Elena Marinova."
 - date: 2026-08-09
-  tag: olympiad
+  tag: IOAI
   text: "Chaired the inaugural **IOAI²: AI Models Track** at IOAI 2026 in Astana: 15 autonomous AI systems from 14 organizations, including Sakana AI, MBZUAI and Shanghai AI Lab, took on the olympiad tasks. [Track page](https://ioai-official.org/ai-models-track/)"
 - date: 2026-07-01
   tag: paper
@@ -25,7 +25,7 @@
   tag: paper
   text: "**TrojanShot** (one learned example can red-team and guard LLMs) selected for an oral at the Amazon Machine Learning Conference 2025 (~10% oral acceptance)."
 - date: 2025-08-21
-  tag: olympiad
+  tag: IOAI
   text: "As **Team Leader of Team India** at IOAI 2025 in Beijing, the 8-member team won **3 Gold, 2 Silver and 1 Bronze** medals in India's debut appearance. [Results](https://ioai-official.org/china-2025/results-2025/) · [The Hindu BusinessLine](https://www.thehindubusinessline.com/news/indian-team-bags-third-spot-in-its-debut-appearance-at-ai-olympiad/article69960200.ece)"
 - date: 2025-05-01
   tag: service
