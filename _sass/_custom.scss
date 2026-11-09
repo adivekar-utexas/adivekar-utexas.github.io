@@ -106,3 +106,10 @@ a:hover { color: #7c2d12; }
 .post-entry__summary { margin: 0 0 0.2rem; color: #44403c; }
 .post-entry__meta { margin: 0; font-size: 0.82em; color: #78716c; }
 .post-tag { color: #9a3412; }
+
+/* ---- Post pages ---------------------------------------------------------- */
+.post-origin {
+  font-size: 0.85em; color: #78716c; border-left: 3px solid #e7e5e4;
+  padding: 0.2rem 0 0.2rem 0.75rem; margin-bottom: 1.5rem;
+}
+.page__content pre { font-size: 0.82em; }
