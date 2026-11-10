@@ -19,16 +19,16 @@ redirect_from:
   <a class="tab" href="#publications">Publications</a>
   <a class="tab" href="#shipped">Product launches</a>
   <a class="tab" href="#ioai">AI Olympiad</a>
+  <a class="tab" href="#open-source">Open source</a>
   <a class="tab" href="#awards">Awards</a>
   <a class="tab" href="#press">Press</a>
   <a class="tab" href="#service">Service</a>
-  <a class="tab" href="#open-source">Open source</a>
 </nav>
 {% include home/history.html %}
 {% include home/papers.html %}
 {% include home/production.html %}
 {% include home/ioai.html %}
+{% include home/oss.html %}
 {% include home/press.html %}
 {% include home/service.html %}
-{% include home/oss.html %}
 <script src="{{ base_path }}/assets/js/home.js" defer></script>

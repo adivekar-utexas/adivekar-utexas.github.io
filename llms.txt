@@ -9,7 +9,7 @@ permalink: /llms.txt
 {{ site.data.profile.name }} is a {% include jobtitle %} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. His scientific contributions added over USD 550M to Amazon revenue (2021-2026). He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: via LinkedIn (https://www.linkedin.com/in/ardivekar). Google Scholar: {{ site.data.profile.google_scholar }}
 
 ## Core pages
-- [Home]({{ site.url }}/): bio, news, work history, publications (with expandable figures and abstracts; Amazon Machine Learning Conference papers are a subsection), product launches, AI Olympiad, awards, press, service and open source
+- [Home]({{ site.url }}/): bio, news, work history, publications (with expandable figures and abstracts; Amazon Machine Learning Conference papers are a subsection), product launches, AI Olympiad, open source, awards, press and service
 - [Google Scholar profile]({{ site.data.profile.google_scholar }}): publication and citation profile
 - [Writing]({{ site.url }}/writing/): blog posts
 - [Speaking]({{ site.url }}/speaking/): talks, oral presentations, lectures and interviews, newest first, with slides, photos and video
@@ -20,10 +20,10 @@ permalink: /llms.txt
 - [Publications]({{ site.url }}/#publications), including [Amazon Machine Learning Conference papers]({{ site.url }}/#amlc)
 - [Product launches]({{ site.url }}/#shipped)
 - [AI Olympiad]({{ site.url }}/#ioai)
+- [Open source]({{ site.url }}/#open-source)
 - [Awards]({{ site.url }}/#awards)
 - [Press]({{ site.url }}/#press)
 - [Service]({{ site.url }}/#service)
-- [Open source]({{ site.url }}/#open-source)
 
 ## Publications
 {% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for p in pubs %}- [{{ p.title }}]({{ site.url }}/#{{ p.urlslug }}): {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, acceptance rate {{ p.acceptancerate }}{% endif %}{% if p.role %}. Role: {{ p.role }}{% endif %}.{% if p.paperurl contains "http" %} Paper: {{ p.paperurl }}{% endif %}{% if p.pitch %} Summary: {{ p.pitch }}{% endif %}

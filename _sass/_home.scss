@@ -164,7 +164,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* Expand toggle: a small grey chevron box centred on the card's bottom edge. */
 .prow__toggle {
   position: absolute; left: 50%; bottom: -13px; transform: translateX(-50%);
-  display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 26px; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 28px; padding: 0;
   border: 1px solid $line; border-radius: 8px; background: $tint; color: $ink-3; cursor: pointer;
   transition: background .12s ease, border-color .12s ease, color .12s ease;
 }
@@ -415,13 +415,22 @@ body { background: $page; color: $ink; }
 .post__title { max-width: 820px; margin-left: auto; margin-right: auto; }
 .post__meta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin: 16px 0 0; font-size: 13.5px; color: $ink-3; }
 .post__meta .tag-chip { text-decoration: none; }
-.post__body { font-size: 17px; line-height: 1.75; }
+.post__body { font-size: 19px; line-height: 1.75; }
 .post__body p, .post__body li { color: $ink; }
 .post__body h2 { margin-top: 44px; }
 .post__body h3 { margin-top: 32px; font-size: 19px; }
 .post__body img { border-radius: 10px; }
 .post__body blockquote { margin: 20px 0; padding: 4px 0 4px 18px; border-left: 3px solid $line; color: $ink-2; font-style: normal; }
-.post__body pre { border-radius: 10px; font-size: 13.5px; }
+.post .post__body pre, .post .post__body code { border-radius: 10px; font-size: 15.5px; line-height: 1.55; }
+.code-block { position: relative; margin: 1.2em 0; }
+.code-block pre { margin: 0; }
+.code-copy {
+  position: absolute; top: 8px; right: 8px; height: 26px; padding: 0 10px;
+  border: 1px solid $line; border-radius: 999px; background: $surface; color: $ink-2;
+  font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+}
+.code-copy:hover { background: $hover; border-color: $hover-line; color: $ink; }
+::selection, ::-moz-selection { color: #10241d; background: #b7e4d4; }
 .post__body code { font-size: 0.88em; }
 .post__body hr { margin: 36px 0; border: 0; border-top: 1px solid $line; }
 .post__body table { font-size: 14.5px; }

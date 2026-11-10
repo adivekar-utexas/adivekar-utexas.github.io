@@ -27,3 +27,34 @@ layout: default
     </footer>
   </article>
 </main>
+<script>
+(function () {
+  document.querySelectorAll('.post__body pre').forEach(function (pre) {
+    var block = document.createElement('div');
+    block.className = 'code-block';
+    pre.parentNode.insertBefore(block, pre);
+    block.appendChild(pre);
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'code-copy';
+    button.textContent = 'Copy';
+    button.addEventListener('click', function () {
+      var text = pre.innerText;
+      function done() { button.textContent = 'Copied'; setTimeout(function () { button.textContent = 'Copy'; }, 1400); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); });
+      } else { fallback(); }
+      function fallback() {
+        var area = document.createElement('textarea');
+        area.value = text;
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+        done();
+      }
+    });
+    block.appendChild(button);
+  });
+})();
+</script>
