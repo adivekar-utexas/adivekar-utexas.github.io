@@ -472,7 +472,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(51, 70, 194, 0.4
   font-family: $serif; font-size: 20px; font-weight: 500; letter-spacing: -0.005em; text-transform: none; color: $ink;
 }
 .award-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 16px; }
-.award-photos figure { margin: 0; aspect-ratio: 3 / 2; border-radius: 12px; overflow: hidden; border: 1px solid $line; background: #0f1320; }
-.award-photos img { width: 100%; height: 100%; object-fit: cover; }
-.award-photos figcaption { grid-column: 1 / -1; margin-top: -4px; font-size: 13px; color: $ink-3; }
+.award-photos figure { margin: 0; }
+.award-photos img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; border: 1px solid $line; background: #0f1320; }
+.award-photos figcaption { margin-top: 6px; font-size: 13px; line-height: 1.4; color: $ink-2; }
+.award-photos__note { grid-column: 1 / -1; margin: 0; font-size: 13px; color: $ink-3; }
 @media (max-width: 560px) { .award-photos { grid-template-columns: 1fr; } }
