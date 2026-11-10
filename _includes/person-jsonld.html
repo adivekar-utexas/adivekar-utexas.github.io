@@ -28,7 +28,6 @@
       "name": {{ p.name | jsonify }},
       "url": "{{ site.url }}/",
       "image": "{{ site.url }}/images/{{ site.author.avatar }}",
-      "email": "mailto:{{ p.email }}",
       "jobTitle": {{ jobtitle | jsonify }},
       "description": {{ site.description | jsonify }},
       "worksFor": { "@type": "Organization", "name": {{ p.employer | jsonify }}, "url": {{ p.employer_url | jsonify }} },

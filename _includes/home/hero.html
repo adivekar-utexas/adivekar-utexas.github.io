@@ -1,19 +1,18 @@
 {% assign p = site.data.profile %}
 <section class="hero" aria-labelledby="hero-name">
   <div class="hero__text">
-    <p class="eyebrow">{{ include.jobtitle }} · Amazon · </p>
     <h1 id="hero-name" class="hero__name">Abhishek Divekar</h1>
-    <p class="hero__lede">I study how to <strong>evaluate and improve large language models when human labels are scarce</strong>: statistically valid LLM judges, diverse synthetic training data, red-teaming and guarding LLMs, and vision-language agents for science.</p>
-    <p class="hero__sub">Published at NeurIPS, AAAI and EMNLP. Chair of the <a href="/service/#ioai">IOAI² AI Models Track</a> at the International Olympiad in AI. M.S. in Computer Science, UT Austin, advised by <a href="https://gregdurrett.github.io/">Greg Durrett</a>.</p>
-    <nav class="link-row" aria-label="Profiles and contact">
-      <a class="btn-pill btn-pill--primary" href="/cv/">{% include icons/cv.svg %}<span>CV</span></a>
-      <a class="btn-pill" href="{{ p.google_scholar }}">{% include icons/scholar.svg %}<span>Google Scholar</span></a>
-      <a class="btn-pill" href="https://github.com/adivekar-utexas">{% include icons/github.svg %}<span>GitHub</span></a>
-      <a class="btn-pill" href="https://www.linkedin.com/in/ardivekar">{% include icons/linkedin.svg %}<span>LinkedIn</span></a>
-      <a class="btn-pill" href="mailto:{{ p.email }}">{% include icons/email.svg %}<span>Email</span></a>
-    </nav>
+    <p class="hero__title">{{ include.jobtitle }}, Amazon</p>
+    <p class="hero__lede">I research <strong>LLM evaluation</strong>, <strong>synthetic data</strong>, <strong>red-teaming LLMs</strong> and <strong>multimodal agents for science</strong>, with first-author papers at NeurIPS, AAAI and EMNLP. At Amazon, I turn that research into products: I led red-teaming for the India launch of Amazon Rufus, used by 100M+ customers, and my work has added over USD 550M to Amazon's revenue.</p>
+    <p class="hero__lede">I chair the IOAI² AI Models Track at the International Olympiad in AI, and led Team India to 3 Gold, 2 Silver and 1 Bronze at IOAI 2025. M.S. in Computer Science, UT Austin.</p>
+    <ul class="icon-links" aria-label="Profiles">
+      <li><a href="/cv/" title="CV" aria-label="CV">{% include icons/cv.svg %}<span>CV</span></a></li>
+      <li><a href="{{ p.google_scholar }}" title="Google Scholar" aria-label="Google Scholar">{% include icons/scholar.svg %}<span>Scholar</span></a></li>
+      <li><a href="https://github.com/adivekar-utexas" title="GitHub" aria-label="GitHub">{% include icons/github.svg %}<span>GitHub</span></a></li>
+      <li><a href="https://www.linkedin.com/in/ardivekar" title="LinkedIn" aria-label="LinkedIn">{% include icons/linkedin.svg %}<span>LinkedIn</span></a></li>
+    </ul>
   </div>
   <figure class="hero__photo">
-    <picture><source srcset="{{ base_path }}/images/profile-440.webp" type="image/webp"><img src="{{ base_path }}/images/profile-440.jpg" alt="Portrait of Abhishek Divekar" width="220" height="220" fetchpriority="high"></picture>
+    <picture><source srcset="{{ base_path }}/images/profile-440.webp" type="image/webp"><img src="{{ base_path }}/images/profile-440.jpg" alt="Portrait of Abhishek Divekar" width="200" height="200" fetchpriority="high"></picture>
   </figure>
 </section>

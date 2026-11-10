@@ -1,0 +1,14 @@
+<section class="home-section" aria-labelledby="launches-h">
+  <h2 id="launches-h" class="home-h2">Industry launches</h2>
+  <ul class="rows">
+  {% for l in site.data.launches %}
+    <li class="row">
+      <span class="row__when">{{ l.year }}</span>
+      <span class="row__main">
+        <span class="row__title">{% if l.link %}<a href="{{ l.link }}">{{ l.name }}</a>{% else %}{{ l.name }}{% endif %}</span>
+        <span class="row__sub">{{ l.role }}. {{ l.impact }}.</span>
+      </span>
+    </li>
+  {% endfor %}
+  </ul>
+</section>

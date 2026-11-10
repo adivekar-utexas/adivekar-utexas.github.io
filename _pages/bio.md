@@ -1,17 +1,23 @@
 ---
-layout: archive
+layout: section
 title: "About"
 permalink: /about-me/
 redirect_from:
   - /awards/
-author_profile: true
 description: "About Abhishek Divekar: career, education, awards, and press coverage."
+lede: "Career, education, honors and press."
+tabs:
+  - {label: "Bio", href: "#bio"}
+  - {label: "Career", href: "#career"}
+  - {label: "Education", href: "#education"}
+  - {label: "Honors", href: "#awards-and-honors"}
+  - {label: "Press", href: "#press"}
+  - {label: "CV", href: "/cv/"}
 ---
 
 {% include base_path %}
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 
-Jump to: [Career](#career) · [Education](#education) · [Awards and honors](#awards-and-honors) · [Press](#press) · [CV](/cv/)
 
 ## Bio
 

@@ -1,0 +1,13 @@
+# Homepage "Industry launches" (Amazon work). Facts as stated on LinkedIn / CV.
+- name: "Amazon Rufus, India launch"
+  year: "2024"
+  role: "Led red-teaming on India-specific compliance policies"
+  impact: "LLM shopping assistant used by 100M+ customers"
+- name: "AutoML platform for product classification"
+  year: "2019–2023"
+  role: "Lead science contributor"
+  impact: "1,000+ models deployed across 14 Amazon websites; 1B+ product attributes updated"
+- name: "PRECISE for search relevance"
+  role: "First author"
+  impact: "Measures search quality from ~100 human-labelled queries plus LLM judgments"
+  link: /publication/precise

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% comment %}
+  Inner-page layout (Research, Writing, Speaking, Service, About, CV).
+  Full-width header, then a row of pill "tabs" that jump to sections (plain
+  anchor links, no JS), then content in the centre two-thirds of the page.
+  Page front matter:
+    lede: one-line summary under the title
+    tabs: [{label: "Publications", href: "#publications"}, ...]
+{% endcomment %}
+<main id="main" class="spage" role="main">
+  <header class="spage__head">
+    <h1 class="spage__title">{{ page.title }}</h1>
+    {% if page.lede %}<p class="spage__lede">{{ page.lede | markdownify | remove: "<p>" | remove: "</p>" }}</p>{% endif %}
+  </header>
+  {% if page.tabs %}
+  <nav class="tabbar" aria-label="On this page">
+    {% for t in page.tabs %}<a class="tab" href="{{ t.href }}">{{ t.label }}</a>{% endfor %}
+  </nav>
+  {% endif %}
+  <div class="spage__body page__content">
+    {{ content }}
+  </div>
+</main>

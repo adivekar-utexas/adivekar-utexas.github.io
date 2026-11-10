@@ -13,7 +13,7 @@ redirect_from:
 {% include base_path %}
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 {% include home/hero.html jobtitle=jobtitle %}
-{% include home/stats.html %}
-{% include home/research.html %}
 {% include home/news.html %}
-{% include home/roles.html %}
+{% include home/research.html %}
+{% include home/launches.html %}
+{% include home/history.html %}

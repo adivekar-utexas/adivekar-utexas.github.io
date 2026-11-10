@@ -1,31 +1,13 @@
-<section class="home-section" aria-labelledby="research-h">
-  <div class="section-head">
-    <p class="eyebrow">01 · Research</p>
-    <h2 id="research-h">Selected papers</h2>
-    <a class="section-head__more" href="/research/">All publications and impact {% include icons/arrow.svg %}</a>
+<section class="home-section home-section--wide" aria-labelledby="research-h">
+  <div class="home-h2-row">
+    <h2 id="research-h" class="home-h2">Research</h2>
+    <a class="more-link" href="/research/">All publications {% include icons/arrow.svg %}</a>
   </div>
-  <ul class="card-grid">
+  <ul class="ptable">
   {% for f in site.data.featured %}
-    {% assign permalink = "/publication/" | append: f.slug %}
+    {% assign permalink = "/publication/" | append: f %}
     {% assign pub = site.publications | where: "permalink", permalink | first %}
-    {% if pub %}
-    {% assign authors = pub.citation | split: "<b>" | first | strip | remove_last: "." %}
-    <li class="card">
-      <div class="card__meta">
-        <span class="badge">{{ pub.venue_short }}{% if pub.acceptancetype == "Oral" %} · Oral{% endif %}</span>
-        <span class="card__area">{{ f.area }}</span>
-      </div>
-      <h3 class="card__title"><a href="{% if pub.paperurl contains 'http' %}{{ pub.paperurl }}{% else %}{{ pub.url }}{% endif %}">{{ pub.title | split: ":" | first }}</a></h3>
-      <p class="card__pitch">{{ f.pitch }}</p>
-      <p class="card__authors">{{ authors }}</p>
-      <p class="card__links">
-        {% if pub.paperurl contains "http" %}<a href="{{ pub.paperurl }}">Paper</a>{% endif %}
-        {% if pub.codeurl %}<a href="{{ pub.codeurl }}">Code</a>{% endif %}
-        {% if pub.projecturl %}<a href="{{ pub.projecturl }}">Project</a>{% endif %}
-        <a href="{{ pub.url }}">Abstract</a>
-      </p>
-    </li>
-    {% endif %}
+    {% if pub %}{% include paper-row.html pub=pub %}{% endif %}
   {% endfor %}
   </ul>
 </section>

@@ -1,0 +1,19 @@
+{% capture jobtitle %}{% include jobtitle %}{% endcapture %}
+<section class="home-section" aria-labelledby="history-h">
+  <div class="home-h2-row">
+    <h2 id="history-h" class="home-h2">History</h2>
+    <a class="more-link" href="/cv/">Full CV {% include icons/arrow.svg %}</a>
+  </div>
+  <ul class="rows">
+  {% for h in site.data.history %}
+    <li class="row">
+      <span class="row__when">{{ h.when }}</span>
+      <span class="row__main">
+        <span class="row__title">{{ h.role | replace: "[[TITLE]]", jobtitle }}</span><span class="row__org"> · {{ h.org }}</span>
+        {% if h.note %}<span class="row__sub">{{ h.note }}</span>{% endif %}
+      </span>
+    </li>
+  {% endfor %}
+  </ul>
+  <p class="site-note">Opinions on this site are my own and do not reflect the views of my employer.</p>
+</section>

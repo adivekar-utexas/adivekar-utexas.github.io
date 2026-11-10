@@ -1,0 +1,7 @@
+{% assign pub = include.pub %}
+<ul class="chip-links" aria-label="Links for {{ pub.title | split: ':' | first }}">
+  {% if pub.paperurl contains "http" %}<li><a class="chip" href="{{ pub.paperurl }}">{% include icons/paper.svg %}<span>Paper</span></a></li>{% endif %}
+  {% if pub.codeurl %}<li><a class="chip" href="{{ pub.codeurl }}">{% include icons/code.svg %}<span>Code</span></a></li>{% endif %}
+  {% if pub.projecturl %}<li><a class="chip" href="{{ pub.projecturl }}">{% include icons/globe.svg %}<span>Project</span></a></li>{% endif %}
+  <li><a class="chip" href="{{ pub.url }}">{% include icons/abstract.svg %}<span>Abstract</span></a></li>
+</ul>

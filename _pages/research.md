@@ -1,41 +1,45 @@
 ---
-layout: archive
+layout: section
 title: "Research"
 permalink: /research/
 redirect_from:
   - /publications/
   - /impact/
-author_profile: true
 description: "Research by Abhishek Divekar: papers at NeurIPS, AAAI, EMNLP and ACL workshops, research deployed in Amazon products, and open-source software."
+lede: "LLM evaluation, synthetic data, red-teaming LLMs and multimodal agents for science. Live citation counts are on [Google Scholar](https://scholar.google.com/citations?user=1Sf2oM4AAAAJ)."
+tabs:
+  - {label: "Conference papers", href: "#conference-papers"}
+  - {label: "Workshop papers", href: "#workshop-papers"}
+  - {label: "Amazon conference", href: "#amazon-machine-learning-conference"}
+  - {label: "In production", href: "#research-in-production"}
+  - {label: "Open source", href: "#open-source-software"}
 ---
 
 {% include base_path %}
 
-My research covers **LLM evaluation** (statistically valid LLM judges), **synthetic data** for training smaller models, **red-teaming and guarding LLMs**, and **vision-language agents for science**. Below: [publications](#publications), [research in production](#research-in-production), [open-source software](#open-source-software) and [collaborations](#collaborations). Live citation counts are on [Google Scholar]({{ site.data.profile.google_scholar }}).
-
-## Publications
-
-<p class="section-note">* equal contribution. Each entry lists venue, acceptance rate and my role.</p>
-### Conference papers
+<p class="section-note">* equal contribution. Bold marks my name.</p>
 
 {% assign pubs = site.publications | sort: "date" | reverse %}
-{% for post in pubs %}{% if post.tier == "peer-reviewed" %}
-  {% include archive-single-publication.html %}
-{% endif %}{% endfor %}
 
-### Workshop papers
+<h2 id="conference-papers">Conference papers</h2>
 
-{% for post in pubs %}{% if post.tier == "peer-reviewed-workshop" %}
-  {% include archive-single-publication.html %}
-{% endif %}{% endfor %}
+<ul class="ptable wide">
+{% for pub in pubs %}{% if pub.tier == "peer-reviewed" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
+</ul>
 
-### Amazon Machine Learning Conference (internal, peer-reviewed)
+<h2 id="workshop-papers">Workshop papers</h2>
 
-AMLC is Amazon's annual internal machine learning conference, with roughly 1,000 submissions per year ([public announcement](https://www.amazon.science/videos-webinars/amazons-annual-machine-learning-conference-featured-presentations-from-thought-leaders-within-academia)). Full texts are internal; abstracts are below.
+<ul class="ptable wide">
+{% for pub in pubs %}{% if pub.tier == "peer-reviewed-workshop" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
+</ul>
 
-{% for post in pubs %}{% if post.tier == "internal" %}
-  {% include archive-single-publication.html %}
-{% endif %}{% endfor %}
+<h2 id="amazon-machine-learning-conference">Amazon Machine Learning Conference</h2>
+
+AMLC is Amazon's annual internal machine learning conference, with roughly 1,000 submissions per year ([public announcement](https://www.amazon.science/videos-webinars/amazons-annual-machine-learning-conference-featured-presentations-from-thought-leaders-within-academia)). Full texts are internal; each paper's page has the abstract.
+
+<ul class="ptable wide">
+{% for pub in pubs %}{% if pub.tier == "internal" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
+</ul>
 
 ## Research in production
 

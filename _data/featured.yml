@@ -1,19 +1,7 @@
-# Homepage research cards (publication slug -> one-line plain-English pitch).
-- slug: vesta
-  pitch: "Vision-language agents that build their own diagnostic tools to fit statistical models to scientific data."
-  area: "AI for science"
-- slug: precise
-  pitch: "Estimate search quality from ~100 human labels plus LLM judges, with the judge's bias corrected."
-  area: "LLM evaluation"
-- slug: synthesizrr
-  pitch: "Retrieval makes LLM-generated training data more diverse and more like human writing."
-  area: "Synthetic data"
-- slug: corrsynth
-  pitch: "Correlated sampling across generations to synthesize diverse classification datasets."
-  area: "Synthetic data"
-- slug: when-gradients-collide
-  pitch: "Why multi-objective prompt optimization for LLM judges fails, and where."
-  area: "LLM-as-a-Judge"
-- slug: trojanshot
-  pitch: "One learned in-context example that both red-teams and guards an LLM."
-  area: "LLM safety"
+# Homepage research rows, in display order. Thumbnail and one-line pitch live
+# on each publication (front matter `thumb` and `pitch`) so pages stay in sync.
+- vesta
+- precise
+- synthesizrr
+- corrsynth
+- when-gradients-collide

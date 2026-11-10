@@ -1,0 +1,23 @@
+{% comment %}
+  One full-width research row: [thumbnail] [venue · title · authors · one-liner] [icon links].
+  Usage: {% include paper-row.html pub=pub %} (uses pub.thumb and pub.pitch)
+{% endcomment %}
+{% assign pub = include.pub %}
+{% capture authors %}{% include authors.html citation=pub.citation %}{% endcapture %}
+<li class="prow">
+  <a class="prow__thumb" href="{{ pub.url }}" tabindex="-1" aria-hidden="true">
+    {% if pub.thumb %}<img src="{{ base_path }}/images/papers/thumbs/{{ pub.thumb }}" alt="" loading="lazy" width="160" height="120">{% else %}<span class="prow__thumb-ph">{{ pub.venue_short | split: " " | first }}</span>{% endif %}
+  </a>
+  <div class="prow__body">
+    <p class="prow__venue">{{ pub.venue_short }}{% if pub.acceptancetype == "Oral" %} <span class="prow__oral">Oral</span>{% endif %}</p>
+    <h3 class="prow__title"><a href="{{ pub.url }}">{{ pub.title }}</a></h3>
+    <p class="prow__authors">{{ authors | strip }}</p>
+    {% if pub.pitch %}<p class="prow__pitch">{{ pub.pitch }}</p>{% endif %}
+  </div>
+  <ul class="prow__links" aria-label="Links">
+    {% if pub.paperurl contains "http" %}<li><a class="ilink" href="{{ pub.paperurl }}">{% include icons/paper.svg %}<span>Paper</span></a></li>{% endif %}
+    {% if pub.codeurl %}<li><a class="ilink" href="{{ pub.codeurl }}">{% include icons/code.svg %}<span>Code</span></a></li>{% endif %}
+    {% if pub.projecturl %}<li><a class="ilink" href="{{ pub.projecturl }}">{% include icons/globe.svg %}<span>Project</span></a></li>{% endif %}
+    <li><a class="ilink" href="{{ pub.url }}">{% include icons/abstract.svg %}<span>Abstract</span></a></li>
+  </ul>
+</li>

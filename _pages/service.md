@@ -1,14 +1,18 @@
 ---
-layout: archive
+layout: section
 title: "Service"
 permalink: /service/
-author_profile: true
 description: "Service by Abhishek Divekar: International Olympiad in AI (Chair of the IOAI² AI Models Track; Team India lead), peer review, area chair, grant review, teaching and mentoring."
+lede: "Olympiad leadership, peer review, grant review and teaching."
+tabs:
+  - {label: "Olympiad in AI", href: "#ioai"}
+  - {label: "Peer review", href: "#conference-peer-review-and-program-committees"}
+  - {label: "Grant review", href: "#research-funding-review"}
+  - {label: "Teaching", href: "#teaching-hiring-and-mentoring"}
 ---
 
 {% include base_path %}
 
-Jump to: [International Olympiad in AI](#ioai) · [Peer review](#conference-peer-review-and-program-committees) · [Research funding review](#research-funding-review) · [Teaching and mentoring](#teaching-hiring-and-mentoring)
 
 <h2 id="ioai">International Olympiad in Artificial Intelligence (IOAI)</h2>
 
