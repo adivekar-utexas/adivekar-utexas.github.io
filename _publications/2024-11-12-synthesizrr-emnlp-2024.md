@@ -7,7 +7,7 @@ external: true
 tier: "peer-reviewed"
 date: 2024-11-12
 venue: 'Conference on Empirical Methods in Natural Language Processing (EMNLP 2024), Main Conference'
-venue_short: 'EMNLP 2024'
+venue_short: 'EMNLP 2024 (Main)'
 paperurl: 'https://arxiv.org/abs/2405.10040'
 codeurl: 'https://github.com/amazon-science/synthesizrr'
 acceptancerate: '20.8%'

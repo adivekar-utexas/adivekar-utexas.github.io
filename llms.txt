@@ -9,13 +9,30 @@ permalink: /llms.txt
 {{ site.data.profile.name }} is a {% include jobtitle %} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. His scientific contributions added over USD 550M to Amazon revenue (2021-2026). He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: via LinkedIn (https://www.linkedin.com/in/ardivekar). Google Scholar: {{ site.data.profile.google_scholar }}
 
 ## Core pages
-- [Home]({{ site.url }}/): bio, news, work history, publications (with abstracts), Amazon Machine Learning Conference papers, research shipped to production, International Olympiad in AI (Chair of the IOAI² AI Models Track, ISC and Jury member at IOAI 2026; Team Leader of Team India at IOAI 2025, 3 Gold, 2 Silver, 1 Bronze), open source, peer review and service, awards and press
+- [Home]({{ site.url }}/): bio, news, work history, publications (with expandable figures and abstracts; Amazon Machine Learning Conference papers are a subsection), product launches, AI Olympiad, awards, press, service and open source
+- [Google Scholar profile]({{ site.data.profile.google_scholar }}): publication and citation profile
 - [Writing]({{ site.url }}/writing/): blog posts
-- [Speaking]({{ site.url }}/speaking/): talks, oral presentations, lectures and interviews, with slides and video
+- [Speaking]({{ site.url }}/speaking/): talks, oral presentations, lectures and interviews, newest first, with slides, photos and video
 - [CV (PDF)]({{ site.url }}/files/Abhishek-Divekar-CV.pdf): curriculum vitae; text version at {{ site.url }}/curriculum-vitae/
 
+## Homepage sections
+- [Work history]({{ site.url }}/#history)
+- [Publications]({{ site.url }}/#publications), including [Amazon Machine Learning Conference papers]({{ site.url }}/#amlc)
+- [Product launches]({{ site.url }}/#shipped)
+- [AI Olympiad]({{ site.url }}/#ioai)
+- [Awards]({{ site.url }}/#awards)
+- [Press]({{ site.url }}/#press)
+- [Service]({{ site.url }}/#service)
+- [Open source]({{ site.url }}/#open-source)
+
 ## Publications
-{% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for p in pubs %}- [{{ p.title }}]({{ site.url }}/#{{ p.urlslug }}): {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, acceptance rate {{ p.acceptancerate }}{% endif %}{% if p.role %}. Role: {{ p.role }}{% endif %}.{% if p.paperurl contains "http" %} Paper: {{ p.paperurl }}{% endif %}
+{% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for p in pubs %}- [{{ p.title }}]({{ site.url }}/#{{ p.urlslug }}): {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, acceptance rate {{ p.acceptancerate }}{% endif %}{% if p.role %}. Role: {{ p.role }}{% endif %}.{% if p.paperurl contains "http" %} Paper: {{ p.paperurl }}{% endif %}{% if p.pitch %} Summary: {{ p.pitch }}{% endif %}
+{% endfor %}
+## News
+{% assign news = site.data.news | sort: "date" | reverse %}{% for item in news %}- {{ item.date | date: '%Y-%m-%d' }}: {{ item.text }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains '://' %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: site.url }}{% endif %}){% endif %}
+{% endfor %}
+## Speaking
+{% assign talks = site.talks | sort: "date" | reverse %}{% for talk in talks %}- [{{ talk.title }}]({{ site.url }}/speaking/#{{ talk.urlslug }}): {{ talk.date | date: '%Y' }}{% unless talk.date_display == 'year' %}-{{ talk.date | date: '%m-%d' }}{% endunless %}, {{ talk.venue }}.{% if talk.videourl %} Video: {{ talk.videourl }}{% endif %}{% if talk.slidesurl %} Slides: {{ talk.slidesurl | prepend: site.url }}{% endif %}
 {% endfor %}
 ## Optional
 - [Projects]({{ site.url }}/projects/): graduate course projects and technical reports

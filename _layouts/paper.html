@@ -6,7 +6,7 @@ layout: null
   to show the figure and abstract. Old /publication/... URLs redirect to
   that card. Crawlers still get the title, abstract and a canonical link.
 {% endcomment %}
-{% assign target = "/#" | append: page.urlslug %}{% if page.tier == "internal" %}{% assign target = "/#amlc" %}{% endif %}
+{% assign target = "/#" | append: page.urlslug %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,6 +19,8 @@ layout: null
 </head>
 <body>
   <h1>{{ page.title }}</h1>
+  <p>{{ page.venue_short | default: page.venue }}{% if page.acceptancetype %}, {{ page.acceptancetype }}{% endif %}{% if page.acceptancerate %}, {{ page.acceptancerate }} acceptance{% endif %}</p>
+  {% if page.tier != 'internal' and page.excerpt %}<p>{{ page.excerpt | strip_html }}</p>{% endif %}
   <p><a href="{{ target }}">Open this paper on the homepage</a>{% if page.paperurl contains "http" %} or read the <a href="{{ page.paperurl }}">paper</a>{% endif %}.</p>
   <script>location.replace({{ target | jsonify }});</script>
 </body>

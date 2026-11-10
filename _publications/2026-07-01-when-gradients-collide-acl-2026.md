@@ -7,7 +7,7 @@ external: true
 tier: "peer-reviewed-workshop"
 date: 2026-07-01
 venue: 'CustomNLP4U Workshop at the Annual Meeting of the Association for Computational Linguistics (ACL 2026)'
-venue_short: 'ACL 2026 Workshop'
+venue_short: 'ACL 2026 (Workshop)'
 paperurl: 'https://arxiv.org/abs/2605.26046'
 codeurl: 'https://github.com/adivekar-utexas/when-gradients-collide'
 projecturl: 'https://textgrad-failure-modes.github.io/'

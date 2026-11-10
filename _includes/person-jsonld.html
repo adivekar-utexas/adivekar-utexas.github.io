@@ -40,13 +40,18 @@
       "knowsAbout": {{ p.research_areas | jsonify }},
       "address": { "@type": "PostalAddress", "addressLocality": {{ p.city | jsonify }}, "addressCountry": {{ p.country | jsonify }} },
       "sameAs": {{ site.social.links | jsonify }}
-    }{% for pub in site.publications %}{% if pub.paperurl and pub.external %},
+    }{% assign public_pubs = site.publications | where_exp: "pub", "pub.listed != false" | sort: "date" | reverse %}{% for pub in public_pubs %}{% if pub.paperurl and pub.external %},
     {
       "@type": "ScholarlyArticle",
       "headline": {{ pub.title | jsonify }},
-      "url": {{ pub.paperurl | jsonify }},
+      "@id": "{{ site.url }}/#{{ pub.urlslug }}",
+      "url": "{{ site.url }}/#{{ pub.urlslug }}",
+      "sameAs": {{ pub.paperurl | jsonify }},
+      "abstract": {{ pub.excerpt | strip_html | jsonify }},
+      {% capture publication_summary %}{{ pub.venue_short | default: pub.venue }}{% if pub.acceptancetype %}, {{ pub.acceptancetype }}{% endif %}{% if pub.acceptancerate %}, acceptance rate {{ pub.acceptancerate }}{% endif %}. {{ pub.pitch }}{% endcapture %}
+      "description": {{ publication_summary | strip | jsonify }},
       "datePublished": "{{ pub.date | date: '%Y-%m-%d' }}",
-      "isPartOf": { "@type": "PublicationEvent", "name": {{ pub.venue | jsonify }} },
+      "isPartOf": { "@type": "PublicationEvent", "name": {{ pub.venue_short | default: pub.venue | jsonify }}, "alternateName": {{ pub.venue | jsonify }} },
       "author": { "@id": "{{ site.url }}/#person" }
     }{% endif %}{% endfor %}
   ]

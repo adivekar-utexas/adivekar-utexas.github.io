@@ -60,13 +60,13 @@ tabs:
 
 See the [homepage](/#publications) for abstracts, acceptance rates and roles.
 
-<ul>{% assign pubs = site.publications | sort: "date" | reverse %}{% for post in pubs %}
+<ul>{% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for post in pubs %}
   {% include archive-single-short-publication.html %}
 {% endfor %}</ul>
 
 ## Talks
 
-<ul>{% for post in site.talks reversed %}
+<ul>{% assign talks = site.talks | sort: "date" | reverse %}{% for post in talks %}
   {% include archive-single-short-talk.html %}
 {% endfor %}</ul>
 
