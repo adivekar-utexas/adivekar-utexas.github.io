@@ -89,7 +89,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 }
 .home .news-feed ul { list-style: none; margin: 0; padding: 0; }
 .home .news-item {
-  display: grid; grid-template-columns: 4.8rem 5.8rem minmax(0, 1fr); gap: 12px; align-items: baseline;
+  display: grid; grid-template-columns: 4.8rem 7.5rem minmax(0, 1fr); gap: 12px; align-items: baseline;
   padding: 8px 0; border-bottom: 1px solid $line; font-size: 14.5px; line-height: 1.5;
 }
 .home .news-item:last-child { border-bottom: 0; }
@@ -134,7 +134,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   background: linear-gradient(135deg, $tint, #f7f8fb);
 }
 .prow__body { min-width: 0; }
-.prow__venue { margin: 0 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: $ink-3; }
+.prow__venue { margin: 0 0 4px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: $ink-3; }
 .prow__title { margin: 0 0 5px; font-family: $serif; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
 .home .prow__title a { color: $ink; text-decoration: none; }
 .home .prow__title a:hover { color: $accent; }
@@ -148,7 +148,15 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid $line; color: $ink-2; background: #f4f6f9;
   vertical-align: 1px; white-space: nowrap;
 }
-.prow__venue .pill { margin-left: 6px; }
+.prow__venue .pill { margin-left: 6px; font-size: 12px; line-height: 22px; }
+.publications-note { display: inline-block; margin-left: 12px; font-family: $sans-serif; font-size: 13px; font-weight: 400; letter-spacing: normal; color: $ink-3; }
+.prow.is-open .prow__thumb { display: none; }
+.prow.is-open .prow__main { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; min-width: 0; }
+.prow.is-animating { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  .prow, .prow__toggle svg { transition: none; }
+}
 .pill--oral { color: $accent; border-color: #c9d1f3; background: #eef1fc; }
 .pill--tldr { margin-right: 6px; color: $ink-2; background: #eceff4; border-color: #dfe3ea; }
 

@@ -3,7 +3,7 @@
 #         text (one short line), and optional cta_text + cta_url (call-to-action link).
 - date: 2026-11-01
   tag: paper
-  text: "VESTA accepted to NeurIPS 2026 (main track)."
+  text: "VESTA accepted to NeurIPS 2026 (main track)!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2606.00384"
 - date: 2026-09-01
@@ -24,36 +24,36 @@
   cta_url: "https://ioai-official.org/ai-models-track/"
 - date: 2026-07-01
   tag: paper
-  text: "When Gradients Collide (with Parth Darshan) at the ACL 2026 CustomNLP4U workshop."
+  text: "When Gradients Collide (with Parth Darshan) accepted to the ACL 2026 CustomNLP4U workshop!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2605.26046"
 - date: 2026-02-01
   tag: IOAI
   text: "Joined the IOAI International Scientific Committee."
-  cta_text: "See my IOAI work"
+  cta_text: "See my AI Olympiad work"
   cta_url: "/#ioai"
 - date: 2026-01-24
   tag: award
-  text: "PRECISE selected for an oral presentation at AAAI 2026 (Innovative Applications of AI track, 19.2% acceptance), Singapore."
+  text: "PRECISE selected for an oral presentation at AAAI 2026 (Innovative Applications of AI track, 19.2% acceptance), Singapore!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2601.18777"
 - date: 2026-01-24
   tag: talk
   text: "Presented PRECISE in an oral session at AAAI 2026, Singapore."
-  cta_text: "See the talk"
-  cta_url: "/speaking/#precise-aaai-2026-oral"
+  cta_text: "Read the paper"
+  cta_url: "https://arxiv.org/abs/2601.18777"
 - date: 2025-11-16
   tag: award
   text: "Named one of the Top 7 GenAI Scientists in India by Analytics Vidhya at DataHack Summit 2025."
 - date: 2025-11-16
   tag: talk
   text: "Invited talk on synthetic data generation at DataHack Summit 2025."
-  cta_text: "See the talk"
+  cta_text: "View talk photos"
   cta_url: "/speaking/#dhs-2025-synthetic-data"
 - date: 2025-10-01
   tag: paper
-  text: "TrojanShot selected as an oral at the Amazon Machine Learning Conference 2025."
-  cta_text: "See the paper"
+  text: "TrojanShot selected as an oral at the Amazon Machine Learning Conference 2025!"
+  cta_text: "Read the paper"
   cta_url: "/#trojanshot-amlc-2025"
 - date: 2025-08-21
   tag: IOAI
@@ -68,7 +68,7 @@
   text: "Joined the NSF-Simons AI Institute for Cosmic Origins (CosmicAI) as a Research Collaborator."
 - date: 2024-11-12
   tag: paper
-  text: "SynthesizRR and CorrSynth accepted to EMNLP 2024 (main conference)."
+  text: "SynthesizRR and CorrSynth accepted to EMNLP 2024 (main conference)!"
   cta_text: "Read the papers"
   cta_url: "/#publications"
 - date: 2024-05-01

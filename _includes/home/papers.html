@@ -1,7 +1,7 @@
 {% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}
 <section class="home-section" id="publications" aria-labelledby="pubs-h">
   <div class="home-h2-row">
-    <h2 id="pubs-h" class="home-h2">Publications</h2>
+    <h2 id="pubs-h" class="home-h2">Publications <span class="publications-note">* equal contribution</span></h2>
     <a class="more-link" href="{{ site.data.profile.google_scholar }}">Google Scholar</a>
   </div>
   <ul class="ptable">
@@ -13,5 +13,4 @@
   <ul class="ptable">
   {% for pub in pubs %}{% if pub.tier == "internal" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
   </ul>
-  <p class="site-note">* equal contribution.</p>
 </section>
