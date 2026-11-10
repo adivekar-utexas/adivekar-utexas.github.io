@@ -14,7 +14,6 @@ redirect_from:
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 {% include home/hero.html jobtitle=jobtitle %}
 {% include home/news.html %}
-{% include home/stage.html %}
 <nav class="tabbar tabbar--home" aria-label="Sections">
   <a class="tab" href="#history">Work history</a>
   <a class="tab" href="#publications">Publications</a>

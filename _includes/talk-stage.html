@@ -43,8 +43,8 @@
     {% if t.tags %}<p class="talk-stage__tags">{% for tg in t.tags %}<span class="pill">{{ tg }}</span>{% endfor %}</p>{% endif %}
     {% if t.excerpt %}<p class="talk-stage__text">{{ t.excerpt | strip_html }}</p>{% endif %}
     <p class="card__links">
-      {% if t.videourl %}<a class="chip-link" href="{{ t.videourl }}">Video</a>{% endif %}
-      {% if t.slidesurl %}<a class="chip-link" href="{{ t.slidesurl }}">Slides (PDF)</a>{% endif %}
+      {% if t.videourl %}<a class="chip-link" href="{{ t.videourl }}">Watch the talk</a>{% endif %}
+      {% if t.slidesurl %}<a class="chip-link" href="{{ t.slidesurl }}">See the slides (PDF)</a>{% endif %}
       {% if t.paperurl %}<a class="chip-link" href="{{ t.paperurl }}">Paper</a>{% endif %}
     </p>
   </div>

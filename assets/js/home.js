@@ -40,4 +40,21 @@
   }
   openHash();
   window.addEventListener('hashchange', openHash);
+
+  var tabs = Array.from(document.querySelectorAll('.tabbar--home .tab'));
+  var sections = tabs.map(function (tab) { return document.getElementById(tab.hash.slice(1)); });
+  function updateTab() {
+    var current = -1;
+    sections.forEach(function (section, index) {
+      if (section && section.getBoundingClientRect().top <= 150) current = index;
+    });
+    tabs.forEach(function (tab, index) {
+      var active = index === current;
+      tab.classList.toggle('is-current', active);
+      if (active) tab.setAttribute('aria-current', 'location');
+      else tab.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll', updateTab, { passive: true });
+  updateTab();
 })();
