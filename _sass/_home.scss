@@ -1,21 +1,20 @@
 /* ==========================================================================
    Design system (2026). Measured from memory.stanford.edu and kimi.ai:
-   Geist UI text, Source Serif 4 display, warm off-white page,
-   burnt-copper links, evergreen details, neutral controls and hairline borders.
+   Geist UI text, Source Serif 4 display, cool stone page,
+   near-black type, one deep teal accent, and light grey controls.
    ========================================================================== */
 
-$ink: #292823;         // warm charcoal
-$ink-2: #59564e;        // secondary text
-$ink-3: #716b60;        // tertiary / meta
-$line: #e2d9cc;         // parchment hairline borders
-$surface: #fffdf9;      // ivory cards
-$page: #f7f1e7;         // warm parchment canvas
-$tint: #f1eadf;         // inset paper wash
-$accent: #95482e;       // burnt-copper links
-$accent-ink: #71351f;
-$accent-secondary: #35584b; // evergreen navigation detail
-$hover: #ede9e1;        // soft neutral grey, never black
-$hover-line: #c9c0b2;   // hover border
+$ink: #18181b;          // near-black
+$ink-2: #3f3f46;        // secondary text
+$ink-3: #5b5b64;        // tertiary / meta
+$line: #e4e4e7;         // cool hairline
+$surface: #ffffff;      // cards
+$page: #f4f4f5;         // cool stone, neither blue nor parchment
+$tint: #f4f4f5;
+$accent: #0f6e56;       // deep teal
+$accent-ink: #0b5344;
+$hover: #f4f4f5;        // light grey, never black
+$hover-line: #d4d4d8;
 $radius: 10px;
 $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 
@@ -159,7 +158,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
 }
-.pill--oral { color: $accent-secondary; border-color: #c3d1c5; background: #edf2eb; }
+.pill--oral { color: $accent; border-color: #b7ddd2; background: #eef7f4; }
 .pill--tldr { margin-right: 6px; color: $ink-2; background: $tint; border-color: $line; }
 
 /* Expand toggle: a small grey chevron box centred on the card's bottom edge. */
@@ -231,7 +230,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   position: sticky; top: 57px; z-index: 10;
   display: flex; flex-wrap: wrap; justify-content: center; gap: 4px;
   margin: 28px auto 36px; padding: 4px; width: fit-content; max-width: 100%;
-  background: rgba(241, 234, 223, 0.96); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  background: rgba(244, 244, 245, 0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   border: 1px solid $line; border-radius: 999px;
 }
 .tab {
@@ -240,9 +239,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   transition: background .12s ease, color .12s ease;
 }
 .tab:hover { background: $surface; color: $ink !important; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.08); }
-.tab.is-current { background: $surface; color: $accent-secondary !important; box-shadow: inset 0 -2px $accent-secondary, 0 1px 2px rgba(41, 40, 35, 0.08); }
-.tabbar--home .tab[aria-current="location"] { font-weight: 600; }
-.hero__name::after { content: ""; display: block; width: 44px; height: 3px; margin: 18px 0 16px; border-radius: 2px; background: $accent-secondary; }
+.tab.is-current { background: $surface; color: $ink !important; box-shadow: 0 1px 2px rgba(24, 24, 27, 0.08); }
 
 .spage__body { max-width: 693px; margin: 0 auto; font-size: 16px; line-height: 1.65; }
 .spage__body > h2, .spage__body h2 {
@@ -263,7 +260,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 body { background: $page; color: $ink; }
 .masthead {
   position: sticky; top: 0; z-index: 20;
-  background: rgba(247, 241, 231, 0.94); backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(244, 244, 245, 0.92); backdrop-filter: saturate(180%) blur(10px);
   -webkit-backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid $line;
 }
 .greedy-nav { background: transparent; min-height: 56px; }
@@ -299,7 +296,9 @@ body { background: $page; color: $ink; }
 }
 .card:hover { border-color: $hover-line; box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08), 0 1px 3px rgba(16, 24, 40, 0.06); }
 .card--with-img { display: grid; grid-template-columns: minmax(0, 1fr) 128px; gap: 24px; align-items: center; }
+.card--logo-wide { grid-template-columns: minmax(0, 1fr) 256px; }
 .card__img { width: 128px; height: auto; border-radius: 10px; }
+.card__img--wide { width: 256px; max-height: 148px; object-fit: contain; padding: 8px; background: #fff; border: 1px solid $line; }
 .card__kicker { margin: 0 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: $ink-3; }
 .card__title { margin: 0 0 6px; font-family: $serif; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: $ink; }
 .home .card__title a { color: $ink; }
@@ -324,8 +323,9 @@ body { background: $page; color: $ink; }
 @media (max-width: 860px) { .cards--3 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) {
   .cards--3 { grid-template-columns: 1fr; }
-  .card--with-img { grid-template-columns: 1fr; }
+  .card--with-img, .card--logo-wide { grid-template-columns: 1fr; }
   .card__img { width: 96px; order: -1; }
+  .card__img--wide { width: min(100%, 220px); max-height: 96px; order: 0; }
 }
 
 /* ---- Speaking: one talk on stage (title, venue, media, frames, tags, text) */
