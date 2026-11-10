@@ -91,7 +91,6 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   padding: 10px 0; border-bottom: 1px solid $line; font-size: 15px; line-height: 1.5;
 }
 .home .news-item:last-child { border-bottom: 0; }
-.home .news-item[hidden] { display: none; }
 .home .news-item time { color: $ink-3; font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .home .news-text { color: $ink; }
 .home .news-cta { font-weight: 600; white-space: nowrap; }

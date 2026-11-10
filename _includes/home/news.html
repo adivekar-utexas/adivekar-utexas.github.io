@@ -26,7 +26,11 @@
   var items = root.querySelectorAll('.news-item');
   var bar = root.querySelectorAll('.news-filter .news-tag');
   function apply(tag) {
-    items.forEach(function (li) { li.hidden = !(tag === 'all' || li.dataset.tag === tag); });
+    items.forEach(function (li) {
+      var show = tag === 'all' || li.dataset.tag === tag;
+      li.style.display = show ? '' : 'none';   /* inline style beats any CSS rule */
+      li.setAttribute('aria-hidden', show ? 'false' : 'true');
+    });
     bar.forEach(function (b) {
       var on = b.dataset.filter === tag;
       b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
@@ -38,6 +42,7 @@
     var tag = b.dataset.filter;
     var current = root.querySelector('.news-filter .is-active');
     apply(current && current.dataset.filter === tag && tag !== 'all' ? 'all' : tag);
+    root.querySelector('.news-feed').scrollTop = 0;
   });
 })();
 </script>
