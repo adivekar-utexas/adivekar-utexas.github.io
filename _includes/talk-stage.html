@@ -1,22 +1,31 @@
 {% comment %}
-  One talk on the Speaking "stage": media on the left (video, slide deck or
-  photo), details on the right. Only the active talk is visible (talks.js);
-  without JS every talk is shown in sequence.
+  One talk on the Speaking "stage", top to bottom: title + date, venue,
+  media (video, slide deck, photo set or single image), a strip of frames
+  to jump between, then pill tags and the description.
+  Only the active talk is visible (talks.js); without JS all are shown.
 {% endcomment %}
 {% assign t = include.t %}
+{% if t.slides_dir %}{% assign fdir = "/images/slides/" | append: t.slides_dir %}{% assign fpre = "s-" %}{% assign fcount = t.slides_count %}{% assign fpad = true %}
+{% elsif t.photos_dir %}{% assign fdir = "/images/talks/" | append: t.photos_dir %}{% assign fpre = "" %}{% assign fcount = t.photos_count %}{% assign fpad = true %}
+{% else %}{% assign fcount = 0 %}{% endif %}
 <section class="talk-stage{% if include.first %} is-active{% endif %}" id="{{ t.urlslug }}" aria-label="{{ t.title }}">
+  <header class="talk-stage__head">
+    <h2 class="talk-stage__title">{{ t.title }}</h2>
+    <p class="talk-stage__kicker"><span class="pill">{{ t.type }}</span>{% if t.date_display != "none" %} {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%d %B %Y" }}{% endif %}{% endif %}</p>
+    <p class="talk-stage__venue">{{ t.venue }}{% if t.location %} · {{ t.location }}{% endif %}</p>
+  </header>
   <div class="talk-stage__media">
     {% if t.youtube_id %}
       <button type="button" class="yt" data-yt="{{ t.youtube_id }}" aria-label="Play video: {{ t.title }}">
         <img src="https://i.ytimg.com/vi/{{ t.youtube_id }}/hqdefault.jpg" alt="" loading="lazy"><span class="yt__play" aria-hidden="true"></span>
       </button>
-    {% elsif t.slides_dir %}
-      <div class="deck" data-count="{{ t.slides_count }}">
-        {% for i in (1..t.slides_count) %}{% if i < 10 %}{% assign n = "0" | append: i %}{% else %}{% assign n = i %}{% endif %}<img class="deck__slide{% if i == 1 %} is-on{% endif %}" {% if i == 1 %}src{% else %}data-src{% endif %}="{{ base_path }}/images/slides/{{ t.slides_dir }}/s-{{ n }}.jpg" alt="Slide {{ i }} of {{ t.slides_count }}">{% endfor %}
+    {% elsif fcount > 0 %}
+      <div class="deck{% if t.photos_dir %} deck--photos{% endif %}" data-count="{{ fcount }}">
+        {% for i in (1..fcount) %}{% if i < 10 %}{% assign n = "0" | append: i %}{% else %}{% assign n = i %}{% endif %}<img class="deck__slide{% if i == 1 %} is-on{% endif %}" {% if i == 1 %}src{% else %}data-src{% endif %}="{{ base_path }}{{ fdir }}/{{ fpre }}{{ n }}.jpg" alt="{% if t.photos_dir %}Photo{% else %}Slide{% endif %} {{ i }} of {{ fcount }}">{% endfor %}
         <div class="deck__nav">
-          <button type="button" class="deck__btn" data-step="-1" aria-label="Previous slide">&lsaquo;</button>
-          <span class="deck__count"><span class="deck__i">1</span> / {{ t.slides_count }}</span>
-          <button type="button" class="deck__btn" data-step="1" aria-label="Next slide">&rsaquo;</button>
+          <button type="button" class="deck__btn" data-step="-1" aria-label="Previous">&lsaquo;</button>
+          <span class="deck__count"><span class="deck__i">1</span> / {{ fcount }}</span>
+          <button type="button" class="deck__btn" data-step="1" aria-label="Next">&rsaquo;</button>
         </div>
       </div>
     {% elsif t.teaserurl %}
@@ -25,11 +34,14 @@
       <div class="talk-stage__ph"><span>{{ t.venue }}</span></div>
     {% endif %}
   </div>
+  {% if fcount > 1 %}
+  <ol class="frames" aria-label="Jump to {% if t.photos_dir %}photo{% else %}slide{% endif %}">
+    {% for i in (1..fcount) %}{% if i < 10 %}{% assign n = "0" | append: i %}{% else %}{% assign n = i %}{% endif %}<li><button type="button" class="frame{% if i == 1 %} is-on{% endif %}" data-go="{{ forloop.index0 }}" aria-label="{{ i }}"><img src="{{ base_path }}{{ fdir }}/{{ fpre }}{{ n }}.jpg" alt="" loading="lazy"></button></li>{% endfor %}
+  </ol>
+  {% endif %}
   <div class="talk-stage__info">
-    <p class="talk-stage__kicker">{{ t.type }}{% if t.date_display != "none" %} · {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%d %b %Y" }}{% endif %}{% endif %}</p>
-    <h2 class="talk-stage__title">{{ t.title }}</h2>
-    <p class="talk-stage__venue">{{ t.venue }}{% if t.location %} · {{ t.location }}{% endif %}</p>
-    {% if t.excerpt %}<p class="talk-stage__text">{{ t.excerpt | strip_html | truncatewords: 70 }}</p>{% endif %}
+    {% if t.tags %}<p class="talk-stage__tags">{% for tg in t.tags %}<span class="pill">{{ tg }}</span>{% endfor %}</p>{% endif %}
+    {% if t.excerpt %}<p class="talk-stage__text">{{ t.excerpt | strip_html }}</p>{% endif %}
     <p class="card__links">
       {% if t.videourl %}<a class="chip-link" href="{{ t.videourl }}">Video</a>{% endif %}
       {% if t.slidesurl %}<a class="chip-link" href="{{ t.slidesurl }}">Slides (PDF)</a>{% endif %}

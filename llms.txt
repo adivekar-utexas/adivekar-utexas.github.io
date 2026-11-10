@@ -9,13 +9,13 @@ permalink: /llms.txt
 {{ site.data.profile.name }} is a {% include jobtitle %} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. His scientific contributions added over USD 550M to Amazon revenue (2021-2026). He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: via LinkedIn (https://www.linkedin.com/in/ardivekar). Google Scholar: {{ site.data.profile.google_scholar }}
 
 ## Core pages
-- [Home]({{ site.url }}/): bio, news, and the full portfolio: conference, workshop and Amazon-conference papers; research in production; open source; International Olympiad in AI (Chair of the IOAI² AI Models Track, ISC and Jury member at IOAI 2026; Team Leader of Team India at IOAI 2025, 3 Gold, 2 Silver, 1 Bronze); peer review and service; awards; press; career history
+- [Home]({{ site.url }}/): bio, news, work history, publications (with abstracts), Amazon Machine Learning Conference papers, research shipped to production, International Olympiad in AI (Chair of the IOAI² AI Models Track, ISC and Jury member at IOAI 2026; Team Leader of Team India at IOAI 2025, 3 Gold, 2 Silver, 1 Bronze), open source, peer review and service, awards and press
 - [Writing]({{ site.url }}/writing/): blog posts
 - [Speaking]({{ site.url }}/speaking/): talks, oral presentations, lectures and interviews, with slides and video
 - [CV (PDF)]({{ site.url }}/files/Abhishek-Divekar-CV.pdf): curriculum vitae; text version at {{ site.url }}/curriculum-vitae/
 
 ## Publications
-{% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for p in pubs %}- [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, acceptance rate {{ p.acceptancerate }}{% endif %}{% if p.role %}. Role: {{ p.role }}{% endif %}.{% if p.paperurl contains "http" %} Paper: {{ p.paperurl }}{% endif %}
+{% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for p in pubs %}- [{{ p.title }}]({{ site.url }}/#{{ p.urlslug }}): {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, acceptance rate {{ p.acceptancerate }}{% endif %}{% if p.role %}. Role: {{ p.role }}{% endif %}.{% if p.paperurl contains "http" %} Paper: {{ p.paperurl }}{% endif %}
 {% endfor %}
 ## Optional
 - [Projects]({{ site.url }}/projects/): graduate course projects and technical reports

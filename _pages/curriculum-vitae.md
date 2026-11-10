@@ -32,7 +32,7 @@ tabs:
   - Red-teaming lead for India-specific compliance policies for the India launch of Amazon Rufus, an LLM-powered shopping assistant used by 100M+ customers.
   - First-author papers at NeurIPS 2026, AAAI 2026 (oral) and EMNLP 2024 (two papers), and orals at the Amazon Machine Learning Conference 2024 and 2025.
 - **Research Collaborator, NSF-Simons AI Institute for Cosmic Origins (CosmicAI)**. Feb 2025 to present.
-  - LLM and vision-language-model agents for astronomical modeling in the "Explorable Universe" project, with UT Austin, NYU and UCLA ([VESTA, NeurIPS 2026](/publication/vesta)).
+  - LLM and vision-language-model agents for astronomical modeling in the "Explorable Universe" project, with UT Austin, NYU and UCLA ([VESTA, NeurIPS 2026](/#vesta-neurips-2026)).
 - **Applied Scientist II, Amazon, India Machine Learning**. Oct 2019 to Nov 2021.
   - Designed and implemented data-processing nodes (160K lines of Python) for an AutoML platform that deployed 1,000+ models across 14 Amazon websites.
   - BERT-based product classification into 10,000+ categories: accuracy improved from 62% to 69% over a multi-task FastText baseline.
@@ -58,7 +58,7 @@ tabs:
 
 ## Publications
 
-See the [homepage](/#conference-papers) for abstracts, acceptance rates and roles.
+See the [homepage](/#publications) for abstracts, acceptance rates and roles.
 
 <ul>{% assign pubs = site.publications | sort: "date" | reverse %}{% for post in pubs %}
   {% include archive-single-short-publication.html %}

@@ -9,6 +9,9 @@ date: 2025-11-16
 teaserurl: 'talk-dhs-2025-synthetic-data.jpg'
 teaser_alt: "Abhishek Divekar presenting on synthetic data generation at DataHack Summit 2025"
 excerpt: "Despite rapid advances in generative AI, representative high-quality data remains a major bottleneck. This talk reviewed how LLM developers now use synthetic data, where synthetic data helps and where it fails, and how to diagnose the quality and diversity of generated datasets, drawing on SynthesizRR and CorrSynth (EMNLP 2024). A companion hands-on session covered synthetic-data diagnostics in code."
+photos_dir: "dhs-2025"
+photos_count: 8
+tags: [synthetic data, LLMs, invited talk]
 ---
 
 Invited talk at Analytics Vidhya's DataHack Summit 2025, where I was also named one of the Top 7 GenAI Scientists in India (AV Luminary Awards).

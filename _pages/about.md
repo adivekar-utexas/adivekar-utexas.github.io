@@ -13,5 +13,23 @@ redirect_from:
 {% include base_path %}
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 {% include home/hero.html jobtitle=jobtitle %}
+<nav class="tabbar tabbar--home" aria-label="Sections">
+  <a class="tab" href="#news">News</a>
+  <a class="tab" href="#history">Work history</a>
+  <a class="tab" href="#publications">Publications</a>
+  <a class="tab" href="#amlc">AMLC</a>
+  <a class="tab" href="#shipped">Shipped</a>
+  <a class="tab" href="#ioai">AI Olympiad</a>
+  <a class="tab" href="#open-source">Open source</a>
+  <a class="tab" href="#service">Service</a>
+  <a class="tab" href="#press">Awards &amp; press</a>
+</nav>
 {% include home/news.html %}
-{% include home/portfolio.html %}
+{% include home/history.html %}
+{% include home/papers.html %}
+{% include home/production.html %}
+{% include home/ioai.html %}
+{% include home/oss.html %}
+{% include home/service.html %}
+{% include home/press.html %}
+<script src="{{ base_path }}/assets/js/home.js" defer></script>

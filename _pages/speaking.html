@@ -5,13 +5,18 @@ permalink: /speaking/
 redirect_from:
   - /talks/
 description: "Talks, oral presentations, lectures and interviews by Abhishek Divekar, with slides and video."
-lede: "Talks, oral presentations, lectures and interviews. Pick a talk to see its slides or video."
+lede: "Talks, oral presentations, lectures and interviews, with slides, photos and video."
 ---
 {% include base_path %}
-{% assign talks = site.talks | sort: "date" | reverse %}
+{% comment %} Featured first (it opens on the stage), then newest first. {% endcomment %}
+{% assign sorted = site.talks | sort: "date" | reverse %}
+{% assign featured = sorted | where: "featured", true %}
+{% assign rest = sorted | where_exp: "t", "t.featured != true" %}
+{% assign talks = featured | concat: rest %}
 <div class="talks wide">
   {% for t in talks %}{% include talk-stage.html t=t first=forloop.first %}{% endfor %}
 
+  <h2 class="talks__more-h">More talks</h2>
   <ol class="talk-strip" aria-label="All talks">
   {% for t in talks %}
     {% if t.teaserurl %}{% assign poster = t.teaserurl | prepend: "/images/" | prepend: base_path %}{% elsif t.slides_dir %}{% assign poster = "/images/slides/" | append: t.slides_dir | append: "/s-01.jpg" | prepend: base_path %}{% elsif t.youtube_id %}{% assign poster = "https://i.ytimg.com/vi/" | append: t.youtube_id | append: "/hqdefault.jpg" %}{% else %}{% assign poster = "" %}{% endif %}

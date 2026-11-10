@@ -12,6 +12,7 @@ slidesurl: '/files/ML-Summer-School-2022-Supervised-Learning-part-2-Abhishek-sli
 location: "Virtual"
 slides_dir: "ml-summer-school-2022"
 slides_count: 19
+tags: [teaching, supervised learning]
 ---
 
 **Resources:** [[Slides](/files/ML-Summer-School-2022-Supervised-Learning-part-2-Abhishek-slides.pdf)]

@@ -12,6 +12,7 @@ slidesurl: '/files/AIMLSys_2022_demo_vF.pdf'
 location: "Virtual"
 slides_dir: "aimlsys-2022"
 slides_count: 14
+tags: [AutoML, ML platforms]
 ---
 
 **Resources:** [[Slides](/files/AIMLSys_2022_demo_vF.pdf)]

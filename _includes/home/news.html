@@ -1,6 +1,6 @@
 {% assign news = site.data.news | sort: "date" | reverse %}
 {% assign tags = news | map: "tag" | uniq %}
-<section class="home-section" aria-labelledby="news-h">
+<section class="home-section" id="news" aria-labelledby="news-h">
   <div class="home-h2-row">
     <h2 id="news-h" class="home-h2">News</h2>
     <div class="news-filter" role="group" aria-label="Filter news">

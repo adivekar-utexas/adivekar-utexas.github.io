@@ -10,4 +10,4 @@
 - name: "PRECISE for search relevance"
   role: "First author"
   impact: "Measures search quality from ~100 human-labelled queries plus LLM judgments"
-  link: /publication/precise
+  link: "/#precise-aaai-2026"
