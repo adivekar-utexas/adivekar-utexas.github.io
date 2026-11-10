@@ -11,6 +11,11 @@
   text: "Released the IOAI² 2026 review, co-authored with Elena Marinova."
   cta_text: "Read the report"
   cta_url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"
+- date: 2026-08-08
+  tag: IOAI
+  text: "The International Jury's final report at the IOAI 2026 closing ceremony presented the AI Models Track, with special thanks to the track chair."
+  cta_text: "Read the report"
+  cta_url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"
 - date: 2026-08-09
   tag: IOAI
   text: "Chaired the inaugural IOAI² AI Models Track at IOAI 2026, Astana: 15 AI systems from\
@@ -26,24 +31,30 @@
   tag: IOAI
   text: "Joined the IOAI International Scientific Committee."
   cta_text: "See my IOAI work"
-  cta_url: "/service/#ioai"
+  cta_url: "/#ioai"
 - date: 2026-01-24
-  tag: talk
-  text: "Oral presentation of PRECISE at AAAI 2026, Singapore."
+  tag: award
+  text: "PRECISE selected for an oral presentation at AAAI 2026 (Innovative Applications of AI track, 19.2% acceptance), Singapore."
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2601.18777"
+- date: 2026-01-24
+  tag: talk
+  text: "Presented PRECISE in an oral session at AAAI 2026, Singapore."
+  cta_text: "See the talk"
+  cta_url: "/speaking/#precise-aaai-2026-oral"
 - date: 2025-11-16
   tag: award
-  text: "Named one of the Top 7 GenAI Scientists in India, Analytics Vidhya AV Luminary Awards\
-  \ 2025."
+  text: "Named one of the Top 7 GenAI Scientists in India by Analytics Vidhya at DataHack Summit 2025."
 - date: 2025-11-16
   tag: talk
   text: "Invited talk on synthetic data generation at DataHack Summit 2025."
   cta_text: "See the talk"
-  cta_url: "/talks/2025-dhs-synthetic-data"
+  cta_url: "/speaking/#dhs-2025-synthetic-data"
 - date: 2025-10-01
   tag: paper
   text: "TrojanShot selected as an oral at the Amazon Machine Learning Conference 2025."
+  cta_text: "Read the abstract"
+  cta_url: "/publication/trojanshot"
 - date: 2025-08-21
   tag: IOAI
   text: "Led Team India at IOAI 2025, Beijing: 3 Gold, 2 Silver, 1 Bronze."
@@ -59,7 +70,7 @@
   tag: paper
   text: "SynthesizRR and CorrSynth accepted to EMNLP 2024 (main conference)."
   cta_text: "Read the papers"
-  cta_url: "/research/"
+  cta_url: "/#conference-papers"
 - date: 2024-05-01
   tag: education
   text: "Completed my M.S. in Computer Science at UT Austin, advised by Greg Durrett."

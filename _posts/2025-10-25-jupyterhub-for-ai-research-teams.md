@@ -55,6 +55,7 @@ rm ~/miniconda3/miniconda.sh
 Note: if these commands don't work, [check out the official page](https://www.anaconda.com/docs/getting-started/miniconda/install#linux-terminal-installer) for the latest steps (look for "Linux Terminal installer").
 
 Next do:
+
 ```
 ~/miniconda3/bin/conda init bash  ## Or zsh, or whatever shell you use
 ```
@@ -89,6 +90,7 @@ If you know you will never use an EFS/NFS, you can create `JUPYTER_HUB_ROOT` on 
 #### Creating the subdirs 
 Let's assume for simplicity you have selected `/jupyterhub` as the `JUPYTER_HUB_ROOT`.
 Run:
+
 ```
 sudo -i 
 sudo mkdir -p /jupyterhub/config
@@ -101,12 +103,14 @@ sudo chmod 755 /jupyterhub /jupyterhub/user
 ## Step 4: Install the JupyterHub conda environment
 
 First we sudo:
+
 ```
 sudo -i
 source /home/ubuntu/.bashrc
 ```
 You should now see a prefix like `(base) root@my-server:~#` in your command line.
 Next, run:
+
 ```
 conda create -n jupyterhub python=3.12 --yes  ## Update the Python version to the one you want to use
 conda activate jupyterhub
@@ -118,6 +122,7 @@ pip install ipykernel jupyterhub-firstuseauthenticator jupyter-server-proxy
 pip install ipython ipykernel ipywidgets
 ```
 Next, give users permissions to execute the following file:
+
 ```
 sudo chmod o+rx /home/ubuntu
 sudo chmod o+rx /home/ubuntu/miniconda3
@@ -136,6 +141,7 @@ Use the following config settings. Important changes to make:
 - `c.JupyterHub.port = 8888`: set this to the port you want to use for JupyterHub. IMPORTANT: this port must be exposed to your users.
 - `c.JupyterHub.admin_users`: set this to the admin users you want to give access to JupyterHub.
 Adjust other settings as needed.
+
 ```
 c = get_config()
 
@@ -192,6 +198,7 @@ c.Spawner.cpu_limit = 40
 
 It's best to start JupyterHub within screen or tmux, so that it continues running even if you log out.
 Here is an example using `screen`:
+
 ```
 screen -S jupyterhub
 sudo -i
@@ -219,6 +226,7 @@ Warning: at the moment, the config does not restrict the number of users you can
 
 ## (Repeatable) Step 9: Create a new conda environment (visible to all users)
 To create a new conda environment visible to all users in the JupyterLab interface, run the following commands:
+
 ```
 sudo -i
 source /home/ubuntu/.bashrc
@@ -233,6 +241,7 @@ python -m ipykernel install --name=common_env  ## Adds the environment to everyo
 
 ## (Repeatable) Step 10: Create a new conda environment (visible only to your user)
 This is a step to be followed by each user after they login to their own JupyterLab instance.
+
 ```
 source /home/ubuntu/.bashrc
 conda create -n my_private_env python=3.12 --yes  ## Can use any Python version you want
@@ -258,6 +267,7 @@ These overrides will be specific to your user and will NOT be visible to other u
 ## (Optional) Step 12: Install Jupyter AI on the JupyterHub machine
 Jupyter AI adds AI coding in a notebook interface.
 You can install Jupyter AI on the JupyterHub machine using the following command:
+
 ```
 sudo -i
 source /home/ubuntu/.bashrc
@@ -266,10 +276,12 @@ uv pip install "jupyter-ai[all]" langchain-openai langchain-anthropic boto3
 uv pip install jupyterhub-ai-gateway
 ```
 Now, install the environment file which will inject keys for all your users:
+
 ```
 sudo install -D -m 600 -o root -g root /dev/null /etc/jupyterhub/llm.env
 ```
 Modify `/etc/jupyterhub/llm.env` to add your keys:
+
 ```
 OPENROUTER_API_KEY=<your-openrouter-api-key>
 OPENAI_API_KEY=<your-openai-api-key>
@@ -278,6 +290,7 @@ AWS_ACCESS_KEY_ID=<your-aws-access-key-id>
 AWS_SECRET_ACCESS_KEY=<your-aws-secret-access-key>
 ```
 Finally, modify the JupyterHub `config.py` file to add the following lines at the end:
+
 ```
 from pathlib import Path
 
@@ -295,6 +308,7 @@ def load_env_file(path):
 c.Spawner.environment = load_env_file("/etc/jupyterhub/llm.env")
 ```
 Finally, restart JupyterHub to apply the changes:
+
 ```
 screen -S jupyterhub  ## or screen -x jupyterhub if you are reattaching to an existing screen session
 sudo -i
@@ -315,15 +329,18 @@ There are two ways to use Ray on the JupyterHub machine.
 Here, you don't actually have to do anything with JupyterHub except install the Ray package (`uv pip install ray`) in one of the conda environments visible to all users. 
 You can use Ray as you would normally:
 - The Ray head node (i.e. the master), you start a Ray cluster as follows: 
+
 ```
 clear && ray stop --force && ray stop --force && sleep 5 && mkdir -p /tmp/ray/ && rm -rf /tmp/ray/* && rm -rf /tmp/tmp*.partd && mkdir -p /dev/shm/ray/ && rm -rf /dev/shm/ray/* && ray start --head --system-config='{"object_spilling_config":"{\"type\":\"filesystem\",\"params\":{\"directory_path\":\"/dev/shm/ray\"}}"}'
 ```
 - From one or more Ray worker nodes, you can connect to the Ray cluster as follows (replacing `<ray-head-node-ip>` with the IP address of the Ray head node):
+
 ```
 clear && sleep $(awk 'BEGIN{srand();print int(rand()*(5)) }') && ray stop --force && ray stop --force && mkdir -p /tmp/ray/ && rm -rf /tmp/ray/* && rm -rf /tmp/tmp*.partd && mkdir -p /dev/shm/ray/ && rm -rf /dev/shm/ray/* && ray start --address='<ray-head-node-ip>:6379'
 ```
 
 To connect to the Ray cluster from the JupyterHub machine, you need to first setup a directory within `/tmp/` for the client-side Ray connections to use. These files are cleaned up automatically on reboot and periodically.
+
 ```
 sudo -i 
 mkdir -p /tmp/ray_client/  ## For client-side Ray connections by your users.
@@ -332,6 +349,7 @@ chmod 777 -R /tmp/ray_client/
 chmod 1777 /tmp/ray_client/
 ```
 Then, you can use the following code in your Jupyter notebook:
+
 ```python
 import ray
 # from ray.util.dask import enable_dask_on_ray  # Optional: for Dask on Ray   
@@ -359,6 +377,7 @@ If you don't have multiple machines, you can start a Ray cluster on the JupyterH
 Ray has a splits the machine's RAM in to object-store and working memory. If your users are using Ray, this can ensure their jobs do not use more than the total machine memory (which can easily bring down the machine, making it non-SSHable). Their jobs will be queued for execution with Ray.
 Here, it is recommended to start Ray in sudo mode, so that it gets special permissions to access the entire machine's RAM.
 You need to first setup two directories for Ray to use:
+
 ```
 sudo -i 
 mkdir -p /tmp/ray/
@@ -370,6 +389,7 @@ chmod 1777 /tmp/ray_client/
 `/tmp/ray/` and `/tmp/ray_client/` are cleaned up automatically on reboot and periodically.
 
 Then, as a one-time activity, you need to increase the limits on open files or you may get "Too many open files" OS errors:
+
 ```
 sudo -i
 ## Backup current limits
@@ -389,6 +409,7 @@ ulimit -a  ## "open files" should be 65535
 ```
 
 (Repeatable) Then you run the following ray command on the JupyterHub machine using sudo:
+
 ```
 sudo -i 
 source /home/ubuntu/.bashrc

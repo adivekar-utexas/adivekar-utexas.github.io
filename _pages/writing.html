@@ -42,17 +42,20 @@ lede: "Notes on research, careers and engineering."
 <script>
   // Tag filter: progressive enhancement; without JS every post is visible.
   (function () {
-    var chips = document.querySelectorAll('.tag-chip');
+    var chips = document.querySelectorAll('.tag-filter .tag-chip');
     var posts = document.querySelectorAll('.post-entry');
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        var tag = chip.getAttribute('data-tag');
-        chips.forEach(function (c) { c.classList.toggle('is-active', c === chip); });
-        posts.forEach(function (p) {
-          var tags = (p.getAttribute('data-tags') || '').split(' ');
-          p.style.display = (tag === 'all' || tags.indexOf(tag) !== -1) ? '' : 'none';
-        });
+    function apply(tag) {
+      chips.forEach(function (c) { c.classList.toggle('is-active', c.getAttribute('data-tag') === tag); });
+      posts.forEach(function (p) {
+        var tags = (p.getAttribute('data-tags') || '').split(' ');
+        p.style.display = (tag === 'all' || tags.indexOf(tag) !== -1) ? '' : 'none';
       });
+    }
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () { apply(chip.getAttribute('data-tag')); });
     });
+    // A post's tag links to /writing/#tag; open the list already filtered.
+    var h = location.hash.slice(1);
+    if (h && document.querySelector('.tag-filter [data-tag="' + h + '"]')) apply(h);
   })();
 </script>

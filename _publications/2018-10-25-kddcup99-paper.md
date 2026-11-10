@@ -20,4 +20,3 @@ Machine Learning has been steadily gaining traction for its use in Anomaly-based
 
 [Download](https://arxiv.org/abs/1811.05372)
 
-Citation: <u>Abhishek Divekar</u>, Meet Parekh, Vaibhav Savla, Rudra Mishra, and Mahesh Shirole. <b>"Benchmarking datasets for Anomaly-based Network Intrusion Detection: KDD CUP 99 alternatives"</b>. <i>IEEE International Conference on Computing, Communication and Security (ICCCS 2018)</i> (Oral) 

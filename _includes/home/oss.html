@@ -1,0 +1,13 @@
+<section class="home-section" id="open-source" aria-labelledby="oss-h">
+  <h2 id="oss-h" class="home-h2">Open source</h2>
+  <p class="home-intro">I led the open-sourcing of FMCore, Bears and Concurry on Amazon Science.</p>
+  <ul class="cards cards--3">
+  {% for o in site.data.oss %}
+    <li class="card">
+      <h3 class="card__title"><a href="{{ o.links[0].url }}">{{ o.name }}</a></h3>
+      <p class="card__text">{{ o.what }}</p>
+      <p class="card__links">{% for l in o.links %}<a class="chip-link" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+    </li>
+  {% endfor %}
+  </ul>
+</section>

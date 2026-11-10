@@ -14,6 +14,4 @@ redirect_from:
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 {% include home/hero.html jobtitle=jobtitle %}
 {% include home/news.html %}
-{% include home/research.html %}
-{% include home/launches.html %}
-{% include home/history.html %}
+{% include home/portfolio.html %}

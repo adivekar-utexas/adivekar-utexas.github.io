@@ -103,7 +103,7 @@ blockquote {
     font-style: italic;
 
     &:before {
-      content: "\2014";
+      content: "-";
       padding-right: 5px;
     }
   }

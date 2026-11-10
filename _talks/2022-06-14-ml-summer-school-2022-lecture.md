@@ -10,6 +10,8 @@ teaserurl: 'ML-Summer-School-2022-AdaBoost.png'
 excerpt: 'Amazon ML Summer School 2022 was an initiative which enrolled ~3,000 Indian undergraduate students and helped them learn key ML technologies from Amazon Scientists. I taught a module on Supervised Learning covering Decision Trees, Bagging and Boosting algorithms, followed by a 3-hour Q&amp;A session to clarify student questions.'
 slidesurl: '/files/ML-Summer-School-2022-Supervised-Learning-part-2-Abhishek-slides.pdf'
 location: "Virtual"
+slides_dir: "ml-summer-school-2022"
+slides_count: 19
 ---
 
 **Resources:** [[Slides](/files/ML-Summer-School-2022-Supervised-Learning-part-2-Abhishek-slides.pdf)]

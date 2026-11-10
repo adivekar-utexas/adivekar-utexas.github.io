@@ -1,16 +1,11 @@
-# Top navigation (short labels; content is grouped for readers, not by document type)
+# Top navigation. Everything else (papers, production, IOAI, service, awards,
+# press, history) lives on the homepage, reached via its section tabs.
 main:
-  - title: "Research"
-    url: /research/
-
   - title: "Writing"
     url: /writing/
 
   - title: "Speaking"
     url: /speaking/
 
-  - title: "Service"
-    url: /service/
-
-  - title: "About"
-    url: /about-me/
+  - title: "CV"
+    url: /cv/

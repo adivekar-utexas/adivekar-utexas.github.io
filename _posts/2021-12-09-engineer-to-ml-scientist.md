@@ -29,7 +29,7 @@ Outside of my family, my manager Nikhil Rasiwasia and many peers helped me succe
 Take graduate-level courses (Intermediate/Expert on Coursera), actually make notes and solve **_all_** the exercises. Be a nerd. This is hard to do when juggling work deadlines, but if you want to be a scientist and not an engineer, there is no replacement.
 I personally joined [UT Austin’s part-time Masters program](https://www.cs.utexas.edu/graduate-program/masters-program/online-option/); the fixed syllabus and peer-pressure helped me learn. I’m half-done with the program…compared to when I started, my comprehension of ML fundamentals is much deeper than I thought was possible. **_Really digging into the math of ML is a game-changer_**.
 Speaking of math, blogs and Reddit posts that discuss “how to break into ML” often repeat the following:
-> “The math you need for ML is Probability, Linear Algebra and Calculus” — Internet
+> “The math you need for ML is Probability, Linear Algebra and Calculus” - Internet
 While this is not **_un_** true, it’s much more accurate to say:
 > “The math you need for Machine Learning is 50% Probability, 35% Linear Algebra and 15% Calculus”
 Probability really is the language of Machine Learning. **_Work hard on your probability skills and a lot of the literature becomes much easier to digest_**. I found “[Introduction to Probability](https://projects.iq.harvard.edu/stat110/home)” by Blitzstein and Hwang an extremely approachable introduction to all the major concepts.
@@ -40,7 +40,7 @@ If I had to estimate, Deep Learning models are used for ~70% of applied ML proje
 Generally, these topics are part of the syllabus of a graduate-level ML course like [Stanford’s CS 229](http://cs229.stanford.edu/syllabus.html). Books I found useful to learn these topics include:
   * “[Understanding Machine Learning: from Theory to Algorithms](https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/)” by Shalev-Shwartz and Ben-David (Free, medium-difficulty, medium-depth)
   * “[Pattern Recognition And Machine Learning](https://link.springer.com/book/9780387310732)” by Bishop (medium-difficulty, high-depth)
-  * “[Machine Learning — A Probabilistic Perspective](https://www.cs.ubc.ca/~murphyk/MLbook/)” by Murphy (Free, high-difficulty, high-depth)
+  * “[Machine Learning - A Probabilistic Perspective](https://www.cs.ubc.ca/~murphyk/MLbook/)” by Murphy (Free, high-difficulty, high-depth)
   * “[An Introduction to Statistical Learning (with Applications in R)](https://www.statlearning.com/)” by James, Witten, Hastie and Tibshirani (Free, low-difficulty, low-depth)
   * “[The Elements of Statistical Learning](https://link.springer.com/book/10.1007/978-0-387-84858-7)” by Hastie, Tibshirani, Friedman (Free, high-difficulty, high-depth)
 
@@ -90,8 +90,8 @@ Once you start writing papers, you will realize a few truths about scientific wr
   * **_The paper you are currently reading is derived from the ideas of one or two cited papers…figure out which ones those are and read them if needed._**
   * None of the authors have read _all_ the research papers that they are citing in detail. A lot of citations are meant to establish background knowledge about the problem or “obvious” facts in the domain. If a large percentage of these facts are new information to you, then take a step back and learn the background first.
 
-### Focus on how — and where — you present your work
+### Focus on how - and where - you present your work
   * **_The impact of your ideas is highly dependent on how well you communicate them, particularly in written form_**(papers, technical documents, etc). If your English skills are poor, work to improve them: “[The Elements of Style](https://www.amazon.in/Elements-Style-William-Strunk-Jr/dp/020530902X)” by Strunk and White is a classic reference.
-  * **_The selectivity of the venue where you publish is a yardstick for the quality of the work you are capable of producing._** One paper in a Tier-1 conference is worth more than 3–4 papers at Tier-3 conferences.
+  * **_The selectivity of the venue where you publish is a yardstick for the quality of the work you are capable of producing._** One paper in a Tier-1 conference is worth more than 3-4 papers at Tier-3 conferences.
 
 There’s a lot of things this article has not covered…as I mentioned, it’s a journey which contains a lot of “small” realizations about yourself and the field. However, I hope this provides some insight on the important part of this journey. Good luck!

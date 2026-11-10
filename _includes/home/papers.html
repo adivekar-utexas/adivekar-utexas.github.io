@@ -1,0 +1,26 @@
+{% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}
+<section class="home-section" id="conference-papers" aria-labelledby="conf-h">
+  <div class="home-h2-row">
+    <h2 id="conf-h" class="home-h2">Conference papers</h2>
+    <a class="more-link" href="{{ site.data.profile.google_scholar }}">Google Scholar</a>
+  </div>
+  <ul class="ptable">
+  {% for pub in pubs %}{% if pub.tier == "peer-reviewed" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
+  </ul>
+  <p class="site-note">* equal contribution.</p>
+</section>
+
+<section class="home-section" id="workshop-papers" aria-labelledby="ws-h">
+  <h2 id="ws-h" class="home-h2">Workshop papers</h2>
+  <ul class="ptable">
+  {% for pub in pubs %}{% if pub.tier == "peer-reviewed-workshop" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
+  </ul>
+</section>
+
+<section class="home-section" id="amazon-conference" aria-labelledby="amlc-h">
+  <h2 id="amlc-h" class="home-h2">Amazon Machine Learning Conference</h2>
+  <p class="home-intro">AMLC is Amazon's annual internal machine learning conference, with roughly 1,000 submissions a year (<a href="https://www.amazon.science/videos-webinars/amazons-annual-machine-learning-conference-featured-presentations-from-thought-leaders-within-academia">announcement</a>). Full texts are internal; each abstract is public.</p>
+  <ul class="ptable">
+  {% for pub in pubs %}{% if pub.tier == "internal" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
+  </ul>
+</section>

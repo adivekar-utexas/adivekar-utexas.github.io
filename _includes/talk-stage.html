@@ -1,0 +1,39 @@
+{% comment %}
+  One talk on the Speaking "stage": media on the left (video, slide deck or
+  photo), details on the right. Only the active talk is visible (talks.js);
+  without JS every talk is shown in sequence.
+{% endcomment %}
+{% assign t = include.t %}
+<section class="talk-stage{% if include.first %} is-active{% endif %}" id="{{ t.urlslug }}" aria-label="{{ t.title }}">
+  <div class="talk-stage__media">
+    {% if t.youtube_id %}
+      <button type="button" class="yt" data-yt="{{ t.youtube_id }}" aria-label="Play video: {{ t.title }}">
+        <img src="https://i.ytimg.com/vi/{{ t.youtube_id }}/hqdefault.jpg" alt="" loading="lazy"><span class="yt__play" aria-hidden="true"></span>
+      </button>
+    {% elsif t.slides_dir %}
+      <div class="deck" data-count="{{ t.slides_count }}">
+        {% for i in (1..t.slides_count) %}{% if i < 10 %}{% assign n = "0" | append: i %}{% else %}{% assign n = i %}{% endif %}<img class="deck__slide{% if i == 1 %} is-on{% endif %}" {% if i == 1 %}src{% else %}data-src{% endif %}="{{ base_path }}/images/slides/{{ t.slides_dir }}/s-{{ n }}.jpg" alt="Slide {{ i }} of {{ t.slides_count }}">{% endfor %}
+        <div class="deck__nav">
+          <button type="button" class="deck__btn" data-step="-1" aria-label="Previous slide">&lsaquo;</button>
+          <span class="deck__count"><span class="deck__i">1</span> / {{ t.slides_count }}</span>
+          <button type="button" class="deck__btn" data-step="1" aria-label="Next slide">&rsaquo;</button>
+        </div>
+      </div>
+    {% elsif t.teaserurl %}
+      <img class="talk-stage__photo{% if t.teaser_fit == "contain" %} talk-stage__photo--contain{% endif %}" src="{{ base_path }}/images/{{ t.teaserurl }}" alt="{{ t.teaser_alt | default: t.title }}" loading="lazy">
+    {% else %}
+      <div class="talk-stage__ph"><span>{{ t.venue }}</span></div>
+    {% endif %}
+  </div>
+  <div class="talk-stage__info">
+    <p class="talk-stage__kicker">{{ t.type }}{% if t.date_display != "none" %} · {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%d %b %Y" }}{% endif %}{% endif %}</p>
+    <h2 class="talk-stage__title">{{ t.title }}</h2>
+    <p class="talk-stage__venue">{{ t.venue }}{% if t.location %} · {{ t.location }}{% endif %}</p>
+    {% if t.excerpt %}<p class="talk-stage__text">{{ t.excerpt | strip_html | truncatewords: 70 }}</p>{% endif %}
+    <p class="card__links">
+      {% if t.videourl %}<a class="chip-link" href="{{ t.videourl }}">Video</a>{% endif %}
+      {% if t.slidesurl %}<a class="chip-link" href="{{ t.slidesurl }}">Slides (PDF)</a>{% endif %}
+      {% if t.paperurl %}<a class="chip-link" href="{{ t.paperurl }}">Paper</a>{% endif %}
+    </p>
+  </div>
+</section>

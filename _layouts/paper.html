@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{% comment %}
+  Paper (abstract) page: same frame as posts. Figure, venue, title, authors,
+  TL;DR, link pills, then the abstract. No sidebar, no share buttons.
+{% endcomment %}
+{% capture authors %}{% include authors.html citation=page.citation %}{% endcapture %}
+<main id="main" class="spage post paper" role="main">
+  <article itemscope itemtype="https://schema.org/ScholarlyArticle">
+    <header class="spage__head post__head">
+      <p class="post__back"><a href="/#conference-papers">Papers</a></p>
+      <p class="prow__venue">{{ page.venue_short | default: "AMLC" }}{% if page.acceptancetype %} <span class="prow__type prow__type--{{ page.acceptancetype | downcase }}">{{ page.acceptancetype }}</span>{% endif %}</p>
+      <h1 class="spage__title post__title" itemprop="headline">{{ page.title }}</h1>
+      <p class="prow__authors paper__authors">{{ authors | strip }}</p>
+      <p class="post__meta">{{ page.venue }}{% if page.acceptancerate %} · acceptance rate {{ page.acceptancerate }}{% endif %}</p>
+      <p class="card__links paper__links">
+        {% if page.paperurl contains "http" %}<a class="ilink" href="{{ page.paperurl }}">{% include icons/paper.svg %}<span>Paper</span></a>{% endif %}
+        {% if page.codeurl %}<a class="ilink" href="{{ page.codeurl }}">{% include icons/code.svg %}<span>Code</span></a>{% endif %}
+        {% if page.projecturl %}<a class="ilink" href="{{ page.projecturl }}">{% include icons/globe.svg %}<span>Project</span></a>{% endif %}
+      </p>
+    </header>
+    <div class="spage__body page__content post__body">
+      {% if page.thumb %}<figure class="paper__fig"><img src="{{ base_path }}/images/papers/{{ page.thumb }}" alt="Key figure from {{ page.title | split: ':' | first }}"></figure>{% endif %}
+      {% if page.pitch %}<p class="prow__pitch"><b class="tldr">TL;DR</b> {{ page.pitch }}</p>{% endif %}
+      {% if page.role %}<p class="section-note">My role: {{ page.role }}.</p>{% endif %}
+      <h2>Abstract</h2>
+      {% assign body = content | strip_html | strip %}{% if body == "" %}<p>{{ page.excerpt }}</p>{% else %}{{ content }}{% endif %}
+      {% if page.alternativeurl %}<p>{{ page.alternativeurl }}</p>{% endif %}
+    </div>
+  </article>
+</main>

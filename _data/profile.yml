@@ -34,11 +34,11 @@ research_areas:
 education:
   - institution: "The University of Texas at Austin"
     degree: "M.S. in Computer Science (Thesis track)"
-    dates: "Aug 2020 – May 2024"
+    dates: "Aug 2020 to May 2024"
     note: "Thesis advisor: Prof. Greg Durrett. Thesis work published at EMNLP 2024 (SynthesizRR)."
   - institution: "Veermata Jijabai Technological Institute (VJTI), Mumbai"
     degree: "B.Tech. in Information Technology"
-    dates: "2013 – 2017"
+    dates: "2013 to 2017"
     note: "Research Assistant in Prof. Mahesh Shirole's lab (anomaly-based network intrusion detection)."
 
 memberships:
@@ -46,7 +46,7 @@ memberships:
     url: "https://ioai-official.org/"
     since: "2026"
     role: "Member; Chair of the IOAI² AI Models Track (2026); IOAI Jury member (2026)"
-  - name: "NSF-Simons AI Institute for Cosmic Origins (CosmicAI) — Research Collaborator"
+  - name: "NSF-Simons AI Institute for Cosmic Origins (CosmicAI), Research Collaborator"
     since: "Feb 2025"
   - name: "IEEE (Senior Member)"
     url: "https://www.ieee.org/"

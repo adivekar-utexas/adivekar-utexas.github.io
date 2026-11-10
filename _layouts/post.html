@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% comment %}
+  Blog post layout: same frame as the other pages (centred header, centre
+  two-thirds column). No sidebar, no previous/next links, no share buttons.
+{% endcomment %}
+{% assign words = content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: site.words_per_minute | at_least: 1 %}
+<main id="main" class="spage post" role="main">
+  <article itemscope itemtype="https://schema.org/BlogPosting">
+    <header class="spage__head post__head">
+      <p class="post__back"><a href="/writing/">Writing</a></p>
+      <h1 class="spage__title post__title" itemprop="headline">{{ page.title }}</h1>
+      {% if page.description %}<p class="spage__lede" itemprop="description">{{ page.description }}</p>{% endif %}
+      <p class="post__meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%d %b %Y" }}</time>
+        <span aria-hidden="true">·</span> {{ minutes }} min read
+        {% for t in page.tags %}<a class="tag-chip" href="/writing/#{{ t | slugify }}">{{ t }}</a>{% endfor %}
+      </p>
+    </header>
+    <div class="spage__body page__content post__body" itemprop="articleBody">
+      {{ content }}
+    </div>
+    <footer class="post__foot">
+      <a class="btn-pill btn-pill--ghost" href="/writing/">All writing</a>
+    </footer>
+  </article>
+</main>

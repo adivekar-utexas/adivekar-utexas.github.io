@@ -4,7 +4,7 @@
   role: "Led red-teaming on India-specific compliance policies"
   impact: "LLM shopping assistant used by 100M+ customers"
 - name: "AutoML platform for product classification"
-  year: "2019–2023"
+  year: "2019 to 2023"
   role: "Lead science contributor"
   impact: "1,000+ models deployed across 14 Amazon websites; 1B+ product attributes updated"
 - name: "PRECISE for search relevance"

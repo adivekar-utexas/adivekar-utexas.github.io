@@ -13,4 +13,5 @@ acceptancerate: "~10%"
 acceptancetype: "Oral"
 role: "First author"
 citation: '<u>Abhishek Divekar</u> and Greg Durrett. <b>&quot;SynthesizRR: Generating Diverse Datasets with Retrieval Augmentation&quot;</b>. <i>Amazon Machine Learning Conference (AMLC 2024)</i>'
+listed: false
 ---

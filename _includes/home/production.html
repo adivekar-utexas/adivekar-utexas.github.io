@@ -1,0 +1,14 @@
+<section class="home-section" id="in-production" aria-labelledby="prod-h">
+  <h2 id="prod-h" class="home-h2">In production</h2>
+  <ul class="cards">
+  {% for l in site.data.launches %}
+    <li class="card">
+      <p class="card__kicker">{{ l.year | default: "Amazon" }}</p>
+      <h3 class="card__title">{% if l.link %}<a href="{{ l.link }}">{{ l.name }}</a>{% else %}{{ l.name }}{% endif %}</h3>
+      <p class="card__text">{{ l.impact }}.</p>
+      <p class="card__meta">{{ l.role }}</p>
+    </li>
+  {% endfor %}
+  </ul>
+  <p class="home-intro">My scientific contributions added over USD 550 million to Amazon's revenue between 2021 and 2026. I have shipped about 650,000 lines of code to production at Amazon. My cost-constrained AutoML work was adopted in <a href="https://auto.gluon.ai/0.4.0/tutorials/tabular_prediction/tabular-indepth.html#inference-speed-as-a-fit-constraint">AutoGluon's <code>infer_limit</code> feature</a>.</p>
+</section>

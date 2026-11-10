@@ -1,5 +1,5 @@
 {% comment %}
   Full author line from a publication's `citation` (text before the first <b>).
-  My name is bold; equal-contribution stars are bold too, wherever they appear.
-  Input citation uses <u>Abhishek Divekar</u> and "*" for equal contribution.
-{% endcomment %}{% assign a = include.citation | split: "<b>" | first | strip | remove_last: "." %}{% assign a = a | replace: "<u>Abhishek Divekar</u>*", "<strong class='me'>Abhishek Divekar*</strong>" | replace: "<u>Abhishek Divekar*</u>", "<strong class='me'>Abhishek Divekar*</strong>" | replace: "<u>Abhishek Divekar</u>", "<strong class='me'>Abhishek Divekar</strong>" | replace: "<i>(Preprint)</i>", "" %}{% assign parts = a | split: "*" %}{% if parts.size > 1 or a contains "*" %}{% assign a = a | replace: "*", "<b class='eq' title='Equal contribution'>*</b>" %}{% endif %}{{ a | strip }}
+  My name is underlined and bold, and so is my equal-contribution star.
+  Other authors' stars stay plain. Input uses <u>Abhishek Divekar</u> and "*".
+{% endcomment %}{% assign me = "<span class='me'>Abhishek Divekar</span>" %}{% assign mestar = "<span class='me'>Abhishek Divekar*</span>" %}{% assign a = include.citation | split: "<b>" | first | strip | remove_last: "." | replace: "<i>(Preprint)</i>", "" %}{% assign a = a | replace: "<u>Abhishek Divekar</u>*", "@@MESTAR@@" | replace: "<u>Abhishek Divekar*</u>", "@@MESTAR@@" | replace: "<u>Abhishek Divekar</u>", "@@ME@@" %}{% assign a = a | replace: "@@MESTAR@@", mestar | replace: "@@ME@@", me %}{{ a | strip }}

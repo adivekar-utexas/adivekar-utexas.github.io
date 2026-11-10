@@ -1,0 +1,24 @@
+{% comment %}
+  Homepage portfolio: one sticky tab row that jumps to each section below.
+  Each section is its own include so it can be edited on its own.
+{% endcomment %}
+<nav class="tabbar tabbar--home" aria-label="Sections">
+  <a class="tab" href="#conference-papers">Conference papers</a>
+  <a class="tab" href="#workshop-papers">Workshop papers</a>
+  <a class="tab" href="#amazon-conference">Amazon conference</a>
+  <a class="tab" href="#in-production">In production</a>
+  <a class="tab" href="#open-source">Open source</a>
+  <a class="tab" href="#ioai">IOAI</a>
+  <a class="tab" href="#service">Service</a>
+  <a class="tab" href="#awards">Awards</a>
+  <a class="tab" href="#press">Press</a>
+  <a class="tab" href="#history">History</a>
+</nav>
+{% include home/papers.html %}
+{% include home/production.html %}
+{% include home/oss.html %}
+{% include home/ioai.html %}
+{% include home/service.html %}
+{% include home/awards.html %}
+{% include home/press.html %}
+{% include home/history.html %}
