@@ -439,3 +439,40 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(51, 70, 194, 0.4
 .card__banner { margin: 0 -6px 14px; padding: 8px; border-radius: 10px; background: #fff; border: 1px solid $line; }
 .card__banner img { display: block; width: 100%; height: auto; }
 .card__img--logo { width: 96px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
+
+/* ---- Homepage photo band (DataHack stage) -------------------------------- */
+.stage-band {
+  position: relative; display: block; margin: 0 0 32px; border-radius: 16px; overflow: hidden;
+  aspect-ratio: 2400 / 700; background: #0f1320; color: #fff !important; text-decoration: none !important;
+}
+.stage-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; transition: transform .6s ease; }
+.stage-band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 14, 26, 0.78) 0%, rgba(10, 14, 26, 0.35) 45%, rgba(10, 14, 26, 0) 70%); }
+.stage-band:hover img { transform: scale(1.02); }
+.stage-band__cap { position: absolute; left: 28px; bottom: 24px; z-index: 1; max-width: 46%; }
+.stage-band__kicker { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.78); }
+.stage-band__title { display: block; font-family: $serif; font-size: 26px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: #fff; }
+@media (max-width: 760px) {
+  .stage-band { aspect-ratio: 16 / 9; }
+  .stage-band__cap { left: 16px; bottom: 14px; max-width: 80%; }
+  .stage-band__title { font-size: 19px; }
+}
+
+/* ---- Speaking header over the stage photo -------------------------------- */
+.spage__head--hero {
+  position: relative; margin: 24px 0 0; padding: 120px 32px 44px; border-radius: 18px; overflow: hidden; text-align: left;
+  background: linear-gradient(180deg, rgba(10, 14, 26, 0.15) 0%, rgba(10, 14, 26, 0.72) 100%), var(--hero) center 45% / cover no-repeat, #0f1320;
+}
+.spage__head--hero .spage__title { color: #fff; }
+.spage__head--hero .spage__lede { margin: 0; color: rgba(255, 255, 255, 0.85); }
+@media (max-width: 760px) { .spage__head--hero { padding: 80px 18px 24px; } }
+
+/* ---- Publications subsection and award photos ---------------------------- */
+.home .home-h3--sub {
+  margin: 36px 0 8px; padding-top: 18px; border-top: 1px solid $line; scroll-margin-top: 120px;
+  font-family: $serif; font-size: 20px; font-weight: 500; letter-spacing: -0.005em; text-transform: none; color: $ink;
+}
+.award-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 16px; }
+.award-photos figure { margin: 0; aspect-ratio: 3 / 2; border-radius: 12px; overflow: hidden; border: 1px solid $line; background: #0f1320; }
+.award-photos img { width: 100%; height: 100%; object-fit: cover; }
+.award-photos figcaption { grid-column: 1 / -1; margin-top: -4px; font-size: 13px; color: $ink-3; }
+@media (max-width: 560px) { .award-photos { grid-template-columns: 1fr; } }

@@ -7,13 +7,11 @@
   <ul class="ptable">
   {% for pub in pubs %}{% if pub.tier == "peer-reviewed" or pub.tier == "peer-reviewed-workshop" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
   </ul>
-  <p class="site-note">* equal contribution.</p>
-</section>
 
-<section class="home-section" id="amlc" aria-labelledby="amlc-h">
-  <h2 id="amlc-h" class="home-h2">Amazon Machine Learning Conference</h2>
+  <h3 class="home-h3 home-h3--sub" id="amlc">Amazon Machine Learning Conference</h3>
   <p class="home-intro">AMLC is Amazon's annual internal machine learning conference, with roughly 1,000 submissions a year (<a href="https://www.amazon.science/videos-webinars/amazons-annual-machine-learning-conference-featured-presentations-from-thought-leaders-within-academia">announcement</a>). Full texts are internal.</p>
   <ul class="ptable">
   {% for pub in pubs %}{% if pub.tier == "internal" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
   </ul>
+  <p class="site-note">* equal contribution.</p>
 </section>

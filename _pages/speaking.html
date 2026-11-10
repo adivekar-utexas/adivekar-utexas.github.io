@@ -6,13 +6,11 @@ redirect_from:
   - /talks/
 description: "Talks, oral presentations, lectures and interviews by Abhishek Divekar, with slides and video."
 lede: "Talks, oral presentations, lectures and interviews, with slides, photos and video."
+hero_image: "/images/home/stage-banner.jpg"
 ---
 {% include base_path %}
-{% comment %} Featured first (it opens on the stage), then newest first. {% endcomment %}
-{% assign sorted = site.talks | sort: "date" | reverse %}
-{% assign featured = sorted | where: "featured", true %}
-{% assign rest = sorted | where_exp: "t", "t.featured != true" %}
-{% assign talks = featured | concat: rest %}
+{% comment %} Newest first; the newest opens on the stage. {% endcomment %}
+{% assign talks = site.talks | sort: "date" | reverse %}
 <div class="talks wide">
   {% for t in talks %}{% include talk-stage.html t=t first=forloop.first %}{% endfor %}
 
