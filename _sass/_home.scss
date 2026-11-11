@@ -117,6 +117,8 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .home .news-tag--talk     { background: #f5f3ff; color: #6d28d9; border-color: #ddd6fe; }
 .home .news-tag--service  { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
 .home .news-tag--education{ background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+.home .news-tag--fulltime { background: #fff1e6; color: #b45309; border-color: #fdd2b0; }
+.home .news-tag--collaboration { background: #eef2ff; color: #4338ca; border-color: #c7d2fe; }
 .news-filter { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; margin-bottom: 14px; }
 .news-filter .news-tag { font-size: 12px; line-height: 24px; padding: 0 10px; }
 .news-filter .news-tag { opacity: 0.55; }
@@ -314,6 +316,12 @@ body { background: $page; color: $ink; }
 .home .card__title a:hover { color: $accent; text-decoration: none; }
 .card__text { margin: 0 0 6px; font-size: 14.5px; line-height: 1.55; color: $ink; }
 .card__meta { margin: 0 0 6px; font-size: 13px; line-height: 1.5; color: $ink-3; }
+.card__did { margin: 8px 0 0; font-size: 14px; line-height: 1.55; color: $ink-2; }
+.card__did-label {
+  display: inline-block; margin-right: 6px; padding: 0 8px; border-radius: 999px; vertical-align: 1px;
+  font-size: 11px; line-height: 18px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: $accent-ink; background: #eef7f4; border: 1px solid #b7ddd2;
+}
 .card__links { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
 
 .chip-link, .btn-pill {

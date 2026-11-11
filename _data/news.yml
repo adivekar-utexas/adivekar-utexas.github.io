@@ -1,6 +1,7 @@
 # News feed shown on the homepage (sorted by date automatically).
-# Fields: date (YYYY-MM-DD), tag (paper | talk | service | award | IOAI | education),
-#         text (one short line), and optional cta_text + cta_url (call-to-action link).
+# Fields: date (YYYY-MM-DD), tag (paper | fulltime | IOAI | collaboration | award | talk |
+#         service | education; labels live in news_tags.yml), text (one short line), and
+#         optional cta_text + cta_url (call-to-action link).
 - date: 2026-11-06
   tag: paper
   text: "TrojanShot (with Vijit Malik) published at CIKM 2026, Rome!"
@@ -66,11 +67,21 @@
   cta_text: "See the results"
   cta_url: "https://ioai-official.org/china-2025/results-2025/"
 - date: 2025-05-01
-  tag: service
+  tag: IOAI
   text: "Served on the Technical Committee of the ACM India AI Olympiad 2025."
+- date: 2025-04-01
+  tag: fulltime
+  text: "Became a [[TITLE]] at Amazon."
+  cta_text: "See my work history"
+  cta_url: "/#history"
 - date: 2025-02-01
-  tag: service
+  tag: collaboration
   text: "Joined the NSF-Simons AI Institute for Cosmic Origins (CosmicAI) as a Research Collaborator."
+- date: 2024-10-01
+  tag: fulltime
+  text: "Launched PRECISE in GlowRoad search, measuring search relevance with LLM judgments and few human labels."
+  cta_text: "See the launch"
+  cta_url: "/#shipped"
 - date: 2024-11-12
   tag: paper
   text: "SynthesizRR and CorrSynth accepted to EMNLP 2024 (main conference)!"

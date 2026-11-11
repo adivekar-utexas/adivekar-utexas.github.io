@@ -25,11 +25,14 @@ permalink: /llms.txt
 - [Press]({{ site.url }}/#press)
 - [Service]({{ site.url }}/#service)
 
+## Product launches (Amazon)
+{% for l in site.data.launches %}- {{ l.name }} ({{ l.year }}): {{ l.what }} Role: {{ l.did }}
+{% endfor %}
 ## Publications
 {% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for p in pubs %}- [{{ p.title }}]({{ site.url }}/#{{ p.urlslug }}): {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, acceptance rate {{ p.acceptancerate }}{% endif %}{% if p.role %}. Role: {{ p.role }}{% endif %}.{% if p.paperurl contains "http" %} Paper: {{ p.paperurl }}{% endif %}{% if p.pitch %} Summary: {{ p.pitch }}{% endif %}
 {% endfor %}
 ## News
-{% assign news = site.data.news | sort: "date" | reverse %}{% for item in news %}- {{ item.date | date: '%Y-%m-%d' }}: {{ item.text }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains '://' %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: site.url }}{% endif %}){% endif %}
+{% assign news = site.data.news | sort: "date" | reverse %}{% capture jobtitle %}{% include jobtitle %}{% endcapture %}{% for item in news %}- {{ item.date | date: '%Y-%m-%d' }}: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains '://' %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: site.url }}{% endif %}){% endif %}
 {% endfor %}
 ## Speaking
 {% assign talks = site.talks | sort: "date" | reverse %}{% for talk in talks %}- [{{ talk.title }}]({{ site.url }}/speaking/#{{ talk.urlslug }}): {{ talk.date | date: '%Y' }}{% unless talk.date_display == 'year' %}-{{ talk.date | date: '%m-%d' }}{% endunless %}, {{ talk.venue }}.{% if talk.videourl %} Video: {{ talk.videourl }}{% endif %}{% if talk.slidesurl %} Slides: {{ talk.slidesurl | prepend: site.url }}{% endif %}

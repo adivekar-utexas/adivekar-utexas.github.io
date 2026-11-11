@@ -1,11 +1,13 @@
 {% assign news = site.data.news | sort: "date" | reverse %}
 {% assign tags = news | map: "tag" | uniq %}
+{% assign labels = site.data.news_tags %}
+{% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 <section class="home-section" id="news" aria-labelledby="news-h">
   <div class="home-h2-row">
     <h2 id="news-h" class="home-h2">News</h2>
     <div class="news-filter" role="group" aria-label="Filter news">
       <button type="button" class="news-tag news-tag--all is-active" data-filter="all" aria-pressed="true">all</button>
-      {% for t in tags %}<button type="button" class="news-tag news-tag--{{ t }}" data-filter="{{ t }}" aria-pressed="false">{% if t == 'IOAI' %}AI Olympiad{% else %}{{ t }}{% endif %}</button>{% endfor %}
+      {% for t in tags %}<button type="button" class="news-tag news-tag--{{ t }}" data-filter="{{ t }}" aria-pressed="false">{{ labels[t] | default: t }}</button>{% endfor %}
     </div>
   </div>
   <div class="news-feed" tabindex="0" aria-label="News, newest first">
@@ -13,8 +15,8 @@
     {% for item in news %}
       <li class="news-item" data-tag="{{ item.tag }}">
         <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %Y" }}</time>
-        <button type="button" class="news-tag news-tag--{{ item.tag }}" data-filter="{{ item.tag }}" title="Show only {% if item.tag == 'IOAI' %}AI Olympiad{% else %}{{ item.tag }}{% endif %} news">{% if item.tag == 'IOAI' %}AI Olympiad{% else %}{{ item.tag }}{% endif %}</button>
-        <span class="news-text">{{ item.text }}{% if item.cta_url %} <a class="news-cta" href="{{ item.cta_url }}">{{ item.cta_text }} <span aria-hidden="true">→</span></a>{% endif %}</span>
+        <button type="button" class="news-tag news-tag--{{ item.tag }}" data-filter="{{ item.tag }}" title="Show only {{ labels[item.tag] | default: item.tag }} news">{{ labels[item.tag] | default: item.tag }}</button>
+        <span class="news-text">{{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} <a class="news-cta" href="{{ item.cta_url }}">{{ item.cta_text }} <span aria-hidden="true">→</span></a>{% endif %}</span>
       </li>
     {% endfor %}
     </ul>
