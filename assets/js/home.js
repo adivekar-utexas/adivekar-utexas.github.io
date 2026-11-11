@@ -46,7 +46,7 @@
   function updateTab() {
     var current = -1;
     sections.forEach(function (section, index) {
-      if (section && section.getBoundingClientRect().top <= 150) current = index;
+      if (section && section.getBoundingClientRect().top <= 170) current = index;
     });
     tabs.forEach(function (tab, index) {
       var active = index === current;

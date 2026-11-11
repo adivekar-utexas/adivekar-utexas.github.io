@@ -34,6 +34,6 @@ rows:
     org: "about 10% oral acceptance rate"
     sub: "For SynthesizRR."
     cta: {label: "See the paper", url: "#synthesizrr-amlc-2024"}
-  - when: "2017"
+  - when: "Aug 2017"
     title: "Winner, Amazon Machine Learning Challenge"
     org: "Chennai, out of 300 participants"

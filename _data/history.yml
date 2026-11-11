@@ -1,4 +1,4 @@
-# Homepage "Work history" rows, newest first. Months come from the CV
+# Homepage "Career progress" rows (education lives in education.yml), newest first. Months come from the CV
 # (personal-profile/modern-cv/resume-academic-cv) and the IOAI records.
 - when: "Apr 2025 to now"
   role: "[[TITLE]]"
@@ -21,10 +21,6 @@
 - when: "Oct 2019 to Nov 2021"
   role: "Applied Scientist II"
   org: "Amazon"
-- when: "Aug 2020 to May 2024"
-  role: "M.S. Computer Science (thesis)"
-  org: "UT Austin"
-  note: "Advised by Greg Durrett"
 - when: "Jul 2017 to Sep 2019"
   role: "Software Development Engineer"
   org: "Amazon"

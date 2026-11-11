@@ -2,6 +2,7 @@
 # (also the CSS class suffix and filter id); the value is what readers see.
 paper: "paper"
 fulltime: "Full-time"
+launch: "Product launch"
 IOAI: "AI Olympiad"
 collaboration: "Collaboration"
 award: "award"

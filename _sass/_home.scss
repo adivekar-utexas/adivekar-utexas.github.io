@@ -18,6 +18,7 @@ $accent-line: #c9d4e2;  // accent hairline
 $hover: #f1efea;        // light warm grey, never black
 $hover-line: #d6d2c9;
 $radius: 10px;
+$masthead-h: 60px;      // fixed header height; sticky bars sit below it
 $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 
 :root { color-scheme: light; }
@@ -120,6 +121,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .home .news-tag--service  { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
 .home .news-tag--education{ background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
 .home .news-tag--fulltime { background: #fff1e6; color: #b45309; border-color: #fdd2b0; }
+.home .news-tag--launch   { background: #ecfeff; color: #0e7490; border-color: #a5f3fc; }
 .home .news-tag--collaboration { background: #eef2ff; color: #4338ca; border-color: #c7d2fe; }
 .news-filter { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; margin-bottom: 14px; }
 .news-filter .news-tag { font-size: 12px; line-height: 24px; padding: 0 10px; }
@@ -133,7 +135,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .ptable { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .prow {
   position: relative; margin: 0; padding: 16px; background: $surface; border: 1px solid $line; border-radius: 14px;
-  scroll-margin-top: 120px; transition: box-shadow .16s ease, border-color .16s ease;
+  scroll-margin-top: 140px; transition: box-shadow .16s ease, border-color .16s ease;
 }
 .prow--expandable { padding-bottom: 26px; }
 .prow:hover, .prow.is-open { border-color: $hover-line; box-shadow: 0 6px 20px rgba(17, 24, 39, 0.08), 0 1px 3px rgba(17, 24, 39, 0.05); }
@@ -162,7 +164,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 }
 .prow__venue .pill { margin-left: 6px; font-size: 12px; line-height: 22px; }
 .publications-scholar { flex-shrink: 0; }
-.publications-note { display: inline-block; margin-left: 12px; font-family: $sans-serif; font-size: 13px; font-weight: 400; letter-spacing: normal; color: $ink-3; }
+.publications-note { margin: -8px 0 14px; font-size: 13px; color: $ink-3; }
 .prow.is-open .prow__thumb { display: none; }
 .prow.is-open .prow__main { grid-template-columns: minmax(0, 1fr); gap: 12px; }
 .prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; min-width: 0; }
@@ -239,7 +241,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .spage__lede { margin: 0 auto; max-width: 640px; font-size: 17px; line-height: 1.6; color: $ink-2; }
 
 .tabbar {
-  position: sticky; top: 57px; z-index: 10;
+  position: sticky; top: $masthead-h + 8px; z-index: 10;
   display: flex; flex-wrap: wrap; justify-content: center; gap: 4px;
   margin: 28px auto 36px; padding: 4px; width: fit-content; max-width: 100%;
   background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
@@ -256,16 +258,16 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 
 .spage__body { max-width: 693px; margin: 0 auto; font-size: 16px; line-height: 1.65; }
 .spage__body > h2, .spage__body h2 {
-  scroll-margin-top: 120px; margin: 48px 0 16px; padding: 0 0 8px; border-bottom: 1px solid $line;
+  scroll-margin-top: 140px; margin: 48px 0 16px; padding: 0 0 8px; border-bottom: 1px solid $line;
   font-family: $serif; font-weight: 500; font-size: 26px; letter-spacing: -0.01em; color: $ink;
 }
-.spage__body h3 { scroll-margin-top: 120px; margin: 28px 0 10px; font-size: 18px; font-weight: 600; color: $ink; }
+.spage__body h3 { scroll-margin-top: 140px; margin: 28px 0 10px; font-size: 18px; font-weight: 600; color: $ink; }
 .spage__body > h2:first-child { margin-top: 0; }
 .spage__body a { color: $accent; }
 .spage__body .wide { width: min(1040px, calc(100vw - 48px)); margin-left: 50%; transform: translateX(-50%); }
 @media (max-width: 760px) {
   .tabbar { position: static; justify-content: flex-start; border-radius: 14px; width: auto; }
-  .tabbar--home { position: sticky; top: 57px; }
+  .tabbar--home { position: sticky; top: $masthead-h + 8px; }
   .spage__head { text-align: left; }
 }
 
@@ -276,11 +278,15 @@ body { background: $page; color: $ink; }
   background: rgba(247, 246, 243, 0.9); backdrop-filter: saturate(180%) blur(10px);
   -webkit-backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid $line;
 }
-.greedy-nav { background: transparent; min-height: 56px; }
-.greedy-nav a { color: $ink-2; font-size: 14px; font-weight: 500; }
+/* Header is a fixed 60px tall; the sticky section bar sits just below it
+   (top: $masthead-h + 8px), so the header never covers the tabs. */
+.masthead__inner-wrap { padding: 0 1em; height: $masthead-h; display: flex; align-items: center; }
+.masthead__menu { width: 100%; }
+.greedy-nav { background: transparent; min-height: 0; }
+.greedy-nav a { color: $ink-2; font-size: 16.5px; font-weight: 500; padding: 6px 0; }
 .greedy-nav a:hover { color: $ink; }
 .greedy-nav .visible-links a:before { background: $ink; height: 2px; }
-.masthead__menu-item--lg a { font-family: $serif; font-size: 19px; font-weight: 600; color: $ink; letter-spacing: -0.01em; }
+.masthead__menu-item--lg a { font-family: $serif; font-size: 21px; font-weight: 600; color: $ink; letter-spacing: -0.01em; }
 .page__title, .page__content h2 { font-family: $serif; font-weight: 500; letter-spacing: -0.012em; color: $ink; }
 .page__content h2 { border-bottom-color: $line; }
 .page__content a, .archive a { color: $accent; }
@@ -294,7 +300,7 @@ body { background: $page; color: $ink; }
 
 /* ---- Shared components (sized to match the Writing page chips) ----------- */
 .home-intro { margin: -4px 0 16px; max-width: 760px; font-size: 15px; line-height: 1.6; color: $ink-2; }
-.home-section { scroll-margin-top: 120px; }
+.home-section { scroll-margin-top: 140px; }
 .tabbar--home {
   margin: 8px auto 40px; flex-wrap: nowrap; justify-content: flex-start;
   width: 100%; overflow-x: auto; scrollbar-width: thin;
@@ -517,7 +523,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(87, 83, 78, 0.6)
 
 /* ---- Publications subsection and award photos ---------------------------- */
 .home .home-h3--sub {
-  margin: 36px 0 8px; padding-top: 18px; border-top: 1px solid $line; scroll-margin-top: 120px;
+  margin: 36px 0 8px; padding-top: 18px; border-top: 1px solid $line; scroll-margin-top: 140px;
   font-family: $serif; font-size: 20px; font-weight: 500; letter-spacing: -0.005em; text-transform: none; color: $ink;
 }
 .award-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 16px; }

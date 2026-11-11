@@ -15,7 +15,8 @@ redirect_from:
 {% include home/hero.html jobtitle=jobtitle %}
 {% include home/news.html %}
 <nav class="tabbar tabbar--home" aria-label="Sections">
-  <a class="tab" href="#history">Work history</a>
+  <a class="tab" href="#history">Career progress</a>
+  <a class="tab" href="#education">Education</a>
   <a class="tab" href="#publications">Publications</a>
   <a class="tab" href="#shipped">Product launches</a>
   <a class="tab" href="#ioai">AI Olympiad</a>
@@ -26,6 +27,7 @@ redirect_from:
   <a class="tab" href="#alumni">Alumni</a>
 </nav>
 {% include home/history.html %}
+{% include home/education.html %}
 {% include home/papers.html %}
 {% include home/production.html %}
 {% include home/ioai.html %}
