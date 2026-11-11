@@ -5,6 +5,7 @@
     <p class="hero__title">{{ include.jobtitle }}, Amazon</p>
     {% for para in site.data.home.hero %}<p class="hero__lede">{{ para | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     {% endfor %}
+    <p class="hero__impact">{{ site.data.home.impact | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     <ul class="icon-links" aria-label="Profiles">
       <li><a href="{{ p.google_scholar }}" title="Google Scholar" aria-label="Google Scholar">{% include icons/scholar.svg %}<span>Scholar</span></a></li>
       <li><a href="https://github.com/adivekar-utexas" title="GitHub" aria-label="GitHub">{% include icons/github.svg %}<span>GitHub</span></a></li>

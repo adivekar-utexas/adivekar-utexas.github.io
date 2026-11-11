@@ -5,8 +5,8 @@ cards:
     title: "Chair, IOAI² AI Models Track"
     url: "https://ioai-official.org/ai-models-track/"
     text:
-      - "The first track at an international science olympiad where fully autonomous AI systems attempt the same tasks as the students. 15 AI systems from 14 organizations in 5 countries took part, including Sakana AI, MBZUAI IFM, Shanghai AI Laboratory, Peking University, Westlake University and UCLA."
-      - "I wrote the track's official statement and am lead author, with IOAI Board Chair Elena Marinova, of the inaugural review. The International Jury's final report at the closing ceremony presented the track and gave special thanks to me and to Kaggle."
+      - "**I created and chaired the inaugural IOAI² AI Models Track** and led its organizing committee. I designed the competition format and rules, and recruited **14 AI research organizations from 5 countries** (United States, China, United Kingdom, Japan and the UAE), including Sakana AI, MBZUAI IFM, Shanghai AI Laboratory, Peking University, Westlake University and UCLA. Their 15 autonomous AI systems competed on the same six tasks as students from 108 countries and territories."
+      - "It is the first track at an international science olympiad where fully autonomous AI systems compete alongside the students. I wrote the track's official statement and am lead author, with IOAI Board Chair Elena Marinova, of the inaugural review. The International Jury's final report at the closing ceremony presented the track and gave special thanks to me and to Kaggle."
     meta: "Also: member of the International Scientific Committee and the IOAI Jury"
     links:
       - {label: "Report", url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"}
@@ -19,7 +19,7 @@ cards:
     title: "Team Leader, Team India"
     url: "https://ioai-official.org/china-2025/results-2025/"
     text:
-      - "India's debut: **3 Gold, 2 Silver and 1 Bronze**, plus one Honourable Mention, placing 3rd of 53 countries and regions by medal table. I helped select, mentor and coach the eight olympians, ran timed six-hour mock contests, and represented India at the IOAI General Assembly. I also designed the team's peacock logo, one feather per olympian."
+      - "**I led Team India at its IOAI debut:** I helped select, mentor and coach the eight olympians, ran timed six-hour mock contests, and represented India at the IOAI General Assembly. The team won **3 Gold, 2 Silver and 1 Bronze**, plus one Honourable Mention, placing 3rd of 53 countries and regions by medal table. I also designed the team's peacock logo, one feather per olympian."
     meta: "Golds: Roumak Das (rank 11), Arjun Tyagi (18), Soham Sen (19). Silvers: Rayan Banerjee (37), Samik Goyal (41). Bronze: Himaneesh Sompalle (77). Ranks and medal-table position computed from the official results."
     links:
       - {label: "Official results", url: "https://ioai-official.org/china-2025/results-2025/"}
@@ -29,7 +29,7 @@ cards:
   - kicker: "2025"
     title: "Technical Committee, ACM India AI Olympiad (INAIO 2025)"
     text:
-      - "Selected the national team: curated Stage-2 problems attempted by 200+ students, and coached and judged the 22 Stage-4 finalists at IIIT Hyderabad."
+      - "**I helped select India's national team:** I curated the Stage-2 problems attempted by 200+ students, and coached and judged the 22 Stage-4 finalists at IIIT Hyderabad."
     image: "logos/acm.png"
     image_alt: "ACM logo"
     image_style: "logo"

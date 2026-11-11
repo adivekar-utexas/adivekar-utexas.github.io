@@ -1,0 +1,5 @@
+{% comment %}
+  Sets `news_sorted`: site.data.news newest first; items on the same date are
+  ordered by `order` (higher first, default 0). Shared by the homepage and
+  llms.txt so both list news identically.
+{% endcomment %}{% assign news_keys = "" | split: "" %}{% for item in site.data.news %}{% assign o = item.order | default: 0 | plus: 0 %}{% assign o_pad = o | plus: 100 %}{% capture k %}{{ item.date | date: "%Y%m%d" }}-{{ o_pad }}-{{ forloop.index0 | plus: 1000 }}{% endcapture %}{% assign news_keys = news_keys | push: k %}{% endfor %}{% assign news_keys = news_keys | sort | reverse %}{% assign news_sorted = "" | split: "" %}{% for k in news_keys %}{% assign idx = k | split: "-" | last | minus: 1000 %}{% assign news_sorted = news_sorted | push: site.data.news[idx] %}{% endfor %}

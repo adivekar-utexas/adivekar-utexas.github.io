@@ -5,10 +5,9 @@
     <li class="card">
       <p class="card__kicker">{{ l.year | default: "Amazon" }}</p>
       <h3 class="card__title">{% if l.link %}<a href="{{ l.link }}">{{ l.name }}</a>{% else %}{{ l.name }}{% endif %}</h3>
-      <p class="card__text">{{ l.what }}</p>
       <p class="card__did"><span class="card__did-label">My role</span> {{ l.did }}</p>
+      <p class="card__text card__text--after">{{ l.what }}</p>
     </li>
   {% endfor %}
   </ul>
-  <p class="home-intro">{{ site.data.home.launches_note | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
 </section>

@@ -1,4 +1,4 @@
-{% assign news = site.data.news | sort: "date" | reverse %}
+{% include news-sorted.html %}{% assign news = news_sorted %}
 {% assign tags = news | map: "tag" | uniq %}
 {% assign labels = site.data.news_tags %}
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}

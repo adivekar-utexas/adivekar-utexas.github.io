@@ -52,6 +52,7 @@ tabs:
 ## Honors
 
 - Top 7 GenAI Scientists in India, Analytics Vidhya AV Luminary Awards, DataHack Summit 2025.
+- Top 7 GenAI Community Contributors, Analytics Vidhya, DataHack Summit 2025.
 - Winner (out of 300 participants), Amazon Machine Learning Challenge, Chennai, 2017.
 - Area Chair, Amazon Machine Learning Conference 2025.
 - Reviewer / PC member: ACL, EMNLP, ICLR, AAAI, COLM, WSDM, SIGIR, WWW.

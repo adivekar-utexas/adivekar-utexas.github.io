@@ -15,12 +15,14 @@ permalink: /llms.txt
 
 {% for para in site.data.home.hero %}{{ para }}
 
-{% endfor %}Links: [Google Scholar]({{ site.data.profile.google_scholar }}), [GitHub](https://github.com/adivekar-utexas), [LinkedIn](https://www.linkedin.com/in/ardivekar), [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf).
+{% endfor %}{{ site.data.home.impact }}
+
+Links: [Google Scholar]({{ site.data.profile.google_scholar }}), [GitHub](https://github.com/adivekar-utexas), [LinkedIn](https://www.linkedin.com/in/ardivekar), [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf).
 
 Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/speaking/) · [CV]({{ u }}/cv/) (text version: {{ u }}/curriculum-vitae/)
 
 ## News
-{% assign news = site.data.news | sort: "date" | reverse %}{% for item in news %}- {{ item.date | date: "%b %Y" }} [{{ site.data.news_tags[item.tag] | default: item.tag }}]: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains "://" %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: u }}{% endif %}){% endif %}
+{% include news-sorted.html %}{% for item in news_sorted %}- {{ item.date | date: "%b %Y" }} [{{ site.data.news_tags[item.tag] | default: item.tag }}]: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains "://" %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: u }}{% endif %}){% endif %}
 {% endfor %}
 ## Work history
 {% for h in site.data.history %}- {{ h.when }}: {{ h.role | replace: "[[TITLE]]", jobtitle }}, {{ h.org }}{% if h.note %}. {{ h.note }}{% endif %}
@@ -44,10 +46,8 @@ Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/
 {% for p in pubs %}{% if p.tier == "internal" %}{% capture authors %}{% include authors.html citation=p.citation %}{% endcapture %}{% assign au = authors | strip_html | strip_newlines | strip %}{% assign au_last = au | slice: -1 %}{% if au_last == "." %}{% assign au_n = au.size | minus: 1 %}{% assign au = au | slice: 0, au_n %}{% endif %}- {{ p.title }}. {{ au }}. {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, {{ p.acceptancerate }} acceptance{% endif %}.{% if p.pitch %} TL;DR: {{ p.pitch }}{% endif %}
 {% endif %}{% endfor %}
 ## Product launches
-{% for l in site.data.launches %}- {{ l.name }} ({{ l.year }}): {{ l.what }} My role: {{ l.did }}
+{% for l in site.data.launches %}- {{ l.name }} ({{ l.year }}). My role: {{ l.did }} {{ l.what }}
 {% endfor %}
-{{ site.data.home.launches_note }}
-
 ## AI Olympiad
 {{ site.data.ioai.intro }}
 {% for c in site.data.ioai.cards %}

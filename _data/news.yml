@@ -1,7 +1,8 @@
 # News feed shown on the homepage (sorted by date automatically).
 # Fields: date (YYYY-MM-DD), tag (paper | fulltime | IOAI | collaboration | award | talk |
-#         service | education; labels live in news_tags.yml), text (one short line), and
-#         optional cta_text + cta_url (call-to-action link).
+#         service | education; labels live in news_tags.yml), text (one short line),
+#         optional cta_text + cta_url (call-to-action link), and optional order:
+#         a tie-breaker for items on the same date (higher shows first).
 - date: 2026-11-06
   tag: paper
   text: "TrojanShot (with Vijit Malik) published at CIKM 2026, Rome!"
@@ -39,6 +40,7 @@
   cta_text: "See my AI Olympiad work"
   cta_url: "/#ioai"
 - date: 2026-01-24
+  order: 2
   tag: award
   text: "PRECISE selected for an oral presentation at AAAI 2026 (Innovative Applications of AI track, 19.2% acceptance), Singapore!"
   cta_text: "Read the paper"
@@ -49,9 +51,15 @@
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2601.18777"
 - date: 2025-11-16
+  order: 3
   tag: award
   text: "Named one of the Top 7 GenAI Scientists in India by Analytics Vidhya at DataHack Summit 2025."
 - date: 2025-11-16
+  order: 2
+  tag: award
+  text: "Also named one of the Top 7 GenAI Community Contributors at the same DataHack Summit 2025."
+- date: 2025-11-16
+  order: 1
   tag: talk
   text: "Invited talk on synthetic data generation at DataHack Summit 2025."
   cta_text: "View talk photos"
