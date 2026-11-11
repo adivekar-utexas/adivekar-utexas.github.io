@@ -17,7 +17,6 @@ titles:
 
 employer: "Amazon"
 employer_url: "https://www.amazon.science/"
-country: "IN"
 google_scholar: "https://scholar.google.com/citations?user=1Sf2oM4AAAAJ"
 one_liner: "[[TITLE]] at Amazon working on LLM evaluation, synthetic data generation and LLM red-teaming."
 

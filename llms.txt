@@ -11,13 +11,11 @@ permalink: /llms.txt
 
 > {{ site.description }}
 
-{{ site.data.profile.name }}: {{ jobtitle }}, {{ site.data.profile.employer }} · {{ site.data.profile.city }}, India.
+{{ site.data.profile.name }}: {{ jobtitle }}, {{ site.data.profile.employer }}.
 
 {% for para in site.data.home.hero %}{{ para }}
 
-{% endfor %}{{ site.data.home.impact }}
-
-Links: [Google Scholar]({{ site.data.profile.google_scholar }}), [GitHub](https://github.com/adivekar-utexas), [LinkedIn](https://www.linkedin.com/in/ardivekar), [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf).
+{% endfor %}Links: [Google Scholar]({{ site.data.profile.google_scholar }}), [GitHub](https://github.com/adivekar-utexas), [LinkedIn](https://www.linkedin.com/in/ardivekar), [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf).
 
 Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/speaking/) · [CV]({{ u }}/cv/) (text version: {{ u }}/curriculum-vitae/)
 

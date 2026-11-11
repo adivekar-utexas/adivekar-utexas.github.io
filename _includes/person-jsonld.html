@@ -38,7 +38,6 @@
         {% for m in p.memberships %}{ "@type": "Organization", "name": {{ m.name | jsonify }}{% if m.url %}, "url": {{ m.url | jsonify }}{% endif %} }{% unless forloop.last %},{% endunless %}{% endfor %}
       ],
       "knowsAbout": {{ p.research_areas | jsonify }},
-      "address": { "@type": "PostalAddress", "addressLocality": {{ p.city | jsonify }}, "addressCountry": {{ p.country | jsonify }} },
       "sameAs": {{ site.social.links | jsonify }}
     }{% assign public_pubs = site.publications | where_exp: "pub", "pub.listed != false" | sort: "date" | reverse %}{% for pub in public_pubs %}{% if pub.paperurl and pub.external %},
     {
