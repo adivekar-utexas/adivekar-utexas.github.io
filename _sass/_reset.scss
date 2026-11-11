@@ -24,14 +24,17 @@ body { margin: 0; }
 
 /* Selected elements */
 
+/* Highlight: white text on a soft slate grey (never black). Kept as two
+   separate rules: a combined selector list is dropped by browsers that
+   don't know ::-moz-selection. */
 ::-moz-selection {
   color: #fff;
-  background: #000;
+  background: #6b7683;
 }
 
 ::selection {
   color: #fff;
-  background: #000;
+  background: #6b7683;
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */

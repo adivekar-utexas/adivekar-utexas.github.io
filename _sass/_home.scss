@@ -188,7 +188,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__fig img { display: block; width: 100%; height: auto; }
 .prow__venue-full { margin: 0 0 12px; font-size: 13px; color: $ink-3; }
 .prow__venue-full .pill { margin-left: 6px; }
-.prow__abs-h { margin: 0 0 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: $ink-3; }
+.prow__abs-h { margin: 0 0 6px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: $ink-3; }
 .prow__abs { margin: 0; font-size: 13.5px; line-height: 1.65; color: $ink-2; text-align: left; }
 .ptable { padding-bottom: 6px; }
 .ptable .prow--expandable { margin-bottom: 10px; }
@@ -454,7 +454,6 @@ body { background: $page; color: $ink; }
   font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
 }
 .code-copy:hover { background: $hover; border-color: $hover-line; color: $ink; }
-::selection, ::-moz-selection { color: #14243a; background: #cddcf0; }
 .post__body code { font-size: 0.88em; }
 .post__body hr { margin: 36px 0; border: 0; border-top: 1px solid $line; }
 .post__body table { font-size: 14.5px; }

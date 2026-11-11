@@ -12,8 +12,8 @@ body { background: #f7f6f3; color: $text-color; }
 .greedy-nav .visible-links a:before { background: $info-color; }
 .page__footer { background: #f5f5f4; border-top: 1px solid #e7e4dd; color: #44403c; }
 
-a { color: $info-color; text-decoration-color: rgba(154, 52, 18, 0.35); text-underline-offset: 2px; }
-a:hover { color: #7c2d12; }
+a { color: $info-color; text-decoration-color: rgba(31, 78, 121, 0.32); text-underline-offset: 2px; }
+a:hover { color: #163a5c; }
 .page__content h2 {
   border-bottom: 1px solid #e7e4dd; padding-bottom: 0.3em; margin-top: 1.6em;
   font-weight: 600; color: #1c1917; font-size: 1.35em;
@@ -21,64 +21,12 @@ a:hover { color: #7c2d12; }
 .author__avatar img { border-radius: 12px; }
 .btn--inverse { color: #44403c; border-color: #c9c0b2; }
 
-/* Homepage quick links */
-.home-links { font-size: 0.95em; }
+/* Homepage quick links handled in _home.scss (icon links). */
 
-/* ---- News feed (scrollable) ------------------------------------------- */
-.news-feed {
-  max-height: 22rem; overflow-y: auto;
-  border: 1px solid #e7e4dd; border-radius: 10px; background: #ffffff;
-  padding: 0.25rem 1rem; margin-bottom: 1.5rem;
-  scrollbar-width: thin;
-  mask-image: linear-gradient(to bottom, #000 88%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent);
-}
-.news-feed:focus { outline: 2px solid rgba(154, 52, 18, 0.35); }
-.news-feed ul { list-style: none; margin: 0; padding: 0; }
-.news-item {
-  display: grid; grid-template-columns: 4.6rem 5.4rem 1fr; gap: 0.6rem;
-  align-items: baseline; padding: 0.6rem 0; border-bottom: 1px dashed #e7e4dd;
-  font-size: 0.92em; line-height: 1.5;
-}
-.news-item:last-child { border-bottom: none; padding-bottom: 1.4rem; }
-.news-item time { color: #6b645c; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.news-tag {
-  justify-self: start; font-size: 0.72em; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.04em; padding: 0.1rem 0.45rem; border-radius: 999px;
-  background: #f5f5f4; color: #44403c; border: 1px solid #e7e4dd;
-}
-.news-tag--paper    { background: #fff7ed; color: #95482e; border-color: #fed7aa; }
-.news-tag--IOAI     { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
-.news-tag--award    { background: #fefce8; color: #a16207; border-color: #fde68a; }
-.news-tag--talk     { background: #f5f3ff; color: #6d28d9; border-color: #ddd6fe; }
-.news-tag--service  { background: #f0fdfa; color: #0f766e; border-color: #99f6e4; }
-@media (max-width: 600px) {
-  .news-item { grid-template-columns: 1fr; gap: 0.15rem; }
-}
+/* ---- News feed: all rules live in _home.scss (.home .news-feed) ---------- */
 
-/* ---- Compact publication list ----------------------------------------- */
+/* ---- Compact publication list (legacy; cards use .prow in _home.scss) ---- */
 .section-note, .site-note { font-size: 0.85em; color: #6b645c; }
-.pub-list { list-style: none; margin-left: 0; padding-left: 0; }
-.pub-item { margin-bottom: 1rem; line-height: 1.45; }
-.pub-title { font-weight: 600; }
-.pub-title a { color: #1c1917; text-decoration: none; }
-.pub-title a:hover { color: $info-color; text-decoration: underline; }
-.pub-venue {
-  display: inline-block; margin-left: 0.4rem; font-size: 0.75em; font-weight: 600;
-  padding: 0.05rem 0.45rem; border-radius: 6px; background: #f5f5f4; color: #44403c;
-  border: 1px solid #e7e4dd; vertical-align: 0.1em;
-}
-.pub-authors { font-size: 0.9em; color: #44403c; }
-.pub-authors u { text-decoration: none; font-weight: 600; color: #1c1917; }
-.pub-links { font-size: 0.85em; }
-
-/* ---- Talks: images under the header, 75% width --------------------------- */
-.talk-teaser { margin: 0.75em 0 0.5em; }
-.talk-teaser img {
-  display: block; width: 75%; max-width: 75%; height: auto;
-  border-radius: 8px; border: 1px solid #e7e4dd;
-}
-@media (max-width: 600px) { .talk-teaser img { width: 100%; max-width: 100%; } }
 
 /* ---- Writing (Eugene Yan-style list) ------------------------------------ */
 .tag-filter { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 1.5rem; }

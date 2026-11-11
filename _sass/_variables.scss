@@ -64,7 +64,8 @@ $primary-color              : #57534e;
 $success-color              : #62c462;
 $warning-color              : #f89406;
 $danger-color               : #ee5f5b;
-$info-color                 : #9a3412;
+/* One muted ink-blue accent for the whole site (see _home.scss). */
+$info-color                 : #1f4e79;
 
 /* brands */
 $behance-color              : #1769FF;

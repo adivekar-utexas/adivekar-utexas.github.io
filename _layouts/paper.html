@@ -19,7 +19,7 @@ layout: null
 </head>
 <body>
   <h1>{{ page.title }}</h1>
-  <p>{{ page.venue_short | default: page.venue }}{% if page.acceptancetype %}, {{ page.acceptancetype }}{% endif %}{% if page.acceptancerate %}, {{ page.acceptancerate }} acceptance{% endif %}</p>
+  <p>{{ page.venue_short | default: page.venue }}{% if page.acceptancetype %}, {{ page.acceptancetype }}{% endif %}{% if page.acceptancerate %}, {{ page.acceptancerate }} acceptance rate{% endif %}</p>
   {% if page.tier != 'internal' and page.excerpt %}<p>{{ page.excerpt | strip_html }}</p>{% endif %}
   <p><a href="{{ target }}">Open this paper on the homepage</a>{% if page.paperurl contains "http" %} or read the <a href="{{ page.paperurl }}">paper</a>{% endif %}.</p>
   <script>location.replace({{ target | jsonify }});</script>

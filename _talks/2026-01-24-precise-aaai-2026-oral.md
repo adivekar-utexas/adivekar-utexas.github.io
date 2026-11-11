@@ -10,7 +10,7 @@ location: "Singapore"
 teaserurl: 'precise-overview.png'
 teaser_alt: "PRECISE overview: combining a small set of human labels with LLM judgments to estimate ranking metrics"
 paperurl: 'https://arxiv.org/abs/2601.18777'
-excerpt: "Oral presentation in the Innovative Applications of AI track (19.2% acceptance). PRECISE combines a small set of human relevance labels with LLM judgments, using prediction-powered inference to estimate ranking metrics such as Precision@K while correcting for LLM-judge bias."
+excerpt: "Oral presentation in the Innovative Applications of AI track (19.2% acceptance rate). PRECISE combines a small set of human relevance labels with LLM judgments, using prediction-powered inference to estimate ranking metrics such as Precision@K while correcting for LLM-judge bias."
 teaser_fit: "contain"
 tags: [LLM evaluation, LLM-as-a-judge, oral]
 ---

@@ -27,7 +27,7 @@
     - {label: "GitHub", url: "https://github.com/adivekar-utexas/when-gradients-collide"}
     - {label: "Project", url: "https://textgrad-failure-modes.github.io/"}
 - name: "IOAI² AI Models Track"
-  image: "../ioai-2026-founding-ai-participants.jpg"
+  image: "ioai-models-track.jpg"
   what: "Task adaptations, scoring, competition rules and Jury precedents, for reuse by other olympiads."
   links:
     - {label: "GitHub", url: "https://github.com/IOAI-official/IOAI-AI-Models-Track"}
