@@ -1,6 +1,11 @@
 # News feed shown on the homepage (sorted by date automatically).
 # Fields: date (YYYY-MM-DD), tag (paper | talk | service | award | IOAI | education),
 #         text (one short line), and optional cta_text + cta_url (call-to-action link).
+- date: 2026-11-06
+  tag: paper
+  text: "TrojanShot (with Vijit Malik) published at CIKM 2026, Rome!"
+  cta_text: "Read the paper"
+  cta_url: "https://dl.acm.org/doi/10.1145/3799682.3841000"
 - date: 2026-11-01
   tag: paper
   text: "VESTA accepted to NeurIPS 2026 (main track)!"

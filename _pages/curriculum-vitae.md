@@ -30,7 +30,7 @@ tabs:
 - **{% include jobtitle %} (L6), Amazon**. Dec 2021 to present.
   - Lead research and applied-science projects tracked at VP and SVP level, and advise teams across Amazon businesses. Scientific contributions added USD 550M+ to Amazon revenue (2021 to 2026).
   - Red-teaming lead for India-specific compliance policies for the India launch of Amazon Rufus, an LLM-powered shopping assistant used by 100M+ customers.
-  - First-author papers at NeurIPS 2026, AAAI 2026 (oral) and EMNLP 2024 (two papers), and orals at the Amazon Machine Learning Conference 2024 and 2025.
+  - First-author papers at NeurIPS 2026, CIKM 2026, AAAI 2026 (oral) and EMNLP 2024 (two papers), and orals at the Amazon Machine Learning Conference 2024 and 2025.
 - **Research Collaborator, NSF-Simons AI Institute for Cosmic Origins (CosmicAI)**. Feb 2025 to present.
   - LLM and vision-language-model agents for astronomical modeling in the "Explorable Universe" project, with UT Austin, NYU and UCLA ([VESTA, NeurIPS 2026](/#vesta-neurips-2026)).
 - **Applied Scientist II, Amazon, India Machine Learning**. Oct 2019 to Nov 2021.
