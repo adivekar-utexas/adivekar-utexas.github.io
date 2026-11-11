@@ -16,5 +16,3 @@ tags: [LLM evaluation, LLM-as-a-judge, oral]
 ---
 
 **Paper:** [arXiv:2601.18777](https://arxiv.org/abs/2601.18777)
-
-<!-- TODO(Abhishek): confirm the exact presentation date and add slides/recording links. -->

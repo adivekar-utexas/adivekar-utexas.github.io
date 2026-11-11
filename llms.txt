@@ -17,7 +17,7 @@ permalink: /llms.txt
 
 {% endfor %}Links: [Google Scholar]({{ site.data.profile.google_scholar }}), [GitHub](https://github.com/adivekar-utexas), [LinkedIn](https://www.linkedin.com/in/ardivekar), [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf).
 
-Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/speaking/) · [CV]({{ u }}/cv/) (text version: {{ u }}/curriculum-vitae/)
+Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/speaking/) · [CV]({{ u }}/cv/)
 
 ## News
 {% include news-sorted.html %}{% for item in news_sorted %}- {{ item.date | date: "%b %Y" }} [{{ site.data.news_tags[item.tag] | default: item.tag }}]: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains "://" %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: u }}{% endif %}){% endif %}
@@ -71,10 +71,6 @@ Photos ({{ site.data.awards.photos_note }}):
 {% endfor %}
 ## Service
 {% for r in site.data.service %}- {{ r.when }}: {{ r.title }}, {{ r.org }}{% if r.sub %}. {{ r.sub }}{% endif %}{% if r.cta %} [{{ r.cta.label }}]({{ r.cta.url }}){% endif %}
-{% endfor %}
-## Alumni
-{{ site.data.alumni.intro }}
-{% for p in site.data.alumni.people %}- {% if p.url %}[{{ p.name }}]({{ p.url }}){% else %}{{ p.name }}{% endif %}: {{ p.now }} {{ p.with_me }}
 {% endfor %}
 ## Writing
 {{ site.pages | where: "url", "/writing/" | map: "lede" | first }}
