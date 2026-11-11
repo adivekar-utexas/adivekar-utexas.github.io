@@ -8,8 +8,8 @@ body { background: #f7f6f3; color: $text-color; }
 .masthead { background: #f7f6f3; border-bottom: 1px solid #e7e4dd; }
 .greedy-nav { background: transparent; }
 .greedy-nav a { color: #44403c; font-weight: 500; }
-.greedy-nav a:hover { color: $info-color; }
-.greedy-nav .visible-links a:before { background: $info-color; }
+.greedy-nav a:hover { color: #44403c; }
+.greedy-nav .visible-links a:before { background: currentColor; }
 .page__footer { background: #f5f5f4; border-top: 1px solid #e7e4dd; color: #44403c; }
 
 a { color: $info-color; text-decoration-color: rgba(31, 78, 121, 0.32); text-underline-offset: 2px; }
