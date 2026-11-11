@@ -1,7 +1,7 @@
 # Homepage "AI Olympiad" section. Rendered by _includes/home/ioai.html and llms.txt.
-intro: "The [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/) is an annual science olympiad for high-school students. Its 2026 edition in Astana, Kazakhstan had 108 countries and territories represented."
+intro: "The [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/) is an annual science olympiad for high-school students. Its 2026 edition in Astana, Kazakhstan, had 108 countries and territories represented."
 cards:
-  - kicker: "IOAI 2026 · Astana"
+  - kicker: "IOAI 2026 · Astana, Kazakhstan"
     title: "Chair, IOAI² AI Models Track"
     url: "https://ioai-official.org/ai-models-track/"
     text:
@@ -15,7 +15,7 @@ cards:
     image: "ioai-2026-founding-ai-participants.jpg"
     image_alt: "The founding AI participants of the IOAI² AI Models Track: logos of the 15 participating AI labs and teams"
     image_style: "wide"
-  - kicker: "IOAI 2025 · Beijing"
+  - kicker: "IOAI 2025 · Beijing, China"
     title: "Team Leader, Team India"
     url: "https://ioai-official.org/china-2025/results-2025/"
     text:
@@ -26,7 +26,7 @@ cards:
       - {label: "Press coverage", url: "#press"}
     image: "ioai-2025-team-india-logo.png"
     image_alt: "Team India IOAI 2025 logo: a peacock with eight feathers"
-  - kicker: "2025"
+  - kicker: "INAIO 2025 · Hyderabad, India"
     title: "Technical Committee, ACM India AI Olympiad (INAIO 2025)"
     text:
       - "**I helped select India's national team:** I curated the Stage-2 problems attempted by 200+ students, and coached and judged the 22 Stage-4 finalists at IIIT Hyderabad."

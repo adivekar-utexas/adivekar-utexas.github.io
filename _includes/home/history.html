@@ -1,19 +1,14 @@
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 <section class="home-section" id="history" aria-labelledby="history-h">
   <div class="home-h2-row">
-    <h2 id="history-h" class="home-h2">Career progress</h2>
+    <h2 id="history-h" class="home-h2">Career</h2>
     <a class="more-link" href="/cv/">Full CV</a>
   </div>
+  {% for g in site.data.history %}
+  <h3 class="home-h3" id="career-{{ g.group | slugify }}">{{ g.group }}</h3>
   <ul class="rows">
-  {% for h in site.data.history %}
-    <li class="row">
-      <span class="row__when">{{ h.when }}</span>
-      <span class="row__main">
-        <span class="row__title">{{ h.role | replace: "[[TITLE]]", jobtitle }}</span><span class="row__org"> · {{ h.org }}</span>
-        {% if h.note %}<span class="row__sub">{{ h.note }}</span>{% endif %}
-      </span>
-    </li>
-  {% endfor %}
+  {% for r in g.rows %}{% assign t = r.title | replace: "[[TITLE]]", jobtitle %}{% include home/row.html r=r title=t %}{% endfor %}
   </ul>
+  {% endfor %}
   <p class="site-note">{{ site.data.home.history_note }}</p>
 </section>

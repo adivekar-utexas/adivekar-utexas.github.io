@@ -16,7 +16,7 @@
     btn.setAttribute('aria-label', open ? 'Hide figure and abstract' : 'Show figure and abstract');
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && card.animate) {
       var after = body.getBoundingClientRect();
-      var options = { duration: 300, easing: 'cubic-bezier(.2, .7, .2, 1)' };
+      var options = { duration: 600, easing: 'cubic-bezier(.2, .7, .2, 1)' };
       var resize = card.animate([{ height: height + 'px' }, { height: card.getBoundingClientRect().height + 'px' }], options);
       card.classList.add('is-animating');
       resize.onfinish = resize.oncancel = function () { card.classList.remove('is-animating'); };

@@ -167,7 +167,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .publications-note { margin: -8px 0 14px; font-size: 13px; color: $ink-3; }
 .prow.is-open .prow__thumb { display: none; }
 .prow.is-open .prow__main { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-.prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; min-width: 0; }
+.prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; }
 .prow.is-animating { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
@@ -183,7 +183,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   transition: background .12s ease, border-color .12s ease, color .12s ease;
 }
 .prow__toggle:hover { background: $hover; border-color: $hover-line; color: $ink; }
-.prow__toggle svg { transition: transform .18s ease; }
+.prow__toggle svg { transition: transform .36s ease; }
 .prow.is-open .prow__toggle svg { transform: rotate(180deg); }
 .prow__more { margin: 18px auto 4px; max-width: 760px; padding-top: 18px; border-top: 1px solid $line; text-align: center; }
 .prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
@@ -283,10 +283,10 @@ body { background: $page; color: $ink; }
 .masthead__inner-wrap { padding: 0 1em; height: $masthead-h; display: flex; align-items: center; }
 .masthead__menu { width: 100%; }
 .greedy-nav { background: transparent; min-height: 0; }
-.greedy-nav a { color: $ink-2; font-size: 16.5px; font-weight: 500; padding: 6px 0; }
+.greedy-nav a { color: $ink-2; font-size: 15.5px; font-weight: 500; padding: 6px 0; }
 .greedy-nav a:hover { color: $ink; }
 .greedy-nav .visible-links a:before { background: $ink; height: 2px; }
-.masthead__menu-item--lg a { font-family: $serif; font-size: 21px; font-weight: 600; color: $ink; letter-spacing: -0.01em; }
+.masthead__menu-item--lg a { font-family: $serif; font-size: 20px; font-weight: 600; color: $ink; letter-spacing: -0.01em; }
 .page__title, .page__content h2 { font-family: $serif; font-weight: 500; letter-spacing: -0.012em; color: $ink; }
 .page__content h2 { border-bottom-color: $line; }
 .page__content a, .archive a { color: $accent; }
@@ -301,11 +301,18 @@ body { background: $page; color: $ink; }
 /* ---- Shared components (sized to match the Writing page chips) ----------- */
 .home-intro { margin: -4px 0 16px; max-width: 760px; font-size: 15px; line-height: 1.6; color: $ink-2; }
 .home-section { scroll-margin-top: 140px; }
+/* Home section bar: one row of evenly spread tabs, wider than the 1040px
+   column so all nine fit with no scrollbar. Wraps (never scrolls) on narrow screens. */
 .tabbar--home {
-  margin: 8px auto 40px; flex-wrap: nowrap; justify-content: flex-start;
-  width: 100%; overflow-x: auto; scrollbar-width: thin;
+  margin: 8px auto 40px; flex-wrap: nowrap; justify-content: space-between; gap: 2px;
+  width: min(1180px, calc(100vw - 32px)); max-width: none; overflow: visible;
+  margin-left: calc((100% - min(1180px, 100vw - 32px)) / 2);
 }
-.tabbar--home .tab { flex: none; height: 32px; padding: 0 12px; font-size: 13px; }
+.tabbar--home .tab { flex: 1 1 auto; justify-content: center; height: 34px; padding: 0 10px; font-size: 13.5px; }
+@media (max-width: 1100px) {
+  .tabbar--home { flex-wrap: wrap; justify-content: center; border-radius: 18px; }
+  .tabbar--home .tab { flex: 0 0 auto; height: 30px; font-size: 13px; }
+}
 
 .cards { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .cards--3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -315,9 +322,9 @@ body { background: $page; color: $ink; }
 }
 .card:hover { border-color: $hover-line; box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08), 0 1px 3px rgba(16, 24, 40, 0.06); }
 .card--with-img { display: grid; grid-template-columns: minmax(0, 1fr) 128px; gap: 24px; align-items: center; }
-.card--logo-wide { grid-template-columns: minmax(0, 1fr) 256px; }
+.card--logo-wide { grid-template-columns: minmax(0, 1fr) 440px; align-items: center; }
 .card__img { width: 128px; height: auto; border-radius: 10px; }
-.card__img--wide { width: 256px; max-height: 148px; object-fit: contain; padding: 8px; background: #fff; border: 1px solid $line; }
+.card__img--wide { width: 440px; max-height: 246px; object-fit: contain; padding: 8px; background: #fff; border: 1px solid $line; }
 .card__kicker { margin: 0 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: $ink-3; }
 .card__title { margin: 0 0 6px; font-family: $serif; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: $ink; }
 .home .card__title a { color: $ink; }
@@ -350,12 +357,16 @@ body { background: $page; color: $ink; }
 .btn-pill--ghost:hover { background: $hover; border-color: $hover-line; color: $ink !important; }
 .more-link { font-size: 13px; }
 
-@media (max-width: 860px) { .cards--3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 860px) {
+  .cards--3 { grid-template-columns: 1fr 1fr; }
+  .card--logo-wide { grid-template-columns: minmax(0, 1fr) 300px; }
+  .card__img--wide { width: 300px; max-height: 170px; }
+}
 @media (max-width: 560px) {
   .cards--3 { grid-template-columns: 1fr; }
   .card--with-img, .card--logo-wide { grid-template-columns: 1fr; }
   .card__img { width: 96px; order: -1; }
-  .card__img--wide { width: min(100%, 220px); max-height: 96px; order: 0; }
+  .card__img--wide { width: 100%; max-height: 220px; order: 0; }
 }
 
 /* ---- Speaking: one talk on stage (title, venue, media, frames, tags, text) */

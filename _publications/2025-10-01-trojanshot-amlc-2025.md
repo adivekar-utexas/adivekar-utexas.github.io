@@ -10,6 +10,7 @@ venue_short: "AMLC 2025"
 paperurl: "(internal)"
 acceptancerate: "10%"
 acceptancetype: "Oral"
+thumb: 'trojanshot.jpg'
 role: "Co-first author (equal contribution)"
 citation: '<u>Abhishek Divekar</u>* and Vijit Malik*. <b>&quot;TrojanShot: One Learned Example Can Red-Team and Guard Large Language Models&quot;</b>. <i>Amazon Machine Learning Conference (AMLC 2025)</i>. (*equal contribution)'
 pitch: "A single learned in-context example can both red-team and guardrail large language models."

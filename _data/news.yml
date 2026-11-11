@@ -25,7 +25,7 @@
   cta_url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"
 - date: 2026-08-09
   tag: IOAI
-  text: "Chaired the inaugural IOAI² AI Models Track at IOAI 2026, Astana: 15 AI systems from\
+  text: "Chaired the inaugural IOAI² AI Models Track at IOAI 2026, Astana, Kazakhstan: 15 AI systems from\
   \ 14 organizations."
   cta_text: "Visit the track"
   cta_url: "https://ioai-official.org/ai-models-track/"
@@ -47,7 +47,7 @@
 - date: 2026-01-24
   order: 2
   tag: award
-  text: "PRECISE won the IAAI 2026 Deployed Application Award at AAAI 2026, Singapore!"
+  text: "PRECISE won the IAAI 2026 Deployed Application Award in the AAAI 2026 Innovative Applications of AI (IAAI) track, Singapore!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2601.18777"
 - date: 2026-01-24
@@ -77,16 +77,16 @@
 - date: 2025-08-21
   order: 4
   tag: IOAI
-  text: "Led Team India at IOAI 2025, Beijing: 3 Gold, 2 Silver, 1 Bronze."
+  text: "Led Team India at IOAI 2025, Beijing, China: 3 Gold, 2 Silver, 1 Bronze."
   cta_text: "See the results"
   cta_url: "https://ioai-official.org/china-2025/results-2025/"
 - date: 2025-05-01
   tag: IOAI
-  text: "Served on the Technical Committee of the ACM India AI Olympiad 2025."
+  text: "Served on the Technical Committee of the ACM India AI Olympiad (INAIO 2025), Hyderabad, India."
 - date: 2025-04-01
   tag: fulltime
   text: "Became a [[TITLE]] at Amazon."
-  cta_text: "See my career progress"
+  cta_text: "See my career"
   cta_url: "/#history"
 - date: 2025-02-01
   tag: collaboration
@@ -128,7 +128,7 @@
 - date: 2021-12-01
   tag: fulltime
   text: "Joined Amazon Central Machine Learning as an Applied Scientist."
-  cta_text: "See my career progress"
+  cta_text: "See my career"
   cta_url: "/#history"
 - date: 2021-10-26
   tag: talk
@@ -156,8 +156,7 @@
 - date: 2017-07-01
   tag: fulltime
   text: "Joined Amazon as a Software Development Engineer (Kindle and Payments)."
-- date: 2017-05-01
-  order: 2
+- date: 2017-04-01
   tag: education
   text: "Graduated from VJTI, Mumbai with a B.Tech. in Information Technology."
 - date: 2017-08-01
