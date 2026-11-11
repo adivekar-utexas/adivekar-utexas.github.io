@@ -57,4 +57,31 @@
   }
   window.addEventListener('scroll', updateTab, { passive: true });
   updateTab();
+
+  // "Copy for LLM": fetch llms.txt (the same text AI crawlers read) and copy it.
+  var llm = document.querySelector('.llm-copy');
+  if (llm) {
+    var label = llm.querySelector('.llm-copy__label');
+    var flash = function (text) {
+      label.textContent = text;
+      setTimeout(function () { label.textContent = 'Copy for LLM'; }, 1600);
+    };
+    var copyText = function (text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+      return new Promise(function (resolve) {
+        var area = document.createElement('textarea');
+        area.value = text; area.setAttribute('readonly', '');
+        area.style.position = 'fixed'; area.style.opacity = '0';
+        document.body.appendChild(area); area.select();
+        document.execCommand('copy'); area.remove(); resolve();
+      });
+    };
+    llm.addEventListener('click', function () {
+      fetch(llm.dataset.src, { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(copyText)
+        .then(function () { flash('Copied'); })
+        .catch(function () { flash('Copy failed'); });
+    });
+  }
 })();
