@@ -8,6 +8,7 @@ tier: "peer-reviewed"
 date: 2026-11-06
 venue: 'ACM International Conference on Information and Knowledge Management (CIKM 2026), Rome'
 venue_short: 'CIKM 2026 (Research track)'
+acceptancetype: 'Poster'
 acceptancerate: '26.5%'
 paperurl: 'https://dl.acm.org/doi/10.1145/3799682.3841000'
 role: 'Co-first author (equal contribution)'

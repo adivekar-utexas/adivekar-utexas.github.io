@@ -46,8 +46,8 @@ tabs:
 
 ## Professional service
 
-- Chair, IOAI² AI Models Track, International Olympiad in Artificial Intelligence (IOAI 2026); member of the International Scientific Committee and the IOAI Jury (IOAI 2026). Lead author, [IOAI² 2026 Inaugural Edition Review](https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/).
-- Team Leader, Team India, IOAI 2025 (3 Gold, 2 Silver, 1 Bronze; [results](https://ioai-official.org/china-2025/results-2025/)).
+- Member, International Scientific Committee, International Olympiad in Artificial Intelligence (IOAI 2026), Dec 2025 to present; duties: Chair of the IOAI² AI Models Track and member of the IOAI Jury. Lead author, [IOAI² 2026 Inaugural Edition Review](https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/).
+- Team Leader, Team India, IOAI 2025, May to Aug 2025 (3 Gold, 2 Silver, 1 Bronze; [results](https://ioai-official.org/china-2025/results-2025/)).
 
 ## Honors
 

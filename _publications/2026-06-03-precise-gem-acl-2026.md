@@ -8,6 +8,7 @@ tier: "peer-reviewed-workshop"
 date: 2026-06-03
 venue: 'GEM Workshop at the Annual Meeting of the Association for Computational Linguistics (ACL 2026)'
 venue_short: 'ACL 2026 (GEM Workshop)'
+acceptancetype: 'Oral'
 paperurl: 'https://arxiv.org/abs/2606.05308'
 role: 'Sole author'
 citation: '<u>Abhishek Divekar</u>. <b>&quot;Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference&quot;</b>. <i>GEM Workshop, ACL 2026</i>'
