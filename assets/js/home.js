@@ -58,6 +58,16 @@
   window.addEventListener('scroll', updateTab, { passive: true });
   updateTab();
 
+  // Email: assemble mailto: from split data attributes on click, so the
+  // full address never appears in the HTML for scrapers to harvest.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a.js-email');
+    if (!a) return;
+    e.preventDefault();
+    var d = a.dataset;
+    window.location.href = 'mailto:' + d.u + '@' + d.d + '.' + d.t;
+  });
+
   // "Copy for LLM": fetch llms.txt (the same text AI crawlers read) and copy it.
   var llm = document.querySelector('.llm-copy');
   if (llm) {

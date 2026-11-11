@@ -6,7 +6,7 @@ permalink: /llms.txt
 
 > {{ site.description }}
 
-{{ site.data.profile.name }} is a {% include jobtitle %} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. His scientific contributions added over USD 550M to Amazon revenue (2021-2026). He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: via LinkedIn (https://www.linkedin.com/in/ardivekar). Google Scholar: {{ site.data.profile.google_scholar }}
+{{ site.data.profile.name }} is a {% include jobtitle %} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. His scientific contributions added over USD 550M to Amazon revenue (2021-2026). He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: email adivekar, or LinkedIn (https://www.linkedin.com/in/ardivekar). Google Scholar: {{ site.data.profile.google_scholar }}
 
 ## Core pages
 - [Home]({{ site.url }}/): bio, news, work history, publications (with expandable figures and abstracts; Amazon Machine Learning Conference papers are a subsection), product launches, AI Olympiad, open source, awards, press and service
