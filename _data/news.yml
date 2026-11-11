@@ -99,6 +99,11 @@
 - date: 2024-05-01
   tag: education
   text: "Completed my M.S. in Computer Science at UT Austin, advised by Greg Durrett."
+- date: 2024-08-01
+  tag: education
+  text: "My M.S. thesis, Diverse dataset synthesis using retrieval augmented language models, published by The University of Texas at Austin."
+  cta_text: "Read the thesis"
+  cta_url: "https://repositories.lib.utexas.edu/items/ddb94d0e-928d-406f-a49f-632995fd4b03"
 - date: 2024-10-01
   order: 2
   tag: paper

@@ -21,7 +21,7 @@ tabs:
 ## Education
 
 - **M.S. in Computer Science (Thesis track), The University of Texas at Austin**, Aug 2020 to May 2024.
-  - Thesis advisor: Prof. Greg Durrett. Thesis work on diverse synthetic dataset generation with retrieval augmentation, published at EMNLP 2024.
+  - Thesis advisor: Prof. Greg Durrett. Thesis: [Diverse dataset synthesis using retrieval augmented language models](https://repositories.lib.utexas.edu/items/ddb94d0e-928d-406f-a49f-632995fd4b03) (2024); the work was published at EMNLP 2024 as SynthesizRR.
 - **B.Tech. in Information Technology, Veermata Jijabai Technological Institute (VJTI), Mumbai**, 2013 to 2017.
   - Research Assistant in Prof. Mahesh Shirole's lab (anomaly-based network intrusion detection); first-author paper at IEEE ICCCS 2018.
 
