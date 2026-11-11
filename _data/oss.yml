@@ -1,9 +1,9 @@
 # Homepage "Open source" cards. First link is the card's main link.
-- name: "SynthesizRR"
-  image: "synthesizrr.jpg"
-  what: "Retrieval-augmented synthetic dataset generation (EMNLP 2024)."
+- name: "IOAI² AI Models Track"
+  image: "ioai-models-track.jpg"
+  what: "Task adaptations, scoring, competition rules and Jury precedents, for reuse by other olympiads."
   links:
-    - {label: "GitHub", url: "https://github.com/amazon-science/synthesizrr"}
+    - {label: "GitHub", url: "https://github.com/IOAI-official/IOAI-AI-Models-Track"}
 - name: "Concurry"
   image: "concurry.jpg"
   what: "Scaling AI research and production workloads in Python."
@@ -20,14 +20,3 @@
   what: "Dataframe sharding, streaming and processing for ML."
   links:
     - {label: "GitHub", url: "https://github.com/adivekar-utexas/bears"}
-- name: "When Gradients Collide"
-  image: "when-gradients-collide.jpg"
-  what: "Code and results for multi-objective prompt optimization of LLM judges (ACL 2026 workshop)."
-  links:
-    - {label: "GitHub", url: "https://github.com/adivekar-utexas/when-gradients-collide"}
-    - {label: "Project", url: "https://textgrad-failure-modes.github.io/"}
-- name: "IOAI² AI Models Track"
-  image: "ioai-models-track.jpg"
-  what: "Task adaptations, scoring, competition rules and Jury precedents, for reuse by other olympiads."
-  links:
-    - {label: "GitHub", url: "https://github.com/IOAI-official/IOAI-AI-Models-Track"}

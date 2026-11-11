@@ -51,6 +51,7 @@ tabs:
 
 ## Honors
 
+- IAAI 2026 Deployed Application Award, AAAI, for PRECISE (with Anirban Majumder).
 - Top 7 GenAI Scientists in India, Analytics Vidhya AV Luminary Awards, DataHack Summit 2025.
 - Top 7 GenAI Community Contributors, Analytics Vidhya, DataHack Summit 2025.
 - Winner (out of 300 participants), Amazon Machine Learning Challenge, Chennai, Aug 2017.
