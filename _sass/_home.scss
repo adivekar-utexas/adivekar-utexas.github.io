@@ -133,11 +133,15 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* Research cards: one per row, full width, hairline border, shadow on hover.
    External papers expand in place (figure + abstract) via the bottom toggle. */
 .ptable { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+/* Every card (external and AMLC) uses the same even padding, so the space
+   above the content equals the space below it. */
 .prow {
-  position: relative; margin: 0; padding: 16px; background: $surface; border: 1px solid $line; border-radius: 14px;
+  position: relative; margin: 0; padding: 18px 16px; background: $surface; border: 1px solid $line; border-radius: 14px;
   scroll-margin-top: 140px; transition: box-shadow .16s ease, border-color .16s ease;
 }
-.prow--expandable { padding-bottom: 26px; }
+/* The expand chevron straddles the card's bottom edge, so expandable cards
+   reserve a little room in the gap below instead of uneven bottom padding. */
+.ptable .prow--expandable { margin-bottom: 26px; }
 .prow:hover, .prow.is-open { border-color: $hover-line; box-shadow: 0 6px 20px rgba(17, 24, 39, 0.08), 0 1px 3px rgba(17, 24, 39, 0.05); }
 .prow__main { display: grid; grid-template-columns: 224px minmax(0, 1fr) auto; gap: 24px; align-items: center; }
 .prow__thumb { aspect-ratio: 16 / 9; border-radius: 9px; overflow: hidden; background: #fff; border: 1px solid $line; }
@@ -175,9 +179,10 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .pill--oral { color: $accent; border-color: $accent-line; background: $accent-soft; }
 .pill--tldr { margin-right: 6px; color: $ink-2; background: $tint; border-color: $line; }
 
-/* Expand toggle: a small grey chevron box centred on the card's bottom edge. */
+/* Expand toggle: a small grey chevron box straddling the card's bottom edge.
+   It hangs mostly below the card, so the card keeps even padding inside. */
 .prow__toggle {
-  position: absolute; left: 50%; bottom: -13px; transform: translateX(-50%);
+  position: absolute; left: 50%; bottom: -21px; transform: translateX(-50%);
   display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 28px; padding: 0;
   border: 1px solid $line; border-radius: 8px; background: $tint; color: $ink-3; cursor: pointer;
   transition: background .12s ease, border-color .12s ease, color .12s ease;
@@ -185,7 +190,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__toggle:hover { background: $hover; border-color: $hover-line; color: $ink-3; }
 .prow__toggle svg { transition: transform .36s ease; }
 .prow.is-open .prow__toggle svg { transform: rotate(180deg); }
-.prow__more { margin: 18px auto 4px; max-width: 760px; padding-top: 18px; border-top: 1px solid $line; text-align: center; }
+.prow__more { margin: 16px 0 0; max-width: none; padding-top: 16px; border-top: 1px solid $line; text-align: center; }
 .prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
 .prow__venue-full { margin: 0 0 12px; font-size: 13px; color: $ink-3; }
@@ -193,7 +198,6 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__abs-h { margin: 0 0 6px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: $ink-3; }
 .prow__abs { margin: 0; font-size: 13.5px; line-height: 1.65; color: $ink-2; text-align: left; }
 .ptable { padding-bottom: 6px; }
-.ptable .prow--expandable { margin-bottom: 10px; }
 
 /* Icon links: a vertical stack of compact pills, sized like the Writing chips. */
 .prow__links { list-style: none; margin: 0; padding: 0; align-self: center; display: flex; flex-direction: column; gap: 6px; min-width: 100px; }
@@ -241,7 +245,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .spage__lede { margin: 0 auto; max-width: 640px; font-size: 17px; line-height: 1.6; color: $ink-2; }
 
 .tabbar {
-  position: sticky; top: $masthead-h + 8px; z-index: 10;
+  position: sticky; top: $masthead-h + 1px; z-index: 10;
   display: flex; flex-wrap: wrap; justify-content: center; gap: 4px;
   margin: 28px auto 36px; padding: 4px; width: fit-content; max-width: 100%;
   background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
@@ -267,7 +271,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .spage__body .wide { width: min(1040px, calc(100vw - 48px)); margin-left: 50%; transform: translateX(-50%); }
 @media (max-width: 760px) {
   .tabbar { position: static; justify-content: flex-start; border-radius: 14px; width: auto; }
-  .tabbar--home { position: sticky; top: $masthead-h + 8px; }
+  .tabbar--home { position: sticky; top: $masthead-h + 1px; }
   .spage__head { text-align: left; }
 }
 
@@ -279,7 +283,7 @@ body { background: $page; color: $ink; }
   -webkit-backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid $line;
 }
 /* Header is a fixed 60px tall; the sticky section bar sits just below it
-   (top: $masthead-h + 8px), so the header never covers the tabs. */
+   (top: $masthead-h + 1px), so it sits flush under the header. */
 .masthead__inner-wrap { padding: 0 1em; height: $masthead-h; display: flex; align-items: center; }
 .masthead__menu { width: 100%; }
 .greedy-nav { background: transparent; min-height: 0; }
