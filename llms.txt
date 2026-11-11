@@ -61,16 +61,20 @@ Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/
 {% for o in site.data.oss %}- {{ o.name }}: {{ o.what }} {% for l in o.links %}[{{ l.label }}]({{ l.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}
 {% endfor %}
 ## Awards
-{% for r in site.data.awards.rows %}- {{ r.when }}: {{ r.title }}{% if r.org %}, {{ r.org }}{% endif %}{% capture anchor_base %}]({{ u }}/#{% endcapture %}{% if r.sub %}. {{ r.sub | replace: "](#", anchor_base }}{% endif %}
+{% for r in site.data.awards.rows %}- {{ r.when }}: {{ r.title }}{% if r.org %}, {{ r.org }}{% endif %}{% if r.sub %}. {{ r.sub }}{% endif %}{% if r.cta %} [{{ r.cta.label }}]({% if r.cta.url contains "://" %}{{ r.cta.url }}{% else %}{{ u }}/{{ r.cta.url }}{% endif %}){% endif %}
 {% endfor %}
 Photos ({{ site.data.awards.photos_note }}):
 {% for ph in site.data.awards.photos %}- {{ ph.caption }} ({{ ph.alt }})
 {% endfor %}
-## Press
-{% for r in site.data.press %}- {{ r.when }}: {% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}{% if r.org %}, {{ r.org }}{% endif %}{% if r.outlets %}: {% for o in r.outlets %}[{{ o.label }}]({{ o.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}{% if r.sub %}. {{ r.sub }}{% endif %}
+## Press & Media
+{% for r in site.data.press %}- {{ r.when }}: {{ r.title }}.{% if r.sub %} {{ r.sub }}{% endif %}{% if r.outlets %} {% if r.outlets.size == 1 %}Read in{% else %}Read the coverage in{% endif %} {% for o in r.outlets %}[{{ o.label }}]({{ o.url }}){% unless forloop.last %}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{% endunless %}{% endfor %}.{% endif %}{% if r.cta %} [{{ r.cta.label }}]({{ r.cta.url }}){% endif %}
 {% endfor %}
 ## Service
-{% for r in site.data.service %}- {{ r.when }}: {{ r.title }}, {{ r.org }}{% if r.sub %}. {{ r.sub }}{% endif %}
+{% for r in site.data.service %}- {{ r.when }}: {{ r.title }}, {{ r.org }}{% if r.sub %}. {{ r.sub }}{% endif %}{% if r.cta %} [{{ r.cta.label }}]({{ r.cta.url }}){% endif %}
+{% endfor %}
+## Alumni
+{{ site.data.alumni.intro }}
+{% for p in site.data.alumni.people %}- {% if p.url %}[{{ p.name }}]({{ p.url }}){% else %}{{ p.name }}{% endif %}: {{ p.now }} {{ p.with_me }}
 {% endfor %}
 ## Writing
 {{ site.pages | where: "url", "/writing/" | map: "lede" | first }}
@@ -78,5 +82,5 @@ Photos ({{ site.data.awards.photos_note }}):
 {% endfor %}
 ## Speaking
 {{ site.pages | where: "url", "/speaking/" | map: "lede" | first }} Newest first.
-{% assign talks = site.talks | sort: "date" | reverse %}{% for t in talks %}- [{{ t.title }}]({{ u }}/speaking/#{{ t.urlslug }}). {{ t.type }}, {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%d %B %Y" }}{% endif %}, {{ t.venue }}{% if t.location %}, {{ t.location }}{% endif %}.{% if t.tags %} Topics: {{ t.tags | join: ", " }}.{% endif %}{% if t.excerpt %} {{ t.excerpt | strip_html | strip_newlines | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '&#39;', "'" }}{% endif %}{% if t.photos_dir %} Photos: {{ t.photos_count }} on the Speaking page.{% endif %}{% if t.videourl %} Video: {{ t.videourl }}{% endif %}{% if t.slidesurl %} Slides: {{ t.slidesurl | prepend: u }}{% endif %}{% if t.paperurl %} Paper: {{ t.paperurl }}{% endif %}
+{% assign talks = site.talks | sort: "date" | reverse %}{% for t in talks %}- [{{ t.title }}]({{ u }}/speaking/#{{ t.urlslug }}). {{ t.type }}, {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%d %B %Y" }}{% endif %}, {{ t.venue }}{% if t.location %}, {{ t.location }}{% endif %}.{% if t.tags %} Topics: {{ t.tags | join: ", " }}.{% endif %}{% if t.excerpt %} {{ t.excerpt | strip_html | strip_newlines | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '&#39;', "'" }}{% endif %}{% if t.photos_dir %} Photos: {{ t.photos_count }} on the Speaking page.{% endif %}{% if t.videourl %} Video: {{ t.videourl }}{% endif %}{% if t.slidesurl %} Slides: {{ t.slidesurl | prepend: u }}{% endif %}{% if t.paperurl %} Paper: {{ t.paperurl }}{% endif %}{% if t.eventurl %} {{ t.eventurl_label | default: "Event page" }}: {{ t.eventurl }}{% endif %}
 {% endfor %}

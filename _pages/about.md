@@ -21,8 +21,9 @@ redirect_from:
   <a class="tab" href="#ioai">AI Olympiad</a>
   <a class="tab" href="#open-source">Open source</a>
   <a class="tab" href="#awards">Awards</a>
-  <a class="tab" href="#press">Press</a>
+  <a class="tab" href="#press">Press &amp; Media</a>
   <a class="tab" href="#service">Service</a>
+  <a class="tab" href="#alumni">Alumni</a>
 </nav>
 {% include home/history.html %}
 {% include home/papers.html %}
@@ -31,4 +32,5 @@ redirect_from:
 {% include home/oss.html %}
 {% include home/press.html %}
 {% include home/service.html %}
+{% include home/alumni.html %}
 <script src="{{ base_path }}/assets/js/home.js" defer></script>

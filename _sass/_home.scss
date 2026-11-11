@@ -324,6 +324,10 @@ body { background: $page; color: $ink; }
 .home .card__title a:hover { color: $accent; text-decoration: none; }
 .card__text { margin: 0 0 6px; font-size: 14.5px; line-height: 1.55; color: $ink; }
 .card__meta { margin: 0 0 6px; font-size: 13px; line-height: 1.5; color: $ink-3; }
+.row__sub--muted { color: $ink-3; }
+.row__outlets a { font-weight: 500; }
+#alumni .row { grid-template-columns: minmax(0, 1fr); }
+#alumni .row__when { display: none; }
 .card__did { margin: 2px 0 8px; font-size: 14.5px; line-height: 1.55; color: $ink; }
 .card__text--after { margin: 0; font-size: 14px; color: $ink-2; }
 .card__did-label {

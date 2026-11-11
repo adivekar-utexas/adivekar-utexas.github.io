@@ -46,6 +46,7 @@
       {% if t.videourl %}<a class="chip-link" href="{{ t.videourl }}">Watch the talk</a>{% endif %}
       {% if t.slidesurl %}<a class="chip-link" href="{{ t.slidesurl }}">See the slides (PDF)</a>{% endif %}
       {% if t.paperurl %}<a class="chip-link" href="{{ t.paperurl }}">Paper</a>{% endif %}
+      {% if t.eventurl %}<a class="chip-link" href="{{ t.eventurl }}">{{ t.eventurl_label | default: "Event page" }}</a>{% endif %}
     </p>
   </div>
 </section>

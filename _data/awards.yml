@@ -11,24 +11,29 @@ rows:
   - when: "2026"
     title: "Oral presentation, AAAI 2026"
     org: "Innovative Applications of AI track, 19.2% acceptance"
-    sub: "For [PRECISE](#precise-aaai-2026)."
+    sub: "For PRECISE."
+    cta: {label: "See the paper", url: "#precise-aaai-2026"}
   - when: "2025"
     title: "Top 7 GenAI Scientists in India"
     org: "Analytics Vidhya, DataHack Summit 2025"
+    cta: {label: "Read the announcement", url: "https://www.analyticsvidhya.com/blog/2025/08/dhs-day-2/"}
   - when: "2025"
     title: "Top 7 GenAI Community Contributors"
     org: "Analytics Vidhya, DataHack Summit 2025"
   - when: "2025"
     title: "Oral presentation, Amazon Machine Learning Conference"
     org: "about 10% oral acceptance"
-    sub: "For [TrojanShot](#trojanshot-amlc-2025)."
+    sub: "For TrojanShot."
+    cta: {label: "See the paper", url: "#trojanshot-amlc-2025"}
   - when: "2025"
     title: "Team Leader, Team India at IOAI 2025"
     org: "3 Gold, 2 Silver, 1 Bronze; 3rd of 53 by medal table"
+    cta: {label: "See the official results", url: "https://ioai-official.org/china-2025/results-2025/"}
   - when: "2024"
     title: "Oral presentation, Amazon Machine Learning Conference"
     org: "about 10% oral acceptance"
     sub: "For SynthesizRR."
+    cta: {label: "See the paper", url: "#synthesizrr-amlc-2024"}
   - when: "2017"
     title: "Winner, Amazon Machine Learning Challenge"
     org: "Chennai, out of 300 participants"

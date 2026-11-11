@@ -10,7 +10,8 @@
 - {when: "2025", title: "Reviewer", org: "WWW"}
 - when: "2025"
   title: "Proposal reviewer, Amazon Research Awards"
-  org: "[AWS Agentic AI call for proposals](https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-fall-2025)"
+  org: "AWS Agentic AI call for proposals"
+  cta: {label: "See the call for proposals", url: "https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-fall-2025"}
 - {when: "2022", title: "Reviewer", org: "AMLC, NLP and ML Tools tracks"}
 - {when: "2022", title: "Reviewer", org: "AIMLSys"}
 - when: "2022"

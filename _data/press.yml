@@ -1,25 +1,25 @@
-# Homepage "Press" section. Rendered by _includes/home/press.html and llms.txt.
+# Homepage "Press & Media" section, one entry per story. Rendered by
+# _includes/home/press.html and llms.txt. `outlets` are the coverage links.
 - when: "Aug 2025"
-  title: "Indian team bags third spot in its debut appearance at AI Olympiad"
-  url: "https://www.thehindubusinessline.com/news/indian-team-bags-third-spot-in-its-debut-appearance-at-ai-olympiad/article69960200.ece"
-  org: "The Hindu BusinessLine"
-  sub: "Rohan Das, 21 August 2025. Names me as a team lead."
-- when: "Aug 2025"
-  title: "Indian students win 3 gold medals at int'l AI olympiad"
-  url: "https://timesofindia.indiatimes.com/city/chennai/indian-students-win-3-gold-medals-at-intl-ai-olympiad/articleshow/123474957.cms"
-  org: "The Times of India"
-- when: "Aug 2025"
-  title: "More coverage of Team India at IOAI 2025"
+  title: "Team India places 3rd at its debut International Olympiad in AI"
+  sub: "Coverage of the team I led at IOAI 2025, Beijing (3 Gold, 2 Silver, 1 Bronze)."
   outlets:
+    - {label: "The Hindu BusinessLine", url: "https://www.thehindubusinessline.com/news/indian-team-bags-third-spot-in-its-debut-appearance-at-ai-olympiad/article69960200.ece"}
+    - {label: "The Times of India", url: "https://timesofindia.indiatimes.com/city/chennai/indian-students-win-3-gold-medals-at-intl-ai-olympiad/articleshow/123474957.cms"}
     - {label: "Navbharat Times", url: "https://navbharattimes.indiatimes.com/tech/ai-news/india-secured-third-postion-in-international-olympiad-in-artificial-intelligence-ahead-of-china-and-america/articleshow/123436355.cms"}
     - {label: "Zee News", url: "https://zeenews.india.com/hindi/technology/india-shines-at-international-ai-olympiad-2025-beats-us-and-china-to-win-3rd-place/2891483"}
     - {label: "India.com", url: "https://www.india.com/hindi-news/gallery-hindi/india-occupy-3rd-position-in-international-ai-olympiad-beat-us-china-8029719/india-vs-usa-china-ai-olympiad/"}
+- when: "Aug 2025"
+  title: "DataHack Summit 2025, Day 2: talk on synthetic data and Top 7 GenAI Scientists award"
+  sub: "Analytics Vidhya's Day 2 recap covers my talk, The Promise and Pitfalls of Synthetic Data Generation, and lists me among the AV Luminary Award winners."
+  outlets:
+    - {label: "Analytics Vidhya", url: "https://www.analyticsvidhya.com/blog/2025/08/dhs-day-2/"}
 - when: "2022"
   title: "Amazon India announces second edition of Machine Learning Summer School"
-  url: "https://timesofindia.indiatimes.com/gadgets-news/amazon-india-announces-second-edition-of-machine-learning-summer-school-how-to-apply-and-other-details/articleshow/92076056.cms"
-  org: "The Times of India"
   sub: "Covers the summer school where I taught."
+  outlets:
+    - {label: "The Times of India", url: "https://timesofindia.indiatimes.com/gadgets-news/amazon-india-announces-second-edition-of-machine-learning-summer-school-how-to-apply-and-other-details/articleshow/92076056.cms"}
 - when: "2022"
   title: "Being a machine learning scientist at Amazon India"
-  url: "https://youtu.be/15sa6OeIWJg"
-  org: "Video interview"
+  sub: "Video interview about my work at Amazon India."
+  cta: {label: "Watch the video interview", url: "https://youtu.be/15sa6OeIWJg"}

@@ -50,19 +50,19 @@
   text: "Presented PRECISE in an oral session at AAAI 2026, Singapore."
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2601.18777"
-- date: 2025-11-16
+- date: 2025-08-21
   order: 3
   tag: award
   text: "Named one of the Top 7 GenAI Scientists in India by Analytics Vidhya at DataHack Summit 2025."
-- date: 2025-11-16
+- date: 2025-08-21
   order: 2
   tag: award
   text: "Also named one of the Top 7 GenAI Community Contributors at the same DataHack Summit 2025."
-- date: 2025-11-16
+- date: 2025-08-21
   order: 1
   tag: talk
   text: "Invited talk on synthetic data generation at DataHack Summit 2025."
-  cta_text: "View talk photos"
+  cta_text: "See the talk"
   cta_url: "/speaking/#dhs-2025-synthetic-data"
 - date: 2025-10-01
   tag: paper
@@ -70,6 +70,7 @@
   cta_text: "Read the paper"
   cta_url: "/#trojanshot-amlc-2025"
 - date: 2025-08-21
+  order: 4
   tag: IOAI
   text: "Led Team India at IOAI 2025, Beijing: 3 Gold, 2 Silver, 1 Bronze."
   cta_text: "See the results"
@@ -98,3 +99,58 @@
 - date: 2024-05-01
   tag: education
   text: "Completed my M.S. in Computer Science at UT Austin, advised by Greg Durrett."
+- date: 2024-10-01
+  order: 2
+  tag: paper
+  text: "SynthesizRR selected as an oral at the Amazon Machine Learning Conference 2024!"
+  cta_text: "Read the paper"
+  cta_url: "/#synthesizrr-amlc-2024"
+- date: 2022-10-07
+  tag: talk
+  text: "Presented Flexible AutoML at AIMLSys 2022."
+  cta_text: "See the slides"
+  cta_url: "/speaking/#litmus-aimlsys-2022-talk"
+- date: 2022-06-14
+  tag: talk
+  text: "Taught supervised learning at the Amazon ML Summer School to about 3,000 Indian undergraduates."
+  cta_text: "See the lecture"
+  cta_url: "/speaking/#ml-summer-school-2022-lecture"
+- date: 2021-12-01
+  tag: fulltime
+  text: "Joined Amazon Central Machine Learning as an Applied Scientist."
+  cta_text: "See my work history"
+  cta_url: "/#history"
+- date: 2021-10-26
+  tag: talk
+  text: "Presented DRiP, AutoML for cost-constrained product classification, at Amazon Research Days 2021."
+  cta_text: "See the slides"
+  cta_url: "/speaking/#drip-ard-2021-talk"
+- date: 2021-09-01
+  tag: paper
+  text: "DRiP and the CPP multimodal AutoML benchmark accepted at the Amazon Machine Learning Conference 2021!"
+  cta_text: "Read the papers"
+  cta_url: "/#amlc"
+- date: 2020-08-01
+  tag: education
+  text: "Started my M.S. in Computer Science (thesis track) at UT Austin, part-time alongside Amazon."
+- date: 2019-10-01
+  tag: fulltime
+  text: "Moved from software engineering to Applied Science at Amazon India Machine Learning."
+  cta_text: "Read how"
+  cta_url: "/writing/engineer-to-ml-scientist/"
+- date: 2018-10-25
+  tag: paper
+  text: "First-author paper on intrusion-detection benchmarks presented as an oral at IEEE ICCCS 2018!"
+  cta_text: "Read the paper"
+  cta_url: "https://arxiv.org/abs/1811.05372"
+- date: 2017-07-01
+  tag: fulltime
+  text: "Joined Amazon as a Software Development Engineer (Kindle and Payments)."
+- date: 2017-05-01
+  order: 2
+  tag: education
+  text: "Graduated from VJTI, Mumbai with a B.Tech. in Information Technology."
+- date: 2017-05-01
+  order: 1
+  tag: award
+  text: "Won the Amazon Machine Learning Challenge in Chennai, out of 300 participants."

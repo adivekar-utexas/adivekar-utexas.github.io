@@ -23,7 +23,7 @@ cards:
     meta: "Golds: Roumak Das (rank 11), Arjun Tyagi (18), Soham Sen (19). Silvers: Rayan Banerjee (37), Samik Goyal (41). Bronze: Himaneesh Sompalle (77). Ranks and medal-table position computed from the official results."
     links:
       - {label: "Official results", url: "https://ioai-official.org/china-2025/results-2025/"}
-      - {label: "Press", url: "#press"}
+      - {label: "Press coverage", url: "#press"}
     image: "ioai-2025-team-india-logo.png"
     image_alt: "Team India IOAI 2025 logo: a peacock with eight feathers"
   - kicker: "2025"
