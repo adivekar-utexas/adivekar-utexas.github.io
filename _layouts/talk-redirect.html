@@ -1,0 +1,22 @@
+---
+layout: null
+---
+{% comment %}
+  Old /talks/... URLs from the previous site. Talks now live on /speaking/;
+  this stub sends visitors to the matching talk card there.
+{% endcomment %}
+{% assign target = "/speaking/#" | append: page.talk %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting&hellip;</title>
+  <link rel="canonical" href="{{ site.url }}{{ target }}">
+  <meta http-equiv="refresh" content="0; url={{ target }}">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <a href="{{ target }}">Open this talk on the Speaking page.</a>
+  <script>location.replace({{ target | jsonify }});</script>
+</body>
+</html>

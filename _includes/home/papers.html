@@ -9,7 +9,7 @@
   </ul>
 
   <h3 class="home-h3 home-h3--sub" id="amlc">Amazon Machine Learning Conference</h3>
-  <p class="home-intro">AMLC is Amazon's annual internal machine learning conference, with roughly 1,000 submissions a year (<a href="https://www.amazon.science/videos-webinars/amazons-annual-machine-learning-conference-featured-presentations-from-thought-leaders-within-academia">announcement</a>). Full texts are internal.</p>
+  <p class="home-intro">{{ site.data.home.amlc_intro | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
   <ul class="ptable">
   {% for pub in pubs %}{% if pub.tier == "internal" %}{% include paper-row.html pub=pub %}{% endif %}{% endfor %}
   </ul>

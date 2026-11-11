@@ -1,19 +1,6 @@
 <section class="home-section" id="service" aria-labelledby="service-h">
   <h2 id="service-h" class="home-h2">Service</h2>
   <ul class="rows">
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Area Chair</span><span class="row__org"> · Amazon Machine Learning Conference (AMLC)</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · ACL</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · EMNLP</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · ICLR</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · AAAI</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · COLM</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · WSDM</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · SIGIR</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · WWW</span></span></li>
-    <li class="row"><span class="row__when">2025</span><span class="row__main"><span class="row__title">Proposal reviewer, Amazon Research Awards</span><span class="row__org"> · <a href="https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-fall-2025">AWS Agentic AI call for proposals</a></span></span></li>
-    <li class="row"><span class="row__when">2022</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · AMLC, NLP and ML Tools tracks</span></span></li>
-    <li class="row"><span class="row__when">2022</span><span class="row__main"><span class="row__title">Reviewer</span><span class="row__org"> · AIMLSys</span></span></li>
-    <li class="row"><span class="row__when">2022</span><span class="row__main"><span class="row__title">Instructor, Amazon ML Summer School</span><span class="row__org"> · about 3,000 Indian undergraduates</span><span class="row__sub">Taught the supervised-learning module: decision trees, bagging and boosting.</span></span></li>
-    <li class="row"><span class="row__when">Ongoing</span><span class="row__main"><span class="row__title">Hiring and mentoring</span><span class="row__org"> · Amazon</span><span class="row__sub">200+ interviews for Applied Scientist roles. I mentor junior scientists and interns.</span></span></li>
+  {% for r in site.data.service %}{% include home/row.html r=r %}{% endfor %}
   </ul>
 </section>

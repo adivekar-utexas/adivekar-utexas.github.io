@@ -1,0 +1,23 @@
+# Homepage "Service" section. Rendered by _includes/home/service.html and llms.txt.
+- {when: "2025", title: "Area Chair", org: "Amazon Machine Learning Conference (AMLC)"}
+- {when: "2025", title: "Reviewer", org: "ACL"}
+- {when: "2025", title: "Reviewer", org: "EMNLP"}
+- {when: "2025", title: "Reviewer", org: "ICLR"}
+- {when: "2025", title: "Reviewer", org: "AAAI"}
+- {when: "2025", title: "Reviewer", org: "COLM"}
+- {when: "2025", title: "Reviewer", org: "WSDM"}
+- {when: "2025", title: "Reviewer", org: "SIGIR"}
+- {when: "2025", title: "Reviewer", org: "WWW"}
+- when: "2025"
+  title: "Proposal reviewer, Amazon Research Awards"
+  org: "[AWS Agentic AI call for proposals](https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-fall-2025)"
+- {when: "2022", title: "Reviewer", org: "AMLC, NLP and ML Tools tracks"}
+- {when: "2022", title: "Reviewer", org: "AIMLSys"}
+- when: "2022"
+  title: "Instructor, Amazon ML Summer School"
+  org: "about 3,000 Indian undergraduates"
+  sub: "Taught the supervised-learning module: decision trees, bagging and boosting."
+- when: "Ongoing"
+  title: "Hiring and mentoring"
+  org: "Amazon"
+  sub: "200+ interviews for Applied Scientist roles. I mentor junior scientists and interns."

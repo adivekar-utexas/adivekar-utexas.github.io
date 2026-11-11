@@ -2,41 +2,81 @@
 layout: null
 permalink: /llms.txt
 ---
-# {{ site.data.profile.name }}
+{% comment %}
+  The LLM-readable version of the site. It mirrors what a visitor can reach by
+  clicking: the homepage (in section order), Writing, Speaking and the CV.
+  Every section reads from the same _data / collection source as its HTML, so
+  the two cannot drift apart. Do not add content here that is not on the site.
+{% endcomment -%}{% capture jobtitle %}{% include jobtitle %}{% endcapture %}{% assign u = site.url %}# {{ site.data.profile.name }}
 
 > {{ site.description }}
 
-{{ site.data.profile.name }} is a {% include jobtitle %} at {{ site.data.profile.employer }}, based in {{ site.data.profile.city }}, India. His scientific contributions added over USD 550M to Amazon revenue (2021-2026). He holds an M.S. in Computer Science (thesis track) from The University of Texas at Austin, advised by Prof. Greg Durrett. Contact: email adivekar, or LinkedIn (https://www.linkedin.com/in/ardivekar). Google Scholar: {{ site.data.profile.google_scholar }}
+{{ site.data.profile.name }}: {{ jobtitle }}, {{ site.data.profile.employer }} · {{ site.data.profile.city }}, India.
 
-## Core pages
-- [Home]({{ site.url }}/): bio, news, work history, publications (with expandable figures and abstracts; Amazon Machine Learning Conference papers are a subsection), product launches, AI Olympiad, open source, awards, press and service
-- [Google Scholar profile]({{ site.data.profile.google_scholar }}): publication and citation profile
-- [Writing]({{ site.url }}/writing/): blog posts
-- [Speaking]({{ site.url }}/speaking/): talks, oral presentations, lectures and interviews, newest first, with slides, photos and video
-- [CV (PDF)]({{ site.url }}/files/Abhishek-Divekar-CV.pdf): curriculum vitae; text version at {{ site.url }}/curriculum-vitae/
+{% for para in site.data.home.hero %}{{ para }}
 
-## Homepage sections
-- [Work history]({{ site.url }}/#history)
-- [Publications]({{ site.url }}/#publications), including [Amazon Machine Learning Conference papers]({{ site.url }}/#amlc)
-- [Product launches]({{ site.url }}/#shipped)
-- [AI Olympiad]({{ site.url }}/#ioai)
-- [Open source]({{ site.url }}/#open-source)
-- [Awards]({{ site.url }}/#awards)
-- [Press]({{ site.url }}/#press)
-- [Service]({{ site.url }}/#service)
+{% endfor %}Links: [Google Scholar]({{ site.data.profile.google_scholar }}), [GitHub](https://github.com/adivekar-utexas), [LinkedIn](https://www.linkedin.com/in/ardivekar), [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf).
 
-## Product launches (Amazon)
-{% for l in site.data.launches %}- {{ l.name }} ({{ l.year }}): {{ l.what }} Role: {{ l.did }}
-{% endfor %}
-## Publications
-{% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for p in pubs %}- [{{ p.title }}]({{ site.url }}/#{{ p.urlslug }}): {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, acceptance rate {{ p.acceptancerate }}{% endif %}{% if p.role %}. Role: {{ p.role }}{% endif %}.{% if p.paperurl contains "http" %} Paper: {{ p.paperurl }}{% endif %}{% if p.pitch %} Summary: {{ p.pitch }}{% endif %}
-{% endfor %}
+Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/speaking/) · [CV]({{ u }}/cv/) (text version: {{ u }}/curriculum-vitae/)
+
 ## News
-{% assign news = site.data.news | sort: "date" | reverse %}{% capture jobtitle %}{% include jobtitle %}{% endcapture %}{% for item in news %}- {{ item.date | date: '%Y-%m-%d' }}: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains '://' %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: site.url }}{% endif %}){% endif %}
+{% assign news = site.data.news | sort: "date" | reverse %}{% for item in news %}- {{ item.date | date: "%b %Y" }} [{{ site.data.news_tags[item.tag] | default: item.tag }}]: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains "://" %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: u }}{% endif %}){% endif %}
+{% endfor %}
+## Work history
+{% for h in site.data.history %}- {{ h.when }}: {{ h.role | replace: "[[TITLE]]", jobtitle }}, {{ h.org }}{% if h.note %}. {{ h.note }}{% endif %}
+{% endfor %}
+{{ site.data.home.history_note }}
+
+## Publications
+\* = equal contribution. Google Scholar: {{ site.data.profile.google_scholar }}
+{% assign pubs = site.publications | where_exp: "p", "p.listed != false" | sort: "date" | reverse %}{% for p in pubs %}{% if p.tier == "peer-reviewed" or p.tier == "peer-reviewed-workshop" %}{% capture authors %}{% include authors.html citation=p.citation %}{% endcapture %}{% assign au = authors | strip_html | strip_newlines | strip %}{% assign au_last = au | slice: -1 %}{% if au_last == "." %}{% assign au_n = au.size | minus: 1 %}{% assign au = au | slice: 0, au_n %}{% endif %}
+### {{ p.title }}
+- Venue: {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, {{ p.acceptancerate }} acceptance{% endif %}
+- Authors: {{ au }}
+{% if p.paperurl contains "http" %}- Paper: {{ p.paperurl }}
+{% endif %}{% if p.codeurl %}- Code: {{ p.codeurl }}
+{% endif %}{% if p.projecturl %}- Project: {{ p.projecturl }}
+{% endif %}{% if p.pitch %}- TL;DR: {{ p.pitch }}
+{% endif %}{% if p.excerpt %}- Abstract: {{ p.excerpt | strip_html | strip_newlines | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '&#39;', "'" }}
+{% endif %}{% endif %}{% endfor %}
+### Amazon Machine Learning Conference
+{{ site.data.home.amlc_intro }}
+{% for p in pubs %}{% if p.tier == "internal" %}{% capture authors %}{% include authors.html citation=p.citation %}{% endcapture %}{% assign au = authors | strip_html | strip_newlines | strip %}{% assign au_last = au | slice: -1 %}{% if au_last == "." %}{% assign au_n = au.size | minus: 1 %}{% assign au = au | slice: 0, au_n %}{% endif %}- {{ p.title }}. {{ au }}. {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, {{ p.acceptancerate }} acceptance{% endif %}.{% if p.pitch %} TL;DR: {{ p.pitch }}{% endif %}
+{% endif %}{% endfor %}
+## Product launches
+{% for l in site.data.launches %}- {{ l.name }} ({{ l.year }}): {{ l.what }} My role: {{ l.did }}
+{% endfor %}
+{{ site.data.home.launches_note }}
+
+## AI Olympiad
+{{ site.data.ioai.intro }}
+{% for c in site.data.ioai.cards %}
+### {{ c.title }} ({{ c.kicker }})
+{% for t in c.text %}{{ t }}
+{% endfor %}{% if c.meta %}{{ c.meta }}
+{% endif %}{% for l in c.links %}{% if l.url contains "://" %}- {{ l.label }}: {{ l.url }}
+{% endif %}{% endfor %}{% endfor %}
+## Open source
+{{ site.data.home.oss_intro }}
+{% for o in site.data.oss %}- {{ o.name }}: {{ o.what }} {% for l in o.links %}[{{ l.label }}]({{ l.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}
+{% endfor %}
+## Awards
+{% for r in site.data.awards.rows %}- {{ r.when }}: {{ r.title }}{% if r.org %}, {{ r.org }}{% endif %}{% capture anchor_base %}]({{ u }}/#{% endcapture %}{% if r.sub %}. {{ r.sub | replace: "](#", anchor_base }}{% endif %}
+{% endfor %}
+Photos ({{ site.data.awards.photos_note }}):
+{% for ph in site.data.awards.photos %}- {{ ph.caption }} ({{ ph.alt }})
+{% endfor %}
+## Press
+{% for r in site.data.press %}- {{ r.when }}: {% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}{% if r.org %}, {{ r.org }}{% endif %}{% if r.outlets %}: {% for o in r.outlets %}[{{ o.label }}]({{ o.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}{% if r.sub %}. {{ r.sub }}{% endif %}
+{% endfor %}
+## Service
+{% for r in site.data.service %}- {{ r.when }}: {{ r.title }}, {{ r.org }}{% if r.sub %}. {{ r.sub }}{% endif %}
+{% endfor %}
+## Writing
+{{ site.pages | where: "url", "/writing/" | map: "lede" | first }}
+{% assign posts = site.posts | where_exp: "p", "p.hidden != true" %}{% for post in posts %}{% assign words = post.content | strip_html | number_of_words %}{% assign minutes = words | divided_by: site.words_per_minute | at_least: 1 %}- [{{ post.title }}]({{ u }}{{ post.url }}) ({{ post.date | date: "%d %b %Y" }}, {{ minutes }} min; tags: {{ post.tags | join: ", " }}): {{ post.description }}
 {% endfor %}
 ## Speaking
-{% assign talks = site.talks | sort: "date" | reverse %}{% for talk in talks %}- [{{ talk.title }}]({{ site.url }}/speaking/#{{ talk.urlslug }}): {{ talk.date | date: '%Y' }}{% unless talk.date_display == 'year' %}-{{ talk.date | date: '%m-%d' }}{% endunless %}, {{ talk.venue }}.{% if talk.videourl %} Video: {{ talk.videourl }}{% endif %}{% if talk.slidesurl %} Slides: {{ talk.slidesurl | prepend: site.url }}{% endif %}
+{{ site.pages | where: "url", "/speaking/" | map: "lede" | first }} Newest first.
+{% assign talks = site.talks | sort: "date" | reverse %}{% for t in talks %}- [{{ t.title }}]({{ u }}/speaking/#{{ t.urlslug }}). {{ t.type }}, {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%d %B %Y" }}{% endif %}, {{ t.venue }}{% if t.location %}, {{ t.location }}{% endif %}.{% if t.tags %} Topics: {{ t.tags | join: ", " }}.{% endif %}{% if t.excerpt %} {{ t.excerpt | strip_html | strip_newlines | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '&#39;', "'" }}{% endif %}{% if t.photos_dir %} Photos: {{ t.photos_count }} on the Speaking page.{% endif %}{% if t.videourl %} Video: {{ t.videourl }}{% endif %}{% if t.slidesurl %} Slides: {{ t.slidesurl | prepend: u }}{% endif %}{% if t.paperurl %} Paper: {{ t.paperurl }}{% endif %}
 {% endfor %}
-## Optional
-- [Projects]({{ site.url }}/projects/): graduate course projects and technical reports
-- [Sitemap]({{ site.url }}/sitemap.xml)

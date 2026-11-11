@@ -17,8 +17,9 @@ My thesis was in the NLP domain, during 2023 when AI went mainstream via ChatGPT
 
 Another thing which I did different from other students is that I framed my own research problem. This is recommended only if you're really dead-set on one idea, like I was. Otherwise it's okay to go with an idea your Thesis advisor gives you. But make sure you're eventually doing your own research, not just contributing to someone else's project.
 
-I've written about the process I followed to reach out to MS thesis professors. I've tried to put this together in a step-by-step fashion, starting from the very basics: /files/work-with-professors.pdf
-If you have questions on the steps to find an advisor, please reach out to me here: https://linkedin.com/in/ardivekar/
+I've written about the process I followed to reach out to MS thesis professors. I've tried to put this together in a step-by-step fashion, starting from the very basics: [How to reach out to professors for an MS thesis (PDF)](/files/work-with-professors.pdf).
+
+If you have questions on the steps to find an advisor, please [reach out to me on LinkedIn](https://linkedin.com/in/ardivekar/).
 
 ----
 
