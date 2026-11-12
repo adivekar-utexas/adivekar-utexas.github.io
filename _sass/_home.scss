@@ -136,7 +136,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* Every card (external and AMLC) uses the same even padding, so the space
    above the content equals the space below it. */
 .prow {
-  position: relative; margin: 0; padding: 18px 16px; background: $surface; border: 1px solid $line; border-radius: 14px;
+  position: relative; margin: 0; padding: 20px; background: $surface; border: 1px solid $line; border-radius: 14px;
   scroll-margin-top: 140px; transition: box-shadow .16s ease, border-color .16s ease;
 }
 /* The expand chevron straddles the card's bottom edge, so expandable cards
@@ -152,7 +152,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   background: linear-gradient(135deg, $tint, #ffffff);
 }
 .prow__body { min-width: 0; }
-.prow__venue { margin: 0 0 4px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: none; color: $ink-3; }
+.prow__venue { margin: 0 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: $ink-3; }
 .prow__title { margin: 0 0 5px; font-family: $serif; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
 .home .prow__title a { color: $ink; text-decoration: none; }
 .home .prow__title a:hover { color: $accent; }
@@ -169,9 +169,11 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__venue .pill { margin-left: 6px; font-size: 12px; line-height: 22px; }
 .publications-scholar { flex-shrink: 0; }
 .publications-note { margin: -8px 0 14px; font-size: 13px; color: $ink-3; }
-.prow.is-open .prow__thumb { display: none; }
-.prow.is-open .prow__main { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-.prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; }
+/* Hide the thumbnail but keep its grid cell, so the text column does not
+   shift left when the card opens. */
+.prow.is-open .prow__thumb { visibility: hidden; }
+/* Keep the three-column grid when open, so the text column does not shift left. */
+.prow.is-open .prow__links { grid-column: 3; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; }
 .prow.is-animating { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
@@ -190,7 +192,9 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__toggle:hover { background: $hover; border-color: $hover-line; color: $ink-3; }
 .prow__toggle svg { transition: transform .36s ease; }
 .prow.is-open .prow__toggle svg { transform: rotate(180deg); }
-.prow__more { margin: 16px 0 0; max-width: none; padding-top: 16px; border-top: 1px solid $line; text-align: center; }
+/* Expanded block lines up with the card's text column (thumb width + gap),
+   so opening a card does not move the figure or abstract to the left. */
+.prow__more { margin: 16px 0 0 248px; max-width: none; padding-top: 16px; border-top: 1px solid $line; text-align: center; }
 .prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
 .prow__venue-full { margin: 0 0 12px; font-size: 13px; color: $ink-3; }
@@ -217,6 +221,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 @media (max-width: 860px) {
   .prow__main { grid-template-columns: 176px minmax(0, 1fr); }
   .prow__links { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; min-width: 0; }
+  .prow__more { margin-left: 200px; }
 }
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 20px; padding-top: 28px; }
@@ -231,6 +236,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 }
 @media (max-width: 560px) {
   .prow__main { grid-template-columns: 1fr; }
+  .prow__more { margin-left: 0; }
 }
 
 
@@ -308,12 +314,11 @@ body { background: $page; color: $ink; }
 /* ---- Shared components (sized to match the Writing page chips) ----------- */
 .home-intro { margin: -4px 0 16px; max-width: 760px; font-size: 15px; line-height: 1.6; color: $ink-2; }
 .home-section { scroll-margin-top: 140px; }
-/* Home section bar: one row of evenly spread tabs, wider than the 1040px
-   column so all nine fit with no scrollbar. Wraps (never scrolls) on narrow screens. */
+/* Home section bar: one row of evenly spread tabs, exactly the width of the
+   content column. Wraps (never scrolls) on narrow screens. */
 .tabbar--home {
   margin: 8px auto 40px; flex-wrap: nowrap; justify-content: space-between; gap: 2px;
-  width: min(1180px, calc(100vw - 32px)); max-width: none; overflow: visible;
-  margin-left: calc((100% - min(1180px, 100vw - 32px)) / 2);
+  width: 100%; max-width: none; overflow: visible;
 }
 .tabbar--home .tab { flex: 1 1 auto; justify-content: center; height: 34px; padding: 0 10px; font-size: 13.5px; }
 @media (max-width: 1100px) {
@@ -324,7 +329,7 @@ body { background: $page; color: $ink; }
 .cards { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .cards--3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .card {
-  margin: 0; padding: 18px 20px; background: $surface; border: 1px solid $line; border-radius: 14px;
+  margin: 0; padding: 20px; background: $surface; border: 1px solid $line; border-radius: 14px;
   transition: box-shadow .16s ease, border-color .16s ease;
 }
 .card:hover { border-color: $hover-line; box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08), 0 1px 3px rgba(16, 24, 40, 0.06); }
@@ -501,10 +506,15 @@ body { background: $page; color: $ink; }
 a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 a:focus-visible, button:focus-visible { outline: 2px solid rgba(87, 83, 78, 0.6); outline-offset: 2px; }
 
-/* Section sub-headings and media cards ------------------------------------ */
-.home .home-h3 { margin: 22px 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: $ink-3; }
-.card--media { display: flex; flex-direction: column; padding: 12px 12px 16px; }
-.card--media .card__title, .card--media .card__text, .card--media .card__links { padding: 0 6px; }
+/* Section sub-headings: one style everywhere (serif, same size as the AMLC
+   divider), so Career groups and the AMLC subsection read the same. */
+.home .home-h3, .home .home-h3--sub {
+  margin: 36px 0 8px; padding-top: 18px; border-top: 1px solid $line; scroll-margin-top: 140px;
+  font-family: $serif; font-size: 20px; font-weight: 500; letter-spacing: -0.005em;
+  text-transform: none; color: $ink;
+}
+.card--media { display: flex; flex-direction: column; padding: 20px; }
+.card--media .card__title, .card--media .card__text, .card--media .card__links { padding: 0; }
 .card__media { display: block; aspect-ratio: 16 / 9; margin-bottom: 12px; border-radius: 9px; overflow: hidden; border: 1px solid $line; background: #fff; }
 .card__media img { width: 100%; height: 100%; object-fit: cover; }
 .card--media .card__links { margin-top: auto; padding-top: 6px; }

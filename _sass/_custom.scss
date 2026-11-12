@@ -39,7 +39,7 @@ a:hover { color: #163a5c; }
 .tag-chip.is-active { background: #e7e4dd; color: #1c1917; border-color: #d6d2c9; }
 .post-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .post-entry {
-  position: relative; margin: 0; padding: 18px 20px; background: #ffffff; border: 1px solid #e7e4dd; border-radius: 14px;
+  position: relative; margin: 0; padding: 20px; background: #ffffff; border: 1px solid #e7e4dd; border-radius: 14px;
   transition: box-shadow .16s ease, border-color .16s ease;
 }
 .post-entry:hover { border-color: #c9c0b2; box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08), 0 1px 3px rgba(16, 24, 40, 0.06); }
