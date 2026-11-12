@@ -14,6 +14,11 @@ redirect_from:
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 {% include home/hero.html jobtitle=jobtitle %}
 {% include home/news.html %}
+{% comment %}
+  Section bar. If you add, rename or remove a tab here, update three places:
+  (1) the matching section include below, (2) the anchor id on that section,
+  (3) the /section-name/ redirect stub in _pages/redirect-*.html.
+{% endcomment %}
 <nav class="tabbar tabbar--home" aria-label="Sections">
   <a class="tab" href="#history">Career</a>
   <a class="tab" href="#publications">Publications</a>
