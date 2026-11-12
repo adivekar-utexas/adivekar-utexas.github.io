@@ -16,4 +16,5 @@ citation: '<u>Abhishek Divekar</u>*, Gaurav Manchanda*, Prit Raj, Abhishek Das, 
 venue_short: 'AMLC 2021'
 pitch: "AutoML that finds high-performing models within an explicit production cost budget, with a cost-performance tradeoff curve."
 thumb: 'drip.jpg'
+thumb_alt: "DRiP cost-performance tradeoff curve: ROC-AUC against production cost, with the single-point results of other AutoML systems shown for comparison."
 ---
