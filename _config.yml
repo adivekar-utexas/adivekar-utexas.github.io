@@ -157,6 +157,7 @@ exclude:
   - assets/fonts/geist/*.md
   - README.md
   - CONTRIBUTING.md
+  - AGENTS.md
   - LICENSE
   - Gemfile.lock
 keep_files:
