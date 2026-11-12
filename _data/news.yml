@@ -13,9 +13,14 @@
   text: "VESTA accepted to NeurIPS 2026 (main track)!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2606.00384"
+- date: 2026-11-01
+  tag: IOAI
+  text: "Joined the IOAI International Scientific Committee and the AI Models Track committee for IOAI 2027."
+  cta_text: "See my AI Olympiad work"
+  cta_url: "/#ioai"
 - date: 2026-09-01
   tag: IOAI
-  text: "Released the IOAI² 2026 review, co-authored with Elena Marinova."
+  text: "Released the IOAI² 2026 review, co-authored with IOAI co-founder Elena Marinova."
   cta_text: "Read the report"
   cta_url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"
 - date: 2026-08-08
