@@ -14,7 +14,10 @@
       sub: "LLM and vision-language agents for astronomy, with UT Austin, NYU and UCLA."
 - group: "Academic and olympiad service"
   rows:
-    - when: "Dec 2025 to now"
+    - when: "Nov 2026 to now"
+      title: "Member, International Scientific Committee (IOAI 2027)"
+      org: "International Olympiad in Artificial Intelligence"
+    - when: "Dec 2025 to Sep 2026"
       title: "Member, International Scientific Committee (IOAI 2026)"
       org: "International Olympiad in Artificial Intelligence"
       sub: "Duties: Chair of the IOAI² AI Models Track; member of the IOAI Jury."
