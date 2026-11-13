@@ -69,13 +69,16 @@ social:
   type                   : Person
   name                   : "Abhishek Divekar"
   links: # sameAs links used in JSON-LD (keep identical to profile fields everywhere)
+    - "https://orcid.org/0000-0002-2546-9871"
     - "https://scholar.google.com/citations?user=1Sf2oM4AAAAJ"
+    - "https://www.semanticscholar.org/author/51929228"
     - "https://www.linkedin.com/in/ardivekar"
     - "https://github.com/adivekar-utexas"
     - "https://github.com/ARDivekar"
     - "https://x.com/AdamDivekar"
     - "https://huggingface.co/adivekar"
-    # TODO(Abhishek): add ORCID, DBLP pid, Semantic Scholar author ID, OpenReview profile once confirmed
+    # TODO(Abhishek): add the DBLP pid and the OpenReview profile id once confirmed
+    # (dblp.org and openreview.net block automated lookups, so neither could be verified here).
 
 
 # Analytics

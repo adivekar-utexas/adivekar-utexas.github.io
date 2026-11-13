@@ -455,13 +455,6 @@ body { background: $page; color: $ink; }
 .talk-card__title { display: block; padding: 2px 4px 0; font-size: 14px; font-weight: 600; line-height: 1.35; }
 @media (max-width: 760px) { .talk-stage { padding: 16px; } .spage__body .talk-stage__title { font-size: 22px; } }
 
-/* ---- CV page: PDF viewer -------------------------------------------------- */
-#main.cvpage { max-width: 1040px; margin: 0 auto; padding: 32px 24px 48px; color: $ink; }
-.cvpage__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
-.cvpage__title { margin: 0; font-family: $serif; font-weight: 500; font-size: 34px; letter-spacing: -0.02em; }
-.cvpage__actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.cvpage__pdf { display: block; width: 100%; height: calc(100vh - 170px); min-height: 640px; border: 1px solid $line; border-radius: 12px; background: #fff; }
-
 /* ---- Blog posts ---------------------------------------------------------- */
 .post__head { padding-bottom: 28px; margin-bottom: 36px; border-bottom: 1px solid $line; }
 .post__back { margin: 0 0 14px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
@@ -500,9 +493,6 @@ body { background: $page; color: $ink; }
 .paper__fig img { display: block; width: 100%; height: auto; border-radius: 0; }
 .paper .post__body .prow__pitch { font-size: 16px; margin-bottom: 12px; }
 @media (max-width: 760px) { .paper .prow__venue, .paper__links { text-align: left; justify-content: flex-start; } }
-.cvpage__pages { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.cvpage__pages a { display: block; width: 100%; max-width: 860px; }
-.cvpage__pages img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid $line; border-radius: 6px; box-shadow: 0 4px 18px rgba(16, 24, 40, 0.07); }
 
 /* No focus ring on mouse clicks; keyboard users still get one. */
 a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }

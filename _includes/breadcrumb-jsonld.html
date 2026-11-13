@@ -1,0 +1,20 @@
+{% comment %}
+  BreadcrumbList for inner pages. The homepage is the root; Writing, Speaking
+  and posts hang off it. Emitted only on pages that are not the homepage.
+{% endcomment %}
+{% if page.url != "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" }{% if page.url == "/writing/" %},
+    { "@type": "ListItem", "position": 2, "name": "Writing", "item": "{{ site.url }}/writing/" }{% elsif page.url == "/speaking/" %},
+    { "@type": "ListItem", "position": 2, "name": "Speaking", "item": "{{ site.url }}/speaking/" }{% elsif page.url contains "/writing/" %},
+    { "@type": "ListItem", "position": 2, "name": "Writing", "item": "{{ site.url }}/writing/" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ site.url }}{{ page.url }}" }{% else %},
+    { "@type": "ListItem", "position": 2, "name": {{ page.title | default: site.title | jsonify }}, "item": "{{ site.url }}{{ page.url }}" }{% endif %}
+  ]
+}
+</script>
+{% endif %}

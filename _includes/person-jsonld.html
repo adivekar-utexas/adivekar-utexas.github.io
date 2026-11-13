@@ -52,7 +52,28 @@
       "datePublished": "{{ pub.date | date: '%Y-%m-%d' }}",
       "isPartOf": { "@type": "PublicationEvent", "name": {{ pub.venue_short | default: pub.venue | jsonify }}, "alternateName": {{ pub.venue | jsonify }} },
       "author": { "@id": "{{ site.url }}/#person" }
-    }{% endif %}{% endfor %}
+    }{% endif %}{% endfor %}{% assign talks = site.talks | sort: "date" | reverse %}{% for t in talks %},
+    {
+      "@type": "Event",
+      "@id": "{{ site.url }}/speaking/#{{ t.urlslug }}",
+      "name": {{ t.title | jsonify }},
+      "startDate": "{{ t.date | date: '%Y-%m-%d' }}",
+      "eventAttendanceMode": "{% if t.location == 'Virtual' %}https://schema.org/OnlineEventAttendanceMode{% else %}https://schema.org/OfflineEventAttendanceMode{% endif %}",
+      {% if t.location and t.location != 'Virtual' %}"location": { "@type": "Place", "name": {{ t.location | jsonify }} },
+      {% endif %}"description": {{ t.excerpt | default: t.title | strip_html | strip_newlines | jsonify }},
+      "performer": { "@id": "{{ site.url }}/#person" }{% if t.eventurl %},
+      "sameAs": {{ t.eventurl | jsonify }}{% endif %}{% if t.videourl %},
+      "recordedIn": { "@type": "VideoObject", "name": {{ t.title | jsonify }}, "contentUrl": {{ t.videourl | jsonify }} }{% endif %}
+    }{% endfor %}{% for o in site.data.oss %},
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "{{ site.url }}/#oss-{{ o.name | slugify }}",
+      "name": {{ o.name | jsonify }},
+      "description": {{ o.what | jsonify }},
+      "codeRepository": {{ o.links[0].url | jsonify }},
+      "programmingLanguage": "Python",
+      "author": { "@id": "{{ site.url }}/#person" }
+    }{% endfor %}
   ]
 }
 </script>

@@ -17,7 +17,7 @@ permalink: /llms.txt
 
 {% endfor %}Links: [Google Scholar]({{ site.data.profile.google_scholar }}), [GitHub](https://github.com/adivekar-utexas), [LinkedIn](https://www.linkedin.com/in/ardivekar), [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf).
 
-Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/speaking/) · [CV]({{ u }}/cv/)
+Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/speaking/) · [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf)
 
 ## News
 {% include news-sorted.html %}{% for item in news_sorted %}- {{ item.date | date: "%b %Y" }} [{{ site.data.news_tags[item.tag] | default: item.tag }}]: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains "://" %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: u }}{% endif %}){% endif %}

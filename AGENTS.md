@@ -30,7 +30,7 @@ Verify with the sync check in [Checks before committing](#5-checks-before-commit
 | `_config.yml` → `description` | It names the venues ("NeurIPS 2026, CIKM 2026, AAAI 2026 and EMNLP 2024") |
 | `_data/home.yml` → `hero[0]` | Same venue list in the intro |
 | `_pages/about.md` → `excerpt` | Same venue list in the meta description |
-| `files/Abhishek-Divekar-CV.pdf` + `images/cv/page-*.jpg` | Outside the build; the PDF must be rebuilt by hand |
+| `files/Abhishek-Divekar-CV.pdf` | Outside the build; rebuild it by hand |
 | `images/papers/<slug>.jpg` + `images/papers/thumbs/<slug>.jpg` | Full figure and 16:9 thumbnail |
 
 ### A news item (`_data/news.yml`)
@@ -107,7 +107,7 @@ Nothing else should hardcode a title. If you find one, replace it with `[[TITLE]
 |---|---|
 | **Alt text is mandatory** | No `alt=""` anywhere. Publications use `thumb_alt:`; open-source cards use `alt:`; everything else sets `alt` inline |
 | Paper thumbnails | 640x360 (16:9), full figure 1600px wide, both JPEG |
-| CV pages | `images/cv/page-1..3.jpg`; if the PDF gains or loses a page, update the `(1..3)` loop in `_pages/cv.html` |
+| CV | `files/Abhishek-Divekar-CV.pdf` only. There is no HTML CV and no rendered page images; the CV link opens the PDF directly. `/cv/` and `/resume` are redirect stubs pointing at the file |
 | Portrait | `images/profile-560.jpg` and `.webp`, 560x560 source |
 | No EXIF | Strip GPS and camera metadata before committing |
 
@@ -230,13 +230,46 @@ Run these in order. All must pass.
 4. **No em dashes or en dashes** in rendered content: `grep -r "—\|–" _site --include='*.html'` returns nothing. Hyphens are fine; CTA arrows (`→`) are fine.
 5. **No empty alt:** `grep -c 'alt=""' _site/index.html` is `0`.
 6. **Redirects resolve.** Every `/section/` URL returns 200 and points at its anchor.
-7. **JSON-LD parses** and contains one `Person` with a non-empty `sameAs`.
-8. **Links.** No broken internal links in the built site.
-9. **Visual check** of the changed area in a browser at desktop and phone width.
+7. **JSON-LD parses** on every page, with one `Person` carrying a non-empty `sameAs`:
+
+   ```bash
+   python3 - <<'PY'
+   import json, re, pathlib
+   bad = total = 0
+   for p in pathlib.Path('_site').rglob('*.html'):
+       for b in re.findall(r'(?s)<script type="application/ld\+json">(.*?)</script>', p.read_text(errors='replace')):
+           total += 1
+           try: json.loads(b)
+           except Exception as e:
+               bad += 1; print("INVALID", p, e)
+   print(f"blocks: {total} | invalid: {bad}")
+   PY
+   ```
+
+8. **Redirects resolve.** Every `/section/` URL returns 200 and points at its anchor, and `/cv/` reaches the PDF.
+9. **Links.** No broken internal links in the built site.
+10. **Visual check** of the changed area in a browser at desktop and phone width.
 
 ---
 
-## 6. Style conventions
+## 6. Structured data
+
+Emitted by `_includes/person-jsonld.html` on every page, from the same data files as the page.
+
+| Type | Source | Notes |
+|---|---|---|
+| `Person` | `_data/profile.yml` + `_config.yml` `social.links` | `sameAs` is the identity graph. ORCID and Semantic Scholar are verified; DBLP and OpenReview are still missing because both sites block automated lookups |
+| `ScholarlyArticle` | every `_publications/` file with `external: true` and a `paperurl` | Includes the abstract |
+| `Event` | every file in `_talks/` | `location` drives online vs offline attendance; `videourl` becomes a `VideoObject` |
+| `SoftwareSourceCode` | every entry in `_data/oss.yml` | `codeRepository` is the first link |
+| `BreadcrumbList` | `_includes/breadcrumb-jsonld.html` | Inner pages only; homepage gets none |
+| `WebSite`, `ProfilePage` | `_config.yml` | |
+
+**When you add a talk or a repo, the JSON-LD follows automatically.** When you add a *new kind* of thing, add a block here, and check that the emitted JSON still parses (see the checks below).
+
+---
+
+## 7. Style conventions
 
 | Topic | Rule |
 |---|---|
@@ -251,7 +284,7 @@ Run these in order. All must pass.
 
 ---
 
-## 7. Known traps
+## 8. Known traps
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -266,7 +299,7 @@ Run these in order. All must pass.
 
 ---
 
-## 8. Git
+## 9. Git
 
 - One commit per logical change. Commit locally as you go; do not batch unrelated edits.
 - Never commit `_site/`, `_private/`, `vendor/`, `.bundle/`.
@@ -275,7 +308,7 @@ Run these in order. All must pass.
 
 ---
 
-## 9. File map
+## 10. File map
 
 ```
 _config.yml                 site-wide settings, description, social graph, og_image
@@ -294,13 +327,14 @@ _data/navigation.yml        top nav
 _pages/about.md             the homepage: hero, news, section bar, section includes
 _pages/writing.html         Writing list
 _pages/speaking.html        Speaking
-_pages/cv.html              CV viewer (PDF + page images)
 _pages/redirect-*.html      /section/ stubs; keep in sync with the section bar
+_pages/redirect-cv.html     /cv/ and /resume -> the CV PDF
 _includes/home/*.html       one include per homepage section
 _includes/paper-row.html    one publication card
 _includes/authors.html      author line: your name bold, underlined, star bold
 _includes/jobtitle          the [[TITLE]] resolver
-_includes/person-jsonld.html  JSON-LD graph
+_includes/person-jsonld.html  JSON-LD graph: Person, articles, Events, repos
+_includes/breadcrumb-jsonld.html  BreadcrumbList for inner pages
 _includes/seo.html          meta tags, canonical, og:image, twitter card
 llms.txt                    the LLM-readable mirror (generated from _data)
 _sass/_home.scss            the design system: palette, cards, tabs, rows
