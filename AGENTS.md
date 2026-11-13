@@ -258,7 +258,7 @@ Emitted by `_includes/person-jsonld.html` on every page, from the same data file
 
 | Type | Source | Notes |
 |---|---|---|
-| `Person` | `_data/profile.yml` + `_config.yml` `social.links` | `sameAs` is the identity graph. ORCID and Semantic Scholar are verified; DBLP and OpenReview are still missing because both sites block automated lookups |
+| `Person` | `_data/profile.yml` + `_config.yml` `social.links` | `sameAs` is the identity graph: ORCID, DBLP, Google Scholar, Semantic Scholar, OpenReview, LinkedIn, GitHub, X, HuggingFace. Add any new profile here only, and it propagates to every page |
 | `ScholarlyArticle` | every `_publications/` file with `external: true` and a `paperurl` | Includes the abstract |
 | `Event` | every file in `_talks/` | `location` drives online vs offline attendance; `videourl` becomes a `VideoObject` |
 | `SoftwareSourceCode` | every entry in `_data/oss.yml` | `codeRepository` is the first link |
