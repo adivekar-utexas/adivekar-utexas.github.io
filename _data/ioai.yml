@@ -3,11 +3,11 @@
 #   expand: false      no chevron; everything is visible
 #   more_image: x.jpg  expanding shows that image full width
 #   image_right: x.jpg a small image on the right, above the buttons
-intro: "The [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/) is an annual science olympiad for high-school students. Its third edition, IOAI 2026 in Astana, Kazakhstan, had 108 countries and territories represented, and was the first to include an AI Models Track."
+intro: "The [International Olympiad in Artificial Intelligence (IOAI) [[ARROW]]](https://ioai-official.org/) is an annual science olympiad for high-school students. Its third edition, IOAI 2026 in Astana, Kazakhstan, had 108 countries and territories represented, and was the first to include an AI Models Track."
 cards:
   - slug: "ioai-2026"
     kicker: "IOAI 2026 · Astana, Kazakhstan"
-    title: "Member of IOAI Scientific Committee, and Chair of IOAI²: AI Models Track"
+    title: "Chair of IOAI²: AI Models Track; member of IOAI 2026 Scientific Committee"
     expand: true
     text:
       - "As an ISC member, I helped propose and curate the IOAI 2026 tasks and served on the IOAI Jury in Astana, which proctored the competition."
@@ -15,14 +15,14 @@ cards:
     show_all_text: true
     links:
       - {label: "IOAI 2026 Team", icon: "team", url: "https://ioai-official.org/republic-of-kazakhstan/international-jury/"}
-      - {label: "IOAI² Announcement", icon: "article", url: "https://ioai-official.org/ai-models-track/"}
+      - {label: "IOAI² Rules", icon: "article", url: "https://ioai-official.org/ai-models-track/"}
       - {label: "IOAI² Results", icon: "results", url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"}
       - {label: "IOAI² GitHub", icon: "github", url: "https://github.com/IOAI-official/IOAI-AI-Models-Track"}
     image: "ioai-2026-founding-ai-participants.jpg"
     image_alt: "The founding AI participants of the IOAI² AI Models Track: logos of the 14 participating AI labs and teams"
     more_image: "ioai-2026-founding-ai-participants.jpg"
     more_image_alt: "The founding AI participants of the IOAI² AI Models Track: logos of the 14 participating AI labs and teams"
-    more_image_caption: "The founding AI participants of the IOAI² AI Models Track: the logos of the 14 labs and teams whose systems competed in Astana."
+    more_image_caption: "The founding AI participants of the IOAI² AI Models Track: the logos of the 14 labs and teams whose autonomous AI systems competed in the inaugural AI Models Track."
   - slug: "ioai-2025"
     kicker: "IOAI 2025 · Beijing, China"
     title: "Team Lead, Team India"

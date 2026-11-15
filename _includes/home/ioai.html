@@ -1,7 +1,7 @@
-{% assign io = site.data.ioai %}
+{% assign io = site.data.ioai %}{% capture arrow_html %}{% include arrow.html %}{% endcapture %}
 <section class="home-section" id="ioai" aria-labelledby="ioai-h">
   <h2 id="ioai-h" class="home-h2">AI Olympiad</h2>
-  <p class="home-intro">{{ io.intro | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+  <p class="home-intro">{{ io.intro | replace: "[[ARROW]]", arrow_html | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
   <ul class="ptable">
   {% for c in io.cards %}{% include home/ioai-card.html c=c %}{% endfor %}
   </ul>

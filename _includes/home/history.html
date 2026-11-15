@@ -2,7 +2,7 @@
 <section class="home-section" id="history" aria-labelledby="history-h">
   <div class="home-h2-row">
     <h2 id="history-h" class="home-h2">Career</h2>
-    <a class="more-link" href="/files/Abhishek-Divekar-CV.pdf">Full CV</a>
+    <a class="ilink ilink--fit" href="/files/Abhishek-Divekar-CV.pdf">{% include icons/paper.svg %}<span>View my resume {% include arrow.html %}</span></a>
   </div>
   {% for g in site.data.history %}
   <h3 class="home-h3" id="career-{{ g.group | slugify }}">{{ g.group }}</h3>

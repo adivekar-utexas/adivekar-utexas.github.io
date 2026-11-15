@@ -103,7 +103,7 @@ These flow automatically into JSON-LD, `llms.txt`, the sidebar and meta tags: `n
 
 Nothing else should hardcode a title. If you find one, replace it with `[[TITLE]]` or `{% include jobtitle %}`.
 
-`[[ARROW]]` in `_data/home.yml` becomes the CTA arrow (from `_data/ui.yml`), substituted in `_includes/home/hero.html` and `llms.txt`.
+`[[ARROW]]` in `_data/home.yml` and `_data/ioai.yml` becomes the CTA arrow (from `_data/ui.yml`), substituted in `_includes/home/hero.html`, `_includes/home/ioai.html` and `llms.txt`.
 
 `[[TITLE]]` is substituted in page front matter (`seo_title`, `description`), `_data/news.yml` text, `_data/history.yml` role, and `_config.yml` `author.bio`. The substitution lives in `_includes/seo.html`, `_includes/author-profile.html`, `_includes/home/news.html`, `_includes/home/history.html` and `llms.txt`. If you add a new template that prints a front-matter string, add the same `| replace: "[[TITLE]]", jobtitle` filter.
 
