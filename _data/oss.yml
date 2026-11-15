@@ -24,3 +24,9 @@
   what: "Dataframe sharding, streaming and processing for ML."
   links:
     - {label: "GitHub", url: "https://github.com/adivekar-utexas/bears"}
+- name: "AI Learning Gems"
+  image: "ai-learning-gems.jpg"
+  alt: "AI Learning Gems project card: textbook-style AI notes."
+  what: "Textbook-style AI notes, researched by LLMs and curated by me."
+  links:
+    - {label: "GitHub", url: "https://github.com/AI-Learning-Gems"}

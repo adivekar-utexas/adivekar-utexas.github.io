@@ -1,0 +1,31 @@
+{% comment %}
+  One AI Olympiad card, using the same layout as the publication cards:
+  [image] [kicker, title, first paragraph] [chip links], expandable for the rest.
+  Usage: {% include home/ioai-card.html c=card %}
+{% endcomment %}
+{% assign c = include.c %}
+{% assign press = nil %}{% if c.press_id %}{% assign press = site.data.press | where: "id", c.press_id | first %}{% endif %}
+{% assign has_more = false %}{% if c.text.size > 1 or c.meta or press or c.links %}{% assign has_more = true %}{% endif %}
+{% assign extra = c.text | slice: 1, 20 %}
+<li class="prow prow--expandable" id="{{ c.slug }}">
+  <div class="prow__main">
+    <div class="prow__thumb">
+      <img src="{{ base_path }}/images/{{ c.image }}" alt="{{ c.image_alt }}" loading="lazy">
+    </div>
+    <div class="prow__body">
+      <p class="prow__venue">{{ c.kicker }}</p>
+      <h3 class="prow__title">{{ c.title }}</h3>
+      {% for t in c.text limit: 1 %}<p class="prow__pitch">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endfor %}
+    </div>
+  </div>
+  <div class="prow__more" id="{{ c.slug }}-more" hidden>
+    {% for t in extra %}<p class="prow__abs">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+    {% endfor %}
+    {% if c.meta %}<p class="prow__abs">{{ c.meta }}</p>{% endif %}
+    {% if press %}<p class="prow__abs">Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
+    {% if c.links %}<p class="prow__abs">{% for l in c.links %}<a class="chip-link" href="{{ l.url }}">{{ l.label }}</a> {% endfor %}</p>{% endif %}
+  </div>
+  <button type="button" class="prow__toggle" aria-expanded="false" aria-controls="{{ c.slug }}-more" aria-label="Show more about {{ c.title }}">
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+  </button>
+</li>

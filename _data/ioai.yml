@@ -1,9 +1,11 @@
 # Homepage "AI Olympiad" section. Rendered by _includes/home/ioai.html and llms.txt.
+# Every card expands, like the publication cards: the first paragraph stays
+# visible, the rest (meta, press, extra text) opens with the chevron.
 intro: "The [International Olympiad in Artificial Intelligence (IOAI)](https://ioai-official.org/) is an annual science olympiad for high-school students. Its 2026 edition in Astana, Kazakhstan, had 108 countries and territories represented."
 cards:
-  - kicker: "IOAI 2026 · Astana, Kazakhstan"
+  - slug: "ioai-2026"
+    kicker: "IOAI 2026 · Astana, Kazakhstan"
     title: "Chair, IOAI² AI Models Track"
-    url: "https://ioai-official.org/ai-models-track/"
     text:
       - "**I created and chaired the inaugural IOAI² AI Models Track** and led its organizing committee. I designed the competition format and rules, and recruited **14 AI research organizations from 5 countries** (United States, China, United Kingdom, Japan and the UAE), including Sakana AI, MBZUAI IFM, Shanghai AI Laboratory, Peking University, Westlake University and UCLA. Their 15 autonomous AI systems competed on the same six tasks as students from 108 countries and territories."
       - "It is the first track at an international science olympiad where fully autonomous AI systems compete alongside the students. I wrote the track's official statement and am lead author, with IOAI Board Chair Elena Marinova, of the inaugural review. The International Jury's final report at the closing ceremony presented the track and gave special thanks to me and to Kaggle."
@@ -14,22 +16,21 @@ cards:
       - {label: "Rules on GitHub", url: "https://github.com/IOAI-official/IOAI-AI-Models-Track"}
     image: "ioai-2026-founding-ai-participants.jpg"
     image_alt: "The founding AI participants of the IOAI² AI Models Track: logos of the 15 participating AI labs and teams"
-    image_style: "wide"
-  - kicker: "IOAI 2025 · Beijing, China"
-    title: "Team Leader, Team India"
-    url: "https://ioai-official.org/china-2025/results-2025/"
+  - slug: "ioai-2025"
+    kicker: "IOAI 2025 · Beijing, China"
+    title: "AI Olympiad Coach, Team India"
     text:
       - "**I led Team India at its IOAI debut:** I helped select, mentor and coach the eight olympians, ran timed six-hour mock contests, and represented India at the IOAI General Assembly. The team won **3 Gold, 2 Silver and 1 Bronze**, plus one Honourable Mention, placing 3rd of 53 countries and regions by medal table. I also designed the team's peacock logo, one feather per olympian."
-    meta: "Golds: Roumak Das (rank 11), Arjun Tyagi (18), Soham Sen (19). Silvers: Rayan Banerjee (37), Samik Goyal (41). Bronze: Himaneesh Sompalle (77). Ranks and medal-table position computed from the official results."
+    meta: "Golds: Roumak Das (rank 11), Arjun Tyagi (18), Soham Sen (19). Silvers: Rayan Banerjee (37), Samik Goyal (41). Bronze: Himaneesh Sompalle (77)."
+    press_id: "ioai-2025"
     links:
       - {label: "Official results", url: "https://ioai-official.org/china-2025/results-2025/"}
-      - {label: "Press coverage", url: "#press"}
     image: "ioai-2025-team-india-logo.png"
     image_alt: "Team India IOAI 2025 logo: a peacock with eight feathers"
-  - kicker: "INAIO 2025 · Hyderabad, India"
+  - slug: "inaio-2025"
+    kicker: "INAIO 2025 · Hyderabad, India"
     title: "Technical Committee, ACM India AI Olympiad (INAIO 2025)"
     text:
       - "**I helped select India's national team:** I curated the Stage-2 problems attempted by 200+ students, and coached and judged the 22 Stage-4 finalists at IIIT Hyderabad."
     image: "logos/acm.png"
     image_alt: "ACM logo"
-    image_style: "logo"

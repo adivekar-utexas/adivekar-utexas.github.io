@@ -2,18 +2,7 @@
 <section class="home-section" id="ioai" aria-labelledby="ioai-h">
   <h2 id="ioai-h" class="home-h2">AI Olympiad</h2>
   <p class="home-intro">{{ io.intro | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
-  <ul class="cards">
-  {% for c in io.cards %}
-    <li class="card card--with-img{% if c.image_style == 'wide' %} card--logo-wide{% endif %}">
-      <div>
-        <p class="card__kicker">{{ c.kicker }}</p>
-        <h3 class="card__title">{% if c.url %}<a href="{{ c.url }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</h3>
-        {% for t in c.text %}<p class="card__text">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endfor %}
-        {% if c.meta %}<p class="card__meta">{{ c.meta }}</p>{% endif %}
-        {% if c.links %}<p class="card__links">{% for l in c.links %}<a class="chip-link" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>{% endif %}
-      </div>
-      {% if c.image %}<img class="card__img{% if c.image_style == 'wide' %} card__img--wide{% elsif c.image_style == 'logo' %} card__img--logo{% endif %}" src="{{ base_path }}/images/{{ c.image }}" alt="{{ c.image_alt }}" loading="lazy">{% endif %}
-    </li>
-  {% endfor %}
+  <ul class="ptable">
+  {% for c in io.cards %}{% include home/ioai-card.html c=c %}{% endfor %}
   </ul>
 </section>

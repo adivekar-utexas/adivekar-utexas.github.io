@@ -120,7 +120,7 @@ Nothing else should hardcode a title. If you find one, replace it with `[[TITLE]
 |---|---|---|
 | `_data/history.yml` | Career section (grouped: Full-time, Part-time, Academic and olympiad service, Internships, Education) | `llms.txt` Career; news if it is a milestone |
 | `_data/launches.yml` | Product launches | `llms.txt`; news |
-| `_data/ioai.yml` | AI Olympiad cards | Images under `images/`; `llms.txt` |
+| `_data/ioai.yml` | AI Olympiad cards, rendered by `_includes/home/ioai-card.html` in the same layout as publications: image left, expandable. `press_id` pulls an outlet list from `_data/press.yml` | Images under `images/`; `llms.txt` |
 | `_data/oss.yml` | Open source cards | Image in `images/oss/`, `alt:` field |
 | `_data/awards.yml` | Awards rows and photos | `llms.txt`; news |
 | `_data/press.yml` | Press & Media | `llms.txt` |
@@ -341,6 +341,7 @@ _pages/speaking.html        Speaking
 _pages/redirect-*.html      /section/ stubs; keep in sync with the section bar
 _pages/redirect-cv.html     /cv/ and /resume -> the CV PDF
 _includes/home/*.html       one include per homepage section
+_includes/home/ioai-card.html  one AI Olympiad card (publication card layout)
 _includes/paper-row.html    one publication card
 _includes/authors.html      author line: your name bold, underlined, star bold
 _includes/jobtitle          the [[TITLE]] resolver
