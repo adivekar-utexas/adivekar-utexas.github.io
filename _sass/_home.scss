@@ -210,7 +210,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* Olympiad cards are publication cards: same grid, same open/close rules,
    same animation. The only differences are a wider button column (the labels
    are longer) and an optional small image (the peacock) beside the text. */
-.prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) 176px; }
+.prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) 176px; align-items: start; }
 .prow--ioai .prow__side { align-self: center; display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
 .prow--ioai .prow__links { width: 100%; justify-content: center; }
 .prow--ioai .prow__links li { flex: 1 1 auto; }
