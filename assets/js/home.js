@@ -28,6 +28,11 @@
     card.querySelector('.prow__toggle').addEventListener('click', function () {
       setOpen(card, !card.classList.contains('is-open'));
     });
+    // The "Abstract" pill opens the card; it is hidden while the abstract is visible.
+    var pill = card.querySelector('.ilink--abstract');
+    if (pill) {
+      pill.addEventListener('click', function () { setOpen(card, true); });
+    }
   });
   // /#paper-slug opens that card (old /publication/... pages redirect here).
   function openHash() {

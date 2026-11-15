@@ -176,7 +176,8 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
    text in every other card (e.g. "KeywordGym for Amazon advertising"). */
 .prow.is-open .prow__thumb { display: none; }
 .prow.is-open .prow__main { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-.prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; margin: 12px 0 24px; }
+.prow.is-open .ilink--abstract { display: none; }
+.prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; gap: 8px; margin: 12px 0 24px; }
 .prow.is-animating { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
@@ -207,15 +208,15 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .ptable { padding-bottom: 6px; }
 
 /* Icon links: a vertical stack of compact pills, sized like the Writing chips. */
-.prow__links { list-style: none; margin: 0; padding: 0; align-self: center; display: flex; flex-direction: column; gap: 6px; min-width: 100px; }
+.prow__links { list-style: none; margin: 0; padding: 0; align-self: center; display: flex; flex-direction: column; gap: 9px; min-width: 100px; }
 .prow__links li { margin: 0; }
 .ilink {
-  display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 18px;
+  display: flex; align-items: center; gap: 8px; height: 31px; padding: 0 18px;
   border: 1px solid $line; border-radius: 999px; background: $surface;
-  font-size: 14px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important;
+  font-size: 13px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important;
   transition: background .12s ease, border-color .12s ease, color .12s ease;
 }
-.ilink svg { width: 14px; height: 14px; flex: none; color: $ink-3; }
+.ilink svg { width: 13px; height: 13px; flex: none; color: $ink-3; }
 .ilink:hover { background: $hover; border-color: $hover-line; color: $ink-2 !important; }
 .ilink:hover svg { color: $ink-3; }
 .ilink:focus-visible { outline: 2px solid $accent; outline-offset: 2px; }
@@ -270,7 +271,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 }
 .tab {
   display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 999px;
-  font-size: 14px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important; white-space: nowrap;
+  font-size: 13px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important; white-space: nowrap;
   transition: background .12s ease, color .12s ease;
 }
 .tab:hover { background: $tint; color: $ink-2 !important; }

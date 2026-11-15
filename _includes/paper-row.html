@@ -1,13 +1,12 @@
 {% comment %}
   One research card: [16:9 figure] [venue + type, title, authors, TL;DR] [icon links].
-  External papers get a "More" toggle at the bottom that expands the card in place:
-  large centred figure, then the abstract in small type. AMLC papers (internal)
-  have no abstract and no toggle.
+  Any card with an abstract expands in place: large centred figure (only when the
+  paper has one), then the abstract in small type, then its BibTeX.
   Usage: {% include paper-row.html pub=pub %}
 {% endcomment %}
 {% assign pub = include.pub %}
 {% capture authors %}{% include authors.html citation=pub.citation %}{% endcapture %}
-{% assign has_more = false %}{% if pub.thumb and pub.excerpt %}{% assign has_more = true %}{% endif %}
+{% assign has_more = false %}{% if pub.excerpt %}{% assign has_more = true %}{% endif %}
 {% if pub.thumb_alt %}{% assign thumb_alt = pub.thumb_alt %}{% else %}{% assign thumb_alt = pub.title | split: ':' | first | prepend: 'Key figure from ' %}{% endif %}
 <li class="prow{% if has_more %} prow--expandable{% endif %}" id="{{ pub.urlslug }}">
   <div class="prow__main">
@@ -21,6 +20,7 @@
       {% if pub.pitch %}<p class="prow__pitch"><span class="pill pill--tldr">TL;DR</span> {{ pub.pitch }}</p>{% endif %}
     </div>
     <ul class="prow__links" aria-label="Links">
+      {% if has_more %}<li><button type="button" class="ilink ilink--abstract" data-expand="{{ pub.urlslug }}" title="Show the abstract">{% include icons/abstract.svg %}<span>Abstract</span></button></li>{% endif %}
       {% if pub.paperurl contains "http" %}<li><a class="ilink" href="{{ pub.paperurl }}">{% include icons/paper.svg %}<span>Paper</span></a></li>{% endif %}
       {% if pub.codeurl %}<li><a class="ilink" href="{{ pub.codeurl }}">{% include icons/code.svg %}<span>Code</span></a></li>{% endif %}
       {% if pub.projecturl %}<li><a class="ilink" href="{{ pub.projecturl }}">{% include icons/globe.svg %}<span>Project</span></a></li>{% endif %}
