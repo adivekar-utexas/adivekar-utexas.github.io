@@ -87,17 +87,16 @@
   window.addEventListener('scroll', updateTab, { passive: true });
   updateTab();
 
-  // Email: decode the base64 address on click, copy it, and reveal a visible
-  // mailto: link. The plain address is not present in the page source.
+  // First click reveals the address; subsequent clicks open the mail client.
+  // Obfuscation deters simple scraping, but is not encryption.
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a.js-email');
-    if (!a) return;
+    if (!a || a.classList.contains('js-email--shown')) return;
     e.preventDefault();
     var email;
     try { email = atob(a.dataset.e.replace(/-/g, '+').replace(/_/g, '/')); }
     catch (err) { email = ''; }
     if (!email) return;
-    var addressText = email.replace(/([.at])+/g, ' ');
     var reveal = function () {
       var span = a.querySelector('span');
       a.setAttribute('href', 'mailto:' + email);
@@ -106,11 +105,7 @@
       if (span) span.textContent = email;
       a.classList.add('js-email--shown');
     };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(email).then(reveal, reveal);
-    } else {
-      reveal();
-    }
+    reveal();
   });
 
   // "Copy for LLM": fetch llms.txt (the same text AI crawlers read) and copy it.

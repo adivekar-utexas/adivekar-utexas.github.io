@@ -185,7 +185,7 @@ Rules:
 | University transcripts (PDF or image) | Purged; the filenames are still referenced in old `_pages/cv.md` history |
 | Internal AMLC paper abstracts | Purged from every file, including `markdown_generator/` |
 
-**Allowed and intentional:** `adivekar` and `adivekar`. The UT address is intentionally NOT in HTML, `llms.txt`, or plain URLs. On the page it is base64-encoded then decoded on click, and the click reveals a visible `mailto:` link; `llms.txt` points to the LinkedIn contact instead. Do not put the plain address in HTML or in `_data/*.yml`. The Amazon address appears only inside PDFs.
+**Email privacy:** never write the public contact address in plaintext or spelled-out form in tracked files, including this document and `llms.txt`. The homepage stores an encoded value: the first click reveals a visible address, and a subsequent click opens the mail client. This is obfuscation, not encryption or protection against browsers that execute JavaScript. LinkedIn and Google Scholar remain available in `llms.txt`. Local archival branch backups must never be pushed.
 
 **Local-only, gitignored:** `_private/internal-abstracts/` (the purged abstracts) and `_private/recovered/` (files that exist only in old history). Never commit these; never delete them.
 
