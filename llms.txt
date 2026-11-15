@@ -13,7 +13,7 @@ permalink: /llms.txt
 
 {{ site.data.profile.name }}: {{ jobtitle }}, {{ site.data.profile.employer }}.
 
-{% for para in site.data.home.hero %}{{ para }}
+{% for para in site.data.home.hero %}{{ para | replace: "[[TITLE]]", jobtitle | replace: "[[ARROW]]", site.data.ui.arrow }}
 
 {% endfor %}Links: [Google Scholar]({{ site.data.profile.google_scholar }}), [GitHub](https://github.com/adivekar-utexas), [LinkedIn](https://www.linkedin.com/in/ardivekar), [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf).
 

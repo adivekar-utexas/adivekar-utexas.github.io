@@ -3,10 +3,10 @@
   <div class="hero__text">
     <h1 id="hero-name" class="hero__name">Abhishek Divekar</h1>
     <p class="hero__title">{{ include.jobtitle }}, Amazon</p>
-    {% for para in site.data.home.hero %}<p class="hero__lede">{{ para | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+    {% capture arrow_html %}{% include arrow.html %}{% endcapture %}{% for para in site.data.home.hero %}<p class="hero__lede">{{ para | replace: "[[TITLE]]", include.jobtitle | replace: "[[ARROW]]", arrow_html | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     {% endfor %}
     <ul class="icon-links" aria-label="Profiles">
-      <li><a href="{{ p.google_scholar }}" title="Google Scholar" aria-label="Google Scholar">{% include icons/scholar.svg %}<span>Scholar</span></a></li>
+      <li><a href="{{ p.google_scholar }}" title="Google Scholar" aria-label="Google Scholar">{% include icons/scholar.svg %}<span>Google Scholar</span></a></li>
       <li><a href="https://github.com/adivekar-utexas" title="GitHub" aria-label="GitHub">{% include icons/github.svg %}<span>GitHub</span></a></li>
       <li><a href="https://www.linkedin.com/in/ardivekar" title="LinkedIn" aria-label="LinkedIn">{% include icons/linkedin.svg %}<span>LinkedIn</span></a></li>
       {% comment %} Email is split across data attributes and assembled on click (see home.js), so the full address is never in the page source. {% endcomment %}
