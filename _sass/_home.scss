@@ -108,7 +108,8 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .home .news-item:last-child { border-bottom: 0; }
 .home .news-item time { color: $ink-3; font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .home .news-text { color: $ink; }
-.home .news-cta { font-weight: 600; white-space: nowrap; }
+.home .news-cta { color: #2873ad; font-weight: 600; white-space: nowrap; }
+.home .news-cta:hover { color: #2873ad; }
 .home .news-tag {
   justify-self: start; cursor: pointer; font: inherit; font-size: 11px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.6;
@@ -207,10 +208,21 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__side .prow__links { min-width: 0; width: 100%; }
 .prow__side .ilink { width: 100%; }
 .prow__pitch--meta { margin-top: 8px; font-size: 13.5px; color: $ink-2; }
-/* An Olympiad card keeps its image when it opens; the text column widens. */
-.prow--keep-thumb.is-open .prow__thumb { display: block; }
-.prow--keep-thumb.is-open .prow__main { grid-template-columns: 208px minmax(0, 1fr); }
-.prow--keep-thumb.prow--has-side.is-open .prow__main { grid-template-columns: 208px minmax(0, 1fr) 132px; }
+/* Olympiad cards hide the left thumbnail when open, like publications.
+   Keep the peacock alongside the text and keep the action buttons on the right. */
+.prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) max-content; }
+.prow--ioai .prow__side { align-self: center; }
+.prow--ioai .prow__links { width: max-content; }
+.prow--ioai .ilink { white-space: nowrap; }
+.prow--ioai.prow--has-side .prow__side { align-self: start; margin-top: 52px; }
+.prow--ioai.is-open .prow__main { grid-template-columns: minmax(0, 1fr) max-content; }
+.prow--ioai.is-open .prow__side .prow__links { grid-column: auto; flex-direction: column; margin: 0; gap: 9px; }
+@media (max-width: 860px) {
+  .prow--ioai .prow__main, .prow--ioai.is-open .prow__main { grid-template-columns: minmax(0, 1fr); }
+  .prow--ioai.prow--has-side .prow__side { margin-top: 0; }
+  .prow--ioai .prow__side { align-items: flex-start; }
+  .prow--ioai .prow__links, .prow--ioai.is-open .prow__side .prow__links { flex-direction: row; flex-wrap: wrap; width: auto; }
+}
 .prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
 .prow__abs-h { margin: 0 0 6px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: $ink-3; }

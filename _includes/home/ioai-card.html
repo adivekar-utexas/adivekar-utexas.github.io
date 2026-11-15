@@ -8,7 +8,7 @@
 {% assign press = nil %}{% if c.press_id %}{% assign press = site.data.press | where: "id", c.press_id | first %}{% endif %}
 {% assign extra = c.text | slice: 1, 20 %}
 {% assign has_more = false %}{% if c.expand %}{% if c.more_image or extra.size > 0 %}{% assign has_more = true %}{% endif %}{% endif %}
-<li class="prow prow--keep-thumb{% if has_more %} prow--expandable{% endif %}{% if c.image_right %} prow--has-side{% endif %}" id="{{ c.slug }}">
+<li class="prow prow--ioai{% if has_more %} prow--expandable{% endif %}{% if c.image_right %} prow--has-side{% endif %}" id="{{ c.slug }}">
   <div class="prow__main">
     <div class="prow__thumb">
       <img src="{{ base_path }}/images/{{ c.image }}" alt="{{ c.image_alt }}" loading="lazy">
@@ -17,8 +17,8 @@
       <p class="prow__venue">{{ c.kicker }}</p>
       <h3 class="prow__title">{{ c.title }}</h3>
       {% for t in c.text limit: 1 %}<p class="prow__pitch">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endfor %}
+      {% if c.summary or press %}<p class="prow__pitch prow__pitch--meta">{% if c.summary %}{{ c.summary }} {% endif %}{% if press %}Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}</p>{% endif %}
       {% if c.meta %}<p class="prow__pitch prow__pitch--meta">{{ c.meta }}</p>{% endif %}
-      {% if press %}<p class="prow__pitch prow__pitch--meta">Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
     </div>
     <div class="prow__side">
       {% if c.image_right %}<img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" loading="lazy">{% endif %}

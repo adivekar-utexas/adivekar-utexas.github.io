@@ -64,8 +64,8 @@ Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/
 ### {{ c.title }}
 {{ c.kicker }}
 {% for t in c.text %}{{ t }}
-{% endfor %}{% if c.meta %}{{ c.meta }}
-{% endif %}{% assign press = nil %}{% if c.press_id %}{% assign press = site.data.press | where: "id", c.press_id | first %}{% endif %}{% if press %}Press coverage: {% for o in press.outlets %}[{{ o.label }}]({{ o.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}
+{% endfor %}{% assign press = nil %}{% if c.press_id %}{% assign press = site.data.press | where: "id", c.press_id | first %}{% endif %}{% if c.summary %}{{ c.summary }} {% endif %}{% if press %}Press coverage: {% for o in press.outlets %}[{{ o.label }}]({{ o.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}
+{% if c.meta %}{{ c.meta }}
 {% endif %}{% for l in c.links %}{% if l.url contains "://" %}- {{ l.label }}: {{ l.url }}
 {% endif %}{% endfor %}{% endfor %}
 ## Open source

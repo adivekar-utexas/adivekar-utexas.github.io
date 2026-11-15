@@ -5,7 +5,7 @@
   rows:
     - {when: "Dec 2021 to now", title: "[[TITLE]]", org: "Amazon"}
     - {when: "Oct 2019 to Nov 2021", title: "Applied Scientist II, India Machine Learning", org: "Amazon"}
-    - {when: "Jul 2017 to Sep 2019", title: "Software Development Engineer, Kindle and Payments", org: "Amazon"}
+    - {when: "Jul 2017 to Sep 2019", title: "Software Development Engineer, Digital Payments", org: "Amazon"}
 - group: "Part-time"
   rows:
     - when: "Feb 2025 to now"
