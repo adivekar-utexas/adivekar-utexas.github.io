@@ -18,11 +18,11 @@ cards:
       - {label: "IOAI² Rules", icon: "article", url: "https://ioai-official.org/ai-models-track/"}
       - {label: "IOAI² Results", icon: "results", url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"}
       - {label: "IOAI² GitHub", icon: "github", url: "https://github.com/IOAI-official/IOAI-AI-Models-Track"}
-    image: "ioai-2026-founding-ai-participants.jpg"
-    image_alt: "The founding AI participants of the IOAI² AI Models Track: logos of the 14 participating AI labs and teams"
-    more_image: "ioai-2026-founding-ai-participants.jpg"
-    more_image_alt: "The founding AI participants of the IOAI² AI Models Track: logos of the 14 participating AI labs and teams"
-    more_image_caption: "The founding AI participants of the IOAI² AI Models Track: the logos of the 14 labs and teams whose autonomous AI systems competed in the inaugural AI Models Track."
+    image: "ioai-2026-submissions-per-task.png"
+    image_alt: "Line chart of AI Model Track submissions per task, rising from 16 on Task 1 to a peak of 201 on Task 6."
+    more_image: "ioai-2026-submissions-per-task.png"
+    more_image_alt: "Line chart of AI Model Track submissions per task, rising from 16 on Task 1 to a peak of 201 on Task 6."
+    more_image_caption: "Submissions per task across the IOAI² AI Models Track."
   - slug: "ioai-2025"
     kicker: "IOAI 2025 · Beijing, China"
     title: "Team Lead, Team India"
