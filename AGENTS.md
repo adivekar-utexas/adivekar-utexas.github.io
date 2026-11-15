@@ -120,7 +120,7 @@ Nothing else should hardcode a title. If you find one, replace it with `[[TITLE]
 |---|---|---|
 | `_data/history.yml` | Career section (grouped: Full-time, Part-time, Academic and olympiad service, Internships, Education) | `llms.txt` Career; news if it is a milestone |
 | `_data/launches.yml` | Product launches | `llms.txt`; news |
-| `_data/ioai.yml` | AI Olympiad cards, rendered by `_includes/home/ioai-card.html` in the same layout as publications: image left, expandable. `press_id` pulls an outlet list from `_data/press.yml` | Images under `images/`; `llms.txt` |
+| `_data/ioai.yml` | AI Olympiad cards, rendered by `_includes/home/ioai-card.html`: image left, text centre, buttons right. `expand: false` keeps a card flat; `more_image` is what the chevron reveals; `image_right` puts a small image above the buttons; `press_id` pulls outlets from `_data/press.yml` | Images under `images/`; `llms.txt` |
 | `_data/oss.yml` | Open source cards | Image in `images/oss/`, `alt:` field |
 | `_data/awards.yml` | Awards rows and photos | `llms.txt`; news |
 | `_data/press.yml` | Press & Media | `llms.txt` |

@@ -1,13 +1,14 @@
 {% comment %}
-  One AI Olympiad card, using the same layout as the publication cards:
-  [image] [kicker, title, first paragraph] [chip links], expandable for the rest.
+  One AI Olympiad card, same layout as a publication card:
+  [image left] [kicker, title, text, meta, press] [small image + buttons right].
+  Expanding shows `more_image` full width and any extra paragraphs.
   Usage: {% include home/ioai-card.html c=card %}
 {% endcomment %}
 {% assign c = include.c %}
 {% assign press = nil %}{% if c.press_id %}{% assign press = site.data.press | where: "id", c.press_id | first %}{% endif %}
-{% assign has_more = false %}{% if c.text.size > 1 or c.meta or press or c.links %}{% assign has_more = true %}{% endif %}
 {% assign extra = c.text | slice: 1, 20 %}
-<li class="prow prow--expandable" id="{{ c.slug }}">
+{% assign has_more = false %}{% if c.expand %}{% if c.more_image or extra.size > 0 %}{% assign has_more = true %}{% endif %}{% endif %}
+<li class="prow prow--keep-thumb{% if has_more %} prow--expandable{% endif %}{% if c.image_right %} prow--has-side{% endif %}" id="{{ c.slug }}">
   <div class="prow__main">
     <div class="prow__thumb">
       <img src="{{ base_path }}/images/{{ c.image }}" alt="{{ c.image_alt }}" loading="lazy">
@@ -16,16 +17,24 @@
       <p class="prow__venue">{{ c.kicker }}</p>
       <h3 class="prow__title">{{ c.title }}</h3>
       {% for t in c.text limit: 1 %}<p class="prow__pitch">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endfor %}
+      {% if c.meta %}<p class="prow__pitch prow__pitch--meta">{{ c.meta }}</p>{% endif %}
+      {% if press %}<p class="prow__pitch prow__pitch--meta">Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
+    </div>
+    <div class="prow__side">
+      {% if c.image_right %}<img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" loading="lazy">{% endif %}
+      {% if c.links %}<ul class="prow__links" aria-label="Links">
+        {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% include icons/globe.svg %}<span>{{ l.label }}</span></a></li>{% endfor %}
+      </ul>{% endif %}
     </div>
   </div>
+  {% if has_more %}
   <div class="prow__more" id="{{ c.slug }}-more" hidden>
+    {% if c.more_image %}<figure class="prow__fig"><img src="{{ base_path }}/images/{{ c.more_image }}" alt="{{ c.more_image_alt }}" loading="lazy"></figure>{% endif %}
     {% for t in extra %}<p class="prow__abs">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     {% endfor %}
-    {% if c.meta %}<p class="prow__abs">{{ c.meta }}</p>{% endif %}
-    {% if press %}<p class="prow__abs">Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
-    {% if c.links %}<p class="prow__abs">{% for l in c.links %}<a class="chip-link" href="{{ l.url }}">{{ l.label }}</a> {% endfor %}</p>{% endif %}
   </div>
   <button type="button" class="prow__toggle" aria-expanded="false" aria-controls="{{ c.slug }}-more" aria-label="Show more about {{ c.title }}">
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
   </button>
+  {% endif %}
 </li>

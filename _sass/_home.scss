@@ -201,6 +201,17 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* The expanded block sits at the card's own padding, flush with the text above. */
 /* No rule above the expanded block; the spacing alone separates it. */
 .prow__more { margin: 0; max-width: none; padding-top: 0; border-top: 0; text-align: center; }
+/* Olympiad cards: a small image plus the buttons stack in the right column. */
+.prow--has-side .prow__main { grid-template-columns: 208px minmax(0, 1fr) 132px; }
+.prow__side { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.prow__side-img { display: block; width: 100%; max-width: 120px; height: auto; }
+.prow__side .prow__links { min-width: 0; width: 100%; }
+.prow__side .ilink { width: 100%; }
+.prow__pitch--meta { margin-top: 8px; font-size: 13.5px; color: $ink-2; }
+/* An Olympiad card keeps its image when it opens; the text column widens. */
+.prow--keep-thumb.is-open .prow__thumb { display: block; }
+.prow--keep-thumb.is-open .prow__main { grid-template-columns: 208px minmax(0, 1fr); }
+.prow--keep-thumb.prow--has-side.is-open .prow__main { grid-template-columns: 208px minmax(0, 1fr) 132px; }
 .prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
 .prow__venue-full { margin: 0 0 12px; font-size: 13px; color: $ink-3; }
