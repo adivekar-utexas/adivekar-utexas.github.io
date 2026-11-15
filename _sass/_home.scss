@@ -28,7 +28,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   max-width: 1040px; margin: 0 auto; padding: 0 24px 64px;
   color: $ink; font-size: 16px; line-height: 1.6;
 }
-.home a { color: $accent; text-decoration: none; }
+.home a { color: #2873ad; text-decoration: none; }
 .home a:hover { color: $accent-ink; text-decoration: underline; text-underline-offset: 3px; }
 
 
@@ -89,7 +89,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .row__when { font-size: 13px; color: $ink-3; font-variant-numeric: tabular-nums; }
 .row__title { font-size: 16px; font-weight: 600; color: $ink; }
 .home .row__title a { color: $ink; }
-.home .row__title a:hover { color: $accent; }
+.home .row__title a:hover { color: #2873ad; }
 .row__org { font-size: 15px; color: $ink-2; }
 .row__sub { display: block; margin-top: 2px; font-size: 14px; line-height: 1.5; color: $ink-2; }
 .home .site-note { margin-top: 20px; font-size: 13px; color: $ink-3; }
@@ -159,7 +159,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__venue { margin: 0 0 4px; font-size: 12px; font-weight: 600; line-height: 22px; letter-spacing: 0.02em; text-transform: uppercase; color: $ink-3; }
 .prow__title { margin: 0 0 5px; font-family: $serif; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
 .home .prow__title a { color: $ink; text-decoration: none; }
-.home .prow__title a:hover { color: $accent; }
+.home .prow__title a:hover { color: #2873ad; }
 .prow__authors { margin: 0 0 6px; font-size: 13.5px; font-style: italic; line-height: 1.5; color: $ink-2; }
 .prow__authors .me { font-style: normal; font-weight: 700; color: $ink; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
 .prow__pitch { margin: 0; font-size: 14.5px; line-height: 1.5; color: $ink; }
@@ -171,7 +171,9 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   vertical-align: 1px; white-space: nowrap;
 }
 .prow__venue .pill { margin-left: 6px; font-size: 12px; line-height: 22px; letter-spacing: 0.02em; }
-.ilink.publications-scholar { flex: 0 0 auto; width: fit-content; margin-left: auto; }
+.ilink.publications-scholar { flex: 0 0 auto; width: fit-content; margin-left: auto; color: $ink-2 !important; }
+.ilink.publications-scholar:hover { color: $ink-2 !important; }
+.ilink.publications-scholar svg { color: $ink-3; }
 .publications-note { margin: -8px 0 14px; font-size: 13px; color: $ink-3; }
 /* When open, the thumbnail goes away and the card becomes one full-width column.
    Its content then starts at the card's own 20px padding, the same inset as the
@@ -386,7 +388,7 @@ body { background: $page; color: $ink; }
 .card__kicker { margin: 0 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: $ink-3; }
 .card__title { margin: 0 0 6px; font-family: $serif; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: $ink; }
 .home .card__title a { color: $ink; }
-.home .card__title a:hover { color: $accent; text-decoration: none; }
+.home .card__title a:hover { color: #2873ad; text-decoration: none; }
 .card__text { margin: 0 0 6px; font-size: 14.5px; line-height: 1.55; color: $ink; }
 .row__sub--muted { color: $ink-3; }
 .row__outlets a { font-weight: 500; }
