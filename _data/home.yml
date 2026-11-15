@@ -1,8 +1,9 @@
 # Homepage prose shared by the HTML and llms.txt (Markdown allowed).
 hero:
   - "I research **LLM evaluation**, **synthetic data**, **red-teaming LLMs** and **multimodal agents for science**, with first-author papers at NeurIPS, CIKM, AAAI and EMNLP. At Amazon, I turn that research into products, including leading red-teaming for the India launch of Amazon Rufus, used by 100M+ customers."
-  - "I chair the IOAI² AI Models Track at the International Olympiad in AI, and led Team India to 3 Gold, 2 Silver and 1 Bronze at IOAI 2025. M.S. in Computer Science, UT Austin."
+  - "At the International Olympiad in Artificial Intelligence (IOAI) I served on the 2026 International Scientific Committee, where I chaired its AI Models Track subcommittee and sat on the IOAI Jury as a committee member. At IOAI 2025 I was Team Lead for India, where our team of eight won **3 Gold, 2 Silver and 1 Bronze**."
   - "Projects where I have personally owned scientific contributions have added **over USD 550 million to Amazon's revenue** between 2021 and 2026. I have shipped about 650,000 lines of code into production (~500k was written pre-LLMs). I have worked extensively with distributed language model training and LLM Evals."
+  - "I hold an M.S. in Computer Science from UT Austin."
 amlc_intro: "AMLC is Amazon's annual internal machine learning conference, with roughly 1,000 submissions a year ([announcement](https://www.amazon.science/videos-webinars/amazons-annual-machine-learning-conference-featured-presentations-from-thought-leaders-within-academia)). Full texts are internal."
 oss_intro: "I led the open-sourcing of FMCore, Bears and Concurry on Amazon Science."
 history_note: "Opinions on this site are my own and do not reflect the views of my employer."

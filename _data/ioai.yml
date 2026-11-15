@@ -7,7 +7,7 @@ cards:
     text:
       - "**I created and chaired the inaugural IOAI² AI Models Track** and led its organizing committee. I designed the competition format and rules, and recruited **14 AI research organizations from 5 countries** (United States, China, United Kingdom, Japan and the UAE), including Sakana AI, MBZUAI IFM, Shanghai AI Laboratory, Peking University, Westlake University and UCLA. Their 15 autonomous AI systems competed on the same six tasks as students from 108 countries and territories."
       - "It is the first track at an international science olympiad where fully autonomous AI systems compete alongside the students. I wrote the track's official statement and am lead author, with IOAI Board Chair Elena Marinova, of the inaugural review. The International Jury's final report at the closing ceremony presented the track and gave special thanks to me and to Kaggle."
-    meta: "Also: member of the International Scientific Committee and the IOAI Jury"
+      - "I have been part of the International Scientific Committee's subcommittee on the AI Models track, which I chaired in 2026, and I sat on the IOAI Jury in my capacity as a member of the ISC."
     links:
       - {label: "Report", url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"}
       - {label: "Track page", url: "https://ioai-official.org/ai-models-track/"}
