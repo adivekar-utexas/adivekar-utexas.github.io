@@ -183,7 +183,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* Open row: every button in a card is the same width, as in the closed stack. */
 .prow.is-open .prow__links li { flex: 0 0 auto; }
 .prow.is-open .prow__links .ilink { justify-content: center; min-width: 114px; }
-.prow--ioai.is-open .prow__links .ilink { min-width: 184px; }
+.prow--ioai.is-open .prow__links .ilink { min-width: 176px; }
 .prow.is-animating { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
@@ -209,14 +209,13 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* Olympiad cards are publication cards: same grid, same open/close rules,
    same animation. The only differences are a wider button column (the labels
    are longer) and an optional small image (the peacock) beside the text. */
-.prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) 184px; }
-.prow--ioai .prow__side { align-self: center; display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
-.prow--ioai .prow__side:has(.prow__side-img) { align-self: start; padding-top: 56px; }
-.prow--ioai .prow__links { min-width: 0; width: 100%; }
-.prow--ioai .ilink { white-space: nowrap; padding: 0 16px; }
-.prow--ioai .prow__side-img { display: block; width: 144px; max-width: 100%; height: auto; }
-.prow--ioai.is-open .prow__side { grid-column: 1; padding-top: 0; }
-.prow--ioai.is-open .prow__links { width: auto; margin: 0 0 24px; }
+.prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) 176px; }
+.prow--ioai .prow__side { align-self: start; display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
+.prow--ioai .prow__links { width: 100%; }
+.prow--ioai .ilink { white-space: nowrap; }
+.prow--ioai .prow__side-img { display: block; width: 100%; height: auto; }
+.prow--ioai.is-open .prow__side { grid-column: 1; }
+.prow--ioai.is-open .prow__links { margin: 0 0 24px; }
 @media (max-width: 860px) {
   .prow--ioai .prow__main { grid-template-columns: 176px minmax(0, 1fr); }
   .prow--ioai .prow__links .ilink { min-width: 0; }
@@ -227,8 +226,9 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   .prow--ioai .prow__main { grid-template-columns: 1fr; }
   .prow__side-img { width: 72px; }
 }
-.prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
+.prow__fig { margin: 0 0 10px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
+.prow__caption { margin: 0 0 14px; padding: 0 6px; text-align: left; font-size: 13px; line-height: 1.5; color: $ink-3; }
 .prow__abs-h { margin: 0 0 6px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: $ink-3; }
 .prow__abs { margin: 0; font-size: 13.5px; line-height: 1.65; color: $ink-2; text-align: left; }
 
