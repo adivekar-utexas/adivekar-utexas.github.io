@@ -16,7 +16,7 @@
       <li class="news-item" data-tag="{{ item.tag }}">
         <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %Y" }}</time>
         <button type="button" class="news-tag news-tag--{{ item.tag }}" data-filter="{{ item.tag }}" title="Show only {{ labels[item.tag] | default: item.tag }} news">{{ labels[item.tag] | default: item.tag }}</button>
-        <span class="news-text">{{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} <a class="news-cta" href="{{ item.cta_url }}">{{ item.cta_text }} <span aria-hidden="true">{% if item.cta_url contains "://" %}↗{% else %}→{% endif %}</span></a>{% endif %}</span>
+        <span class="news-text">{{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} <a class="news-cta" href="{{ item.cta_url }}">{{ item.cta_text }} <span aria-hidden="true">↗</span></a>{% endif %}</span>
       </li>
     {% endfor %}
     </ul>
