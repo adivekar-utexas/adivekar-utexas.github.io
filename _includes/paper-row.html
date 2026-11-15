@@ -24,6 +24,7 @@
       {% if pub.paperurl contains "http" %}<li><a class="ilink" href="{{ pub.paperurl }}">{% include icons/paper.svg %}<span>Paper</span></a></li>{% endif %}
       {% if pub.codeurl %}<li><a class="ilink" href="{{ pub.codeurl }}">{% include icons/code.svg %}<span>Code</span></a></li>{% endif %}
       {% if pub.projecturl %}<li><a class="ilink" href="{{ pub.projecturl }}">{% include icons/globe.svg %}<span>Project</span></a></li>{% endif %}
+      {% if pub.bibtex %}<li><button type="button" class="ilink ilink--copy" data-bibtex-target="{{ pub.urlslug }}-bibtex" title="Copy the BibTeX entry">{% include icons/bibtex.svg %}<span>BibTeX</span></button></li>{% endif %}
     </ul>
   </div>
   {% if has_more %}
@@ -31,6 +32,8 @@
     {% if pub.thumb %}<figure class="prow__fig"><img src="{{ base_path }}/images/papers/{{ pub.thumb }}" alt="{{ thumb_alt }}" loading="lazy"></figure>{% endif %}
     <h4 class="prow__abs-h">Abstract</h4>
     <p class="prow__abs">{{ pub.excerpt | strip_html }}</p>
+    {% if pub.bibtex %}<h4 class="prow__abs-h prow__abs-h--bibtex">BibTeX</h4>
+    <pre class="prow__bibtex" id="{{ pub.urlslug }}-bibtex">{{ pub.bibtex | strip }}</pre>{% endif %}
   </div>
   <button type="button" class="prow__toggle" aria-expanded="false" aria-controls="{{ pub.urlslug }}-more" aria-label="Show figure and abstract">
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>

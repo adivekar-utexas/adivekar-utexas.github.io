@@ -151,6 +151,11 @@ citation: 'A Author*, <u>Abhishek Divekar</u>*, B Author. <b>&quot;Title&quot;</
 excerpt: "The abstract, plain text."
 thumb: 'slug.jpg'                # 16:9, in images/papers/thumbs/
 thumb_alt: "One sentence describing what the figure shows."
+bibtex: |
+  @inproceedings{key,
+    title = {...},
+    ...
+  }
 pitch: "One-line TL;DR."
 ---
 ```
@@ -296,6 +301,7 @@ Emitted by `_includes/person-jsonld.html` on every page, from the same data file
 | A venue line wraps onto a second row | The line (venue + Poster/Oral + Accept Rate) is wider than the text column | Budget is ~437px at 12px / 0.02em with a 208px thumb. Shorten the label, not the layout |
 | Numbers wrong in the social card | `og-card.jpg` is a raster with text baked in | Regenerate the image |
 | News tag renders grey | No `.news-tag--<tag>` rule | Add the class in `_sass/_home.scss` |
+| A BibTeX pill says "Copied" but nothing is on the clipboard | The `#<slug>-bibtex` block is missing | The pill copies from that `<pre>`; it only exists when the card has both a figure and an abstract |
 | Section anchor lands under the sticky bar | Missing scroll offset | Sections use `scroll-margin-top: 140px` |
 
 ---

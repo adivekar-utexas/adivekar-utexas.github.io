@@ -94,4 +94,27 @@
         .catch(function () { flash('Copy failed'); });
     });
   }
+  // "BibTeX" pill: copy that paper's entry, flashing the label.
+  document.querySelectorAll('.ilink--copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.dataset.bibtexTarget);
+      if (!target) return;
+      var label = btn.querySelector('span');
+      var text = target.textContent.trim();
+      var flash = function (msg) {
+        label.textContent = msg;
+        setTimeout(function () { label.textContent = 'BibTeX'; }, 1600);
+      };
+      var fallback = function () {
+        var area = document.createElement('textarea');
+        area.value = text; area.setAttribute('readonly', '');
+        area.style.position = 'fixed'; area.style.opacity = '0';
+        document.body.appendChild(area); area.select();
+        document.execCommand('copy'); area.remove(); flash('Copied');
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { flash('Copied'); }).catch(fallback);
+      } else { fallback(); }
+    });
+  });
 })();

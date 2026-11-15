@@ -210,15 +210,24 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__links { list-style: none; margin: 0; padding: 0; align-self: center; display: flex; flex-direction: column; gap: 6px; min-width: 100px; }
 .prow__links li { margin: 0; }
 .ilink {
-  display: flex; align-items: center; gap: 8px; height: 39px; padding: 0 20px;
+  display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 18px;
   border: 1px solid $line; border-radius: 999px; background: $surface;
-  font-size: 15px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important;
+  font-size: 14px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important;
   transition: background .12s ease, border-color .12s ease, color .12s ease;
 }
-.ilink svg { width: 15px; height: 15px; flex: none; color: $ink-3; }
+.ilink svg { width: 14px; height: 14px; flex: none; color: $ink-3; }
 .ilink:hover { background: $hover; border-color: $hover-line; color: $ink-2 !important; }
 .ilink:hover svg { color: $ink-3; }
 .ilink:focus-visible { outline: 2px solid $accent; outline-offset: 2px; }
+.ilink--copy { cursor: pointer; font-family: inherit; }
+/* BibTeX block in the expanded card */
+.prow__abs-h--bibtex { margin-top: 18px; }
+.prow__bibtex {
+  margin: 0; padding: 14px 16px; overflow-x: auto; text-align: left;
+  background: $tint; border: 1px solid $line; border-radius: 10px;
+  font-family: $monospace; font-size: 12.5px; line-height: 1.55; color: $ink-2;
+  white-space: pre;
+}
 
 /* ---- Responsive ---------------------------------------------------------- */
 @media (max-width: 860px) {

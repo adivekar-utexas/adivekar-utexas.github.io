@@ -40,10 +40,20 @@ Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/
 {% endif %}{% if p.projecturl %}- Project: {{ p.projecturl }}
 {% endif %}{% if p.pitch %}- TL;DR: {{ p.pitch }}
 {% endif %}{% if p.excerpt %}- Abstract: {{ p.excerpt | strip_html | strip_newlines | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '&#39;', "'" }}
+{% endif %}{% if p.bibtex %}- BibTeX:
+
+```
+{{ p.bibtex | strip }}
+```
 {% endif %}{% endif %}{% endfor %}
 ### Amazon Machine Learning Conference
 {{ site.data.home.amlc_intro }}
-{% for p in pubs %}{% if p.tier == "internal" %}{% capture authors %}{% include authors.html citation=p.citation %}{% endcapture %}{% assign au = authors | strip_html | strip_newlines | strip %}{% assign au_last = au | slice: -1 %}{% if au_last == "." %}{% assign au_n = au.size | minus: 1 %}{% assign au = au | slice: 0, au_n %}{% endif %}- {{ p.title }}. {{ au }}. {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, {{ p.acceptancerate }} Accept Rate{% endif %}.{% if p.pitch %} TL;DR: {{ p.pitch }}{% endif %}{% if p.excerpt %} Abstract: {{ p.excerpt | strip_html | strip_newlines | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '&#39;', "'" }}{% endif %}
+{% for p in pubs %}{% if p.tier == "internal" %}{% capture authors %}{% include authors.html citation=p.citation %}{% endcapture %}{% assign au = authors | strip_html | strip_newlines | strip %}{% assign au_last = au | slice: -1 %}{% if au_last == "." %}{% assign au_n = au.size | minus: 1 %}{% assign au = au | slice: 0, au_n %}{% endif %}- {{ p.title }}. {{ au }}. {{ p.venue_short | default: p.venue }}{% if p.acceptancetype %}, {{ p.acceptancetype }}{% endif %}{% if p.acceptancerate %}, {{ p.acceptancerate }} Accept Rate{% endif %}.{% if p.pitch %} TL;DR: {{ p.pitch }}{% endif %}{% if p.excerpt %} Abstract: {{ p.excerpt | strip_html | strip_newlines | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '&#39;', "'" }}{% endif %}{% if p.bibtex %}
+- BibTeX:
+
+```
+{{ p.bibtex | strip }}
+```{% endif %}
 {% endif %}{% endfor %}
 ## Product launches
 {% for l in site.data.launches %}- {{ l.name }} ({{ l.year }}). My role: {{ l.did }} {{ l.what }}

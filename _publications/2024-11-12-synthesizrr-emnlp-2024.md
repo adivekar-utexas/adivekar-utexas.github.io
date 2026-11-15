@@ -13,6 +13,21 @@ codeurl: 'https://github.com/amazon-science/synthesizrr'
 acceptancerate: '20.8%'
 role: 'First author (with Prof. Greg Durrett, UT Austin; MS thesis work)'
 citation: '<u>Abhishek Divekar</u> and Greg Durrett. <b>&quot;SynthesizRR: Generating Diverse Datasets with Retrieval Augmentation&quot;</b>. <i>Conference on Empirical Methods in Natural Language Processing (EMNLP 2024)</i>'
+bibtex: |
+  @inproceedings{divekar-durrett-2024-synthesizrr,
+    title = {SynthesizRR: Generating Diverse Datasets with Retrieval Augmentation},
+    author = {Divekar, Abhishek and Durrett, Greg},
+    editor = {Al-Onaizan, Yaser and Bansal, Mohit and Chen, Yun-Nung},
+    booktitle = {Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
+    month = nov,
+    year = {2024},
+    address = {Miami, Florida, USA},
+    publisher = {Association for Computational Linguistics},
+    url = {https://aclanthology.org/2024.emnlp-main.1071/},
+    doi = {10.18653/v1/2024.emnlp-main.1071},
+    pages = {19200-19227},
+    abstract = {It is often desirable to distill the capabilities of large language models (LLMs) into smaller student models due to compute and memory constraints. One way to do this for classification tasks is via dataset synthesis, which can be accomplished by generating examples of each label from the LLM. Prior approaches to synthesis use few-shot prompting, which relies on the LLM's parametric knowledge to generate usable examples. However, this leads to issues of repetition, bias towards popular entities, and stylistic differences from human text. In this work, we propose Synthesize by Retrieval and Refinement (SynthesizRR), which uses retrieval augmentation to introduce variety into the dataset synthesis process: as retrieved passages vary, the LLM is seeded with different content to generate its examples. We empirically study the synthesis of six datasets, covering topic classification, sentiment analysis, tone detection, and humor, requiring complex synthesis strategies. We find SynthesizRR greatly improves lexical and semantic diversity, similarity to human-written text, and distillation performance, when compared to 32-shot prompting and four prior approaches.}
+  }
 excerpt: 'It is often desirable to distill the capabilities of large language models (LLMs) into smaller student models due to compute and memory constraints. One way to do this for classification tasks is via dataset synthesis, which can be accomplished by generating examples of each label from the LLM. Prior approaches to synthesis use few-shot prompting, which relies on the LLM''s parametric knowledge to generate usable examples. However, this leads to issues of repetition, bias towards popular entities, and stylistic differences from human text. In this work, we propose Synthesize by Retrieval and Refinement (SynthesizRR), which uses retrieval augmentation to introduce variety into the dataset synthesis process: as retrieved passages vary, the LLM is "seeded" with different content to generate its examples. We empirically study the synthesis of six datasets, covering topic classification, sentiment analysis, tone detection, and humor, requiring complex synthesis strategies. We find that SynthesizRR greatly improves lexical and semantic diversity, similarity to human-written text, and distillation performance, when compared to 32-shot prompting and four prior approaches.'
 thumb: 'synthesizrr.jpg'
 thumb_alt: "SynthesizRR pipeline: retrieved passages seed the LLM, which then inverts the task to generate synthetic data."
