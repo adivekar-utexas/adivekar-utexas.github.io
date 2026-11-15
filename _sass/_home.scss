@@ -210,14 +210,18 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
    same animation. The only differences are a wider button column (the labels
    are longer) and an optional small image (the peacock) beside the text. */
 .prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) 184px; }
-.prow--ioai .prow__links { min-width: 0; }
+.prow--ioai .prow__side { align-self: center; display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
+.prow--ioai .prow__side:has(.prow__side-img) { align-self: start; padding-top: 56px; }
+.prow--ioai .prow__links { min-width: 0; width: 100%; }
 .prow--ioai .ilink { white-space: nowrap; padding: 0 16px; }
-.prow__textrow { display: flex; align-items: flex-start; gap: 18px; }
-.prow__text { flex: 1 1 auto; min-width: 0; }
-.prow__side-img { flex: none; display: block; width: 96px; height: auto; }
+.prow--ioai .prow__side-img { display: block; width: 144px; max-width: 100%; height: auto; }
+.prow--ioai.is-open .prow__side { grid-column: 1; padding-top: 0; }
+.prow--ioai.is-open .prow__links { width: auto; margin: 0 0 24px; }
 @media (max-width: 860px) {
   .prow--ioai .prow__main { grid-template-columns: 176px minmax(0, 1fr); }
   .prow--ioai .prow__links .ilink { min-width: 0; }
+  .prow--ioai .prow__side { grid-column: 1 / -1; }
+  .prow--ioai .prow__side:has(.prow__side-img) { padding-top: 0; }
 }
 @media (max-width: 560px) {
   .prow--ioai .prow__main { grid-template-columns: 1fr; }

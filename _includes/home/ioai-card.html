@@ -21,15 +21,17 @@
       <div class="prow__textrow">
         <div class="prow__text">
           {% for t in c.text limit: 1 %}<p class="prow__pitch">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endfor %}
-          {% if c.summary or press %}<p class="prow__pitch prow__pitch--meta">{% if c.summary %}{{ c.summary }} {% endif %}{% if press %}Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}</p>{% endif %}
-          {% if c.meta %}<p class="prow__pitch prow__pitch--meta">{{ c.meta }}</p>{% endif %}
+          {% if c.summary or c.meta %}<p class="prow__pitch prow__pitch--meta">{% if c.summary %}{{ c.summary }} {% endif %}{{ c.meta }}</p>{% endif %}
+          {% if press %}<p class="prow__pitch prow__pitch--meta">Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
         </div>
-        {% if c.image_right %}<img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" width="96" height="120">{% endif %}
       </div>
     </div>
-    {% if c.links %}<ul class="prow__links" aria-label="Links">
-      {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% include icons/globe.svg %}<span>{{ l.label }}</span></a></li>{% endfor %}
-    </ul>{% endif %}
+    <div class="prow__side">
+      {% if c.image_right %}<img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" width="144" height="180">{% endif %}
+      {% if c.links %}<ul class="prow__links" aria-label="Links">
+        {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% include icons/globe.svg %}<span>{{ l.label }}</span></a></li>{% endfor %}
+      </ul>{% endif %}
+    </div>
   </div>
   {% if has_more %}
   <div class="prow__more" id="{{ c.slug }}-more" hidden>

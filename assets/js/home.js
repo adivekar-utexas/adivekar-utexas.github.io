@@ -44,7 +44,7 @@
       var resize = card.animate([{ height: height + 'px' }, { height: card.getBoundingClientRect().height + 'px' }], options);
       card.classList.add('is-animating');
       resize.onfinish = resize.oncancel = function () { card.classList.remove('is-animating'); };
-      body.animate([{ transform: 'translate(' + (before.left - after.left) + 'px, ' + (before.top - after.top) + 'px)' }, { transform: 'none' }], options);
+      body.animate([{ transform: 'translateX(' + (before.left - after.left) + 'px)' }, { transform: 'none' }], options);
       if (open) more.animate([{ opacity: 0 }, { opacity: 1 }], options);
     }
   }
