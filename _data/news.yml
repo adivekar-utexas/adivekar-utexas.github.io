@@ -33,10 +33,9 @@
   cta_url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"
 - date: 2026-08-09
   tag: IOAI
-  text: "Chaired the inaugural IOAI² AI Models Track at IOAI 2026, Astana, Kazakhstan: 15 AI systems from\
-  \ 14 organizations."
-  cta_text: "Visit the track"
-  cta_url: "https://ioai-official.org/ai-models-track/"
+  text: "Chaired the inaugural IOAI² AI Models Track at IOAI 2026, Astana, Kazakhstan, where 14 AI organizations from 5 countries participated to benchmark fully autonomous AI systems at solving IOAI 2026 Tasks."
+  cta_text: "Read the report"
+  cta_url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"
 - date: 2026-07-01
   tag: paper
   text: "When Gradients Collide (with Parth Darshan) accepted to the ACL 2026 CustomNLP4U workshop!"
@@ -109,7 +108,7 @@
   text: "Completed my M.S. in Computer Science at UT Austin, advised by Greg Durrett."
 - date: 2024-08-01
   tag: education
-  text: "My M.S. thesis, Diverse dataset synthesis using retrieval augmented language models, published by The University of Texas at Austin."
+  text: "My M.S. thesis, \"Diverse dataset synthesis using retrieval augmented language models\", published by The University of Texas at Austin."
   cta_text: "Read the thesis"
   cta_url: "https://repositories.lib.utexas.edu/items/ddb94d0e-928d-406f-a49f-632995fd4b03"
 - date: 2024-10-01
@@ -128,11 +127,6 @@
   text: "Taught supervised learning at the Amazon ML Summer School to about 3,000 Indian undergraduates."
   cta_text: "See the lecture"
   cta_url: "/speaking/#ml-summer-school-2022-lecture"
-- date: 2021-12-01
-  tag: fulltime
-  text: "Joined Amazon Central Machine Learning as an Applied Scientist."
-  cta_text: "See my career"
-  cta_url: "/#history"
 - date: 2021-10-26
   tag: talk
   text: "Presented DRiP, AutoML for cost-constrained product classification, at Amazon Research Days 2021."
@@ -148,7 +142,7 @@
   text: "Started my M.S. in Computer Science (thesis track) at UT Austin, part-time alongside Amazon."
 - date: 2019-10-01
   tag: fulltime
-  text: "Moved from software engineering to Applied Science at Amazon India Machine Learning."
+  text: "Moved from software engineering to Applied Science at Amazon Central Machine Learning."
   cta_text: "Read how"
   cta_url: "/writing/engineer-to-ml-scientist/"
 - date: 2018-10-25

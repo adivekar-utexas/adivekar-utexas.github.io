@@ -40,7 +40,7 @@
     - when: "Aug 2020 to May 2024"
       title: "M.S. Computer Science (thesis track)"
       org: "The University of Texas at Austin"
-      sub: "Advised by Greg Durrett. Completed part-time while working full-time at Amazon. Thesis work published at EMNLP 2024 (SynthesizRR)."
+      sub: "Advised by Greg Durrett. Completed part-time while working full-time at Amazon. My thesis was published at EMNLP 2024 as a first-author main conference paper (SynthesizRR)."
       cta: {label: "Read the thesis", url: "https://repositories.lib.utexas.edu/items/ddb94d0e-928d-406f-a49f-632995fd4b03"}
     - when: "Jul 2013 to Apr 2017"
       title: "B.Tech. Information Technology"

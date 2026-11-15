@@ -279,7 +279,7 @@ Emitted by `_includes/person-jsonld.html` on every page, from the same data file
 | Topic | Rule |
 |---|---|
 | Dashes | No em dashes or en dashes. Use a comma, a period, or a hyphen. |
-| Arrows | `→` only in call-to-action links ("Read the paper →"). Never as a dash. |
+| Arrows | Call-to-action links end in `{% include arrow.html %}`, never a literal glyph. The glyph lives in `_data/ui.yml` (`arrow:`), currently `↗`; switch it there to change every CTA at once. Never use an arrow as a dash. |
 | Dates | `YYYY-MM-DD` in data, `Mon YYYY` or `Month YYYY` in display. Month-level precision is acceptable when the exact day is unknown; do not invent a day. |
 | Tone | Plain, first person, no marketing words ("elegant", "cutting-edge", "world-class"). |
 | Emphasis | Bold the single most important phrase in a cluster, not whole sentences. |

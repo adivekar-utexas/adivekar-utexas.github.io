@@ -209,18 +209,19 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 
 /* Icon links: a vertical stack of compact pills, sized like the Writing chips. */
 .prow__links { list-style: none; margin: 0; padding: 0; align-self: center; display: flex; flex-direction: column; gap: 9px; min-width: 100px; }
-.prow__links li { margin: 0; }
+.prow__links li { margin: 0; display: flex; }
 .ilink {
-  display: flex; align-items: center; gap: 8px; height: 31px; padding: 0 18px;
+  display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 18px;
   border: 1px solid $line; border-radius: 999px; background: $surface;
-  font-size: 13px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important;
+  font-size: 14px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important;
   transition: background .12s ease, border-color .12s ease, color .12s ease;
 }
-.ilink svg { width: 13px; height: 13px; flex: none; color: $ink-3; }
+.ilink svg { width: 14px; height: 14px; flex: none; color: $ink-3; }
 .ilink:hover { background: $hover; border-color: $hover-line; color: $ink-2 !important; }
 .ilink:hover svg { color: $ink-3; }
 .ilink:focus-visible { outline: 2px solid $accent; outline-offset: 2px; }
 .ilink--copy { cursor: pointer; font-family: inherit; }
+.ilink { flex: 1 1 auto; }
 /* BibTeX block in the expanded card */
 .prow__abs-h--bibtex { margin-top: 18px; }
 .prow__bibtex {
@@ -271,7 +272,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 }
 .tab {
   display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 999px;
-  font-size: 13px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important; white-space: nowrap;
+  font-size: 14px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important; white-space: nowrap;
   transition: background .12s ease, color .12s ease;
 }
 .tab:hover { background: $tint; color: $ink-2 !important; }

@@ -1,0 +1,7 @@
+# One place to change the call-to-action arrow glyph, used by every template.
+#
+#   arrow: "→"   plain right arrow
+#   arrow: "↗"   north-east arrow (current)
+#
+# Templates call {% include arrow.html %}; nothing hardcodes the glyph.
+arrow: "↗"
