@@ -2,7 +2,7 @@
 {% capture arrow_html %}{% include arrow.html %}{% endcapture %}
 <section class="hero" aria-labelledby="hero-name">
   <h1 id="hero-name" class="hero__name">Abhishek Divekar</h1>
-  <p class="hero__title">{{ include.jobtitle }}, Amazon</p>
+  <p class="hero__title">{{ include.jobtitle }}, {{ p.employer }}</p>
   <div class="hero__grid">
     <div class="hero__text">
       {% for para in site.data.home.hero %}<p class="hero__lede">{{ para | replace: "[[TITLE]]", include.jobtitle | replace: "[[ARROW]]", arrow_html | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
