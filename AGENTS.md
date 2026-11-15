@@ -33,6 +33,8 @@ Verify with the sync check in [Checks before committing](#5-checks-before-commit
 | `files/Abhishek-Divekar-CV.pdf` | Outside the build; rebuild it by hand |
 | `images/papers/<slug>.jpg` + `images/papers/thumbs/<slug>.jpg` | Full figure and 16:9 thumbnail |
 
+**The venue list appears in three files that are not linked to each other:** `_config.yml` → `description`, `_pages/about.md` → `excerpt`, and `_data/home.yml` → `hero[0]`. They have already drifted once (`_config.yml` and `about.md` said "NeurIPS 2026, CIKM 2026, AAAI 2026 and EMNLP 2024" while the hero said "NeurIPS, ACL, EMNLP, AAAI, and CIKM"). When a paper is accepted at a new venue, update all three. The hero uses bare venue names; the other two use `Venue Year`.
+
 ### A news item (`_data/news.yml`)
 
 | Also update | Why |
@@ -148,7 +150,7 @@ paperurl: 'https://…'            # "(internal)" if there is no public link
 codeurl: 'https://…'             # optional
 projecturl: 'https://…'          # optional
 acceptancetype: 'Poster'         # Oral | Poster | omit
-acceptancerate: '26.5%'          # rendered as "26.5% acceptance rate"
+acceptancerate: '26.5%'          # rendered on the card as "26.5% Accept Rate"
 role: 'Co-first author (equal contribution)'
 citation: 'A Author*, <u>Abhishek Divekar</u>*, B Author. <b>&quot;Title&quot;</b>. <i>Venue</i>.'
 excerpt: "The abstract, plain text."
@@ -167,7 +169,7 @@ Rules:
 
 - **Author markup:** `<u>Abhishek Divekar</u>` for your name, `<u>Abhishek Divekar</u>*` for equal contribution. `_includes/authors.html` bolds and underlines only your name and only your star.
 - **`venue_short` format:** `Venue Year (Track)`, for example `NeurIPS 2026 (Main track)`, `AAAI 2026 (Industry track)`, `CIKM 2026 (Research track)`, `ACL 2026 (GEM Workshop)`.
-- **`tier: internal`** = an AMLC paper. It renders in the AMLC subsection, gets **no abstract and no expand toggle**, and must **not** carry an `excerpt` or body text (internal material was deliberately purged; see Privacy).
+- **`tier: internal`** = an AMLC paper. It renders in the AMLC subsection and may carry an `excerpt`: **any card with an abstract expands**, showing its figure when it has one and the abstract either way. Only cards with no `excerpt` stay flat.
 - **`listed: false`** hides a paper everywhere without deleting the file.
 - **Dates drive order.** Set the real publication date, not today's.
 
@@ -297,7 +299,7 @@ Emitted by `_includes/person-jsonld.html` on every page, from the same data file
 | Symptom | Cause | Fix |
 |---|---|---|
 | Expand buttons and Copy for LLM do nothing locally | `_site` was built with production URLs | Rebuild with `_config.yml,_config.dev.yml` |
-| Expanded card content is indented far from the card edge | `.prow__more` was given a left margin matching the thumbnail column | When open the card is one column; everything sits at the card's 20px padding, the same as every other card. Do not add a left margin to `.prow__more` |
+| Expanded card content is indented far from the card edge | `.prow__more` was given a left margin matching the thumbnail column | When open the card is one column; everything sits at the card's 25px padding, the same as every other card. Do not add a left margin to `.prow__more` |
 | Sticky bar sits under the header | `top` offset out of sync with `$masthead-h` | Both use `$masthead-h + 1px` |
 | `alt` text is truncated at a colon | `default:` filter applies before `split` | Assign the alt in an `{% if %}` block first |
 | A new section tab scrolls sideways | Too many tabs for the bar | Bar wraps at 1100px; keep labels short |
