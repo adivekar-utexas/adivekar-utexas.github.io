@@ -123,7 +123,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .home .news-tag--fulltime { background: #fff1e6; color: #b45309; border-color: #fdd2b0; }
 .home .news-tag--launch   { background: #ecfeff; color: #0e7490; border-color: #a5f3fc; }
 .home .news-tag--collaboration { background: #eef2ff; color: #4338ca; border-color: #c7d2fe; }
-.news-filter { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; margin-bottom: 14px; }
+.news-filter { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-start; margin-bottom: 14px; }
 .news-filter .news-tag { font-size: 12px; line-height: 24px; padding: 0 10px; }
 .news-filter .news-tag { opacity: 0.55; }
 .news-filter .news-tag.is-active { opacity: 1; box-shadow: 0 0 0 2px rgba(28, 35, 48, 0.12); }

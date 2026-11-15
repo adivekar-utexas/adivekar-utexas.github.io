@@ -1,5 +1,5 @@
 {% include news-sorted.html %}{% assign news = news_sorted %}
-{% assign tags = news | map: "tag" | uniq %}
+{% assign tags = site.data.news_tag_order %}
 {% assign labels = site.data.news_tags %}
 {% capture jobtitle %}{% include jobtitle %}{% endcapture %}
 <section class="home-section" id="news" aria-labelledby="news-h">

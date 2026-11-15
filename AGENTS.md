@@ -38,6 +38,7 @@ Verify with the sync check in [Checks before committing](#5-checks-before-commit
 | Also update | Why |
 |---|---|
 | `_data/news_tags.yml` | A new `tag` needs a display label |
+| `_data/news_tag_order.yml` | The tag must also be listed here, or it will not appear in the filter bar. This file, not the feed, decides left-to-right order |
 | `_sass/_home.scss` → `.news-tag--<tag>` | A new tag needs a colour class, or it renders unstyled |
 | `order:` field | Tie-breaker for items on the same date (higher shows first) |
 

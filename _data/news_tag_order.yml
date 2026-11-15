@@ -1,0 +1,11 @@
+# Order of the tag filter above the News feed, left to right.
+# Every tag used in _data/news.yml must appear here, or it will be missing
+# from the filter bar (the labels themselves live in news_tags.yml).
+- fulltime
+- paper
+- IOAI
+- award
+- talk
+- collaboration
+- launch
+- education
