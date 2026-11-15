@@ -15,7 +15,7 @@
       {% if pub.thumb %}<img src="{{ base_path }}/images/papers/thumbs/{{ pub.thumb }}" alt="{{ thumb_alt }}" loading="lazy" width="640" height="360">{% else %}<span class="prow__thumb-ph">{{ pub.title | split: ":" | first }}</span>{% endif %}
     </div>
     <div class="prow__body">
-      <p class="prow__venue">{{ pub.venue_short | default: "AMLC" }}{% if pub.acceptancetype %} <span class="pill pill--{{ pub.acceptancetype | downcase }}">{{ pub.acceptancetype }}</span>{% endif %}{% if pub.acceptancerate %} <span class="pill pill--acceptance">{{ pub.acceptancerate }} acceptance rate</span>{% endif %}</p>
+      <p class="prow__venue">{{ pub.venue_short | default: "AMLC" }}{% if pub.acceptancetype %} <span class="pill pill--{{ pub.acceptancetype | downcase }}">{{ pub.acceptancetype }}</span>{% endif %}{% if pub.acceptancerate %} <span class="pill pill--acceptance">{{ pub.acceptancerate }} Accept Rate</span>{% endif %}</p>
       <h3 class="prow__title">{% if pub.paperurl contains "http" %}<a href="{{ pub.paperurl }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
       <p class="prow__authors">{{ authors | strip }}</p>
       {% if pub.pitch %}<p class="prow__pitch"><span class="pill pill--tldr">TL;DR</span> {{ pub.pitch }}</p>{% endif %}

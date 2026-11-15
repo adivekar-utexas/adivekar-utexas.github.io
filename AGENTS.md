@@ -279,7 +279,7 @@ Emitted by `_includes/person-jsonld.html` on every page, from the same data file
 | Tone | Plain, first person, no marketing words ("elegant", "cutting-edge", "world-class"). |
 | Emphasis | Bold the single most important phrase in a cluster, not whole sentences. |
 | Names | "Abhishek Divekar" in full the first time in a block; the site is first-person elsewhere. |
-| Numbers | `USD 550 million`, `100M+`, `~650,000`, `19.2%`. Percentages carry "acceptance rate", never bare "acceptance". |
+| Numbers | `USD 550 million`, `100M+`, `~650,000`, `19.2%`. On a publication card the label is `25.7% Accept Rate` (a tag, uppercase, next to Poster/Oral). In prose and in `llms.txt`-only text write "19.2% acceptance rate". Never bare "acceptance". |
 | Venues | Full name in `venue`, short form in `venue_short`. Spell out AAAI, CIKM, NeurIPS, EMNLP on first use in prose. |
 
 ---

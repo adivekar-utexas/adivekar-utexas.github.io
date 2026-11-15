@@ -136,14 +136,14 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* Every card (external and AMLC) uses the same even padding, so the space
    above the content equals the space below it. */
 .prow {
-  position: relative; margin: 0; padding: 20px; background: $surface; border: 1px solid $line; border-radius: 14px;
+  position: relative; margin: 0; padding: 25px; background: $surface; border: 1px solid $line; border-radius: 14px;
   scroll-margin-top: 140px; transition: box-shadow .16s ease, border-color .16s ease;
 }
 /* The expand chevron straddles the card's bottom edge, so expandable cards
    reserve a little room in the gap below instead of uneven bottom padding. */
 .ptable .prow--expandable { margin-bottom: 26px; }
 .prow:hover, .prow.is-open { border-color: $hover-line; box-shadow: 0 6px 20px rgba(17, 24, 39, 0.08), 0 1px 3px rgba(17, 24, 39, 0.05); }
-.prow__main { display: grid; grid-template-columns: 224px minmax(0, 1fr) auto; gap: 24px; align-items: center; }
+.prow__main { display: grid; grid-template-columns: 208px minmax(0, 1fr) auto; gap: 20px; align-items: center; }
 .prow__thumb { aspect-ratio: 16 / 9; border-radius: 9px; overflow: hidden; background: #fff; border: 1px solid $line; }
 .prow__thumb img { display: block; width: 100%; height: 100%; object-fit: contain; background: #fff; }
 .prow__thumb-ph {
@@ -152,7 +152,9 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   background: linear-gradient(135deg, $tint, #ffffff);
 }
 .prow__body { min-width: 0; }
-.prow__venue { margin: 0 0 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: $ink-3; }
+/* Venue line and its pills share one type style, so "CIKM 2026 (Research track)"
+   is exactly the size of the POSTER/ORAL tags next to it. */
+.prow__venue { margin: 0 0 4px; font-size: 12px; font-weight: 600; line-height: 22px; letter-spacing: 0.02em; text-transform: uppercase; color: $ink-3; }
 .prow__title { margin: 0 0 5px; font-family: $serif; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
 .home .prow__title a { color: $ink; text-decoration: none; }
 .home .prow__title a:hover { color: $accent; }
@@ -166,7 +168,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid $line; color: $ink-2; background: $tint;
   vertical-align: 1px; white-space: nowrap;
 }
-.prow__venue .pill { margin-left: 6px; font-size: 12px; line-height: 22px; }
+.prow__venue .pill { margin-left: 6px; font-size: 12px; line-height: 22px; letter-spacing: 0.02em; }
 .publications-scholar { flex-shrink: 0; }
 .publications-note { margin: -8px 0 14px; font-size: 13px; color: $ink-3; }
 /* When open, the thumbnail goes away and the card becomes one full-width column.
@@ -329,7 +331,7 @@ body { background: $page; color: $ink; }
 .cards { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .cards--3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .card {
-  margin: 0; padding: 20px; background: $surface; border: 1px solid $line; border-radius: 14px;
+  margin: 0; padding: 25px; background: $surface; border: 1px solid $line; border-radius: 14px;
   transition: box-shadow .16s ease, border-color .16s ease;
 }
 .card:hover { border-color: $hover-line; box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08), 0 1px 3px rgba(16, 24, 40, 0.06); }
@@ -503,7 +505,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(87, 83, 78, 0.6)
   font-family: $serif; font-size: 20px; font-weight: 500; letter-spacing: -0.005em;
   text-transform: none; color: $ink;
 }
-.card--media { display: flex; flex-direction: column; padding: 20px; }
+.card--media { display: flex; flex-direction: column; padding: 25px; }
 .card--media .card__title, .card--media .card__text, .card--media .card__links { padding: 0; }
 .card__media { display: block; aspect-ratio: 16 / 9; margin-bottom: 12px; border-radius: 9px; overflow: hidden; border: 1px solid $line; background: #fff; }
 .card__media img { width: 100%; height: 100%; object-fit: cover; }
