@@ -122,7 +122,7 @@ Nothing else should hardcode a title. If you find one, replace it with `[[TITLE]
 |---|---|---|
 | `_data/history.yml` | Career section (grouped: Full-time, Part-time, Academic and olympiad service, Internships, Education) | `llms.txt` Career; news if it is a milestone |
 | `_data/launches.yml` | Product launches | `llms.txt`; news |
-| `_data/ioai.yml` | AI Olympiad cards, rendered by `_includes/home/ioai-card.html`: image left, text centre, buttons right. `expand: false` keeps a card flat; expanded cards hide the left thumbnail like publication cards; `more_image` is what the chevron reveals; `image_right` keeps a small image above the buttons; `press_id` pulls outlets from `_data/press.yml` | Images under `images/`; `llms.txt` |
+| `_data/ioai.yml` | AI Olympiad cards, rendered by `_includes/home/ioai-card.html`: image left, text centre, buttons right. These are publication cards: same grid, same open/close rules, same animation. Only the button column is wider (184px). `expand: false` keeps a card flat; opening hides the left thumbnail and shows `more_image` full width (set `more_image` or the card opens with no figure); `image_right` (the peacock) sits inside the body beside the text, so it stays visible open or closed; `summary` is a line before the press coverage; `press_id` pulls outlets from `_data/press.yml` | Images under `images/`; `llms.txt` |
 | `_data/oss.yml` | Open source cards | Image in `images/oss/`, `alt:` field |
 | `_data/awards.yml` | Awards rows and photos | `llms.txt`; news |
 | `_data/press.yml` | Press & Media | `llms.txt` |
@@ -309,6 +309,9 @@ Emitted by `_includes/person-jsonld.html` on every page, from the same data file
 | News tag renders grey | No `.news-tag--<tag>` rule | Add the class in `_sass/_home.scss` |
 | A BibTeX pill says "Copied" but nothing is on the clipboard | The `#<slug>-bibtex` block is missing | The pill copies from that `<pre>`; it only exists when the card has an `excerpt` (which is what makes it expandable) |
 | Section anchor lands under the sticky bar | Missing scroll offset | Sections use `scroll-margin-top: 140px` |
+| A card's open animation is jerky, or the card jumps at the end | Its figure is a lazy image inside a hidden block, so it starts loading only on click and arrives mid-animation | `home.js` preloads every expanded figure once the page is idle and waits up to 400ms for one still loading. Keep `loading="lazy"` off the peacock and keep figures inside `.prow__more` |
+| An Olympiad card opens to the same height, with no figure | The card has no `more_image` | Every expandable Olympiad card needs `more_image` |
+| Olympiad card text runs under its buttons | A side column was nested inside the grid | The buttons are a sibling `.prow__links` in the 3rd grid column, as in `paper-row.html`; do not wrap them |
 
 ---
 

@@ -1,14 +1,16 @@
 {% comment %}
-  One AI Olympiad card, same layout as a publication card:
-  [image left] [kicker, title, text, meta, press] [small image + buttons right].
-  Expanding shows `more_image` full width and any extra paragraphs.
+  One AI Olympiad card. Same markup and CSS as a publication card
+  (_includes/paper-row.html): [thumb] [body] [links], and when open the thumb
+  hides and `more_image` shows full width, exactly like a paper figure.
+  `image_right` (the peacock) sits inside the body beside the text, so it stays
+  visible open or closed and never pushes the buttons around.
   Usage: {% include home/ioai-card.html c=card %}
 {% endcomment %}
 {% assign c = include.c %}
 {% assign press = nil %}{% if c.press_id %}{% assign press = site.data.press | where: "id", c.press_id | first %}{% endif %}
 {% assign extra = c.text | slice: 1, 20 %}
 {% assign has_more = false %}{% if c.expand %}{% if c.more_image or extra.size > 0 %}{% assign has_more = true %}{% endif %}{% endif %}
-<li class="prow prow--ioai{% if has_more %} prow--expandable{% endif %}{% if c.image_right %} prow--has-side{% endif %}" id="{{ c.slug }}">
+<li class="prow prow--ioai{% if has_more %} prow--expandable{% endif %}" id="{{ c.slug }}">
   <div class="prow__main">
     <div class="prow__thumb">
       <img src="{{ base_path }}/images/{{ c.image }}" alt="{{ c.image_alt }}" loading="lazy">
@@ -16,16 +18,18 @@
     <div class="prow__body">
       <p class="prow__venue">{{ c.kicker }}</p>
       <h3 class="prow__title">{{ c.title }}</h3>
-      {% for t in c.text limit: 1 %}<p class="prow__pitch">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endfor %}
-      {% if c.summary or press %}<p class="prow__pitch prow__pitch--meta">{% if c.summary %}{{ c.summary }} {% endif %}{% if press %}Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}</p>{% endif %}
-      {% if c.meta %}<p class="prow__pitch prow__pitch--meta">{{ c.meta }}</p>{% endif %}
+      <div class="prow__textrow">
+        <div class="prow__text">
+          {% for t in c.text limit: 1 %}<p class="prow__pitch">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endfor %}
+          {% if c.summary or press %}<p class="prow__pitch prow__pitch--meta">{% if c.summary %}{{ c.summary }} {% endif %}{% if press %}Press coverage: {% for o in press.outlets %}<a href="{{ o.url }}">{{ o.label }} {% include arrow.html %}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}</p>{% endif %}
+          {% if c.meta %}<p class="prow__pitch prow__pitch--meta">{{ c.meta }}</p>{% endif %}
+        </div>
+        {% if c.image_right %}<img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" width="96" height="120">{% endif %}
+      </div>
     </div>
-    <div class="prow__side">
-      {% if c.image_right %}<img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" loading="lazy">{% endif %}
-      {% if c.links %}<ul class="prow__links" aria-label="Links">
-        {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% include icons/globe.svg %}<span>{{ l.label }}</span></a></li>{% endfor %}
-      </ul>{% endif %}
-    </div>
+    {% if c.links %}<ul class="prow__links" aria-label="Links">
+      {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% include icons/globe.svg %}<span>{{ l.label }}</span></a></li>{% endfor %}
+    </ul>{% endif %}
   </div>
   {% if has_more %}
   <div class="prow__more" id="{{ c.slug }}-more" hidden>

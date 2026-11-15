@@ -180,6 +180,10 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow.is-open .prow__main { grid-template-columns: minmax(0, 1fr); gap: 12px; }
 .prow.is-open .ilink--abstract { display: none; }
 .prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; gap: 8px; margin: 12px 0 24px; }
+/* Open row: every button in a card is the same width, as in the closed stack. */
+.prow.is-open .prow__links li { flex: 0 0 auto; }
+.prow.is-open .prow__links .ilink { justify-content: center; min-width: 114px; }
+.prow--ioai.is-open .prow__links .ilink { min-width: 184px; }
 .prow.is-animating { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
@@ -201,27 +205,23 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 /* The expanded block sits at the card's own padding, flush with the text above. */
 /* No rule above the expanded block; the spacing alone separates it. */
 .prow__more { margin: 0; max-width: none; padding-top: 0; border-top: 0; text-align: center; }
-/* Olympiad cards: a small image plus the buttons stack in the right column. */
-.prow--has-side .prow__main { grid-template-columns: 208px minmax(0, 1fr) 132px; }
-.prow__side { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.prow__side-img { display: block; width: 100%; max-width: 120px; height: auto; }
-.prow__side .prow__links { min-width: 0; width: 100%; }
-.prow__side .ilink { width: 100%; }
 .prow__pitch--meta { margin-top: 8px; font-size: 13.5px; color: $ink-2; }
-/* Olympiad cards hide the left thumbnail when open, like publications.
-   Keep the peacock alongside the text and keep the action buttons on the right. */
-.prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) max-content; }
-.prow--ioai .prow__side { align-self: center; }
-.prow--ioai .prow__links { width: max-content; }
-.prow--ioai .ilink { white-space: nowrap; }
-.prow--ioai.prow--has-side .prow__side { align-self: start; margin-top: 52px; }
-.prow--ioai.is-open .prow__main { grid-template-columns: minmax(0, 1fr) max-content; }
-.prow--ioai.is-open .prow__side .prow__links { grid-column: auto; flex-direction: column; margin: 0; gap: 9px; }
+/* Olympiad cards are publication cards: same grid, same open/close rules,
+   same animation. The only differences are a wider button column (the labels
+   are longer) and an optional small image (the peacock) beside the text. */
+.prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) 184px; }
+.prow--ioai .prow__links { min-width: 0; }
+.prow--ioai .ilink { white-space: nowrap; padding: 0 16px; }
+.prow__textrow { display: flex; align-items: flex-start; gap: 18px; }
+.prow__text { flex: 1 1 auto; min-width: 0; }
+.prow__side-img { flex: none; display: block; width: 96px; height: auto; }
 @media (max-width: 860px) {
-  .prow--ioai .prow__main, .prow--ioai.is-open .prow__main { grid-template-columns: minmax(0, 1fr); }
-  .prow--ioai.prow--has-side .prow__side { margin-top: 0; }
-  .prow--ioai .prow__side { align-items: flex-start; }
-  .prow--ioai .prow__links, .prow--ioai.is-open .prow__side .prow__links { flex-direction: row; flex-wrap: wrap; width: auto; }
+  .prow--ioai .prow__main { grid-template-columns: 176px minmax(0, 1fr); }
+  .prow--ioai .prow__links .ilink { min-width: 0; }
+}
+@media (max-width: 560px) {
+  .prow--ioai .prow__main { grid-template-columns: 1fr; }
+  .prow__side-img { width: 72px; }
 }
 .prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }

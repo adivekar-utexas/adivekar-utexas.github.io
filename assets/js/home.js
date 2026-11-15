@@ -1,5 +1,29 @@
 /* Homepage: expand a paper card in place (figure + abstract). */
 (function () {
+  // Figures inside a closed card are lazy images in a hidden block, so they
+  // only start loading when the card opens. The open animation then measures
+  // the card before the image exists and the card jumps when it arrives.
+  // Fix: load them in the background once the page is idle, and on click wait
+  // briefly for any figure that is still loading before measuring.
+  function figures(card) { return Array.prototype.slice.call(card.querySelectorAll('.prow__more img')); }
+  function warm() {
+    document.querySelectorAll('.prow__more img').forEach(function (img) { img.loading = 'eager'; });
+  }
+  if (document.readyState === 'complete') setTimeout(warm, 300);
+  else window.addEventListener('load', function () { setTimeout(warm, 300); });
+  function ready(card) {
+    var pending = figures(card).filter(function (img) { return !img.complete; });
+    if (!pending.length) return Promise.resolve();
+    pending.forEach(function (img) { img.loading = 'eager'; });
+    var loaded = Promise.all(pending.map(function (img) {
+      return img.decode ? img.decode().catch(function () {}) : Promise.resolve();
+    }));
+    return Promise.race([loaded, new Promise(function (r) { setTimeout(r, 400); })]);
+  }
+  function toggle(card, open) {
+    if (open) ready(card).then(function () { setOpen(card, true); });
+    else setOpen(card, false);
+  }
   function setOpen(card, open) {
     var more = card.querySelector('.prow__more');
     var btn = card.querySelector('.prow__toggle');
@@ -26,12 +50,12 @@
   }
   document.querySelectorAll('.prow--expandable').forEach(function (card) {
     card.querySelector('.prow__toggle').addEventListener('click', function () {
-      setOpen(card, !card.classList.contains('is-open'));
+      toggle(card, !card.classList.contains('is-open'));
     });
     // The "Abstract" pill opens the card; it is hidden while the abstract is visible.
     var pill = card.querySelector('.ilink--abstract');
     if (pill) {
-      pill.addEventListener('click', function () { setOpen(card, true); });
+      pill.addEventListener('click', function () { toggle(card, true); });
     }
   });
   // /#paper-slug opens that card (old /publication/... pages redirect here).
@@ -39,7 +63,7 @@
     var id = location.hash.slice(1);
     var target = id && document.getElementById(id);
     if (target && target.classList.contains('prow--expandable')) {
-      if (!target.classList.contains('is-open')) setOpen(target, true);
+      if (!target.classList.contains('is-open')) toggle(target, true);
       requestAnimationFrame(function () { target.scrollIntoView({ block: 'start' }); });
     }
   }

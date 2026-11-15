@@ -21,6 +21,8 @@
 - date: 2026-08-01
   tag: IOAI
   text: "Travelled to Kazakhstan to serve on the IOAI 2026 Jury."
+  cta_text: "See the Jury"
+  cta_url: "https://ioai-official.org/republic-of-kazakhstan/international-jury/"
 - date: 2026-09-01
   tag: IOAI
   text: "Released the IOAI² 2026 review, co-authored with IOAI co-founder Elena Marinova."
