@@ -15,7 +15,7 @@ cards:
     show_all_text: true
     links:
       - {label: "IOAI 2026 Team", icon: "team", url: "https://ioai-official.org/republic-of-kazakhstan/international-jury/"}
-      - {label: "IOAI² Page", icon: "article", url: "https://ioai-official.org/ai-models-track/"}
+      - {label: "IOAI² Announcement", icon: "article", url: "https://ioai-official.org/ai-models-track/"}
       - {label: "IOAI² Results", icon: "results", url: "https://ioai-official.org/ai-models-track/ioai%C2%B2-2026-report/"}
       - {label: "IOAI² GitHub", icon: "github", url: "https://github.com/IOAI-official/IOAI-AI-Models-Track"}
     image: "ioai-2026-founding-ai-participants.jpg"

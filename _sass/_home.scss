@@ -181,9 +181,8 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow.is-open .ilink--abstract { display: none; }
 .prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; gap: 8px; margin: 12px 0 24px; }
 /* Open row: every button in a card is the same width, as in the closed stack. */
-.prow.is-open .prow__links li { flex: 0 0 auto; }
 .prow.is-open .prow__links .ilink { justify-content: center; min-width: 114px; }
-.prow--ioai.is-open .prow__links .ilink { min-width: 176px; }
+.prow--ioai.is-open .prow__links .ilink { min-width: 158px; }
 .prow.is-animating { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
@@ -211,10 +210,13 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
    are longer) and an optional small image (the peacock) beside the text. */
 .prow--ioai .prow__main { grid-template-columns: 208px minmax(0, 1fr) 176px; }
 .prow--ioai .prow__side { align-self: start; display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
-.prow--ioai .prow__links { width: 100%; }
+.prow--ioai .prow__links { width: 100%; justify-content: center; }
+.prow--ioai .prow__links li { flex: 1 1 auto; }
+.prow--ioai .prow__links .ilink { justify-content: center; padding: 0 10px; }
 .prow--ioai .ilink { white-space: nowrap; }
 .prow--ioai .prow__side-img { display: block; width: 100%; height: auto; }
-.prow--ioai.is-open .prow__side { grid-column: 1; }
+.prow--ioai.is-open .prow__side { grid-column: 1; align-self: start; }
+.prow--ioai.is-open .prow__side .prow__side-img { display: none; }
 .prow--ioai.is-open .prow__links { margin: 0 0 24px; }
 @media (max-width: 860px) {
   .prow--ioai .prow__main { grid-template-columns: 176px minmax(0, 1fr); }

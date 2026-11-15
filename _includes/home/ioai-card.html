@@ -2,8 +2,9 @@
   One AI Olympiad card. Same markup and CSS as a publication card
   (_includes/paper-row.html): [thumb] [body] [links], and when open the thumb
   hides and `more_image` shows full width, exactly like a paper figure.
-  `image_right` (the peacock) sits inside the body beside the text, so it stays
-  visible open or closed and never pushes the buttons around.
+  `image_right` (the peacock) sits above the buttons in the right-side column.
+  That column is in the card grid, so the peacock stays on the right and never
+  stretches full width when the card opens.
   Usage: {% include home/ioai-card.html c=card %}
 {% endcomment %}
 {% assign c = include.c %}
@@ -29,7 +30,7 @@
     <div class="prow__side">
       {% if c.image_right %}<img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" width="144" height="180">{% endif %}
       {% if c.links %}<ul class="prow__links" aria-label="Links">
-        {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% if l.icon == 'github' %}{% include icons/github.svg %}{% elsif l.icon == 'results' %}{% include icons/scholar.svg %}{% elsif l.icon == 'team' %}{% include icons/cv.svg %}{% elsif l.icon == 'article' %}{% include icons/paper.svg %}{% else %}{% include icons/globe.svg %}{% endif %}<span>{{ l.label }}</span></a></li>{% endfor %}
+        {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% if l.icon == 'github' %}{% include icons/github.svg %}{% elsif l.icon == 'results' %}{% include icons/trophy.svg %}{% elsif l.icon == 'team' %}{% include icons/users.svg %}{% elsif l.icon == 'article' %}{% include icons/article.svg %}{% else %}{% include icons/globe.svg %}{% endif %}<span>{{ l.label }}</span></a></li>{% endfor %}
       </ul>{% endif %}
     </div>
   </div>
