@@ -72,13 +72,13 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .llm-copy:hover { background: #e3e9f2; border-color: #aebdd2; }
 
 /* ---- Section headings: one plain heading, no eyebrows or numbers ---------- */
-.home-section { margin: 0 0 48px; }
+.home-section { margin: 0 0 48px; scroll-margin-top: 140px; }
 .home-h2-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .home .home-h2 {
   margin: 0 0 16px; padding: 0; border: 0; font-family: $serif; font-weight: 500;
   font-size: 26px; line-height: 1.2; letter-spacing: -0.01em; color: $ink;
 }
-.more-link { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.more-link { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 500; white-space: nowrap; }
 
 /* ---- Rows (industry launches, history): date column + text -------------- */
 .rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid $line; }
@@ -126,15 +126,14 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .home .news-tag--launch   { background: #ecfeff; color: #0e7490; border-color: #a5f3fc; }
 .home .news-tag--collaboration { background: #eef2ff; color: #4338ca; border-color: #c7d2fe; }
 .news-filter { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-start; margin-bottom: 14px; }
-.news-filter .news-tag { font-size: 12px; line-height: 24px; padding: 0 10px; }
-.news-filter .news-tag { opacity: 0.55; }
+.news-filter .news-tag { font-size: 12px; line-height: 24px; padding: 0 10px; opacity: 0.55; }
 .news-filter .news-tag.is-active { opacity: 1; box-shadow: 0 0 0 2px rgba(28, 35, 48, 0.12); }
 .news-filter .news-tag--all { background: $surface; color: $ink; border-color: $line; }
 
 /* ---- Research table: [thumb | details | icon links], full page width ------ */
 /* Research cards: one per row, full width, hairline border, shadow on hover.
    External papers expand in place (figure + abstract) via the bottom toggle. */
-.ptable { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.ptable { list-style: none; margin: 0; padding: 0 0 6px; display: flex; flex-direction: column; gap: 12px; }
 /* Every card (external and AMLC) uses the same even padding, so the space
    above the content equals the space below it. */
 .prow {
@@ -214,17 +213,14 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow--keep-thumb.prow--has-side.is-open .prow__main { grid-template-columns: 208px minmax(0, 1fr) 132px; }
 .prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
-.prow__venue-full { margin: 0 0 12px; font-size: 13px; color: $ink-3; }
-.prow__venue-full .pill { margin-left: 6px; }
 .prow__abs-h { margin: 0 0 6px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: $ink-3; }
 .prow__abs { margin: 0; font-size: 13.5px; line-height: 1.65; color: $ink-2; text-align: left; }
-.ptable { padding-bottom: 6px; }
 
 /* Icon links: a vertical stack of compact pills, sized like the Writing chips. */
 .prow__links { list-style: none; margin: 0; padding: 0; align-self: center; display: flex; flex-direction: column; gap: 9px; min-width: 100px; }
 .prow__links li { margin: 0; display: flex; }
 .ilink {
-  display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 18px;
+  display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 18px; flex: 1 1 auto;
   border: 1px solid $line; border-radius: 999px; background: $surface;
   font-size: 14px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important;
   transition: background .12s ease, border-color .12s ease, color .12s ease;
@@ -234,7 +230,6 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .ilink:hover svg { color: $ink-3; }
 .ilink:focus-visible { outline: 2px solid $accent; outline-offset: 2px; }
 .ilink--copy { cursor: pointer; font-family: inherit; }
-.ilink { flex: 1 1 auto; }
 /* BibTeX block in the expanded card */
 .prow__abs-h--bibtex { margin-top: 18px; }
 .prow__bibtex {
@@ -329,17 +324,13 @@ body { background: $page; color: $ink; }
 .page__title, .page__content h2 { font-family: $serif; font-weight: 500; letter-spacing: -0.012em; color: $ink; }
 .page__content h2 { border-bottom-color: $line; }
 .page__content a, .archive a { color: $accent; }
-.page__footer { background: $page; border-top: 1px solid $line; color: $ink-3; }
-.author__name { font-family: $serif; font-weight: 600; color: $ink; }
-
-/* ---- Polish ------------------------------------------------------------- */
-.page__footer { font-size: 13px; }
+.page__footer { background: $page; border-top: 1px solid $line; color: $ink-3; font-size: 13px; }
 .page__footer a { color: $ink-2; }
 .page__footer-copyright { color: $ink-3; }
+.author__name { font-family: $serif; font-weight: 600; color: $ink; }
 
 /* ---- Shared components (sized to match the Writing page chips) ----------- */
 .home-intro { margin: -4px 0 16px; max-width: 760px; font-size: 15px; line-height: 1.6; color: $ink-2; }
-.home-section { scroll-margin-top: 140px; }
 /* Home section bar: one row of evenly spread tabs, slightly wider than the
    content column so it reads as a floating bar. Wraps (never scrolls) on
    narrow screens. */
@@ -366,11 +357,8 @@ body { background: $page; color: $ink; }
 .home .card__title a { color: $ink; }
 .home .card__title a:hover { color: $accent; text-decoration: none; }
 .card__text { margin: 0 0 6px; font-size: 14.5px; line-height: 1.55; color: $ink; }
-.card__meta { margin: 0 0 6px; font-size: 13px; line-height: 1.5; color: $ink-3; }
 .row__sub--muted { color: $ink-3; }
 .row__outlets a { font-weight: 500; }
-#alumni .row { grid-template-columns: minmax(0, 1fr); }
-#alumni .row__when { display: none; }
 .card__did { margin: 2px 0 8px; font-size: 14.5px; line-height: 1.55; color: $ink; }
 .card__text--after { margin: 0; font-size: 14px; color: $ink-2; }
 .card__did-label {
@@ -391,7 +379,6 @@ body { background: $page; color: $ink; }
 .btn-pill:hover { background: $hover; border-color: $hover-line; color: $ink !important; }
 .btn-pill--ghost { background: $surface; border-color: $line; color: $ink !important; }
 .btn-pill--ghost:hover { background: $hover; border-color: $hover-line; color: $ink !important; }
-.more-link { font-size: 13px; }
 
 @media (max-width: 860px) {
   .cards--3 { grid-template-columns: 1fr 1fr; }
@@ -502,14 +489,8 @@ body { background: $page; color: $ink; }
 @media (max-width: 760px) { .post__meta { justify-content: flex-start; } }
 
 /* ---- Paper (abstract) pages ---------------------------------------------- */
-.paper .prow__venue { text-align: center; }
-.paper__authors { max-width: 760px; margin: 14px auto 0; font-size: 15px; }
-.paper__links { justify-content: center; margin-top: 16px; }
-.paper__links .ilink { display: inline-flex; }
-.paper__fig { margin: 0 0 24px; padding: 12px; background: #fff; border: 1px solid $line; border-radius: 12px; }
-.paper__fig img { display: block; width: 100%; height: auto; border-radius: 0; }
-.paper .post__body .prow__pitch { font-size: 16px; margin-bottom: 12px; }
-@media (max-width: 760px) { .paper .prow__venue, .paper__links { text-align: left; justify-content: flex-start; } }
+/* Publication pages are redirect stubs now (see _layouts/paper.html), so the
+   only shared rule left is nothing; card styling lives in `.prow` above. */
 
 /* No focus ring on mouse clicks; keyboard users still get one. */
 a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
@@ -527,26 +508,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(87, 83, 78, 0.6)
 .card__media { display: block; aspect-ratio: 16 / 9; margin-bottom: 12px; border-radius: 9px; overflow: hidden; border: 1px solid $line; background: #fff; }
 .card__media img { width: 100%; height: 100%; object-fit: cover; }
 .card--media .card__links { margin-top: auto; padding-top: 6px; }
-.card--hero { padding: 14px 20px 18px; }
-.card__banner { margin: 0 -6px 14px; padding: 8px; border-radius: 10px; background: #fff; border: 1px solid $line; }
-.card__banner img { display: block; width: 100%; height: auto; }
-
-/* ---- Homepage photo band (DataHack stage) -------------------------------- */
-.stage-band {
-  position: relative; display: block; margin: 0 0 32px; border-radius: 16px; overflow: hidden;
-  aspect-ratio: 2400 / 700; background: #0f1320; color: #fff !important; text-decoration: none !important;
-}
-.stage-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; transition: transform .6s ease; }
-.stage-band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 14, 26, 0.78) 0%, rgba(10, 14, 26, 0.35) 45%, rgba(10, 14, 26, 0) 70%); }
-.stage-band:hover img { transform: scale(1.02); }
-.stage-band__cap { position: absolute; left: 28px; bottom: 24px; z-index: 1; max-width: 46%; }
-.stage-band__kicker { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.78); }
-.stage-band__title { display: block; font-family: $serif; font-size: 26px; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: #fff; }
-@media (max-width: 760px) {
-  .stage-band { aspect-ratio: 16 / 9; }
-  .stage-band__cap { left: 16px; bottom: 14px; max-width: 80%; }
-  .stage-band__title { font-size: 19px; }
-}
 
 /* ---- Speaking header over the stage photo -------------------------------- */
 .spage__head--hero {

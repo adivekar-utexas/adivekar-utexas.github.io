@@ -1,31 +1,12 @@
 /* ==========================================================================
-   Site customizations (2026 revamp): warm neutral palette, news feed,
-   compact publication list. Loaded last from assets/css/main.scss.
+   Site customizations: components that predate the 2026 design system
+   (Writing list, post pages). The palette, cards, tabs and rows all live in
+   _home.scss, which is imported AFTER this file, so anything here that
+   restates a colour must be a component-level choice, not a page default.
    ========================================================================== */
 
-
-body { background: #f7f6f3; color: $text-color; }
-.masthead { background: #f7f6f3; border-bottom: 1px solid #e7e4dd; }
-.greedy-nav { background: transparent; }
-.greedy-nav a { color: #44403c; font-weight: 500; }
-.greedy-nav a:hover { color: #44403c; }
-.greedy-nav .visible-links a:before { background: currentColor; }
-.page__footer { background: #f5f5f4; border-top: 1px solid #e7e4dd; color: #44403c; }
-
-a { color: $info-color; text-decoration-color: rgba(31, 78, 121, 0.32); text-underline-offset: 2px; }
-a:hover { color: #163a5c; }
-.page__content h2 {
-  border-bottom: 1px solid #e7e4dd; padding-bottom: 0.3em; margin-top: 1.6em;
-  font-weight: 600; color: #1c1917; font-size: 1.35em;
-}
-.author__avatar img { border-radius: 12px; }
-.btn--inverse { color: #44403c; border-color: #c9c0b2; }
-
-/* Homepage quick links handled in _home.scss (icon links). */
-
-/* ---- News feed: all rules live in _home.scss (.home .news-feed) ---------- */
-
-/* ---- Compact publication list (legacy; cards use .prow in _home.scss) ---- */
+/* Writing (Eugene Yan-style list) and post pages are styled here because they
+   are not part of the homepage's .home scope. */
 .section-note, .site-note { font-size: 0.85em; color: #6b645c; }
 
 /* ---- Writing (Eugene Yan-style list) ------------------------------------ */
