@@ -120,7 +120,7 @@ Nothing else should hardcode a title. If you find one, replace it with `[[TITLE]
 
 | File | Feeds | Also check |
 |---|---|---|
-| `_data/history.yml` | Career section (grouped: Full-time, Part-time, Academic and olympiad service, Internships, Education) | `llms.txt` Career; news if it is a milestone |
+| `_data/history.yml` | Career section (grouped: Full-time, Part-time, Academic service, Internships, Education); Academic service also accommodates roles such as workshop organizing | `llms.txt` Career; news if it is a milestone |
 | `_data/launches.yml` | Product launches | `llms.txt`; news |
 | `_data/ioai.yml` | AI Olympiad cards, rendered by `_includes/home/ioai-card.html`: image left, text centre, buttons right. These are publication cards: same grid, same open/close rules, same animation. Only the button column is wider (176px; IOAI 2025 buttons are 158px). `expand: false` keeps a card flat; opening hides the left thumbnail and shows `more_image` full width (set `more_image` or the card opens with no figure); `show_all_text: true` renders every paragraph in the closed card and leaves nothing for the chevron; `more_image_alt` is the alt text and `more_image_caption` the visible caption; `image_right` (the peacock) is 141px, above the buttons when closed and beside the text on the right when open; it stays visible and never stretches; `summary` is a line before the press coverage; `press_id` pulls outlets from `_data/press.yml` | Images under `images/`; `llms.txt` |
 | `_data/oss.yml` | Open source cards | Image in `images/oss/`, `alt:` field |
