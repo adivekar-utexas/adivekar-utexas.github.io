@@ -293,6 +293,7 @@ Emitted by `_includes/person-jsonld.html` on every page, from the same data file
 | Sticky bar sits under the header | `top` offset out of sync with `$masthead-h` | Both use `$masthead-h + 1px` |
 | `alt` text is truncated at a colon | `default:` filter applies before `split` | Assign the alt in an `{% if %}` block first |
 | A new section tab scrolls sideways | Too many tabs for the bar | Bar wraps at 1100px; keep labels short |
+| A venue line wraps onto a second row | The line (venue + Poster/Oral + Accept Rate) is wider than the text column | Budget is ~437px at 12px / 0.02em with a 208px thumb. Shorten the label, not the layout |
 | Numbers wrong in the social card | `og-card.jpg` is a raster with text baked in | Regenerate the image |
 | News tag renders grey | No `.news-tag--<tag>` rule | Add the class in `_sass/_home.scss` |
 | Section anchor lands under the sticky bar | Missing scroll offset | Sections use `scroll-margin-top: 140px` |

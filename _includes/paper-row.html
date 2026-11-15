@@ -7,7 +7,7 @@
 {% endcomment %}
 {% assign pub = include.pub %}
 {% capture authors %}{% include authors.html citation=pub.citation %}{% endcapture %}
-{% assign has_more = false %}{% if pub.tier != "internal" and pub.excerpt %}{% assign has_more = true %}{% endif %}
+{% assign has_more = false %}{% if pub.thumb and pub.excerpt %}{% assign has_more = true %}{% endif %}
 {% if pub.thumb_alt %}{% assign thumb_alt = pub.thumb_alt %}{% else %}{% assign thumb_alt = pub.title | split: ':' | first | prepend: 'Key figure from ' %}{% endif %}
 <li class="prow{% if has_more %} prow--expandable{% endif %}" id="{{ pub.urlslug }}">
   <div class="prow__main">
