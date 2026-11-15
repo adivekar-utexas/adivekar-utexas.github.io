@@ -169,11 +169,12 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__venue .pill { margin-left: 6px; font-size: 12px; line-height: 22px; }
 .publications-scholar { flex-shrink: 0; }
 .publications-note { margin: -8px 0 14px; font-size: 13px; color: $ink-3; }
-/* Hide the thumbnail but keep its grid cell, so the text column does not
-   shift left when the card opens. */
-.prow.is-open .prow__thumb { visibility: hidden; }
-/* Keep the three-column grid when open, so the text column does not shift left. */
-.prow.is-open .prow__links { grid-column: 3; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; }
+/* When open, the thumbnail goes away and the card becomes one full-width column.
+   Its content then starts at the card's own 20px padding, the same inset as the
+   text in every other card (e.g. "KeywordGym for Amazon advertising"). */
+.prow.is-open .prow__thumb { display: none; }
+.prow.is-open .prow__main { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.prow.is-open .prow__links { grid-column: 1; flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: 0; }
 .prow.is-animating { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
@@ -192,9 +193,8 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__toggle:hover { background: $hover; border-color: $hover-line; color: $ink-3; }
 .prow__toggle svg { transition: transform .36s ease; }
 .prow.is-open .prow__toggle svg { transform: rotate(180deg); }
-/* Expanded block lines up with the card's text column (thumb width + gap),
-   so opening a card does not move the figure or abstract to the left. */
-.prow__more { margin: 16px 0 0 248px; max-width: none; padding-top: 16px; border-top: 1px solid $line; text-align: center; }
+/* The expanded block sits at the card's own padding, flush with the text above. */
+.prow__more { margin: 16px 0 0; max-width: none; padding-top: 16px; border-top: 1px solid $line; text-align: center; }
 .prow__fig { margin: 0 0 14px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
 .prow__venue-full { margin: 0 0 12px; font-size: 13px; color: $ink-3; }
@@ -221,7 +221,6 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 @media (max-width: 860px) {
   .prow__main { grid-template-columns: 176px minmax(0, 1fr); }
   .prow__links { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; min-width: 0; }
-  .prow__more { margin-left: 200px; }
 }
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 20px; padding-top: 28px; }
@@ -236,7 +235,6 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 }
 @media (max-width: 560px) {
   .prow__main { grid-template-columns: 1fr; }
-  .prow__more { margin-left: 0; }
 }
 
 

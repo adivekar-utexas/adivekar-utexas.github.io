@@ -289,7 +289,7 @@ Emitted by `_includes/person-jsonld.html` on every page, from the same data file
 | Symptom | Cause | Fix |
 |---|---|---|
 | Expand buttons and Copy for LLM do nothing locally | `_site` was built with production URLs | Rebuild with `_config.yml,_config.dev.yml` |
-| A card's figure and text jump left when opened | The thumbnail used `display: none`, which removes its grid cell | Keep `visibility: hidden` so the cell holds |
+| Expanded card content is indented far from the card edge | `.prow__more` was given a left margin matching the thumbnail column | When open the card is one column; everything sits at the card's 20px padding, the same as every other card. Do not add a left margin to `.prow__more` |
 | Sticky bar sits under the header | `top` offset out of sync with `$masthead-h` | Both use `$masthead-h + 1px` |
 | `alt` text is truncated at a colon | `default:` filter applies before `split` | Assign the alt in an `{% if %}` block first |
 | A new section tab scrolls sideways | Too many tabs for the bar | Bar wraps at 1100px; keep labels short |
