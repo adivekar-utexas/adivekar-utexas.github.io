@@ -53,6 +53,7 @@ Automatic: Speaking stage and card strip, `llms.txt` Speaking.
 | Also update | Why |
 |---|---|
 | `_data/news.yml` | A talk worth announcing needs a news line |
+| `card_venue` | Short venue and format label for the More talks card; omit the year already shown by the date |
 | `images/slides/<slides_dir>/s-01.jpg …` | Slide images, if you set `slides_dir` and `slides_count` |
 | `images/<teaserurl>` | The card image |
 | `files/<deck>.pdf` | If the deck is downloadable |

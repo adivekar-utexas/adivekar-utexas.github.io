@@ -3,6 +3,7 @@ title: "The Promise and Pitfalls of Synthetic Data Generation"
 collection: talks
 urlslug: "dhs-2025-synthetic-data"
 type: "Invited talk and hands-on session"
+card_venue: "Hands-on session · Analytics Vidhya DataHack"
 permalink: /talks/2025-dhs-synthetic-data
 venue: "DataHack Summit 2025, Analytics Vidhya"
 date: 2025-08-21
@@ -12,7 +13,7 @@ excerpt: "Despite rapid advances in generative AI, representative high-quality d
 eventurl: 'https://www.analyticsvidhya.com/datahacksummit-2025/sessions/the-promise-and-pitfalls-of-synthetic-data-generationno-title'
 eventurl_label: 'Session page (Analytics Vidhya)'
 photos_dir: "dhs-2025"
-photos_count: 8
+photos_count: 6
 tags: [synthetic data, LLMs, invited talk]
 ---
 

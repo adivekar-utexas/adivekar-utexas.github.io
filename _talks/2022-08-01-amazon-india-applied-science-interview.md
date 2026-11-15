@@ -3,6 +3,7 @@ title: "Being a Machine Learning Scientist at Amazon India"
 collection: talks
 urlslug: "amazon-india-scientist-interview"
 type: "Interview"
+card_venue: "Interview · Amazon"
 permalink: /talks/2022-amazon-india-scientist-interview
 venue: "Amazon"
 date: 2022-01-01

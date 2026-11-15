@@ -171,7 +171,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   vertical-align: 1px; white-space: nowrap;
 }
 .prow__venue .pill { margin-left: 6px; font-size: 12px; line-height: 22px; letter-spacing: 0.02em; }
-.publications-scholar { flex: 0 0 auto; margin-left: auto; }
+.ilink.publications-scholar { flex: 0 0 auto; width: fit-content; margin-left: auto; }
 .publications-note { margin: -8px 0 14px; font-size: 13px; color: $ink-3; }
 /* When open, the thumbnail goes away and the card becomes one full-width column.
    Its content then starts at the card's own 20px padding, the same inset as the
@@ -238,11 +238,11 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   .prow--ioai .prow__main { grid-template-columns: 1fr; }
   .prow__side-img { width: 72px; }
 }
-.prow__fig { margin: 0 0 10px; padding: 10px; background: #fff; border: 1px solid $line; border-radius: 12px; }
+.prow__fig { margin: 0 0 10px; padding: 0; overflow: hidden; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
 /* These photographic figures should reach the frame edges without an inset. */
 #ioai-2025 .prow__fig, #drip-paper .prow__fig { padding: 0; overflow: hidden; }
-#ioai-2025 .prow__fig img, #drip-paper .prow__fig img { width: 100%; height: 100%; object-fit: cover; }
+#ioai-2025 .prow__fig img, #drip-paper .prow__fig img { width: 100%; height: auto; }
 .prow__caption { margin: 0 0 14px; padding: 0 6px; text-align: left; font-size: 13px; line-height: 1.5; color: $ink-3; }
 .prow__abs-h { margin: 0 0 6px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: $ink-3; }
 .prow__abs { margin: 0; font-size: 13.5px; line-height: 1.65; color: $ink-2; text-align: left; }
@@ -251,7 +251,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow__links { list-style: none; margin: 0; padding: 0; align-self: center; display: flex; flex-direction: column; gap: 9px; min-width: 100px; }
 .prow__links li { margin: 0; display: flex; }
 .ilink {
-  display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 18px; flex: 1 1 auto;
+  display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 18px; flex: 1 1 auto; white-space: nowrap;
   border: 1px solid $line; border-radius: 999px; background: $surface;
   font-size: 14px; font-weight: 500; color: $ink-2 !important; text-decoration: none !important;
   transition: background .12s ease, border-color .12s ease, color .12s ease;

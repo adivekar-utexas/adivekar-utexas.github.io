@@ -8,6 +8,7 @@ date: 2024-10-01
 venue: "Amazon Machine Learning Conference (AMLC 2024), NLP track"
 venue_short: "AMLC 2024"
 paperurl: "(internal)"
+codeurl: 'https://github.com/amazon-science/synthesizrr'
 alternativeurl: '<a href="https://arxiv.org/abs/2405.10040">Public version at EMNLP 2024</a>'
 acceptancerate: "10%"
 acceptancetype: "Oral"

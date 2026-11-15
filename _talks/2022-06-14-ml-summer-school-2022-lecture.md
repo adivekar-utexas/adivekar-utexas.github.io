@@ -3,6 +3,7 @@ title: "Supervised Learning (Decision Trees, Bagging and Boosting algorithms)"
 collection: talks
 urlslug: "ml-summer-school-2022-lecture"
 type: "Lecture"
+card_venue: "Lecture · Amazon ML Summer School"
 permalink: /talks/2022-06-14-ml-summer-school-2022-lecture
 venue: "Amazon ML Summer School 2022"
 date: 2022-06-14

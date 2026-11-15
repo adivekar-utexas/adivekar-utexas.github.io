@@ -21,7 +21,7 @@ hero_image: "/images/home/stage-banner.jpg"
     <li>
       <a class="talk-card{% if forloop.first %} is-active{% endif %}" href="#{{ t.urlslug }}" data-talk="{{ t.urlslug }}">
         <span class="talk-card__img">{% if poster != "" %}<img src="{{ poster }}" alt="" loading="lazy"{% if t.teaser_fit == "contain" %} class="is-contain"{% endif %}>{% else %}<span class="talk-card__ph">{{ t.venue }}</span>{% endif %}{% if t.youtube_id %}<span class="talk-card__play" aria-hidden="true"></span>{% endif %}</span>
-        <span class="talk-card__kicker">{{ t.type }}{% if t.date_display != "none" %} · {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%b %Y" }}{% endif %}{% endif %}</span>
+        <span class="talk-card__kicker">{{ t.card_venue | default: t.type }}{% if t.date_display != "none" %} · {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%b %Y" }}{% endif %}{% endif %}</span>
         <span class="talk-card__title">{{ t.title }}</span>
       </a>
     </li>

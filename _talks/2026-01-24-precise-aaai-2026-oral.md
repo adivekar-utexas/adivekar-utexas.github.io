@@ -3,6 +3,7 @@ title: "PRECISE: Reducing the Bias of LLM Evaluations using Prediction-Powered R
 collection: talks
 urlslug: "precise-aaai-2026-oral"
 type: "Oral presentation"
+card_venue: "Oral talk · AAAI"
 permalink: /talks/2026-precise-aaai-2026-oral
 venue: "AAAI Conference on Artificial Intelligence (AAAI 2026), Innovative Applications of AI track"
 date: 2026-01-24
