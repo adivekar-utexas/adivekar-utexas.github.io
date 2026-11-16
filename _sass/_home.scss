@@ -171,6 +171,11 @@ picture { display: contents; }
 .prow__authors { margin: 0 0 6px; font-size: 13.5px; font-style: italic; line-height: 1.5; color: $ink-2; }
 .prow__authors .me { font-style: normal; font-weight: 700; color: $ink; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
 .prow__pitch { margin: 0; font-size: 14.5px; line-height: 1.5; color: $ink; }
+/* Tag lines (Role, TL;DR) are one block each: the pill sits inside the paragraph
+   and the text wraps behind it on the next line, which is how these cards have
+   always read. Do not fix the wrap with a hanging indent; it breaks the button
+   column. */
+.prow__pitch .pill { margin-right: 6px; }
 
 /* Rounded tags (Oral / Poster / TL;DR / talk types and topics). */
 .pill {
