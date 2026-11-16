@@ -12,7 +12,6 @@ acceptancetype: 'Poster'
 paperurl: 'https://arxiv.org/abs/2605.26046'
 codeurl: 'https://github.com/adivekar-utexas/when-gradients-collide'
 projecturl: 'https://textgrad-failure-modes.github.io/'
-role: 'Co-first author (equal contribution); research lead and corresponding author'
 citation: 'Parth Darshan* and <u>Abhishek Divekar</u>*. <b>&quot;When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges&quot;</b>. <i>CustomNLP4U Workshop, ACL 2026</i>'
 bibtex: |
   @inproceedings{darshan-divekar-2026-gradients,
@@ -33,5 +32,6 @@ bibtex: |
 excerpt: 'LLM-as-a-judge pipelines increasingly rely on automatic prompt optimization, where an outer LLM reads textual feedback ("gradients") about an inner judge and rewrites the judge prompt. When the judge scores multiple quality dimensions at once, the optimizer must reconcile several per-task feedback signals into a single revision. We study this multi-objective prompt optimization problem and identify two recurring failure modes. Gradient dilution: concatenating feedback from several tasks into one textual gradient makes the consuming LLM unable to tell which advice applies to which task, dropping gradient task-focus by 59% (9.0 to 3.7 on a 1-to-10 scale). Instruction interference: per-task instructions optimized in isolation interfere when stitched into a single multi-task prompt, degrading test-set Spearman from 0.305 to 0.220. We characterize both failures across four decomposition modes (SSS, SSC, SCC, CCC) on SummEval and BRIGHTER, using TextGrad and OPRO.'
 thumb: 'when-gradients-collide.jpg'
 thumb_alt: "The multi-objective prompt-optimization loop: an outer LLM reads textual gradients for several objectives and rewrites the judge prompt."
+contribution: "Research Lead"
 pitch: "Two failure modes of multi-objective prompt optimization for LLM judges: gradient dilution, a 59% specificity drop under joint critique, and instruction interference, a 5.3% Spearman loss."
 ---

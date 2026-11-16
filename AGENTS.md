@@ -155,7 +155,7 @@ codeurl: 'https://…'             # optional
 projecturl: 'https://…'          # optional
 acceptancetype: 'Poster'         # Oral | Poster | omit
 acceptancerate: '26.5%'          # rendered on the card as "26.5% Accept Rate"
-role: 'Co-first author (equal contribution)'
+contribution: 'Co-first author and Research Lead'   # shown as a "Contribution" pill above the TL;DR
 citation: 'A Author*, <u>Abhishek Divekar</u>*, B Author. <b>&quot;Title&quot;</b>. <i>Venue</i>.'
 excerpt: "The abstract, plain text."
 thumb: 'slug.jpg'                # 16:9, in images/papers/thumbs/
@@ -206,6 +206,15 @@ export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8   # Sass fails on ASCII locale
 
 # Local preview (local URLs, dev settings)
 bundle exec jekyll serve --config _config.yml,_config.dev.yml
+
+# Detached, so it survives the agent session and regenerates on save.
+# GUISTRM: the agent's sandbox kills children of a shell call on return, so a
+# plain `& disown` dies silently with no error in the log unless you use nohup
+# with stdin redirected. This is the form that actually works.
+nohup bundle exec jekyll serve --config _config.yml,_config.dev.yml > /tmp/jekyll-serve.log 2>&1 < /dev/null & disown
+
+# Confirm it is up before saying so
+curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:4000/
 
 # Production build (absolute https://adivekar.com URLs)
 bundle exec jekyll build --destination /tmp/site-check

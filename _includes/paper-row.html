@@ -18,6 +18,7 @@
       <p class="prow__venue">{{ pub.venue_short | default: "AMLC" }}{% if pub.acceptancetype %} <span class="pill pill--{{ pub.acceptancetype | downcase }}">{{ pub.acceptancetype }}</span>{% endif %}{% if pub.acceptancerate %} <span class="pill pill--acceptance">{{ pub.acceptancerate }} Accept Rate</span>{% endif %}</p>
       <h3 class="prow__title">{% if pub.paperurl contains "http" %}<a href="{{ pub.paperurl }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
       <p class="prow__authors">{{ authors | strip }}</p>
+      {% if pub.contribution %}<p class="prow__pitch"><span class="pill pill--tldr">Contribution</span> {{ pub.contribution }}</p>{% endif %}
       {% if pub.pitch %}<p class="prow__pitch"><span class="pill pill--tldr">TL;DR</span> {{ pub.pitch }}</p>{% endif %}
     </div>
     <ul class="prow__links" aria-label="Links">
