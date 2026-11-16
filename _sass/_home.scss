@@ -198,7 +198,6 @@ picture { display: contents; }
 /* Open row: every button in a card is the same width, as in the closed stack. */
 .prow.is-open .prow__links .ilink { justify-content: center; min-width: 114px; }
 .prow--ioai.is-open .prow__links .ilink { min-width: 158px; }
-.prow.is-animating { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .prow, .prow__toggle svg { transition: none; }
 }
@@ -248,6 +247,13 @@ picture { display: contents; }
    stays centred with the buttons below 761px. Above 761px the media query above
    places it in grid column 2 explicitly, so a flex-end alignment is not needed. */
 .prow--ioai.is-open .prow__links { margin: 0 0 24px; }
+/* The expand chevron hangs below the card and the next card starts 12px below
+   that, so a click on the chevron can ever so slightly overlap the gap. Nesting
+   it inside the card's own padding clipping can clip it too, which looks like the
+   arrow flickers out when you close the card. Keep both guards but let the
+   closing animation use the height animation alone, with no overflow clip, so
+   nothing around it is ever clipped. */
+.prow.is-animating { overflow: visible; }
 @media (max-width: 860px) {
   .prow--ioai .prow__main { grid-template-columns: 176px minmax(0, 1fr); }
   .prow--ioai .prow__thumb { margin-top: 0; }
@@ -339,6 +345,16 @@ picture { display: contents; }
 @media (max-width: 860px) {
   .prow__main { grid-template-columns: 176px minmax(0, 1fr); }
   .prow__links { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; min-width: 0; }
+}
+/* Between 561px and 860px the button row has dropped below the text but the
+   thumbnail has not yet moved above it. The pills then sit as an inline group
+   with nothing centring them, so they hug the left edge. Centring the row recovers
+   the same look as the phone layout, without widening them: that full-width
+   treatment is still scoped to 560px and below. */
+@media (min-width: 561px) and (max-width: 860px) {
+  .prow__links,
+  .prow--ioai .prow__links,
+  #ioai-2025 .prow__links { justify-content: center; }
 }
 @media (max-width: 760px) {
   .hero__grid { grid-template-columns: 1fr; gap: 20px; }

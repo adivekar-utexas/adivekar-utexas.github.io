@@ -33,21 +33,41 @@
     var body = card.querySelector('.prow__body');
     var before = body.getBoundingClientRect();
     var height = card.getBoundingClientRect().height;
+    /* Anchor the chevron to the card: it sits below the card, so on close the
+       shrinking card slides it up with it and it leaves the visible gap before the
+       animation ends, which reads as flicking out. Holding its resting offset for
+       the whole animation keeps it in view throughout. */
+    var btnFrom = btn.getBoundingClientRect().bottom - card.getBoundingClientRect().top;
+    var body = card.querySelector('.prow__body');
+    var before = body.getBoundingClientRect();
+    var height = card.getBoundingClientRect().height;
     more.hidden = !open;
     card.classList.toggle('is-open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     btn.setAttribute('aria-label', open ? 'Hide figure and abstract' : 'Show figure and abstract');
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && card.animate) {
       var after = body.getBoundingClientRect();
+      var cardAfter = card.getBoundingClientRect();
       /* One duration for every viewport. It used to feel slower on a phone only
          because the expanded figure still had to fetch and decode; that is now
          handled by the intent warm-up, so the timing itself is identical.
          420ms is 30% faster than the previous 600ms. */
       var options = { duration: 420, easing: 'cubic-bezier(.2, .7, .2, 1)' };
-      var resize = card.animate([{ height: height + 'px' }, { height: card.getBoundingClientRect().height + 'px' }], options);
+      var resize = card.animate([{ height: height + 'px' }, { height: cardAfter.height + 'px' }], options);
       card.classList.add('is-animating');
       resize.onfinish = resize.oncancel = function () { card.classList.remove('is-animating'); };
       body.animate([{ transform: 'translateX(' + (before.left - after.left) + 'px)' }, { transform: 'none' }], options);
+      /* The chevron's resting position relative to the card's top edge moves a
+         little between the open and closed states. Holding it there for the whole
+         animation stops it drifting further once the content has settled, and
+         keeps it from looking like it disappears when you close the card. */
+      var btnTo = btn.getBoundingClientRect().bottom - cardAfter.top;
+      if (btnFrom !== btnTo) {
+        btn.animate(
+          [{ transform: 'translate(-50%, ' + (btnFrom - btnTo) + 'px)' }, { transform: 'translate(-50%, 0)' }],
+          options
+        );
+      }
       if (open) more.animate([{ opacity: 0 }, { opacity: 1 }], options);
     }
   }
