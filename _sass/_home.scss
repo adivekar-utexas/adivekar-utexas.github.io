@@ -249,6 +249,24 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   .prow--ioai .prow__main { grid-template-columns: 1fr; }
   .prow__side-img { width: 72px; }
 }
+/* Phones: every action pill spans the card's content width (the card minus its
+   own padding) with its label centred. The INAIO card already looked like this
+   because it has a single button that filled the row; this makes the multi-button
+   cards match. Desktop keeps the compact stacked column. */
+@media (max-width: 560px) {
+  .prow .prow__links,
+  #ioai-2025 .prow__links { width: 100%; }
+  .prow .prow__links li,
+  .prow--ioai .prow__links li { flex: 1 0 100%; }
+  /* Outranks the unscoped `#ioai-2025.is-open .prow__links li` (158px) rule. */
+  #ioai-2025.is-open .prow__links li { flex: 1 0 100%; }
+  .prow .prow__links .ilink,
+  .prow--ioai .prow__links .ilink,
+  .prow.is-open .prow__links .ilink,
+  .prow--ioai.is-open .prow__links .ilink {
+    width: 100%; min-width: 0; justify-content: center;
+  }
+}
 .prow__fig { margin: 0 0 10px; padding: 0; overflow: hidden; background: #fff; border: 1px solid $line; border-radius: 12px; }
 .prow__fig img { display: block; width: 100%; height: auto; }
 /* These photographic figures should reach the frame edges without an inset. */
@@ -281,6 +299,24 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
   font-family: $monospace; font-size: 12.5px; line-height: 1.55; color: $ink-2;
   white-space: pre;
 }
+
+/* BibTeX block with a copy button glued to its top-right corner. The right
+   padding keeps the first line clear of the button when it is not scrolled. */
+.prow__bibtex-wrap { position: relative; }
+.prow__bibtex-wrap .prow__bibtex { padding-right: 48px; }
+.bibtex-copy {
+  position: absolute; top: 8px; right: 8px; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; padding: 0; cursor: pointer;
+  border: 1px solid $line; border-radius: 8px; background: $surface; color: $ink-3;
+  transition: background .12s ease, border-color .12s ease, color .12s ease;
+}
+.bibtex-copy:hover { background: $hover; border-color: $hover-line; color: $ink-2; }
+.bibtex-copy:focus-visible { outline: 2px solid $accent; outline-offset: 2px; }
+.bibtex-copy svg { width: 15px; height: 15px; display: block; }
+.bibtex-copy .bibtex-copy__check { display: none; color: #047857; }
+.bibtex-copy.is-copied .bibtex-copy__icon { display: none; }
+.bibtex-copy.is-copied .bibtex-copy__check { display: block; }
 
 /* ---- Responsive ---------------------------------------------------------- */
 @media (max-width: 860px) {

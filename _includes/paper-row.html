@@ -33,7 +33,13 @@
     <h4 class="prow__abs-h">Abstract</h4>
     <p class="prow__abs">{{ pub.excerpt | strip_html }}</p>
     {% if pub.bibtex %}<h4 class="prow__abs-h prow__abs-h--bibtex">BibTeX</h4>
-    <pre class="prow__bibtex" id="{{ pub.urlslug }}-bibtex">{{ pub.bibtex | strip }}</pre>{% endif %}
+    <div class="prow__bibtex-wrap">
+    <button type="button" class="bibtex-copy" data-bibtex-target="{{ pub.urlslug }}-bibtex" title="Copy the BibTeX entry" aria-label="Copy the BibTeX entry">
+      <svg class="bibtex-copy__icon" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <svg class="bibtex-copy__check" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>
+    </button>
+    <pre class="prow__bibtex" id="{{ pub.urlslug }}-bibtex">{{ pub.bibtex | strip }}</pre>
+    </div>{% endif %}
   </div>
   <button type="button" class="prow__toggle" aria-expanded="false" aria-controls="{{ pub.urlslug }}-more" aria-label="Show figure and abstract">
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>

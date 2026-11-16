@@ -134,16 +134,22 @@
         .catch(function () { flash('Copy failed'); });
     });
   }
-  // "BibTeX" pill: copy that paper's entry, flashing the label.
-  document.querySelectorAll('.ilink--copy').forEach(function (btn) {
+  // "BibTeX" pill and the copy icon on the BibTeX block: copy that paper's entry.
+  document.querySelectorAll('.ilink--copy, .bibtex-copy').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var target = document.getElementById(btn.dataset.bibtexTarget);
       if (!target) return;
       var label = btn.querySelector('span');
       var text = target.textContent.trim();
       var flash = function (msg) {
-        label.textContent = msg;
-        setTimeout(function () { label.textContent = 'BibTeX'; }, 1600);
+        if (label) {
+          label.textContent = msg;
+          setTimeout(function () { label.textContent = 'BibTeX'; }, 1600);
+        } else {
+          // Icon-only button: swap to a check mark, or back to the copy icon.
+          btn.classList.toggle('is-copied', msg === 'Copied');
+          setTimeout(function () { btn.classList.remove('is-copied'); }, 1600);
+        }
       };
       var fallback = function () {
         var area = document.createElement('textarea');
