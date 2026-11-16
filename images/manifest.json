@@ -1,5 +1,11 @@
 {
-	"name": "Minimal Mistakes",
+	"name": "Abhishek Divekar",
+	"short_name": "A. Divekar",
+	"description": "Senior Researcher at Amazon: LLM evaluation, synthetic data, red-teaming and multimodal agents for science.",
+	"start_url": "/",
+	"display": "browser",
+	"background_color": "#f7f6f3",
+	"theme_color": "#f7f6f3",
 	"icons": [
 		{
 			"src": "\/images\/android-chrome-36x36.png?v=M44lzPylqQ",

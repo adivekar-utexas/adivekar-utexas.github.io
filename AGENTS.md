@@ -27,7 +27,7 @@ Verify with the sync check in [Checks before committing](#5-checks-before-commit
 | Also update | Why |
 |---|---|
 | `_data/news.yml` | A new paper needs a news line; that is how it appears at the top of the page |
-| `_config.yml` → `description` | It names the venues ("NeurIPS 2026, CIKM 2026, AAAI 2026 and EMNLP 2024") |
+| `_config.yml` → `description` | It names the venues ("NeurIPS 2026, CIKM 2026, ACL 2026, AAAI 2026 and EMNLP 2024") |
 | `_data/home.yml` → `hero[0]` | Same venue list in the intro |
 | `_pages/about.md` → `excerpt` | Same venue list in the meta description |
 | `files/Abhishek-Divekar-CV.pdf` | Outside the build; rebuild it by hand |
@@ -238,7 +238,7 @@ Run these in order. All must pass.
 
    `missing: 0` is the only acceptable result. A fragment that is genuinely different (for example a curly apostrophe) will show up here; fix the source, not the check.
 3. **No PII in the page source.** `grep -E "adivekar@(gmail|utexas|amazon)" _site/**/*.html` returns nothing.
-4. **No em dashes or en dashes** in rendered content: `grep -r "—\|–" _site --include='*.html'` returns nothing. Hyphens are fine; CTA arrows (`→`) are fine.
+4. **No em dashes or en dashes** in rendered content: `grep -r "—\|–" _site --include='*.html'` returns nothing. Hyphens are fine; CTA arrows (`↗`, from `_data/ui.yml`) are fine.
 5. **No empty alt:** `grep -c 'alt=""' _site/index.html` is `0`.
 6. **Redirects resolve.** Every `/section/` URL returns 200 and points at its anchor.
 7. **JSON-LD parses** on every page, with one `Person` carrying a non-empty `sameAs`:
@@ -257,7 +257,7 @@ Run these in order. All must pass.
    PY
    ```
 
-8. **Redirects resolve.** Every `/section/` URL returns 200 and points at its anchor, and `/cv/` reaches the PDF.
+8. **`/cv/` resolves.** `/cv/` and `/resume` return 200 and point at the CV PDF.
 9. **Links.** No broken internal links in the built site.
 10. **Visual check** of the changed area in a browser at desktop and phone width.
 

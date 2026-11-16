@@ -179,7 +179,7 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .ilink.publications-scholar svg { color: $ink-3; }
 .publications-note { margin: -8px 0 14px; font-size: 13px; color: $ink-3; }
 /* When open, the thumbnail goes away and the card becomes one full-width column.
-   Its content then starts at the card's own 20px padding, the same inset as the
+   Its content then starts at the card's own 25px padding, the same inset as the
    text in every other card (e.g. "KeywordGym for Amazon advertising"). */
 .prow.is-open .prow__thumb { display: none; }
 .prow.is-open .prow__main { grid-template-columns: minmax(0, 1fr); gap: 12px; }
