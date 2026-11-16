@@ -11,7 +11,7 @@ cards:
     expand: true
     text:
       - "As an ISC member, I helped propose and curate the IOAI 2026 tasks and served on the IOAI Jury in Astana, which proctored the competition."
-      - "I also co-created and chaired the inaugural IOAI²: AI Models Track, and led its organizing committee. This first-of-its-kind competition measured the ability of agentic AI systems to solve our Olympiad-level ML modeling tasks, fully autonomously and with no human intervention. As chair, I spearheaded recruitment of 14 AI research organizations participating in the track across 3 continents, including UCLA, Peking University, Sakana AI, MBZUAI IFM, Shanghai AI Laboratory, Darwin Robotics and several AI neolabs. I led development of rules and proctoring of the track, announced medals, and co-wrote the final report with co-founder and Chair of the IOAI Board, Elena Marinova."
+      - "I also co-created and chaired the inaugural IOAI²: AI Models Track, and led its organizing committee. This first-of-its-kind competition measured the ability of agentic AI systems to solve our Olympiad-level ML modeling tasks, fully autonomously and with no human intervention. As chair, I spearheaded recruitment of 14 AI research organizations participating in the track across 3 continents, including UCLA, Peking University, Sakana AI, MBZUAI IFM, Shanghai AI Laboratory, Darwin Robotics and several AI neolabs. I led development of rules and proctoring of the track, announced medals, and co-wrote the final report with IOAI co-founder and Chair of the Board, Elena Marinova."
     show_all_text: true
     links:
       - {label: "IOAI 2026 Team", icon: "team", url: "https://ioai-official.org/republic-of-kazakhstan/international-jury/"}

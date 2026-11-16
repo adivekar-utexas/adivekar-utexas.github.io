@@ -14,10 +14,6 @@
   cta: {label: "See the call for proposals", url: "https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-fall-2025"}
 - {when: "2022", title: "Reviewer", org: "AMLC, NLP and ML Tools tracks"}
 - {when: "2022", title: "Reviewer", org: "AIMLSys"}
-- when: "2022"
-  title: "Instructor, Amazon ML Summer School"
-  org: "about 3,000 Indian undergraduates"
-  sub: "Taught the supervised-learning module: decision trees, bagging and boosting."
 - when: "Ongoing"
   title: "Hiring and mentoring"
   org: "Amazon"
