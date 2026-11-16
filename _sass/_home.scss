@@ -253,6 +253,13 @@ picture { display: contents; }
 @media (max-width: 560px) {
   .prow--ioai .prow__main { grid-template-columns: 1fr; }
   .prow__side-img { width: 72px; }
+  /* When the card is OPEN on a phone the peacock goes full content width, so it
+     reads like the expanded figure. When closed it stays small and centred.
+     Width is the content column (the card minus its 25px padding and border) and
+     height follows from the source aspect ratio. Desktop is unaffected. */
+  #ioai-2025.is-open .prow__side-img {
+    width: 100%; max-width: none; align-self: stretch; margin: 0 0 14px;
+  }
 }
 /* Phones: every action pill spans the card's content width (the card minus its
    own padding) with its label centred. The INAIO card already looked like this
