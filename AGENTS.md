@@ -112,7 +112,9 @@ Nothing else should hardcode a title. If you find one, replace it with `[[TITLE]
 | Rule | Detail |
 |---|---|
 | **Alt text is mandatory** | No `alt=""` anywhere. Publications use `thumb_alt:`; open-source cards use `alt:`; everything else sets `alt` inline |
+| **WebP companions** | Large photographs ship a WebP beside the JPEG, since WebP is roughly half the size. The hero and the award photos use `<picture><source type="image/webp">`; the Speaking header uses `image-set()` via `hero_image_webp`. Keep the JPEG as the fallback and regenerate both when the photo changes |
 | Paper thumbnails | 640x360 (16:9), full figure 1600px wide, both JPEG |
+| Award photos | 1600x1067 WebP at q75 (under 100 KB) plus a 1200x800 JPEG fallback at q68, with `decoding="async"` so scrolling does not stall on the decode |
 | CV | `files/Abhishek-Divekar-CV.pdf` only. There is no HTML CV and no rendered page images; the CV link opens the PDF directly. `/cv/` and `/resume` are redirect stubs pointing at the file |
 | Portrait | `images/profile-560.jpg` and `.webp`, 560x560 source |
 | No EXIF | Strip GPS and camera metadata before committing |

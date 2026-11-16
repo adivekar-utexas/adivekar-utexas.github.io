@@ -1,9 +1,11 @@
 # Homepage "Awards" section. Rendered by _includes/home/press.html and llms.txt.
 photos:
   - image: "home/award-av-2025.jpg"
+    webp: "home/award-av-2025.webp"
     alt: "Abhishek Divekar receiving the Top 7 GenAI Scientists in India award from Manish Gupta, Director at Google DeepMind, at Analytics Vidhya DataHack Summit 2025"
     caption: "Receiving the award from Manish Gupta, Director, Google DeepMind."
   - image: "home/award-av-2025-closeup.jpg"
+    webp: "home/award-av-2025-closeup.webp"
     alt: "Abhishek Divekar with Pratyush Kumar, Co-founder of Sarvam.ai, at the Top 7 GenAI Scientists in India award, Analytics Vidhya DataHack Summit 2025"
     caption: "With Pratyush Kumar, Co-founder, Sarvam.ai."
 photos_note: "Top 7 GenAI Scientists in India, Analytics Vidhya DataHack Summit 2025."

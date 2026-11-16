@@ -4,7 +4,10 @@
   <div class="award-photos">
     {% for ph in aw.photos %}
     <figure>
-      <img src="{{ base_path }}/images/{{ ph.image }}" alt="{{ ph.alt }}" loading="lazy">
+      <picture>
+        {% if ph.webp %}<source srcset="{{ base_path }}/images/{{ ph.webp }}" type="image/webp">{% endif %}
+        <img src="{{ base_path }}/images/{{ ph.image }}" alt="{{ ph.alt }}" loading="lazy" decoding="async">
+      </picture>
       <figcaption>{{ ph.caption }}</figcaption>
     </figure>
     {% endfor %}

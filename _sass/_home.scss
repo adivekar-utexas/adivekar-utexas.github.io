@@ -595,6 +595,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(87, 83, 78, 0.6)
 }
 .spage__head--hero .spage__title { color: #fff; }
 .spage__head--hero .spage__lede { margin: 0; color: rgba(255, 255, 255, 0.85); }
+/* Browsers with image-set and WebP take the much smaller WebP (39 KB vs 156 KB).
+   Same two layers as the shorthand above, so position and size still line up. */
+@supports (background-image: image-set(url("x") type("image/webp"))) {
+  .spage__head--hero:not([style*="--hero-webp"]) { background-image: linear-gradient(180deg, rgba(10, 14, 26, 0.15) 0%, rgba(10, 14, 26, 0.72) 100%), var(--hero); }
+  .spage__head--hero[style*="--hero-webp"] {
+    background-image: linear-gradient(180deg, rgba(10, 14, 26, 0.15) 0%, rgba(10, 14, 26, 0.72) 100%), image-set(var(--hero-webp) type("image/webp"), var(--hero) type("image/jpeg"));
+  }
+}
 @media (max-width: 760px) { .spage__head--hero { padding: 80px 18px 24px; } }
 
 /* ---- Publications subsection and award photos ---------------------------- */

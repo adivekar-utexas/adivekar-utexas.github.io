@@ -10,7 +10,7 @@ layout: default
     tabs: [{label: "Publications", href: "#publications"}, ...]
 {% endcomment %}
 <main id="main" class="spage" role="main">
-  <header class="spage__head{% if page.hero_image %} spage__head--hero{% endif %}"{% if page.hero_image %} style="--hero: url('{{ base_path }}{{ page.hero_image }}')"{% endif %}>
+  <header class="spage__head{% if page.hero_image %} spage__head--hero{% endif %}"{% if page.hero_image %} style="--hero: url('{{ base_path }}{{ page.hero_image }}'){% if page.hero_image_webp %}; --hero-webp: url('{{ base_path }}{{ page.hero_image_webp }}'){% endif %}"{% endif %}>
     <h1 class="spage__title">{{ page.title }}</h1>
     {% if page.lede %}<p class="spage__lede">{{ page.lede | markdownify | remove: "<p>" | remove: "</p>" }}</p>{% endif %}
   </header>
