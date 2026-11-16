@@ -209,7 +209,7 @@ picture { display: contents; }
   transition: background .12s ease, border-color .12s ease, color .12s ease;
 }
 .prow__toggle:hover { background: $hover; border-color: $hover-line; color: $ink-3; }
-.prow__toggle svg { transition: transform .36s ease; }
+.prow__toggle svg { transition: transform .25s ease; }
 .prow.is-open .prow__toggle svg { transform: rotate(180deg); }
 /* The expanded block sits at the card's own padding, flush with the text above. */
 /* No rule above the expanded block; the spacing alone separates it. */

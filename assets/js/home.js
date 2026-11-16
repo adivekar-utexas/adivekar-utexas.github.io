@@ -39,7 +39,11 @@
     btn.setAttribute('aria-label', open ? 'Hide figure and abstract' : 'Show figure and abstract');
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && card.animate) {
       var after = body.getBoundingClientRect();
-      var options = { duration: 600, easing: 'cubic-bezier(.2, .7, .2, 1)' };
+      /* One duration for every viewport. It used to feel slower on a phone only
+         because the expanded figure still had to fetch and decode; that is now
+         handled by the intent warm-up, so the timing itself is identical.
+         420ms is 30% faster than the previous 600ms. */
+      var options = { duration: 420, easing: 'cubic-bezier(.2, .7, .2, 1)' };
       var resize = card.animate([{ height: height + 'px' }, { height: card.getBoundingClientRect().height + 'px' }], options);
       card.classList.add('is-animating');
       resize.onfinish = resize.oncancel = function () { card.classList.remove('is-animating'); };
