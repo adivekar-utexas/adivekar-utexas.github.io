@@ -8,10 +8,11 @@
 {% capture authors %}{% include authors.html citation=pub.citation %}{% endcapture %}
 {% assign has_more = false %}{% if pub.excerpt %}{% assign has_more = true %}{% endif %}
 {% if pub.thumb_alt %}{% assign thumb_alt = pub.thumb_alt %}{% else %}{% assign thumb_alt = pub.title | split: ':' | first | prepend: 'Key figure from ' %}{% endif %}
+{% assign thumb_webp = pub.thumb | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
 <li class="prow{% if has_more %} prow--expandable{% endif %}" id="{{ pub.urlslug }}">
   <div class="prow__main">
     <div class="prow__thumb">
-      {% if pub.thumb %}<img src="{{ base_path }}/images/papers/thumbs/{{ pub.thumb }}" alt="{{ thumb_alt }}" loading="lazy" width="640" height="360">{% else %}<span class="prow__thumb-ph">{{ pub.title | split: ":" | first }}</span>{% endif %}
+      {% if pub.thumb %}<picture><source srcset="{{ base_path }}/images/papers/thumbs/{{ thumb_webp }}" type="image/webp"><img src="{{ base_path }}/images/papers/thumbs/{{ pub.thumb }}" alt="{{ thumb_alt }}" loading="lazy" decoding="async" width="640" height="360"></picture>{% else %}<span class="prow__thumb-ph">{{ pub.title | split: ":" | first }}</span>{% endif %}
     </div>
     <div class="prow__body">
       <p class="prow__venue">{{ pub.venue_short | default: "AMLC" }}{% if pub.acceptancetype %} <span class="pill pill--{{ pub.acceptancetype | downcase }}">{{ pub.acceptancetype }}</span>{% endif %}{% if pub.acceptancerate %} <span class="pill pill--acceptance">{{ pub.acceptancerate }} Accept Rate</span>{% endif %}</p>
@@ -29,7 +30,7 @@
   </div>
   {% if has_more %}
   <div class="prow__more" id="{{ pub.urlslug }}-more" hidden>
-    {% if pub.thumb %}<figure class="prow__fig"><img src="{{ base_path }}/images/papers/{{ pub.thumb }}" alt="{{ thumb_alt }}" loading="lazy"></figure>{% endif %}
+    {% if pub.thumb %}<figure class="prow__fig"><picture><source srcset="{{ base_path }}/images/papers/{{ thumb_webp }}" type="image/webp"><img src="{{ base_path }}/images/papers/{{ pub.thumb }}" alt="{{ thumb_alt }}" loading="lazy" decoding="async"></picture></figure>{% endif %}
     <h4 class="prow__abs-h">Abstract</h4>
     <p class="prow__abs">{{ pub.excerpt | strip_html }}</p>
     {% if pub.bibtex %}<h4 class="prow__abs-h prow__abs-h--bibtex">BibTeX</h4>

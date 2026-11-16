@@ -3,14 +3,13 @@
   // Figures inside a closed card are lazy images in a hidden block, so they
   // only start loading when the card opens. The open animation then measures
   // the card before the image exists and the card jumps when it arrives.
-  // Fix: load them in the background once the page is idle, and on click wait
-  // briefly for any figure that is still loading before measuring.
+  // Fix: warm a card's figure only when the reader shows intent (hover, focus,
+  // touch or press), and on open wait briefly for it before measuring. Warming
+  // every figure on load downloaded ~2 MB of images for cards never opened.
   function figures(card) { return Array.prototype.slice.call(card.querySelectorAll('.prow__more img')); }
-  function warm() {
-    document.querySelectorAll('.prow__more img').forEach(function (img) { img.loading = 'eager'; });
+  function warmCard(card) {
+    figures(card).forEach(function (img) { img.loading = 'eager'; });
   }
-  if (document.readyState === 'complete') setTimeout(warm, 300);
-  else window.addEventListener('load', function () { setTimeout(warm, 300); });
   function ready(card) {
     var pending = figures(card).filter(function (img) { return !img.complete; });
     if (!pending.length) return Promise.resolve();
@@ -57,6 +56,11 @@
     if (pill) {
       pill.addEventListener('click', function () { toggle(card, true); });
     }
+    // Intent signals: start the figure download before the click lands, so the
+    // open animation rarely has to wait. `once` keeps it to one download.
+    ['pointerenter', 'focusin', 'touchstart', 'pointerdown'].forEach(function (evt) {
+      card.addEventListener(evt, function () { warmCard(card); }, { once: true, passive: true });
+    });
   });
   // /#paper-slug opens that card (old /publication/... pages redirect here).
   function openHash() {

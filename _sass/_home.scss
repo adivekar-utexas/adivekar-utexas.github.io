@@ -23,6 +23,11 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 
 :root { color-scheme: light; }
 
+/* A <picture> wrapper must not create a box, or the flex/grid rules that size
+   `.prow__side-img`, `.prow__thumb img`, `.prow__fig img` and `.card__media img`
+   would target the wrapper instead of the image. */
+picture { display: contents; }
+
 /* ---- Home layout: centered single column, no sidebar --------------------- */
 #main.home {
   max-width: 1040px; margin: 0 auto; padding: 0 24px 64px;

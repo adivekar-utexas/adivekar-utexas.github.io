@@ -18,10 +18,10 @@ hero_image_webp: "/images/home/stage-banner.webp"
   <h2 class="talks__more-h">More talks</h2>
   <ol class="talk-strip" aria-label="All talks">
   {% for t in talks %}
-    {% if t.teaserurl %}{% assign poster = t.teaserurl | prepend: "/images/" | prepend: base_path %}{% elsif t.slides_dir %}{% assign poster = "/images/slides/" | append: t.slides_dir | append: "/s-01.jpg" | prepend: base_path %}{% elsif t.youtube_id %}{% assign poster = "https://i.ytimg.com/vi/" | append: t.youtube_id | append: "/hqdefault.jpg" %}{% else %}{% assign poster = "" %}{% endif %}
+    {% if t.teaserurl %}{% assign poster = t.teaserurl | prepend: "/images/" | prepend: base_path %}{% elsif t.slides_dir %}{% assign poster = "/images/slides/" | append: t.slides_dir | append: "/s-01.jpg" | prepend: base_path %}{% elsif t.youtube_id %}{% assign poster = "https://i.ytimg.com/vi/" | append: t.youtube_id | append: "/hqdefault.jpg" %}{% else %}{% assign poster = "" %}{% endif %}{% assign poster_webp = poster | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
     <li>
       <a class="talk-card{% if forloop.first %} is-active{% endif %}" href="#{{ t.urlslug }}" data-talk="{{ t.urlslug }}">
-        <span class="talk-card__img">{% if poster != "" %}<img src="{{ poster }}" alt="" loading="lazy"{% if t.teaser_fit == "contain" %} class="is-contain"{% endif %}>{% else %}<span class="talk-card__ph">{{ t.venue }}</span>{% endif %}{% if t.youtube_id %}<span class="talk-card__play" aria-hidden="true"></span>{% endif %}</span>
+        <span class="talk-card__img">{% if poster != "" %}<picture>{% unless t.youtube_id %}<source srcset="{{ poster_webp }}" type="image/webp">{% endunless %}<img src="{{ poster }}" alt="" loading="lazy" decoding="async"{% if t.teaser_fit == "contain" %} class="is-contain"{% endif %}></picture>{% else %}<span class="talk-card__ph">{{ t.venue }}</span>{% endif %}{% if t.youtube_id %}<span class="talk-card__play" aria-hidden="true"></span>{% endif %}</span>
         <span class="talk-card__kicker">{{ t.card_venue | default: t.type }}{% if t.date_display != "none" %} · {% if t.date_display == "year" %}{{ t.date | date: "%Y" }}{% else %}{{ t.date | date: "%b %Y" }}{% endif %}{% endif %}</span>
         <span class="talk-card__title">{{ t.title }}</span>
       </a>

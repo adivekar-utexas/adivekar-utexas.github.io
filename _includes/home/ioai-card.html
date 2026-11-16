@@ -9,12 +9,15 @@
 {% endcomment %}
 {% assign c = include.c %}
 {% assign press = nil %}{% if c.press_id %}{% assign press = site.data.press | where: "id", c.press_id | first %}{% endif %}
+{% assign img_webp = c.image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
+{% assign img_right_webp = c.image_right | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
+{% assign more_webp = c.more_image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
 {% assign extra = c.text | slice: 1, 20 %}{% if c.show_all_text %}{% assign extra = '' | split: '' %}{% endif %}
 {% assign has_more = false %}{% if c.expand %}{% if c.more_image or extra.size > 0 %}{% assign has_more = true %}{% endif %}{% endif %}
 <li class="prow prow--ioai{% if has_more %} prow--expandable{% endif %}" id="{{ c.slug }}">
   <div class="prow__main">
     <div class="prow__thumb">
-      <img src="{{ base_path }}/images/{{ c.image }}" alt="{{ c.image_alt }}" loading="lazy">
+      <picture><source srcset="{{ base_path }}/images/{{ img_webp }}" type="image/webp"><img src="{{ base_path }}/images/{{ c.image }}" alt="{{ c.image_alt }}" loading="lazy" decoding="async"></picture>
     </div>
     <div class="prow__body">
       <p class="prow__venue">{{ c.kicker }}</p>
@@ -28,7 +31,7 @@
       </div>
     </div>
     <div class="prow__side">
-      {% if c.image_right %}<img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" width="144" height="180">{% endif %}
+      {% if c.image_right %}<picture><source srcset="{{ base_path }}/images/{{ img_right_webp }}" type="image/webp"><img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" width="144" height="180" decoding="async"></picture>{% endif %}
       {% if c.links %}<ul class="prow__links" aria-label="Links">
         {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% if l.icon == 'github' %}{% include icons/github.svg %}{% elsif l.icon == 'results' %}{% include icons/trophy.svg %}{% elsif l.icon == 'team' %}{% include icons/users.svg %}{% elsif l.icon == 'article' %}{% include icons/article.svg %}{% else %}{% include icons/globe.svg %}{% endif %}<span>{{ l.label }}</span></a></li>{% endfor %}
       </ul>{% endif %}
@@ -36,7 +39,7 @@
   </div>
   {% if has_more %}
   <div class="prow__more" id="{{ c.slug }}-more" hidden>
-    {% if c.more_image %}<figure class="prow__fig"><img src="{{ base_path }}/images/{{ c.more_image }}" alt="{{ c.more_image_alt }}" loading="lazy"></figure>{% if c.more_image_caption %}<figcaption class="prow__caption">{{ c.more_image_caption }}</figcaption>{% endif %}{% endif %}
+    {% if c.more_image %}<figure class="prow__fig"><picture><source srcset="{{ base_path }}/images/{{ more_webp }}" type="image/webp"><img src="{{ base_path }}/images/{{ c.more_image }}" alt="{{ c.more_image_alt }}" loading="lazy" decoding="async"></picture></figure>{% if c.more_image_caption %}<figcaption class="prow__caption">{{ c.more_image_caption }}</figcaption>{% endif %}{% endif %}
     {% for t in extra %}<p class="prow__abs">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     {% endfor %}
   </div>

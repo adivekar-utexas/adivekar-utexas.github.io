@@ -4,7 +4,7 @@
   <ul class="cards cards--3">
   {% for o in site.data.oss %}
     <li class="card card--media">
-      {% if o.image %}<a class="card__media" href="{{ o.links[0].url }}" tabindex="-1" aria-hidden="true"><img src="{{ base_path }}/images/oss/{{ o.image }}" alt="{{ o.alt | default: o.name }}" loading="lazy"></a>{% endif %}
+      {% if o.image %}{% assign oss_webp = o.image | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}<a class="card__media" href="{{ o.links[0].url }}" tabindex="-1" aria-hidden="true"><picture><source srcset="{{ base_path }}/images/oss/{{ oss_webp }}" type="image/webp"><img src="{{ base_path }}/images/oss/{{ o.image }}" alt="{{ o.alt | default: o.name }}" loading="lazy" decoding="async"></picture></a>{% endif %}
       <h3 class="card__title"><a href="{{ o.links[0].url }}">{{ o.name }}</a></h3>
       <p class="card__text">{{ o.what }}</p>
       <p class="card__links">{% for l in o.links %}<a class="chip-link" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
