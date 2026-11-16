@@ -234,7 +234,9 @@ $serif: "Source Serif 4", "Serif Fallback", Georgia, serif;
 .prow--ioai .ilink { white-space: nowrap; }
 .prow--ioai .prow__side-img { display: block; width: 80%; max-width: 141px; height: auto; }
 .prow--ioai.is-open .prow__side { grid-column: 1; align-self: start; }
-.prow--ioai.is-open .prow__side .prow__side-img { width: 80%; max-width: 141px; align-self: flex-end; }
+/* No align-self here. The side column is `align-items: center`, so the peacock
+   stays centred with the buttons below 761px. Above 761px the media query above
+   places it in grid column 2 explicitly, so a flex-end alignment is not needed. */
 .prow--ioai.is-open .prow__links { margin: 0 0 24px; }
 @media (max-width: 860px) {
   .prow--ioai .prow__main { grid-template-columns: 176px minmax(0, 1fr); }
