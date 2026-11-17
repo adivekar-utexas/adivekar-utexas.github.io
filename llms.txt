@@ -20,7 +20,7 @@ permalink: /llms.txt
 Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/speaking/) · [CV (PDF)]({{ u }}/files/Abhishek-Divekar-CV.pdf)
 
 ## News
-{% include news-sorted.html %}{% for item in news_sorted %}- {{ item.date | date: "%b %Y" }} [{{ site.data.news_tags[item.tag] | default: item.tag }}]: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains "://" %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: u }}{% endif %}){% endif %}
+{% include news-sorted.html %}{% for item in news_sorted %}- {{ item.date | date: "%b %Y" }} [{{ site.data.news_tags[item.tag] | default: item.tag }}]: {{ item.text | replace: "[[TITLE]]", jobtitle }}{% if item.cta_url %} [{{ item.cta_text }}]({% if item.cta_url contains "://" %}{{ item.cta_url }}{% else %}{{ item.cta_url | prepend: u }}{% endif %}){% endif %}{% if item.mirror_url %} [{{ item.mirror_text | default: "Mirror (PDF)" }}]({% if item.mirror_url contains "://" %}{{ item.mirror_url }}{% else %}{{ item.mirror_url | prepend: u }}{% endif %}){% endif %}
 {% endfor %}
 ## Career
 {% for g in site.data.history %}
@@ -68,8 +68,8 @@ Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/
 {% endfor %}{% if c.summary %}{{ c.summary }} {% endif %}{% if c.meta %}{{ c.meta }}{% endif %}
 {% assign press = nil %}{% if c.press_id %}{% assign press = site.data.press | where: "id", c.press_id | first %}{% endif %}{% if press %}Press coverage: {% for o in press.outlets %}[{{ o.label }}]({{ o.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}
 {% endif %}{% if c.more_image_caption %}{{ c.more_image_caption }}{% endif %}
-{% for l in c.links %}{% if l.url contains "://" %}- {{ l.label }}: {{ l.url }}
-{% endif %}{% endfor %}{% endfor %}
+{% for l in c.links %}- {{ l.label }}: {% if l.url contains "://" %}{{ l.url }}{% else %}{{ l.url | prepend: u }}{% endif %}
+{% endfor %}{% endfor %}
 ## Open source
 {{ site.data.home.oss_intro }}
 {% for o in site.data.oss %}- {{ o.name }}: {{ o.what }} {% for l in o.links %}[{{ l.label }}]({{ l.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}
