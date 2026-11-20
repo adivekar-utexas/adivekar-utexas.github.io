@@ -19,7 +19,7 @@
       "@type": "ProfilePage",
       "@id": "{{ site.url }}/#profilepage",
       "url": "{{ site.url }}/",
-      "dateModified": "{{ site.time | date: '%Y-%m-%d' }}",
+      "dateModified": "{{ site.time | date: "%Y-%m-%dT%H:%M:%S%z" }}",
       "mainEntity": { "@id": "{{ site.url }}/#person" }
     },
     {
@@ -57,13 +57,21 @@
       "@type": "Event",
       "@id": "{{ site.url }}/speaking/#{{ t.urlslug }}",
       "name": {{ t.title | jsonify }},
-      "startDate": "{{ t.date | date: '%Y-%m-%d' }}",
+      "startDate": "{{ t.date | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+      "startTime": "{{ t.date | date: "%Y-%m-%dT%H:%M:%S%z" }}",
       "eventAttendanceMode": "{% if t.location == 'Virtual' %}https://schema.org/OnlineEventAttendanceMode{% else %}https://schema.org/OfflineEventAttendanceMode{% endif %}",
-      {% if t.location and t.location != 'Virtual' %}"location": { "@type": "Place", "name": {{ t.location | jsonify }} },
+      "eventStatus": "https://schema.org/EventScheduled",
+      {% if t.venue %}"organizer": { "@type": "Organization", "name": {{ t.venue | jsonify }} },
+      "offers": { "@type": "Offer", "availability": "https://schema.org/StockInStock" },
+      {% endif %}      {% if t.teaserurl %}"image": "{{ site.url }}/images/{{ t.teaserurl }}",
+      {% endif %}{% if t.location and t.location != 'Virtual' %}"location": { "@type": "Place", "name": {{ t.venue | append: ", " | append: t.location | jsonify }} },
+      {% elsif t.location == 'Virtual' %}"location": { "@type": "VirtualLocation", "url": {{ t.eventurl | default: t.videourl | default: site.url | jsonify }} },
+      {% elsif t.eventurl %}"location": { "@type": "VirtualLocation", "url": {{ t.eventurl | jsonify }} },
+      {% else %}"location": { "@type": "Place", "name": {{ t.venue | jsonify }} },
       {% endif %}"description": {{ t.excerpt | default: t.title | strip_html | strip_newlines | jsonify }},
       "performer": { "@id": "{{ site.url }}/#person" }{% if t.eventurl %},
       "sameAs": {{ t.eventurl | jsonify }}{% endif %}{% if t.videourl %},
-      "recordedIn": { "@type": "VideoObject", "name": {{ t.title | jsonify }}, "contentUrl": {{ t.videourl | jsonify }} }{% endif %}
+      "recordedIn": { "@type": "VideoObject", "name": {{ t.title | jsonify }}, "contentUrl": {{ t.videourl | jsonify }}, "uploadDate": "{{ t.date | date: "%Y-%m-%dT%H:%M:%S%z" }}", "description": {{ t.excerpt | default: t.title | strip_html | strip_newlines | jsonify }}{% if t.youtube_id %}, "thumbnailUrl": "https://i.ytimg.com/vi/{{ t.youtube_id }}/hqdefault.jpg"{% elsif t.teaserurl %}, "thumbnailUrl": "{{ site.url }}/images/{{ t.teaserurl }}"{% endif %} }{% endif %}
     }{% endfor %}{% for o in site.data.oss %},
     {
       "@type": "SoftwareSourceCode",
