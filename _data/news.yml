@@ -8,11 +8,15 @@
   text: "TrojanShot (with Vijit Malik) published at CIKM 2026, Rome!"
   cta_text: "Read the paper"
   cta_url: "https://dl.acm.org/doi/10.1145/3799682.3841000"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/TrojanShot-CIKM-2026-Main.pdf"
 - date: 2026-12-06
   tag: paper
   text: "VESTA accepted to NeurIPS 2026 (main track)!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2606.00384"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/VESTA-NeurIPS-2026.pdf"
 - date: 2026-11-01
   tag: IOAI
   text: "Re-elected to the Scientific Committee for IOAI 2027 in Singapore."
@@ -49,11 +53,15 @@
   text: "When Gradients Collide (with Parth Darshan) accepted to the ACL 2026 CustomNLP4U workshop!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2605.26046"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/When-Gradients-Collide-ACL-2026-CustomNLP4U.pdf"
 - date: 2026-06-03
   tag: paper
   text: "Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference, an extended abstract of PRECISE, accepted to the ACL 2026 GEM workshop!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2606.05308"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/Statistically-Reliable-LLM-Based-Ranking-Evaluation-ACL-2026-GEM.pdf"
 - date: 2025-12-22
   tag: IOAI
   text: "Joined the IOAI International Scientific Committee for IOAI 2026."
@@ -65,11 +73,15 @@
   text: "PRECISE won the IAAI 2026 Deployed Application Award in the AAAI 2026 Innovative Applications of AI (IAAI) track, Singapore!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2601.18777"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/PRECISE-AAAI-2026-IAAI.pdf"
 - date: 2026-01-24
   tag: talk
   text: "Presented PRECISE in an oral session at AAAI 2026 (Innovative Applications of AI track, 19.2% acceptance rate), Singapore."
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/2601.18777"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/PRECISE-AAAI-2026-IAAI.pdf"
 - date: 2025-08-21
   order: 3
   tag: award
@@ -89,6 +101,8 @@
   text: "TrojanShot selected as an oral at the Amazon Machine Learning Conference 2025!"
   cta_text: "Read the paper"
   cta_url: "/#trojanshot-amlc-2025"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/TrojanShot-CIKM-2026-Main.pdf"
 - date: 2025-08-21
   order: 4
   tag: IOAI
@@ -111,6 +125,8 @@
   text: "SynthesizRR and CorrSynth accepted to EMNLP 2024 (main conference)!"
   cta_text: "Read the papers"
   cta_url: "/#publications"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/SynthesizRR-EMNLP-2024-Main.pdf"
 - date: 2024-05-01
   tag: education
   text: "Completed my M.S. in Computer Science at UT Austin, advised by Greg Durrett."
@@ -125,6 +141,8 @@
   text: "SynthesizRR selected as an oral at the Amazon Machine Learning Conference 2024!"
   cta_text: "Read the paper"
   cta_url: "/#synthesizrr-amlc-2024"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/SynthesizRR-EMNLP-2024-Main.pdf"
 - date: 2022-10-07
   tag: talk
   text: "Presented Flexible AutoML at AIMLSys 2022."
@@ -158,6 +176,8 @@
   text: "First-author paper on intrusion-detection benchmarks presented as an oral at IEEE ICCCS 2018!"
   cta_text: "Read the paper"
   cta_url: "https://arxiv.org/abs/1811.05372"
+  mirror_text: "Mirror (PDF)"
+  mirror_url: "/files/Benchmarking-KDD-CUP-99-IEEE-ICCCS-2018.pdf"
 - date: 2017-07-01
   tag: fulltime
   text: "Joined Amazon as a Software Development Engineer (Digital Payments)."

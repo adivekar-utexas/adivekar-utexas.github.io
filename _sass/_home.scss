@@ -166,6 +166,9 @@ picture { display: contents; }
    is exactly the size of the POSTER/ORAL tags next to it. */
 .prow__venue { margin: 0 0 4px; font-size: 12px; font-weight: 600; line-height: 22px; letter-spacing: 0.02em; text-transform: uppercase; color: $ink-3; }
 .prow__title { margin: 0 0 5px; font-family: $serif; font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
+.prow__title-mirror { font-size: 0.58em; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; }
+.home .prow__title-mirror a { color: #2873ad !important; background: #fff; padding: 0 2px; border-radius: 3px; text-decoration: none; }
+.home .prow__title-mirror a:hover { color: #2873ad !important; text-decoration: underline; }
 .home .prow__title a { color: $ink; text-decoration: none; }
 .home .prow__title a:hover { color: #2873ad; }
 .prow__authors { margin: 0 0 6px; font-size: 13.5px; font-style: italic; line-height: 1.5; color: $ink-2; }

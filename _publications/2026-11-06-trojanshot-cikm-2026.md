@@ -11,6 +11,7 @@ venue_short: 'CIKM 2026 (Research track)'
 acceptancetype: 'Poster'
 acceptancerate: '26.5%'
 paperurl: 'https://dl.acm.org/doi/10.1145/3799682.3841000'
+mirrorurl: '/files/TrojanShot-CIKM-2026-Main.pdf'
 citation: '<u>Abhishek Divekar</u>* and Vijit Malik*. <b>&quot;TrojanShot: Reinforced Demonstrations Yield Sample-Efficient Jailbreaks and Guardrails for LLMs&quot;</b>. <i>Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM 2026)</i>, pp. 1012-1023. (*equal contribution)'
 bibtex: |
   @inproceedings{10.1145/3799682.3841000,

@@ -39,6 +39,7 @@ Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/
 {% endif %}{% if p.paperurl contains "http" %}- Paper: {{ p.paperurl }}
 {% endif %}{% if p.codeurl %}- Code: {{ p.codeurl }}
 {% endif %}{% if p.projecturl %}- Project: {{ p.projecturl }}
+{% endif %}{% if p.mirrorurl %}- Mirror (PDF): {{ p.mirrorurl | prepend: u }}
 {% endif %}{% if p.pitch %}- TL;DR: {{ p.pitch }}
 {% endif %}{% if p.excerpt %}- Abstract: {{ p.excerpt | strip_html | strip_newlines | replace: '&quot;', '"' | replace: '&amp;', '&' | replace: '&#39;', "'" }}
 {% endif %}{% if p.bibtex %}- BibTeX:

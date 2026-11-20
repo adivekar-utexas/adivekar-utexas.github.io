@@ -10,6 +10,7 @@ venue: 'GEM Workshop at the Annual Meeting of the Association for Computational 
 venue_short: 'ACL 2026 (GEM Workshop)'
 acceptancetype: 'Oral'
 paperurl: 'https://arxiv.org/abs/2606.05308'
+mirrorurl: '/files/Statistically-Reliable-LLM-Based-Ranking-Evaluation-ACL-2026-GEM.pdf'
 citation: '<u>Abhishek Divekar</u>. <b>&quot;Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference&quot;</b>. <i>GEM Workshop, ACL 2026</i>'
 bibtex: |
   @misc{divekar2026statisticallyreliablellmbasedranking,

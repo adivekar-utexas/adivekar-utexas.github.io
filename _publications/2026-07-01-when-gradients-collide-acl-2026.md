@@ -10,6 +10,7 @@ venue: 'CustomNLP4U Workshop at the Annual Meeting of the Association for Comput
 venue_short: 'ACL 2026 (CustomNLP4U Workshop)'
 acceptancetype: 'Poster'
 paperurl: 'https://arxiv.org/abs/2605.26046'
+mirrorurl: '/files/When-Gradients-Collide-ACL-2026-CustomNLP4U.pdf'
 codeurl: 'https://github.com/adivekar-utexas/when-gradients-collide'
 projecturl: 'https://textgrad-failure-modes.github.io/'
 citation: 'Parth Darshan* and <u>Abhishek Divekar</u>*. <b>&quot;When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges&quot;</b>. <i>CustomNLP4U Workshop, ACL 2026</i>'

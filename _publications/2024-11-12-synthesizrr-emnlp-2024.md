@@ -9,6 +9,7 @@ date: 2024-11-12
 venue: 'Conference on Empirical Methods in Natural Language Processing (EMNLP 2024), Main Conference'
 venue_short: 'EMNLP 2024 (Main)'
 paperurl: 'https://arxiv.org/abs/2405.10040'
+mirrorurl: '/files/SynthesizRR-EMNLP-2024-Main.pdf'
 codeurl: 'https://github.com/amazon-science/synthesizrr'
 acceptancerate: '20.8%'
 citation: '<u>Abhishek Divekar</u> and Greg Durrett. <b>&quot;SynthesizRR: Generating Diverse Datasets with Retrieval Augmentation&quot;</b>. <i>Conference on Empirical Methods in Natural Language Processing (EMNLP 2024)</i>'

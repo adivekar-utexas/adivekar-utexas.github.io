@@ -10,6 +10,7 @@ excerpt: 'Machine Learning has been steadily gaining traction for its use in Ano
 date: 2018-10-25
 venue: 'IEEE International Conference on Computing, Communication and Security'
 paperurl: 'https://arxiv.org/abs/1811.05372'
+mirrorurl: '/files/Benchmarking-KDD-CUP-99-IEEE-ICCCS-2018.pdf'
 acceptancetype: 'Oral'
 citation: '<u>Abhishek Divekar</u>, Meet Parekh, Vaibhav Savla, Rudra Mishra, and Mahesh Shirole. <b>&quot;Benchmarking datasets for Anomaly-based Network Intrusion Detection: KDD CUP 99 alternatives&quot;</b>. <i>IEEE International Conference on Computing, Communication and Security (ICCCS 2018)</i>'
 bibtex: |
