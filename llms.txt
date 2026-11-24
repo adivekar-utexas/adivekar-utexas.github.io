@@ -63,7 +63,7 @@ Site map: [Home]({{ u }}/) · [Writing]({{ u }}/writing/) · [Speaking]({{ u }}/
 ## AI Olympiad
 {{ site.data.ioai.intro }}
 {% for c in site.data.ioai.cards %}
-### {{ c.title }}
+### {{ c.title }}{% if c.mirrorurl %} (mirror){% endif %}
 {{ c.kicker }}
 {% for t in c.text %}{{ t }}
 {% endfor %}{% if c.summary %}{{ c.summary }} {% endif %}{% if c.meta %}{{ c.meta }}{% endif %}

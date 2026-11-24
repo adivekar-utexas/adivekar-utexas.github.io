@@ -21,7 +21,7 @@
     </div>
     <div class="prow__body">
       <p class="prow__venue">{{ c.kicker }}</p>
-      <h3 class="prow__title">{{ c.title }}</h3>
+      <h3 class="prow__title">{{ c.title }}{% if c.mirrorurl %} <span class="prow__title-mirror">(<a href="{{ c.mirrorurl }}">mirror</a>)</span>{% endif %}</h3>
       <div class="prow__textrow">
         <div class="prow__text">
           {% for t in c.text %}{% if forloop.first or c.show_all_text %}<p class="prow__pitch{% unless forloop.first %} prow__pitch--meta{% endunless %}">{{ t | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endif %}{% endfor %}
@@ -33,7 +33,7 @@
     <div class="prow__side">
       {% if c.image_right %}<picture><source srcset="{{ base_path }}/images/{{ img_right_webp }}" type="image/webp"><img class="prow__side-img" src="{{ base_path }}/images/{{ c.image_right }}" alt="{{ c.image_right_alt }}" width="144" height="180" decoding="async"></picture>{% endif %}
       {% if c.links %}<ul class="prow__links" aria-label="Links">
-        {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% if l.icon == 'github' %}{% include icons/github.svg %}{% elsif l.icon == 'results' %}{% include icons/trophy.svg %}{% elsif l.icon == 'team' %}{% include icons/users.svg %}{% elsif l.icon == 'article' %}{% include icons/article.svg %}{% elsif l.icon == 'download' %}{% include icons/download.svg %}{% else %}{% include icons/globe.svg %}{% endif %}<span>{{ l.label }}</span></a></li>{% endfor %}
+        {% for l in c.links %}<li><a class="ilink" href="{{ l.url }}">{% if l.icon == 'github' %}{% include icons/github.svg %}{% elsif l.icon == 'results' %}{% include icons/trophy.svg %}{% elsif l.icon == 'team' %}{% include icons/users.svg %}{% elsif l.icon == 'article' %}{% include icons/article.svg %}{% else %}{% include icons/globe.svg %}{% endif %}<span>{{ l.label }}</span></a></li>{% endfor %}
       </ul>{% endif %}
     </div>
   </div>
